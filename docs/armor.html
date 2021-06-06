@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch X Armors</title>
+</head>
+
+<style>
+
+.bio {
+  display:inline-block;
+  margin-left:100px;
+  vertical-align:top;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #666677;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  margin-top: 0px;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #9999EE;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #9999EE;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+button img {
+  margin-top: -5px;
+}
+
+</style>
+
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openChar(event, 'X1')">
+    X1 Armors
+  </button>
+  <button class="tablinks" onclick="openChar(event, 'X2')">
+    X2 Armors
+  </button>
+    <button class="tablinks" onclick="openChar(event, 'X3')">
+    X3 Armors
+  </button>
+</div>
+
+<div id="X1" class="tabcontent" style="display:block">
+
+<h2>X1 (Light) Armor Overview</h2>
+
+<p>Overall, the Light Armor is a great armor set for beginners, as most of its attributes are applied automaticly, with no additional actions or micromanagement required by the player.</p>
+
+<p>Head Parts</p>
+<ul>
+  <li>Cost: 2 scrap</li>
+  <li>Description: Allows X to see enemy health. Also protects against headshots and stomps.</li>
+  <li>Strategy/Remarks: This upgrade is great for new players as it lets you see how much damage your weapons deal. It is also excellent for a kill stealing strategy in tandem with a rapid-fire weapon; consider pairing it with the foot parts if pursuing such a game plan. As with all head parts, it guards against Axl's headshots and Vile's stomps, so if either of these attacks are giving you trouble, upgrade this first.</li>
+</ul>
+<p>Body Parts</p>
+<ul>
+  <li>Cost: 6 scrap</li>
+  <li>Description: Reduces damage taken by 25%.</li>
+  <li>Strategy/Remarks: Though the most expensive upgrade, this armor part is by far the most valuable piece you can buy. Increasing longevity translates to less time dying, which means more kills for you and less for others trying to kill you. Consider getting this part first when on a closed map with lots of narrow chokepoints where you are forced to take a lot of hits.</li>
+</ul>
+<p>Arm Parts</p>
+<ul>
+  <li>Cost: 4 scrap</li>
+  <li>Description: Doubles the speed at which X charges his weapons.</li>
+  <li>Strategy/Remarks: A great offensive boost to X's weaponry, this allows him to essentially double his charged damage per second, but on the flip side you'll burn through ammo twice as fast, so try not to overuse charged shots. If you can get the timing down and release exactly when X hits full charge, you will be a force to be reckoned with.</li>
+</ul>
+<p>Foot Parts</p>
+<ul>
+  <li>Cost: 3 scrap</li>
+  <li>Description: Increases X's run and dash speeds.</li>
+  <li>Strategy/Remarks: This upgrade puts X's base dash speed faster than other characters, which allows him to escape from a charging Zero. As such, if there are a lot of Zero's in the match, consider getting this first. It's also more useful on open maps with lots of flat runways like Highway and Factory.</li>
+</ul>
+
+<p>Set Bonus: Hadouken</p>
+<p>With full light armor upgrades, X can perform the mighty Hadouken technique! To toss it out, use QCF (down + down forward + forward + shoot). It will cost 3 scrap, but if you manage to hit someone, they will die instantly! However, it has a relatively short range and high startup lag that leaves you open, and it can be reflected by Zero so don't throw it out blindly.</p>
+
+</div>
+
+<div id="X2" class="tabcontent">
+
+<h2>X2 (Giga) Armor Overview</h2>
+
+<p>The Giga Armor provides powerful abilities, but do have a learning curve and require good control to use effectively, and thus are best reserved for advanced X players. They tend to be more offensive oriented than the Light Armor which is more defensive in nature.</p>
+
+<p>Head Parts</p>
+<ul>
+  <li>Cost: 2 scrap</li>
+  <li>Description: Gives X an additional ability, the Scanner, that lets him scan players to see their name and HP for the rest of the match (activate with SPECIAL btn). Additionally, the last player that was scanned is "tagged" and you'll be able to track them via a nav indicator on your HUD. Also protects against headshots and stomps.</li>
+  <li>Strategy/Remarks: This upgrade requires more effort from the user than the Light armor head upgrade, but the reward is greater revealed information since you can see enemy names, and identify threats faster. Tagging the winning player, or a player that is countering you, is also a good bet in FFA modes, so you can seek or avoid them.</li>
+</ul>
+<p>Body Parts</p>
+<ul>
+  <li>Cost: 6 scrap</li>
+  <li>Description: Grants X an additional weapon, the Giga Crush, a powerful full-screen 12 damage attack that gains ammo as you take damage.</li>
+  <li>Strategy/Remarks: This armor part packs a punch, and is more offensive-oriented than its Light Armor counterpart, though the invincibility while using the move can be used for defensive purposes and to take a breather when getting beat down in a crowd. Note that while the weapon starts with 0 ammo, its ammo is preserved even if you die, unlike with most weapons, so don't worry about losing it if you get killed. Pair this weapon with stun or snaring moves like Crystal Hunter to ensure foes can't escape the blast, as the move has a large charge-up time.</li>
+</ul>
+<p>Arm Parts</p>
+<ul>
+  <li>Cost: 4 scrap</li>
+  <li>Description: Allows X to store an additional charge shot after firing a first one.</li>
+  <li>Strategy/Remarks: An extremely powerful and feared upgrade. Being able to fire two charged shots in one quick burst will net you countless kills. However, once you've fired these two, it'll be a while before you get your next charge shot in, so be sure to back out of the action or finish off enemies with uncharged shots. This arm upgrade also allows for advanced combo based play, such as double Crystal Hunter into Giga Crush, Strike Chain into anything, etc.</li>
+</ul>
+<p>Foot Parts</p>
+<ul>
+  <li>Cost: 3 scrap</li>
+  <li>Description: Gives X an additional midair dash, and increases midair dash speed.</li>
+  <li>Strategy/Remarks: When getting this upgrade, you should play a more aerial based game, and use the additional mobility to become a difficult target to hit. It's great against tornado spammers and ground weapons, but watch out for anti-air like Ryuenjin or Bubble Splash. If you combine this with Speed Burner, you can travel astonishing distances in the air, and avoid dangerous combat zones by simply flying over them.</li>
+</ul>
+
+<p>Set Bonus: Shoryuken</p>
+<p>With full Giga Armor upgrades, X can perform the Shoryuken technique, a high-rising, flaming uppercut! Activate with the Dragon Punch motion (forward + down + down forward + shoot). It will cost 3 scrap, but like with Hadouken, it's an instant kill. It's best used against midair enemies or enemies above you as the hitbox is too small to hit enemies on the ground consistently. It can also be used to gain height and reach high spots that X otherwise couldn't have reached. Note that while the flame effect doesn't show underwater, this ability still kills in one hit underwater.</p>
+
+</div>
+
+<div id="X3" class="tabcontent">
+
+<h2>X3 (Max) Armor Overview</h2>
+
+<p>The Max Armor is unique among armor sets in that it utilizes a chip system. Once you reach full upgrades, you'll be able to select one additional part to improve even more with an enhancement chip. Chip upgrades do not cost any scrap, and can be changed at any time.</p>
+
+<!--<p>Overall, out of all the armor sets the Max Armor takes the most time and investment to reach its full potential, but once you do, you'll be a force to be reckoned with.</p>-->
+
+<p>Head Parts</p>
+<ul>
+  <li>Cost: 2 scrap</li>
+  <li>Description: Gives X a radar in the bottom right of the HUD that reveals the location of enemies and allies on the map. Also protects against headshots and stomps.</li>
+  <li>Enhancement Chip: Slowly recharges health over time. If X has not taken damage for 4 seconds, health is recovered at the rate of 1 bar every 2 seconds.</li>
+  <li>Strategy/Remarks: The radar provides invaluable positioning information and is great when used with long range weapons to pick enemies off screen, or when defending as it warns you of incoming assaults. Pick the enhancement chip if the map lacks health pickups or healers, as it'll greatly increase your longevity, but be sure to back out of the action when weak to make the best use of it.</li>
+</ul>
+<p>Body Parts</p>
+<ul>
+  <li>Cost: 6 scrap</li>
+  <li>Description: When X is hit by a flinching attack, a barrier is generated for a short time that reduces further damage by 50%.</li>
+  <li>Enhancement Chip: The barrier on flinch is improved even more, reducing damage by 75% while it's active.</li>
+  <li>Strategy/Remarks: This armor set only activates on certain attacks, so it's best chosen if you are being constantly assaulted with powerful flinching blows, such as Vile's punches, or Zero's specials, as you'll be able to reduce significant damage. However, opponents can circumvent it by not using charged shots/flinching attacks against it, and Axl doesn't stand much to fear from this armor as most of his attacks don't flinch.</li>
+</ul>
+<p>Arm Parts</p>
+<ul>
+  <li>Cost: 4 scrap</li>
+  <li>Description: Turns the level 3 charged X-Buster into the Cross Shot, a powerful two-part attack that can deal up to 6 damage if both hits land. Also grants the Hyper Buster weapon, which can instantly fire Cross Shot attacks without needing to charge first, as long as it has ammo. Each Hyper Buster shot consumes half the ammo bar.</li>
+  <li>Enhancement Chip: Reduces ammo usage by half.</li>
+  <li>Strategy/Remarks: This arm part grants X mighty weapons that let him tear through enemies. Bear in mind though that like with Giga Crush, the Hyper Buster starts off with no ammo and only gains ammo as X takes damage or picks up blue capsules. And unlike Giga Crush, the ammo won't be preserved on death. The chip reduces all ammo usage by half (including Hyper Buster, which greatly benefits from it) so pair it with ammo-heavy weapons, such as Chameleon Sting, Rolling Shield, Tunnel Fang, etc.</li>
+</ul>
+<p>Foot Parts</p>
+<ul>
+  <li>Cost: 3 scrap</li>
+  <li>Description: Gives X an upward air dash.</li>
+  <li>Enhancement Chip: Gives X two upward air dashes.</li>
+  <li>Strategy/Remarks: This upgrade lets X evade enemies on the ground more easily as well as reach high spots that otherwise could only be reached by the other characters. Pair it with weapons that can strike downwards, such as Storm Tornado, Spin Wheel, Rolling Shield, etc. It's also great against Vile since he has trouble hitting foes above him, but watch out for Zero's uppercut moves!</li>
+</ul>
+
+<p>Set Bonus: Gold Armor/Beam Saber</p>
+<p>With full Max Armor upgrades, X can don the Gold Armor at the cost of 10 scrap! To activate, simply press the special button; there is no charge up or transformation time. This armor grants <i>all</i> chip parts to X, as well as giving him the Beam Saber attack, which can be executed by charging up the buster all the way, and then firing again after the buster shot. The saber deals serious damage and also sends out a cresent shaped projectile. Unlike with the Hyper Modes of Zero and Axl, the Gold Armor lasts until X dies.</p>
+
+</div>
+
+
+<script>
+function openChar(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('game');
+
+if (myParam == "x1") {
+  openChar({currentTarget:document.getElementById("X1")}, "X1")
+}
+if (myParam == "x2") {
+  openChar({currentTarget:document.getElementById("X2")}, "X2")
+}
+if (myParam == "x3") {
+  openChar({currentTarget:document.getElementById("X3")}, "X3")
+}
+
+</script>
+
+
+</body>
+</html>

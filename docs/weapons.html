@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch X Weapons</title>
+</head>
+
+<style>
+
+.bio {
+  display:inline-block;
+  margin-left:100px;
+  vertical-align:top;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #666677;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  margin-top: 0px;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #9999EE;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #9999EE;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+button img {
+  margin-top: -5px;
+}
+
+</style>
+
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openChar(event, 'X1')">
+    X1 Weapons
+  </button>
+  <button class="tablinks" onclick="openChar(event, 'X2')">
+    X2 Weapons
+  </button>
+  <button class="tablinks" onclick="openChar(event, 'X3')">
+    X3 Weapons
+  </button>
+</div>
+
+<div id="X1" class="tabcontent" style="display:block">
+
+<h2>X1 Weapons Overview</h2>
+<p>Mega Man X1 weapons are great for beginners as most are very easy to use, fast, and highly damaging.</p>
+<div id="weapon1"></div><div class="weapon-label">X-Buster</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1<br>
+Cooldown: 0.15<br>
+Charge Damage: 2/3/4<br>
+</p>
+<p>X's main weapon in the games, this weapon stands out with its infinite ammo, a trait no other weapon shares. As such, it should always be considered as your first slot weapon. However, its damage is a bit lackluster in comparison to some of the other special weapons, and it lacks outstanding traits or utility that some other weapons can provide.</p>
+
+<div id="weapon2"></div><div class="weapon-label">Homing Torpedo</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.5<br>
+Charge Damage: 6<br>
+</p>
+<p>The only weapon in the game that can home in on enemies, but hampered by a slow firing speed and the ability to be destroyed by any damaging weapon in the game (aside from other torpedos). This weapon is good in wall-heavy maps that don't have a lot of straightways, where the homing effect would be of more use. The charge is great for hunting down single players, or spreading damage across a variety of foes, but even its projectiles can be destroyed. Overall a great burst damage option.</p>
+
+<div id="weapon3"></div><div class="weapon-label">Chameleon Sting</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.75<br>
+Charge Damage: N/A<br>
+</p>
+<p>The uncharged shot deals decent damage, and if you can aim the pellets carefully, you can "meatshot" by hitting with all three of them at once on an enemy, dealing heavy damage. The charge turns X invincible for 10 seconds, making it great for escapes and reaching the flag, but like with any weapon charge, you cannot use it when carrying the flag. You can also use the invulnerability to access otherwise lethal parts of the map such as lava or spikes and pickup goodies sprawled upon them. While charged, shooting sting shots consumes 8 bars of ammo, so you only get 3 shots before the whole meter is depleted.</p>
+
+<div id="weapon4"></div><div class="weapon-label">Rolling Shield</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.75<br>
+Charge Damage: 1 per hit<br>
+</p>
+<p>Fires spheres of rolling energy that can block projectiles and damage enemies alike. The charged version grants a protective barrier that can damage enemies X runs into, and block all projectile weapons (except electric spark, which immediately destroys it). Each hit the shield takes drains ammo, and if ammo runs out, the shield is lost. A great defensive tool; if under heavy assault from projectile weapons like the X-buster, consider this weapon, but bear in mind it does nothing to block  melee attacks.</p>
+
+<div id="weapon5"></div><div class="weapon-label">Fire Wave</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1 per hit<br>
+Cooldown: 0.09<br>
+Charge Damage: 2 per hit<br>
+</p>
+<p>The uncharged version is a powerful short-ranged weapon that can turn X into a "mini-Zero" of sorts, making him a monster at close range. However, it suffers from the same problems as Zero's restricted range, and burns through ammo quickly. The charged version will shoot a wave of fire that travels forward and deals heavy damage to anything in its path.</p>
+
+<div id="weapon6"></div><div class="weapon-label">Storm Tornado</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: N/A<br>
+Cooldown: 1.5<br>
+Charge Damage: 2 per hit<br>
+</p>
+<p>The uncharged shot will blow enemies back, making it great for area-denial and flag defense. The uncharged shot will blow enemies away and cause slight damage, but has a long cooldown. It's also great for dealing with groups of enemies as it has an area-of-effect. However the main weakness with the uncharged version is that it deals no damage. The charged version does deal damage (and plenty of it), and launchs a towering vertical projectile that's great for hitting foes directly above or below you.</p>
+
+<div id="weapon7"></div><div class="weapon-label">Electric Spark</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.5<br>
+Charge Damage: 4<br>
+</p>
+<p>Fires slow-moving electric balls that, upon hitting a surface, split into two. The charged shot will cover both your left and right, great for if you're surrounded on both sides. Both the uncharged and charged shot will break enemy rolling shields.</p>
+
+<div id="weapon8"></div><div class="weapon-label">Boomerang Cutter</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.5<br>
+Charge Damage: 3 x 4 boomerangs<br>
+</p>
+<p>Shoots boomerangs that curve in a circular path and, if they do not make contact, return to X and refill the lost ammo spent firing the shot. Firing while jumping makes it curve downwards. This weapon can pick up health-packs out of reach, making it great on certain maps such as PowerPlant. The charge shot fires 4 damaging projectiles that oscillate from X radially, making it great if you find yourself surrounded by opponents, or just as a general purpose form of high damage.</p>
+
+<div id="weapon9"></div><div class="weapon-label">Shotgun Ice</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 0.75<br>
+Charge Damage: 4 (sled)<br>
+</p>
+<p>The uncharged shot fires a projectile that splits into 5 fragments when it hits a wall. With clever placement, you can cause a lot of damage with the shards, or even hit all 5 on a single foe at once for heavy damage. The charged version, unlike in the games, shoots a gust of icy wind along with the ridable penguin sled. This will freeze enemies on contact, and the penguin sled also causes damage. When frozen, mash buttons to escape faster, but this is less effective at lower health.</p>
+
+</div>
+
+<div id="X2" class="tabcontent">
+
+<h2>X2 Weapons Overview</h2>
+<p>Mega Man X2 weapons (with some exceptions) are generally support weapons, meaning you cannot win games using them alone, but should pair them with a more damaging weapon, i.e. an X1 weapon. Many also really shine in team modes. These weapons are suited for advanced players as they are difficult to use and require careful control, thought and strategy.</p>
+
+<div id="weapon1x2"></div><div class="weapon-label">Crystal Hunter</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: N/A<br>
+Cooldown: 1<br>
+Charge Damage: N/A<br>
+</p>
+<p>Uncharged shots will crystalize enemies on hit, immobilizing them for up to 2 seconds, though this can be mashed out of. Crystalized enemies can be jumped on and used as platforms. Dash into a crystalized enemy to break the crystal and cause 3 points of damage. Note that after an enemy breaks free, you cannot crystalize them again until after 5 seconds. It's great when paired with a damaging close range weapon like Fire Wave. The charged shot will create a time rift that slows down all players within the area of effect. Up to 2 rifts can be created per player at once. Pair this slowdown with weapons like Giga Crush and Shoryuken for devastating cleanup.</p>
+
+<div id="weapon2x2"></div><div class="weapon-label">Bubble Splash</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1 per bubble<br>
+Cooldown: 1 (between bursts)<br>
+Charge Damage: 1 per bubble<br>
+</p>
+<p>Shoots bubbles that float upwards when shot. A burst of up to 7 bubbles at a time will be shot if the shoot button is held. Though the bubbles are slow moving and relatively easy to dodge, they can deal a surprising amount of damage if all of them manage to connect. Aim at foes above you for a higher chance of landing hits, and consider using it while crouched as well to give the bubbles more time to travel up. The charged shot surrounds X with 6 oscillating bubbles that can provide minor protection against projectiles as well as deal contact damage to enemies. Not only that, but X also jumps significantly higher when he has bubbles surrounding him, especially when underwater. Also when underwater, the charge effect gives X unlimited double jumps, allowing him to "swim" in the ocean and giving him unparalleled mobility in water maps.</p>
+
+<div id="weapon3x2"></div><div class="weapon-label">Silk Shot</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2 (1 per shrapnel)<br>
+Cooldown: 0.75<br>
+Charge Damage: 4 (1 per shrapnel)<br>
+Healing: 2 (1 per shrapnel)<br>
+Charge Healing: 4 (1 per shrapnel)<br>
+</p>
+<p>Fires hunks of scrap metal that can not only damage enemies, but also heal allies in team modes. Every 16 points of healing nets X one scrap. Upon contact with a wall or player, the shot will explode into fragments, each of which deal minor damage.</p>
+
+<div id="weapon4x2"></div><div class="weapon-label">Spin Wheel</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 3<br>
+Cooldown: 1<br>
+Charge Damage: 4 per spoke<br></p>
+<p>Shoots wheels that have a windup time, but can travel quite a far distance (the furthest of any X special weapon, or about the entire length of the factory_md stage). Wheels also change direction if they hit a wall, so you can lock down certain low-ground depressions in the map surrounded by left and right walls by firing wheels into them. The charge shot generates 8 wheel spokes that radiate from X. Up to 2 can connect at a time on an enemy, so if you space it right you can cause massive damage, but otherwise the spokes are rather slow and easy to dodge.</p>
+
+<div id="weapon5x2"></div><div class="weapon-label">Sonic Slicer</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2 per slicer<br>
+Cooldown: 1<br>
+Charge Damage: 4 per slicer<br>
+</p>
+<p>Fires two flying projectiles that travel slightly upwards and can bounce off walls and ceilings. The charged shot fires 5 shots that travel upwards for a distance before falling back down, making it great for raining down damage on an area as well as damaging enemies above you.</p>
+
+<div id="weapon6x2"></div><div class="weapon-label">Strike Chain</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 1<br>
+Charge Damage: 4<br>
+</p>
+<p>Shoots a chain from X's buster that can latch onto walls, pulling X towards them, as well as pull health and ammo capsules to your location. Enemies can be pulled to X as well, and the charge shot will actually flinch and stun foes that are hooked, allowing you to quickly switch to another weapon for an effective combo, especially if you have another charge shot banked up from the X2 buster upgrade. Notably, the chain can also yank Ride Armor users straight out of the mech, making it great for countering troublesome Vile players causing issues for the team.</p>
+
+<div id="weapon7x2"></div><div class="weapon-label">Magnet Mine</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2 (4 when planted)<br>
+Cooldown: 0.75<br>
+Charge Damage: 1/2/4 per hit<br>
+</p>
+<p>The uncharged shot fires mines that get planted on the map when they hit a surface. Once planted, mines remain on the map until an enemy sets them off by touching them, or until the owning X player dies. Mines can be aimed up or down to plant them on floors or ceilings, and up to 10 mines can be planted on the map at once, per player. Shoot mines in key areas on the map such as on objectives to defend them from enemy attack. Note however that enemies can destroy mines by attacking them. The charged shot fires a slow moving vortex that initially deals low damage, but can absorb projectiles to grow in size and power, up to 4x that of the original shot. Teammates, as well as the player that fired the shot, can also feed the vortex with their own projectiles, so combo it with a fast firing weapon like Fire Wave to power up the vortex quickly after it's launched.</p>
+
+<div id="weapon8x2"></div><div class="weapon-label">Speed Burner</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 3 (1 per flame trail particle)<br>
+Cooldown: 1<br>
+Charge Damage: 6<br>
+</p>
+<p>Shoots a large fireball that travels straight ahead at a fast speed. When fired on the ground, the flame trail particles can cause additional damage to enemies in its path. The charge shot engulfs X with flames and blasts him straight forward, causing massive damage to any foes in his path, as well as allowing X to travel horizontally in the air a great distance, though the dash will end if X hits a wall. Note that the charged shot will cause 3 points of recoil damage to when X hits a wall or enemy, so use this powerful but life-threatening tackle sparingly. (Helmet upgrades reduce this recoil damage to 2.) Also note that the charged shot deals no damage underwater, and the uncharged shot's effectiveness is greatly reduced underwater as well (but still can cause minor damage).</p>
+
+</div>
+
+
+<div id="X3" class="tabcontent">
+
+<h2>X3 Weapons Overview</h2>
+<p>Overall, Mega Man X3 weapons pack a punch, but are slow and consume heavy amounts of ammo. They are also generally the most complex set of weapons in all of X's arsenal, having sophisticated effects that players will have to study in detail to make the most use out of them. They are suitable for intermediate to advanced players.</p>
+
+<div id="weapon1x3"></div><div class="weapon-label">Acid Burst</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1 per second (over time)<br>
+Cooldown: 0.75<br>
+Charge Damage: 1 per second (over time)<br>
+</p>
+<p>Fires globs of acid that deal no damage up front, but cause enemies to take damage over time at the rate of 1 damage per second. The more acid you splash on an enemy, the longer the status ailment lasts. One uncharged glob is good for two seconds of acid damage. Each hit adds additional acid time, up to a max of 8 seconds of acid time. The charged shot fires two larger globs that splashes more acid on an enemy, applying 4 seconds of acid damage per glob, double that of the uncharged. In addition, it has more range and bounces up to four times and splashes acid all over the place, allowing you to splatter entire screenfuls of enemies with the toxic substance.</p> 
+<p>A secondary effect of the "acidified" ailment is that it causes more damage to be taken. The more acid a player has sprayed on them, the more damage they take, up to 50% more for the full 8 seconds. You can tell how much acid is on an enemy by how dark green colored they are. Acid can be removed via healing (every 1 healing removes 1 second of acid time), invincibility granting moves such as Rakuhouha or Giga Crush, and hyper modes. Finally, be aware that Acid Burst does not work underwater, and enemies can wash off acid by entering water.</p>
+
+<div id="weapon2x3"></div><div class="weapon-label">Parasite Bomb</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 4<br>
+Cooldown: 1<br>
+Charge Damage: 4 per hornet<br>
+</p>
+<p>Shoots a bomb that latches onto enemies it hits, exploding 2 seconds later, dealing 4 damage with a full flinch. While this is powerful for an uncharged shot, bear in mind that enemies can mash buttons to remove the parasite, preventing all damage (though this gets progressively harder the lower their HP) and that an enemy can only have one parasite attached at a time. If another enemy is nearby a parasitised enemy, the bomb will slam the parasitised enemy straight into the other enemy, dealing 4 damage to both. Parasitised enemies in Ride Armors will be forced to eject when this happens. The charged shot is unique in that it does not actually have a discrete shoot phase, but instead surrounds X with cursors that will target nearby enemies with a swarm of robotic hornets, dealing a flurry of attacks that home in on foes, though much like with Homing Torpedos, the hornets can be destroyed with most weapons.</p>
+
+<div id="weapon3x3"></div><div class="weapon-label">Triad Thunder</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1-2 damage per hit, 3 hits max<br>
+Cooldown: 1.75<br>
+Charge Damage: 4 per ball, 3 quake<br>
+</p>
+<p>The uncharged shot surrounds X with a triangular-shaped electrical current. Enemies in contact with this current take damage over time. The balls will cause more damage (2, vs 1) so try to position those inside of opponents to maximize damage. Press DOWN before a shot to invert the triangle. After the current dissipates, an additional 3 beams are generated that radiate out from X in a triangular pattern which can cause 2 damage each to enemies at specific angles. The charged shot causes X to generate an earthquake along with two balls of electricity that crawl along walls. The earthquake deals less damage but will damage any grounded enemies within a certain distance from X and cause a full flinch as well.</p>
+
+<div id="weapon4x3"></div><div class="weapon-label">Spinning Blade</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2 per blade<br>
+Cooldown: 1.25<br>
+Charge Damage: 2 per hit, 4 hits max<br>
+</p>
+<p>Shoots two spinning blades that fly backwards after travelling forward a short distance, making it great for hitting enemies behind you while running. The blades are also great for dealing serious damage to enemies directly in front of you as there's two of them that come out at once, but the long weapon cooldown as well as the double ammo usage per shot (as two shots are fired) counteracts this power. The charged shot shoots a yo-yo like spinning blade attached to a string that X can rotate with UP/DOWN, or retract with the SHOOT key.</p>
+
+<div id="weapon5x3"></div><div class="weapon-label">Ray Splasher</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1 per hit (6 hits max)<br>
+Cooldown: 1<br>
+Charge Damage: 1 per hit<br>
+</p>
+<p>Fires a rapid stream of energy bullets in a cone shaped pattern. Enemies within a certain spacing will take the maximum damage, so position yourself carefully so that the cone covers exactly the enemy's entire hitbox. The charged shot generates a floating sentry-like orb above X that will shoot at enemies for you. Unlike in the actual SNES game, these orbs remain on the map until X dies, which allows for defensive setups. With good orb placement, you can lock down entire sections of the map and protect the objective from attack. Up to three orbs can be placed on the map at once. Orbs can be destroyed by enemies and have 4 health, and they can also be healed with Silk Shot. Avoid placing orbs right next to each other as their damage does not overlap and they are more easily taken out by splash damage.</p>
+
+<div id="weapon6x3"></div><div class="weapon-label">Gravity Well</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: N/A<br>
+Cooldown: 1.25<br>
+Charge Damage: N/A<br>
+</p>
+<p>Shoots high gravity zones onto the map. Enemies close to the wells will be sucked in. The closer they are, the stronger the gravitational pull. Ride Armors are sucked in as well with the same acceleration. Multiple gravity wells have an additive gravitational effect, so shoot several in the same spot for a stronger pull. The charged shot can manipulate gravity in an area covering roughly the entire screen. By default, gravity is reversed, causing enemies to fly straight upwards, but if DOWN is held before releasing the charged shot, gravity is intensified 2x, making jumps much weaker and less effective, and making climbing up walls a nearly impossible ordeal. Neither the uncharged nor charged shot deal any damage, so be sure to use this as a support weapon only. Note that teammates and the owning X player are not affected by either the uncharged or charged gravitation.</p>
+
+<div id="weapon7x3"></div><div class="weapon-label">Frost Shield</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 2<br>
+Cooldown: 1<br>
+Charge Damage: 2 per hit<br>
+</p>
+<p>Fires spears of super-hardened ice that capable of blocking most attacks. Upon contacting an enemy or wall, these spears splinter into a shard that falls onto the ground, acting as another shield/barrier that can block attacks. These stay on the map for up to 5 seconds and cannot be destroyed except by running into them, which causes two damage to the victim along with a flinch. The charged shot generates an ice shield held in X's buster that can provide protection against most attacks but only lasts a limited time. It differentiates itself from Rolling Shield by running on a time limitation instead of having its ammo/health drained per shot. It also only covers the front of X, so be sure to watch your back when using it.</p>
+
+<div id="weapon8x3"></div><div class="weapon-label">Tornado Fang</div><div class="clearfix"></div>
+<p class="weapon-stats">
+Damage: 1 per hit<br>
+Cooldown: 0.15<br>
+Charge Damage: 2 per hit<br>
+</p>
+<p>Launches drill-like projectiles that have a brief windup time before picking up speed (like with Frost Shield). Shoot quickly after the first shot to fire two more drills at once, one above and one below the initial drill. If a drill makes contact with an enemy, it will travel much slower as it bores into the enemy, dealing major damage over time and also slowing down the enemy's movement as well. The charged shot turns X's buster into a larger and much more devastating spinning drill that makes short work of any Reploid excavated by it, but drains through ammo rather quickly and has extremely short range, so make your time count.</p>
+
+</div>
+
+<script>
+function openChar(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('game');
+
+if (myParam == "x1") {
+  openChar({currentTarget:document.getElementById("X1")}, "X1")
+}
+if (myParam == "x2") {
+  openChar({currentTarget:document.getElementById("X2")}, "X2")
+}
+if (myParam == "x3") {
+  openChar({currentTarget:document.getElementById("X3")}, "X3")
+}
+
+</script>
+
+
+</body>
+</html>

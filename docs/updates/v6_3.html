@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 6.3</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 6.3</h1>
+
+<h3>Axl Rework</h3>
+
+<p>Axl was reworked to have two different control schemes: one for cursor based aim and one for directional aim. Both these modes have different gameplay with the cursor aim being somewhat similar to MMX7 Axl and the directional aim being much closer to MMX8.</p>
+
+<p>To switch the control scheme, go to Options > Use Cursor Aim (Axl) and set it to "No" to use directional aim (defaults to "yes").</p>
+
+<p>The first mode is Cursor Aim (default). In this mode, Axl will use a cursor to aim. You can move the cursor with the mouse, or bind the aim controls to keyboard keys or controller buttons. In Cursor Aim, Axl will need to have the cursor on top of enemies to lock on and be able to shoot the Axl Bullets. When he's locked on, a notification sound will play, a circling yellow cursor will appear, and the Axl Bullets will fire extremely rapidly and the target's health will be shown. (The sound can be disabled in Options.) For the Blast Launcher, you do not need the cursor on top of enemies to hit them and it would not have any effect.</p>
+
+<p>The second mode is Directional Aim. In this mode, Axl will point his guns at the angle at which you press the aim keys/buttons, or push a controller analog stick. If you let go of the aim controls, Axl will revert to pointing straight ahead. If your aim controls are not on a controller analog stick, you'll only be able to aim in 8 cardinal directions. Otherwise, if you're using a controller's analog stick you can aim at any angle you push the analog stick at. This is the recommended approach. Directional Aim also has a "lock" button you can bind in Controls. If you hold down the lock button, you'll remain in place, which can be useful for aiming without moving, if you choose to bind the aim controls to the same as the movement controls.</p>
+
+<p>Due to the difficulty in balancing a character like Axl, with these reworks also comes a Real Time Balance system. Every time you relaunch the game, Axl's various balance properties will get downloaded from the server. This allows for fast balance changes without having to release a new version of the app. I will notify the Discord whenever there's a Real Time Balance change made to Axl.</p>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li><p>Axl no longer can pick up the flag when disguised. He must undisguise first. This prevents some issues.</p></li>
+  <li><p>Fixed a bug where Vile could jump out of the Ride Armor when spawning.</p></li>
+  <li><p>Fixed a bug where characters could fall through the floor after dying from the Blast Launcher.</p></li>
+  <li><p>Fixed a bug where Blast Launcher could sometimes knock back enemies extremely far.</p></li>
+  <li><p>Fixed a bug where characters could spawn invisible and invincible to other players until their next death (or for the whole match).</p></li>
+  <li><p>Fixed a crash on controller plug/unplug.</p></li>
+  <li><p>Fixed a bug where Vile could get hurt while respawning.</p></li>
+</ul>
+
+<h3>Misc Improvements</h3>
+
+<ul>
+  <li><p>Vile's punch now properly applies knockback to other mechs in online mode.</p></li>
+  <li><p>Can now mute individual players in the in-game chat (in Menu -> Match Options).</p></li>
+  <li><p>Enter now exits chat if no message typed.</p></li>
+  <li><p>Can now bind menu nagivation controls (Menu up/down/left/right) for controllers.</p></li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<ul>
+
+<li>
+  <p>Every character now has their own scrap pool.</p>
+  <ul><li><b>Commentary</b>: This stops players from choosing a different character than X to get scrap, then switching to X after gaining 15 scrap to fully upgrade. It forces them to use X like intended, starting off weaker and experiencing his downsides but gaining strength as he progresses.</li></ul>
+</li>
+
+<li>
+  <p>Vile now gains half a second of invulnerability after his ride armor is destroyed if he was in it.</p>
+  <ul><li><b>Commentary</b>: This is a QoL change to help Vile not get wrecked so hard by Zero's combos and multi-hit moves.</li></ul>
+</li>
+
+<li>
+  <p>Vile bombs now split perpendicularly to the surface hit, like Electric Spark, instead of always to the sides.</p>
+  <ul><li><b>Commentary</b>: Another QoL buff to Vile to help him apply more damage and pressure when out of his Ride Armor.</li></ul>
+</li>
+
+<li>
+  <p>If the player does not respawn for 10 seconds, the player is forced to spawn.</p>
+  <ul><li><b>Commentary</b>: This prevents players from spending too long outside of battle and slowing down matches.</li></ul>
+</li>
+
+<li>
+  <p>Zero: Reduced attack rate of Kuuenzan.</p>
+  <ul><li><b>Commentary</b>: This attack could be spammed too quickly and covered too great an area. In combination with Hyper Zero it was too easy to clean up groups of enemies.</li></ul>
+</li>
+
+</ul>
+
+</body>
+</html>

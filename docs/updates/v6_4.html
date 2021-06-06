@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 6.4</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 6.4</h1>
+
+<h3>New Kick, Report, Ban System</h3>
+
+<p>A sophisticated kick and ban system was added to the game's online mode. These will help curb toxicity and make online a place where everyone can feel safe and comfortable.</p>
+
+<p>The following options were added to "Match Options":</p>
+
+<ul>
+  <li><p>Kick player (host). The host can kick a player out of a match and specify a reason and kick time. Set a kick time of 0 minutes for a kick that allows the player to immediately join. If you want to issue a ban, set the kick time to the max of 1000 minutes or a really high number which is more or less a ban. (Push MENULEFT key on the minute count when it's at 0 to quickly jump to the max value.) Note that these kicks/bans only apply to the specific match. Also if the match ends and gets recreated, the kick expires and you'll need to re-kick if the offender re-joins. A player will remain kicked/banned even if they try and change their name.</p></li>
+  <li><p>Vote Kick player (non-host). Non hosts can initialize a vote kick. It works the same way as the host, except instead of kicking immediately, everyone will have the option to vote Yes (press F1) or No (press F2). If a majority votes Yes, the player will be kicked. If no majority is reached within 60 seconds, the vote kick is aborted. To prevent abuse, a vote kick can only be initialized per player every 60 seconds.</p></li>
+  <li><p>Report player. You can now report a player for misconduct in online matches. When you report a player, a text file gets generated in your game folder called report_[PLAYERNAME].txt. Take this text file and send it to me on Discord in a private chat, along with screenshots and any other helpful behavior of the abuse. If I find the offense to be sufficient, I will issue a permanent ban of that player from all online play. Please note that deliberate false reporting will also result in a permanent ban.</p></li>
+</ul>
+
+<p>Several other changes were added to help protect the community. First, a profanity filter was added. This will apply to all possible places you could type text in the game, including: chat, player and match names. If you type in an offensive/swear word, it will be replaced with * characters. Also, you can now disable chat in the Options menu to be unable to read and send chat messages in games.</p>
+
+<h3>Misc Changes</h3>
+
+<p>Added confirmation on closing the game window, and removed the "quit" option in main menu. These changes are really more to help debug issues where the game crashes without any error popup, as that should never happen. Once I get more data, I will likely revert this change.</p>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li><p>Fixed a bug where Zero's guard didn't reduce damage by half.</p></li>
+  <li><p>Fixed a bug where X's weaknesses didn't do double damage (but still flinched).</p></li>
+  <li><p>Fixed a bug with sprite index ordering which could result in glitched sprites.</p></li>
+  <li><p>Fixed a bug where you could take the flag while invisible.</p></li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<ul>
+  <li><p>Reduced stun time for Vile's punch by half.</p></li>
+</ul>
+
+</body>
+</html>

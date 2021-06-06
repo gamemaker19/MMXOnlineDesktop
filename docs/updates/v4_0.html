@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 4.0</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 4.0: Capture the Flag, Control Point</h1>
+
+<iframe width="640" height="482" src="https://www.youtube.com/embed/H--wFJciy_Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Update 4.0 has been released! This update adds two new team modes: Capture the Flag and Control Point. These modes go beyond simple kill count as the objective and will require deeper strategy and teamwork to capture or defend key points of interest on the map. There have been a few other new additions, such as the highly requested in-game chat, private matches, large camera sizes, and more!
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>Added Capture the Flag mode. This mode's objective is fairly intuitive: take the enemy flag and return it to your own flag location and prevent them from doing the same.</p>
+  <ul>
+  <li>All (and only) large maps support this mode. It's recommended to play this mode with at least 6 players.</li>
+  <li>You do not need your team's flag at your home base in order to score.</li>
+  <li>A nav point on the HUD indicates the location of the enemy flag.</li>
+  <li>While carrying the flag, you cannot dash, or charge weapons as X. This makes flag carriers vulnerable and will require teamwork and coordination for escorting flag carriers back home.</li>
+  <li>Currently you cannot drop the flag once you pick it up, unless you die.</li>
+  <li>If a flag is dropped, it will return to its home base in 30 seconds until picked up by someone else.</li>
+  <li>If a flag falls off the map, it will immediately return to its home base.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added Control Point mode. In this mode, Blue team must capture two control points on the map in order before time runs out, while Red tries to defend and stop them.</p>
+  <ul>
+  <li>Only the following large maps support this mode: Factory, Powerplant, Forest, Airport. It's recommended to play this mode with at least 6 players.</li>
+  <li>A nav point on the HUD indicates the location of the current point to capture or defend.</li>
+  <li>The more Blue players on a point, the faster it caps. But even one Red player on the point will block all capture progress, so get on the point if it's under attack!</li>
+  <li>Points must be captured in order. The second point will be locked until the first one is captured.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added in-game chat.</p> 
+  <ul>
+  <li>Default key is Y for all-chat and T for team-chat (team modes only).</li>
+  <li>Only 7 messages can show up at a time, due to screen space and font size constraints.</li>
+  <li>To see the entire chat history, go to Menu > Match Options > Chat History.</li>
+  <li>There's a limit of 5 messages every 10 seconds per player before you will get throttled, to prevent spam.</li>
+  <li>You can also turn off chat by going to Menu > Match Options > Disable Chat, if it's getting too spammy or toxic.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added the following match options:</p>
+  <ul>
+  <li>Time limit. This can be set for all game modes. Only Control Point requires it, though. If time runs out, whoever has the most kills/points wins.</li>
+  <li>Large camera. If enabled, then the camera will show a much larger portion of the map. Not all maps support this. Turn this on, if you want a more strategic and less reaction/twitch based match! It can be great for the new team modes.</li>
+  <li>Private match. If enabled, then the match won't show up in the Join Match menu and players have to manually join and enter in the match name by pressing "In Game Menu" button (default ESC) in the Join Match menu.
+  <li>In the host lobby you can change the match name now to something custom. Push left or right when it's selected to do so.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added the following maps:</p>
+  <ul>
+  <li><b>1v1 Maps:</b> airport_1v1, sigma4_1v1. Unlike other 1v1 maps these have death pits, so watch your footing!</li>
+  <li><b>Medium Maps:</b> highway_md. Like other medium maps, recommended 4 players max.</li>
+  </ul>
+</li>
+
+</ul>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li><p>Fixed a bug where in 1v1 matches, players would respawn with 0 health.</p></li>
+  <li><p>Fixed a bug where if you had a controller plugged in, then trying to bind a keyboard key will freeze the game.</p></li>
+</ul>
+
+<h3>Quality of Life changes</h3>
+
+<ul>
+  <li><p>Added an option to show FPS (frames per second).</p></li>
+  <li><p>Added an option to disable popup that checks for system requirements every time the game loads.</p></li>
+  <li><p>Added options to hide certain HUD elements in matches.</p></li>
+  <li><p>Large map backgrounds will now load properly for users whose GPU max texture size is 2048 or more.</p></li>
+  <li><p>When changing maps at the end of the match, you can now change most available match options.</p></li>
+  <li><p>You can now randomize weapons or maps in menus by pressing Menu Secondary (default SPACE) when the cursor's over it.</p></li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<ul>
+
+<li>
+  <p>X-Buster: The damage of charged shots reduced from 3/5/7 to 2/4/6.</p>
+  <ul><li><b>Commentary</b>: With the new Arm cannon upgrade, charged X-buster shots proved to be too damaging for how fast they could be thrown out. This nerf reduces that power creep and will help force X players to think about when they want to do a charge.</li></ul>
+</li>
+
+<li>
+  <p>Boomerang Cutter: Charged shot damage reduced from 4 per hit to 3 per hit. Also made charged boomerangs disappear on hit (like Rakuhouha orbs).</p>
+  <ul><li><b>Commentary</b>: This weapon's charge shot was doing too much damage for how hard it was to dodge. It was too easy to get in 2 hits due to how much screen area it covered so damage is now more reasonable.</li></ul>
+</li>
+
+<li>
+  <p>Storm Tornado: Increased cooldown from 1.5 seconds to 2 seconds.</p>
+  <ul><li><b>Commentary</b>: This helps make the weapon less spammable, especially in the new team modes where it's easy to hit a lot of clumped teammates at once with the columns.</li></ul>
+</li>
+
+</ul>
+
+</body>
+</html>

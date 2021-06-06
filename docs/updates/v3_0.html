@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 3.0</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 3.0: Team Deathmatch</h1>
+
+<iframe width="640" height="482" src="https://www.youtube.com/embed/H--wFJciy_Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Update 3.0 has been released! This update adds Team Deathmatch mode, the mighty Hadouken, two new Zero abilities, and a whole host of optimizations, improvements and additions!
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>Added Team Deathmatch mode. You can join either Red or Blue team. The team that reaches the kill limit first wins!</p>
+  <ul>
+  <li>Note that assists don't count for total team kills but still count for earning scrap as X.</li>
+  <li>There's a new in-game menu option, "Match Options" that lets you switch teams. However you can only switch if the opposing team has less players.</li>
+  <li>Also in Match Options, there's a new option for the host to cancel the match (no contest). This is good for if you accidentally set the wrong match settings, or if too many players left for the kill limit to be reached.</li>
+  <li>In the match lobby, the host can also assign players to specific teams with the 0-9 keyboard keys.</li>
+  </ul>
+</li>
+
+<li>
+  <p>X can now use the Hadouken (!) in non-1v1 matches.</p>
+  <ul>
+  <li>Controls: QCF (quarter circle forward, i.e. down + down forward + forward) + shoot. (Don't forget the shoot button!)</li>
+  <li>It's a 1-hit kill, so beware!!!</li>
+  <li>However, this weapon has some major limitations: it can only be used when X is fully upgraded, AND the move costs 3 scrap, so use it wisely.</li>
+  <li>Zero can reflect this move, so don't blindly toss it out!</li>
+  </ul>
+</li>
+
+<li>
+  <p>Zero gets two new abilities:</p>
+  <ul>
+  <li>Shippuuga ("Hurricane Fang"). Special button while dashing. This deals less damage than the normal dash attack and has a smaller hitbox but it will flinch on hit!</li>
+  <li>Kuuenzan ("Air Circling Slash"). Special button in the air. This attack will cover an area all around Zero, but deals less damage than the normal air attack. Consider using underwater where the Ryuenjin is ineffective.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added new large map: sigma2. This map takes place in the beginning of the MMX Sigma 2 stage and supports up to 10 players.</p>
+</li>
+
+</ul>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li><p>Fixed a bug where switching to Zero and back to X causes the body armor health upgrade to be lost.</p></li>
+  <li><p>Fixed a bug where X could shoot a charged X buster even without ammo by switching to it while charged.</p></li>
+  <li><p>Fixed a bug where X could continue to decrement ammo even if it ran out.</p></li>
+  <li><p>Fixed a bug with full-screen mode causing the game to hang or crash on startup.</p></li>
+</ul>
+
+<h3>Optimizations/Quality of Life changes</h3>
+
+<ul>
+  <li><p>Optimized and reduced map image sizes, and map images are now only loaded when you start a match, as opposed to all at once on program launch.</p></li>
+  <li><p>Allowed game to be played without shaders. If your system does not support shaders, you will not see sprite effects or weapon palettes.</p></li>
+  <li><p>Added warning popups before game starts if your system requirements do not meet required or recommended.</p></li>
+  <li><p>Crashes will now show a popup before the program closes that gives the error message technical details.</p></li>
+  <li><p>Crashes will now be logged in a folder called "crashlogs". (out.txt still works, but the crashlogs won't get erased on next program launch.)</p></li>
+  <li><p>When changing maps at the end of the match, you will have more options to change the kill count.</p></li>
+  <li><p>All non-1v1 maps now support 10 players max. (But medium maps have a recommended max of 4 players or it will be hectic.)</p></li>
+  <li><p>The "play to" count will now default to an intelligent value that is based on the game mode and number of players in the match.</p></li>
+  <li><p>All controllers are now supported (before was just Xbox One). Make sure to plug it in before launching or else it won't work. Also make sure to bind buttons appropriately in the Control menu before use. Note that as part of this change, menu up/down/left/right is no longer distinct from movement up/down/left/right, so rebind appropriately.</p>
+  <li><p>Changed some of Zero's animations to better, smoother ones.</p></li>
+  <li><p>Zero's Rakuhouha meter now will be grayed out if he doesn't have enough ammo to use it.</p></li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<ul>
+
+<li>
+  <p>Rakuhouha now grants Zero invulnerability while using it.</p>
+  <ul><li><b>Commentary</b>: This change makes Zero more relevant in late game despite not getting health upgrades and helps with his survivability. It also makes the move more strategic as it can be used both offensively and defensively. Plus, this is how the move worked in MMX4 so it's also more authentic to the real game.</li></ul>
+</li>
+
+<li>
+  <p>Zero's special techniques no longer reflect projectiles.</p>
+  <ul><li><b>Commentary</b>: This wasn't really intentional and made it too easy to accidentally reflect X's shots (or, from an X player, randomly get screwed over from bad timing).</li></ul>
+</li>
+
+<li>
+<p>Guard and Rolling Shield now protect against freeze status.</p>
+<ul><li><b>Commentary</b>: This is a quality of life change to make Zero's Hyouretsuzan down special less annoying and more counterable and make the game more strategic and interesting.</li></ul>
+</li>
+
+<li>
+  <p>Cooldown added to Zero's dash attack.</p>
+  <ul><li><b>Commentary</b>: This makes the attack more balanced as it was kind of ridiculous when spammed.</li></ul>
+</li>
+
+<li>
+  <p>X can no longer choose 2 or more of the same weapon.</p>
+  <ul><li><b>Commentary</b>: Choosing more than one of the same weapon can cause balance issues for weapons whose main balance aspect is their limited ammo (for example, Rolling Shield, Chameleon Sting, X-Buster.)</li></ul>
+</li>
+
+<li>
+  <p>Uncharged Storm Tornado now costs 2 ammo.</p>
+  <ul><li><b>Commentary</b>: This helps the move become less spammable because using it repeatedly can get boring and frustrating to play against.</li></ul>
+</li>
+
+</ul>
+
+</body>
+</html>

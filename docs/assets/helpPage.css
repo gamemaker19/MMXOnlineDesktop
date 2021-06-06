@@ -1,0 +1,209 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+li {
+  line-height: 1.2em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: #36393f;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1400px;
+  max-width: 1400px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-family: Cambria, 'Times New Roman', serif;
+  /*
+  background: url("images/background.png?v=1.0.0");
+  background-repeat: no-repeat;
+  background-size: cover;
+  */
+}
+
+.container {
+  max-width: 1400px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 30px;
+  background-color: darkblue;
+  color: white;
+  text-shadow: 0px 0px 10px #4286f4;
+  height: 55px;
+}
+
+#logo-wrapper {
+  width: 800px;
+  margin-left: 250px;
+}
+
+#logo {
+  width: 800px;
+}
+
+#weapon1, #weapon2, #weapon3, #weapon4, #weapon5, #weapon6, #weapon7, #weapon8, #weapon9 {
+  background: url("images/weapons.png?v=1.0.0");
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+#weapon1x2, #weapon2x2, #weapon3x2, #weapon4x2, #weapon5x2, #weapon6x2, #weapon7x2, #weapon8x2, #weapon9x2 {
+  background: url("images/weaponsx2.png?v=1.0.0");
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+#weapon1x3, #weapon2x3, #weapon3x3, #weapon4x3, #weapon5x3, #weapon6x3, #weapon7x3, #weapon8x3, #weapon9x3 {
+  background: url("images/weaponsx3.png?v=1.0.0");
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+.weapon-label {
+  display: block;
+  float: left;
+  margin-top: -2px;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.weapon-stats {
+  margin-top: 8px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+#weapon1 {
+  background-position: 0 0;
+}
+
+#weapon2 {
+  background-position: -32px 0;
+}
+
+#weapon3 {
+  background-position: -64px 0;
+}
+
+#weapon4 {
+  background-position: -96px 0;
+}
+
+#weapon5 {
+  background-position: -128px 0;
+}
+
+#weapon6 {
+  background-position: -160px 0;
+}
+
+#weapon7 {
+  background-position: -192px 0;
+}
+
+#weapon8 {
+  background-position: -224px 0;
+}
+
+#weapon9 {
+  background-position: -256px 0;
+}
+
+
+#weapon1x2 {
+  background-position: 0 0;
+}
+
+#weapon2x2 {
+  background-position: -32px 0;
+}
+
+#weapon3x2 {
+  background-position: -64px 0;
+}
+
+#weapon4x2 {
+  background-position: -96px 0;
+}
+
+#weapon5x2 {
+  background-position: -128px 0;
+}
+
+#weapon6x2 {
+  background-position: -160px 0;
+}
+
+#weapon7x2 {
+  background-position: -192px 0;
+}
+
+#weapon8x2 {
+  background-position: -224px 0;
+}
+
+
+#weapon1x3 {
+  background-position: 0 0;
+}
+
+#weapon2x3 {
+  background-position: -32px 0;
+}
+
+#weapon3x3 {
+  background-position: -64px 0;
+}
+
+#weapon4x3 {
+  background-position: -96px 0;
+}
+
+#weapon5x3 {
+  background-position: -128px 0;
+}
+
+#weapon6x3 {
+  background-position: -160px 0;
+}
+
+#weapon7x3 {
+  background-position: -192px 0;
+}
+
+#weapon8x3 {
+  background-position: -224px 0;
+}
+
+a:link {
+  color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  color: lightblue;
+}

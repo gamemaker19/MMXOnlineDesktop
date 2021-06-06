@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 7.0</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 7.0 : The Bot Update</h1>
+
+<p>This major update to MMXO introduces new match options that will help the community learn and expand. The first is that bots can now be added to online matches. This will help more players be online as they can play with bots as they wait for others to join. The second is spectator mode. You'll be able to watch other players in non-1v1 matches, allowing players to learn from others. It's also great if you just want to sit out and take a break from the action. 1v1 spectate will be added in a future update.</p>
+
+<p>In addition, this update reworks most of the cast quite significantly, based on feedback from players, adding several new abilities and tweaking gameplay significantly in many cases.</p>
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>Host can now add/remove bots in online matches.</p>
+  <ul>
+  <li>When hosting an online match, you can now specify CPU count.</li>
+  <li>After the match starts, the host can add or remove bots any time by going into Match Options. You can select the character or team of the bot (or leave them random/default).</li>
+  <li>Bots count as player slots, so if you have 9 bots, for instance, no one can join your match unless you remove some first.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Can now enter "Spectator" mode in a match (non-1v1 maps only).</p> 
+  <ul>
+  <li>To join/leave Spectator mode, go to Match Options.</li>
+  <li>Press Left/Right to cycle through players to spectate.</li>
+  <li>When spectating, you still count as a player slot in the match, and will take a slot and potentially prevent others from joining if the room is full.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added taunts in game.</p> 
+  <ul>
+  <li>Default binding to taunt is G on keyboard.</li>
+  <li>Every character has a unique taunt (it's the same as their win animation).</li>
+  </ul>
+</li>
+
+<li>
+  <p>New maps added: sigma1_md, sigma1 (large).</p> 
+  <ul>
+  <li>These take place in sigma fortress 1 stage in the first Mega Man X. In the large map version, there's a twist: you'll have to climb up/down a treacherous set of <i>moving</i> platforms (a first for a MMXO map) in order to capture the enemy objective! The large map supports both CTF and Control Point.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Autobalance added in online matches.</p> 
+  <ul>
+  <li>If a team is down by two or more players, one player will automatically be selected to be moved to the other team.</li>
+  <li>You can no longer manually switch teams.</li>
+  </ul>
+</li>
+
+</ul>
+
+<h3>Misc Changes</h3>
+<ul>
+  <li>Fixed a bug where Capture Points would not sync properly</li>
+  <li>On match end, Axl cursor no longer locks screen.</li>
+  <li>AI Takeover (F12) ability removed. With the new bot and spectate features, it's not really needed anymore.</li>
+  <li>No longer pick up capsules if full on HP/Ammo.</li>
+  <li>If Ride Armor HP full, health capsules apply to the driver instead.</li>
+</ul>
+
+<h3>Character changes and reworks</h3>
+
+<p>The Mega Man X Online: Deathmatch community has grown to an unexpected level in the past few months. I have been getting a lot of feedback on how to better improve and balance the game from passionate community members. I have taken some of this feedback to heart, and have applied some sweeping changes to the character cast across the board.</p>
+
+<h4>Rework #1: Mega Man X</h4>
+
+<p><b>Summary</b>: The main objective of the X rework was to reduce the power level discrepency between early game vs late game X. Previously, an early game X was far too weak and discouraging for new players, whereas a late game X rendered other characters obsolete. A secondary objective was to make X feel more authentic to the SNES games, and this came quite naturally with some of the changes. In addition, balance changes were made to certain overused weapons to help shake up and refresh the X weapon meta.</p>
+
+<ul>
+
+<li>
+  <p>X no longer loses charge progress when flinching, and can even initiate a charge when flinching.</p>
+  <ul><li><b>Commentary</b>: X was too helpless in early game to Zero's and Vile's who stun-locked him with little effort. This change gives X a significant fighting chance by allowing him to retain a charge shot and fight back with his own flinching blows. Plus it's authentic to the behavior in the real X games.</li></ul>
+</li>
+
+<li>
+  <p>Body armor parts: removed 50% health bonus, now reduces damage taken by 25% on hits</p>
+  <ul><li><b>Commentary</b>: Armored X now takes significantly less hits before dying. Such a nerf was necessary to balance X's late game, allowing him to be more easily killable and counterable. Also, this change makes the armor more authentic to the real games, as in MMX1 it didn't increase X's life bar but reduced damage taken on hit.</li></ul>
+</li>
+
+<li>
+  <p>X buster: now has infinite ammo, but damage nerfed from 1/2/4/6 to 1/2/3/4, and only 3 lemons (uncharged shots) can be on the field at once</p>
+  <ul><li><b>Commentary</b>: Another change that makes things more authentic to the actual games while also trying to keep things more balanced. The buster's infinite ammo ensures that X cannot get in a situation where he can't use charge shots, which are his main defense against flinch attacks from melee fighters. However, giving the buster infinite ammo necessitates a nerf in its power level, since previously the only thing keeping it in check was its ammo limitation. As such, the level 2 and level 3 charge shot damage was reduced. This makes the X buster more of a backup weapon than a frontline assault weapon, though the level 2 and 3 flinching capabilities are still useful. To balance the uncharged shot power, X can now only have 3 lemons on the field at once, which greatly reduces his uncharged rate of fire, while making things more authentic to the real games. Of course, if you are shooting at a close range target, you won't be affected by this limitation since the lemons will dissipate before you can get 3 on the screen, just like in the real Mega Man games.</li></ul>
+</li>
+
+<li>
+  <p>Storm tornado: uncharged shot no longer deals damage; uncharged ammo usage reduced from 2 to 1</p>
+  <ul><li><b>Commentary</b>: Storm tornado was one of the most used weapons by far, and for obvious reasons: it's a decently damaging, difficult to avoid column that pushes enemies significantly backwards, often off the maps, to their death. When spammed, it could cause headaches. Overall it had way too much utility and damage packed in one projectile. Removing the damage from the uncharged shot ensures that it's used for utility purposes only.</li></ul>
+</li>
+
+<li>
+  <p>Chameleon sting: firing the weapon when charged now drops the invisibility.</p>
+  <ul><li><b>Commentary</b>: While this change isn't authentic to the real games, a Chameleon Sting that is, would be ridiculously broken in online multiplayer gameplay. Even the previous system of having it consume 4 ammo bars when invisible was too much. X would become an invulnerable, overpowered juggernaut with the charge, able to slow down matches and force people to run away from him. This change makes the charge useful primarly for strategic repositioning as well as getting a single quick sting shot on someone while invisible, before it gets immediately dropped.</li></ul>
+</li>
+
+<li>
+  <p>Fire wave: damage rate increased by 10%.</p>
+  <ul><li><b>Commentary</b>: This weapon was underused. It didn't deal great damage for its short range. A 10% buff was therefore attempted to see how much more the weapon is usable. The fire wave should feel really powerful, just like in Mega Man X1. Right now, it tickles enemies. That must change, without making the weapon too broken.</li></ul>
+</li>
+
+</ul>
+
+<h4>Rework #2: Zero</h4>
+
+<p><b>Summary</b>: Overall, Zero was the least reworked, as I felt like he was in the best spot, with least changes needed. The only tweaks were nerfs to Black Zero which were necessary to bring down because of X's now weaker late game.</p>
+
+<ul>
+
+<li>
+  <p>Black Zero: No longer heals when used, can only be used once per life, and attack boost is now only 1.5x, not 2x</p>
+  <ul><li><b>Commentary</b>: Black Zero was previously an answer to X's overpowered late game, allowing him to remain relevant. To accomplish this goal it needed to be really powerful. With X's weaker late game now, Black Zero is too much. These changes would have been considered anyway, as Black Zero really was doing too much in matches in its current state, for such a low scrap cost of 10.</li></ul>
+</li>
+
+</ul>
+
+<h4>Rework #3: Vile</h4>
+
+<p><b>Summary</b>: The main problem with Vile was his lack of options, especially out of his mech, along with his reliance on a frustrating mechanic (stun lock) to remain competitive with the other characters. These reworks give him new abilites inspired by Vile from Mega Man: Maverick Hunter X, and also increase his damage and defensive potential.</p>
+
+<ul>
+
+<li>
+  <p><b>New ability:</b> Rocket Punch</p>
+  <ul>
+  <li><p><b>Description</b>: This new attack comes straight out of MM:MHX (as well as Vile's left arm) and involves Vile launching his fist straight forward, before it returns to him. It's only possible as unarmored Vile; activate by pressing SHOOT while dashing. It deals 3 damage with a flinch, and can hit both when going forward and when returning to Vile. Hold down SHOOT to send the fist further, but keep in mind Vile is vulnerable while the fist is in flight before it returns to his arm. Also bear in mind that it has a 1 second cooldown, so you can't spam it at close range and stun lock like you could with the old Mech.</p></li>
+  <li><p><b>Commentary</b>: This ability gives Vile a more effective way to defend himself outside of his mech. It's also great in tandem with the stun shot. It's not a silver bullet to not having a Ride Armor though, so don't expect an unarmored Vile to be wiping the floor with X/Zero/Axl with this attack in a straight up fight.</p></li>
+  </ul>
+</li>
+
+<li>
+  <p><b>New ability:</b> Napalm Grenades</p>
+  <ul>
+  <li><p><b>Description</b>: Another MM:MHX ability. When out of his mech, Vile can launch a Napalm out of his knee when pressing SHOOT while crouching. This weapon explodes on contact with a player/wall, not only dealing 2 damage in the intial blast, but dropping hot napalm in a small area that lasts 4 seconds, dealing minor AOE damage to anyone standing in the flames. This makes it a good area denial tool.</p></li>
+  <li><p><b>Commentary</b>: Another ability to allow Vile to defend himself more effectively without a Ride Armor. It also allows him to hold certain points on the map, making him better at his intended role of area denial.</p></li>
+  </ul>
+</li>
+
+<li>
+  <p><b>New ability</b>: Grenade Toss</p>
+  <ul>
+  <li><p><b>Description</b>: When ducking in his Mech, Vile can now toss grenades out of the driver seat by pressing the SPECIAL button. You can toss up to 3 grenades in a short period of time. The grenades tossed alternate between the air bombs and napalm grenades that unarmored Vile can launch. They also alternate being tossed left and right from the ride armor seat.</p></li>
+  <li><p><b>Commentary</b>: This gives Vile more attack options in the Ride Armor, making him more of a threat while in defensive pose. Players will have to be more wary around a ducking Vile, allowing Vile to defend areas of the map better, while also increasing his damage and kill potential in FFA/TDM modes.</p></li>
+  </ul>
+</li>
+
+<li>
+  <p>When recalling Ride Armors, Vile will now immediately enter it once it touches the ground.</p>
+  <ul><li><b>Commentary</b>: Before, Vile had to jump after summoning his mech to enter it, during which he could take a couple of critical blows that could end his life. This change makes the transition much faster, reducing that possibility, and overall allowing unarmored Vile to be more viable and flexible and more easily switch between the two modes strategically, even in the heat of battle.</li></ul>
+</li>
+
+<li>
+  <p>Stun Shot: This move now favors the shooter, meaning it will act more reliably from the Vile's point of view.</p>
+  <ul><li><b>Commentary</b>: Previously this move would only stun if it hit on the recipient's screen. From the Vile's point of view this made it difficult to get a hit in and unreliable, so this makes Vile more consistent. (Though expect some grief from players that dodged the stun shot on their screen but still got hit by it anyway.)</li></ul>
+</li>
+
+<li>
+  <p>Ride Armor punch: Added a flinch cooldown. It can now only flinch an enemy once every second. If multiple punches connect in the time span of 1 second, only the first punch will cause a flinch (though the later ones will still deal 3 damage).</p>
+  <ul><li><b>Commentary</b>: Stun locked punch loops was one of the single most frustrating things when fighting a Vile. With his new tools at his disposal, it's not really necessary anymore. However, Vile will still be able to deal the damage even if every second punch does not cause a flinch.</li></ul>
+</li>
+
+<li>
+  <p>Stun Shot: No longer deals damage to an already stunned enemy.</p>
+  <ul><li><b>Commentary</b>: This was mostly a band-aid feature so Vile could get at least some damage output without additional attack options, but now that he has Rocket Punch and Napalms, the stun shot damaging capability really isn't needed anymore, and is redundant.</li></ul>
+</li>
+
+</ul>
+
+<h4>Rework #4: Axl</h4>
+
+<p><b>Summary</b>: Axl was the least used of the 4 characters, and for understandable reasons. He is very difficult to play, and even once you get the hang of him, he can't really do much in a match. Another problem with Axl is that certain control options are flat out better than others (namely, Cursor mode). These changes attempt to fix that.</p>
+
+<ul>
+
+<li>
+  <p>Directional/angular aim modes now come with a lock on/aim assist mechanic.</p>
+  <ul><li><b>Description/Commentary</b>: With this change, Axl will now lock on to an enemy if aiming within 22.5 degrees from his line of sight with the enemy. This makes the gunplay very similar to MMX7 Axl. The same spinning yellow cursor used by the old cursor aim system is used as the lock on indicator. This change allows keyboard and controller users to more easily target enemies on the map and remain competitive with mouse players, while making Axl much more usable in battle.</li></ul>
+</li>
+
+<li>
+  <p>Added a "shoot backwards" key binding for directional/angular aim modes.</p>
+  <ul><li><b>Description/Commentary</b>: By pressing this binding (default LSHIFT), Axl will point his Axl Bullets in the reverse X direction. Holding this down, you can easily shoot at an enemy while running and dashing away from them. Combined with the lock on mechanic above, Axl can easily kite charging Zero's and Viles, giving him much needed mobility.</li></ul>
+</li>
+
+<li>
+  <p>Cursor aim: no longer needs cursor on targets to shoot the Axl Bullets. The yellow cursor/sound was removed, but you can still see enemy health if your cursor is on top of them.</p>
+  <ul><li><b>Commentary</b>: 6.1 Axl proved to be very powerful, but there was a bug in its implementation causing Axl Bullets to hit multiple times in a single frame, dealing ludicrously high, buggy damage amounts. With that bug fixed, a cursor Axl that doesn't need to aim at enemies to hit them is less of a problem, and is necessary to make the character feel usable and fluid.</li></ul>
+</li>
+
+<li>
+  <p>Added a combat roll ability.</p>
+  <ul><li><b>Description/Commentary</b>: To roll as Axl, press Dash while crouched. This gives Axl a few invulnerability frames during the roll but it does leave you a bit vulnerable before and after the roll animation starts. It gives Axl another tool in his toolset to help improve his impact in a match. Note that you cannot roll with the Blast Launcher.</li></ul>
+</li>
+
+<li>
+  <p>"Explosion" shot rebound to SPECIAL button with Blast Launcher (instead of charging it). Damage reduced from 6 to 4.</p>
+  <ul><li><b>Commentary</b>: The Explosion shot was rarely used because it took too long to charge. This change makes it come out instantly, but its damage was reduced to compensate. Overall this should make the move see more use, especially as a finisher.</li></ul>
+</li>
+
+<li>
+  <p>Grenade launcher can now score assist kills in FFA again.</p>
+</li>
+
+<li>
+  <p>An Axl copied as X/Zero can no longer use Hadouken/Black Zero.</p>
+  <ul><li><b>Commentary</b>: Previously, this was the only way Axl could remain competitive: by transforming into a better character, and using their strongest "super" abilities, often with banked scrap due to Axl's ineffectiveness causing him to be behind and earn extra consulation scrap. For obvious reasons, this is very bad character/game design, and had to be fixed by making Axl stronger and not need to use busted abilities of other characters just to stay relevant in a match.</li></ul>
+</li>
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "axlBalance": {
+    "mouseAxlBulletRof": "0.15",
+    "contAxlBulletRof": "0.15",
+    "mouseGLauncherRof": "0.75",
+    "contGLauncherRof": "0.75",
+    "lockOnMod": "1",
+    "copyShotMod": "2",
+    "cursorSize": "1",
+    "axlBulletDamage": "1",
+    "copyShotDamage": "2",
+    "gLauncherDamage": "3",
+    "explosionDamage": "4",
+    "headshots": "true",
+    "autoAimThreshold": "22.5",
+    "allowFfaAssists":"true",
+    "disableGrenadeKnockback": "false",
+    "headshotMod": "1.5"
+  }
+}

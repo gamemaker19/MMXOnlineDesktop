@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 8.0</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 8.0: The X2 Update</h1>
+
+<iframe width="640" height="482" src="https://www.youtube.com/embed/QRn6MzfCxTY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Mega Man X returns with an all new arsenal of weapons and armor from his second SNES title! Unleash these weapons on 10 new large X2 maps, and 2 new medium and small maps. Also in this update comes a whole host of additions for Zero and Axl and general improvements and fixes.</p>
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>X gets 8 new special weapons from Mega Man X2.</p>
+  <ul>
+    <li>See more info in the X weapon guide: <a href="../weapons.html?game=x2">X Weapon Guide</a></li>
+  </ul>
+</li>
+<li>
+  <p>X gets 4 new armors and the Shoryuken from Mega Man X2.</p>
+  <ul>
+    <li>See more info in the X armor guide: <a href="../armor.html?game=x2">X Armor Guide</a></li>
+  </ul>
+</li>
+<li>
+  <p>Added 10 new large maps and 2 new medium maps from Mega Man X2. These include the intro stage, all 8 maverick stages, and the first X-Hunter stage.</p>
+</li>
+<li>
+  <p>Added 2 new 1v1 maps: Central Computer (where X fought Zero in MMX2), and Zero Virus (where X fought Zero in MMX5).</p>
+</li>
+
+<li>
+  <p>Added Zero alternate techniques for Ryuenjin (E-Blade), Hyouretsuzan (Rakukojin) and Rakuhoha (Rekkoha).</p>
+  <ul>
+  <li>These can be activated by double tapping the appropriate direction and then pressing SPECIAL.</li>
+  <li>The Raijingeki did not get an alternate technique per se, but a weaker and faster purple colored version of the technique can be incorperated in Zero's Z-Saber Combo after the 1st or 2nd Slash, similar to in MMX4.</li>
+  <li>See more info in the Zero character guide: <a href="../characters.html?character=zero">Zero Character Guide</a></li>
+  </ul>
+</li>
+
+<li>
+  <p>Added White Axl hyper mode.</p>
+  <ul>
+    <li>Activate by charging the Copy Shot with 10 scrap. The powerup lasts 10 seconds.</li>
+    <li>White Axl gains the Double Bullet, a pair of dual wielded Axl Bullets, which have twice the fire rate.</li>
+    <li>In addition, White Axl recharges ammo much faster and can hover indefinitely until the powerup runs out.</li>
+    <li>See more info in the Axl character guide: <a href="../characters.html?character=axl">Axl Character Guide</a></li>
+  </ul>
+</li>
+
+<li>
+  <p>Axl gets a new weapon: the Ray Gun from MMX7 and 8.</p>
+  <ul>
+  <li>This sci-fi handgun rapidly shoots slow-moving, team-colored lasers that can pass through enemies.</li>
+  <li>Hold down the fire button for automatic fire, which can create a continuous beam if stationary.</li>
+  <li>SPECIAL button with the weapon shoots lasers that can't pass through enemies, but bounce off walls and travel further.</li>
+  <li>See more info in the Axl character guide: <a href="../characters.html?character=axl">Axl Character Guide</a></li>
+  </ul>
+</li>
+
+</ul>
+
+<h3>Improvements/Changes</h3>
+
+<ul>
+  <li><p>Fix a performance issue that was slowing down framerates, especially for Axl cursor mode.</p></li>
+  <li><p>Game now supports framerates lower than 60 without slowing down gameplay. The minimum framerate supported wihout slowdown is 30 FPS. You can also set a limit on the framerate in Settings (min 30, max 60).</p></li>
+  <li><p>Host can no longer kick players without a vote in public matches.</p></li>
+  <li><p>Players can no longer become spectators in public matches if this would unbalance the teams.</p></li>
+  <li><p>Host can no longer remove a bot in public matches if this would unbalance the teams.</p></li>
+  <li><p>Disabled autobalance in private matches.</p></li>
+  <li><p>Players can now change teams in offline and private matches.</p></li>
+  <li><p>Axl analog aim is now an explicit setting. By default it's disabled, which will not allow 360 degree aim with an analog stick, but allows DPAD aim. If enabled, analog uses 360 aim, but DPAD aim could no longer work on controller.</p></li>
+  <li><p>Changed the Axl Lock On Sound setting to now enable/disable lock-on altogether for directional and angular modes.</p></li>
+  <li><p>Removed the Axl Backwards Aim Invert setting as it was a niche case that wasn't really used or understood.</p></li>
+  <li><p>Re-added double tap to dash. This can be disabled in Settings if it gets in the way.</p></li>
+  <li><p>Players selecting Axl for the first time now must select an aim mode first.</p></li>
+  <li><p>Maps now have a more descriptive display name in all menus except for the Join Server lobby, where it's still abbreviated.</p></li>
+  <li><p>All characters now have 32 HP in 1v1.</p></li>
+  <li><p>In Training you can now press F12 to alternate the AI between 4 behaviors: attack, jump, fight and idle.</p></li>
+  <li><p>Can now set overrides for loop start and end times when replacing music in the music folder. Read/modify the _loopoverrides.ini file in 
+  the folder for more details. Currently only .ogg is supported.</p></li>
+  <li><p>Made Black Zero's hair color lighter to more closely resemble official art.</p></li>
+</ul>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li><p>Fixed instances in maps where Vile and other high jump characters could get out of bounds.</p></li>
+  <li><p>Fixed some issues in finding servers in Join Server menu as well as joining private matches.</p></li>
+  <li><p>Fixed a bug with X that let you upgrade armor with scrap earned from other characters.</p></li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<h4>General</h4>
+
+<ul>
+  <li>(X, Axl) 
+  Each weapon now has its own shoot cooldown. This makes it possible to switch weapons and immediately fire it, even if the previous weapon was a slow, laggy one like Storm Tornado, enabling weapon switch combo techniques.</li>
+  <li>Sigma1 Map: Increase capture time required by blue team for first Control Point.</li>
+</ul>
+
+<h4>X</h4>
+
+<ul>
+  <li>Fire Wave: now can be damaged by uncharged storm tornado (2 damage per hit with flinch) as it's a weakness.</li>
+  <li>All helmet upgrades now protect against Axl headshots.</li>
+  <li>Improved Hadouken input, making it easier to pull off.</li>
+  <li>Hadouken animation now has super armor, like with the newly added Shoryuken.</li>
+  <li>Reduced charged rolling shield contact damage from 2 to 1.</li>
+</ul>
+
+<h4>Zero</h4>
+
+<ul>
+  <li>Ryuenjin no longer flinches. This property has instead been given to the E-Blade, the alt technique for the move.</li>
+  <li>Hyouretsuzan has a new animation with a longer landing lag and smaller hitboxes.</li>
+  <li>Crouch slash has a new animation and can no longer be cancelled into the standard 3 slash combo.</li>
+  <li>Guard damage reduction reduced from 2x to 1.5x.</li>
+  <li>Axl can no longer headshot Black Zero.</li>
+</ul>
+
+<h4>Vile</h4>
+
+<ul>
+  <li>Summoning your mech now has a 4 second cooldown between recalls.</li>
+</ul>
+
+<h4>Axl</h4>
+
+<ul>
+  <li>Transformations no longer cost scrap, nor heal Axl on activation, though they still replenish his ammo.</li>
+  <li>Expanded invuln frames of Dodge Roll to all frames, and made the roll last a little longer.</li>
+  <li>Blast launcher no longer can be fired when ammo is less than the required amount.</li>
+</ul>
+
+</body>
+</html>
