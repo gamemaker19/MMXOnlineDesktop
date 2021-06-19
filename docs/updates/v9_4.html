@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 9.4</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 9.4</h1>
+
+<h3>Improvements</h3>
+<ul>
+<li>To prevent abuse, a player can now only leave and rejoin a match up to 3 times before being blocked from rejoining the match again for 5 minutes. This restriction does not apply for private matches.</li>
+<li>Votekicks now persist even if a player leaves the match or changes their name.</li>
+<li>Axl can now climb walls/ladders with two handed weapons. If Axl slides down a wall or climbs a ladder with a two handed weapon, he will temporarily switch to the Axl Bullet weapon.</li>
+<li>In 1v1, the "0" number key can now be used to switch to X weapon slot 10 (Giga Crush or Hyper Buster).</li>
+<li>Can now see damage text applied to Ray Splasher turrets.</li>
+<li>Added a "GetShaderErrors.bat" file in the game folder that can be run as a wrapper to launch the game to find the exact cause of shader compile errors on startup. If you run this, it will spit out any shader compile errors in a file called "shaderErrors.txt" in the game folder that you can send to GameMaker19 on the Discord to help troubleshoot shader compile issues.</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li>Fixed a bug that could cause a region to crash if two matches were created at the exact same time.</li>
+  <li>Fixed a bug introduced in 9.0 that caused underwater jumps to become much shorter than they should be.</li>
+  <li>Fixed a bug where Axl gun arm was incorrectly inverted in the wall kick state.</li>
+  <li>Axl no longer loses White Axl charge if Dodge Roll is performed.</li>
+  <li>Fixed a bug where Ride Armor could be recalled slower than usual.</li>
+  <li>Fixed a bug where charged Frost Shield and Tornado Fang attached buster position could get off.</li>
+  <li>Fixed occurrances of getting stuck into ground if falling from too high a height.</li>
+  <li>Fixed a bug where a ducking Vile could clip through ceilings if Gravity Welled.</li>
+  <li>Fixed a bug where sound volume was hard coded to 100% in 1v1's.</li>
+  <li>Fixed a bug where X's Beam Saber charge glow was not syncing to other players.</li>
+  <li>Fixed a bug where Volt Catfish music could play randomly in an online match.</li>
+  <li>Fixed a bug where charged Spin Wheel wasn't syncing properly to other players in a match.</li>
+</ul>
+
+<h3>Balance Changes</h3>
+<ul>
+  <li>Zero Buster damage reduced from 4/6/8 to 2/4/6.</li>
+  <li>Hawk and Frog Ride Armors now have a limited fly/swim time. A meter will show when flying/swimming that indicates the amount of fuel left. Fuel will recharge after landing.</li>
+  <li>Hawk Ride Armor max HP increased to 24 bars.</li>
+  <li>Spinning Blade now deals double damage to Ray Splasher turrets as it's the weakness. This means that a single hit from either an uncharged or charged blade will destroy a turret in 1 hit.</li>
+</ul>
+
+</body>
+</html>
