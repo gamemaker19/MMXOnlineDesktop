@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 10.0</title>
+<style>
+.sc {
+	color: lightblue;
+	font-size: 18px;
+	cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+}
+</style>
+
+</head>
+<body class="container">
+
+<script>
+
+function next(elem) {
+    do {
+        elem = elem.nextSibling;
+    } while (elem && elem.nodeType !== 1);
+    return elem;        
+}
+
+function sc() {
+	event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+
+	var targetEl = next(event.srcElement.parentElement);
+
+	targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block");	
+}
+</script>
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 10.0: The Second Character Rework</h1>
+
+<p>Like with the first major character rework in v7.0, this update reworks most of the cast quite significantly, adding new abilities and changing existing ones. This time, the rework is based off not only community feedback, but also newly gathered statistics per character such as win rates.</p>
+
+<p>The general focus was on reducing the power level of Vile and Axl, while trying to avoid feeling like a nerf and giving them new abilities to compensate and skills to explore. X also was given a lot of improvements and options to make his kit more well rounded and not dependent on a few dominant choices. Another goal of the reworks was to reduce the effectiveness and extremely binary nature of cross-character counters. A character should not be rendered useless just because another character exists on the battlefield, and should have more options to fight back. Similarly, there should not be an extremely powerful ability rendered null and void by an extremely powerful (and often, obscure) counter. The traditional counter triangle of Zero > Axl > Vile > Zero has been shakened up and weakened in many cases as a result.</p>
+
+<p>In addition to reworks there were a few other major improvments, notabily to the game's physics and animations, which were improved to be faster, snappier, and more in tune with the real games.</p>
+
+<h3>Section 1: Improvements and bug fixes</h3>
+<ul>
+  <li>Game no longer requires .NET 5 to be downloaded and installed as it's bundled in the game files. However, this means the game download/size will be 2x larger. For advanced download options, see the <a href='../help.html'>help</a> page.</li>
+	<li>Increased the effects of gravity in the game physics more closely match the SNES games, and make the game more fast-paced.</li>
+	<li>Increased the speed of some walk animations to be more in line with the SNES games.</li>
+	<li>Improved a wide variety of of animations and effects.</li>
+	<li>Helmets and aim assist no longer reveal disguised Axl or invisible players.</li>
+	<li>Sprites folder now re-included in game files. These will only be read for frame offsets and rects. All other fields will be ignored and adding or removing frames isn't supported. This will allow for more in-depth visual mods while preventing gameplay tampering.</li>
+  <li>Damage text is now shown in 1v1.</li>
+	<li>Can now switch out of charged Frost Shield and Tornado Fang.</li>
+	<li>Added separate kill icons for X Saber and Zero Buster.</li>
+  <li>Mousewheel can now switch between disguised character weapons as Axl.</li>
+	<li>Assists now count as kills in team modes, matching the behavior in FFA.</li>
+	<li>Fixed some graphical distortions at certain camera positions involving decimal coordinates.</li>
+	<li>Fixed a bug where uncharged Gravity Well could have an infinite kill assist radius.</li>
+	<li>Fixed issues with certain weapons such as Axl explosion and Napalm grenades that could slide on the floor instead of immediately detonating on contact.</li>
+	<li>Prevented use of transformations as White Axl to prevent bugs such as retaining the Double Bullets permanently.</li>
+	<li>Fixed incorrect X sprites not showing armor upgrades when using a ride armor.</li>
+	<li>Fixed headshot issues with Axl Bullets at 30 FPS.</li>
+	<li>Fixed double firing of X Buster when a single shot was pressed at 30 FPS.</li>
+	<li>Fixed a bug with lingering X3 chest barriers on death.</li>
+  <li>Fixed a bug with lingering parasite/burn/poison effect after transforming as Axl.</li>
+	<li>Fixed a bug where Boomerang Cutter would replenish 1 ammo instead of 0.5 with Max Buster chip, allowing for infinite ammo.</li>
+	<li>Fixed a bug where a disguised Axl could upgrade X armor.</li>
+	<li>Fixed a bug where X could still be golden even after taking off all armors as Golden X.</li>
+  <li>Fixed a bug where Rakuhouha could hit more than once.</li>
+	<li>Fixed Training Room music looping.</li>
+</ul>
+
+<h3>Section 2: Mega Man X Reworks</h3>
+
+<p>The first major character rework was X. From the statistics gathered last month, X has the lowest DM winrate as well as the lowest kill rate. One of the main problems is the weapon and armor imbalance: a few weapons and armors are clearly better than the others. Use of inferior weapons and armor can drive down X's kill potential and win rate. Therefore, the X rework consisted of a sweep through all of X's weapons and armors, buffing underutilized ones and slightly tuning some of the more dominant ones where appropriate. In addition, the highly requested mixable armors has finally been implemented (shoutout to Bando for his hard work in providing the sprites!), and along with this came armor effect tweaks to make X's various armor options more balanced with respect to each other.</p>
+
+<h4>X Weapon Reworks</h4>
+<ul>
+<li>
+  <p><b>Chameleon Sting (Charged)</b>: Now cloaks X, rendering him fully invisible to enemies while the effect is active, in addition to the invincibility granted. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes: Chameleon Sting was an underused weapon. This weapon can be tricky to balance since allowing it to shoot more shots when charged could easily lead to unfair one-sided fights due to the long invincibility period. However, a cool suggestion was to make it cloak X, as that sounds exactly like what the weapon should do. The cloak will allow the weapon to be of more use in team modes and allow for stealthy shenanigans by X players to sabotage the objective. However, be aware that when cloaked, you still cause dash and wall climb effects and sounds, so move slowly to avoid giving your position away.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Rolling Shield (Uncharged)</b>: No longer explodes when hitting torpedos. This includes both X's Homing Torpedos and Frog armor torpedos. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes:  This is both a buff to an underused weapon and a nerf to an overused one at once, killing two birds with one stone. Now that shield balls can plow through torpedos, a stronger counter to both X's torpedos and Frog armor Vile is cemented, as both of these were unintentionally overtuned in online matches due to lag making it hard to destroy torpedos through typical attacks.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Fire Wave (Uncharged)</b>: Reduced damage rate by half. Introduced burn effect. Every hit introduces 1 second of burn. Burn deals damage over time at the rate of 1 damage per second. For the most part, burn works exactly like acid, except that Axl's dodge roll can also reduce burn time by 1. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes:  The first of many weapons to get the new burn effect. While in theory the damage output of Fire Wave is the same, the damage rate is reduced because the burn takes longer to apply and can be removed via hyper modes and invincibility granting moves. This helps Fire Wave be a little more counterable since it was being used way too much in the current meta.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Fire Wave (Charged)</b>: Reduced damage from 2 to 1. Now applies 2 seconds of burn per hit. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes:  It's similar to the uncharged change, but with longer burn time applied due to the slower damage rate.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Bubble Splash (Uncharged)</b>: Removed limit of 7 bubbles at once. Now shoots a constant stream of bubbles for as long as the fire button is held, until X is fully charged (much like Fire Wave). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes:  This was one of the worst uncharged weapons in the game. As such, a major buff was needed to make it usable. While this change may seem over the top, it was so bad that it might not even be enough, but I will carefully monitor this change to see if it is actually broken or still terrible.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Strike Chain (Both)</b>: Can now be aimed diagonally. Up-diagonal wall grappling will impart additional X and Y velocity, allowing X to swing through maps like Spiderman. Also increased projectile speed and rate of fire. Polished health pickup behavior to always pull them inside of X. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes:  Strike Chain was another one of the worst weapons in the game, typically used only for Vile in Ride Armors, and even that wasn't always effective due to the hover. All these changes now make the weapon a great mobility tool and Vile counter, and even make it somewhat formidable in combat, and can now be used as a soft counter to ranged characters trying to keep their distance. (As always, it's not advised to pull in a Zero since at melee range he rips anything to shreds.)</i></li></ul>
+</li>
+
+<li>
+  <p><b>Speed Burner (Uncharged)</b>: Reduced damage from 3 to 2. Now applies 1 second of burn. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes: Not much to note here, just applying the new burn effect to all fire weapons.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Speed Burner (Charged)</b>: Reduced damage from 6 to 4. Now applies 2 seconds of burn. Reduced recoil damage from 3 to 1 (helmets no longer reduce recoil). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes: the recoil is probably too much given the weapon usage has dropped significantly, its counter was buffed, and the burn effect is technically a nerf since it doesn't do the damage up front and can be removed.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Acid Burst (Charged)</b>: Reduced acid time from 4 to 3 per blob. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>GM19's notes: The charged shot was applying a little too much acid time in matches, allowing for too much kill steal potential, and reducing the reason to use the uncharged shot.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Triad Thunder (Uncharged)</b>: Increased ball damage from 2 to 3. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes: Triad Thunder had little application and got X killed quickly if trying to use it. It requires getting into melee range, in a game where there are so many high DPS melee options (saber, mech punches, drills, etc). The damage increase will help offset the extreme risk X has to put himself in to hit enemies with the weapon.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Triad Thunder (Charged)</b>: Can now knock climbing enemies off walls. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary1" style="display:none"><li><i>GM19's notes: this change was originally intended, and in fact was easy to implement, so it was done. It's a neat power boost to an underused weapon.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Ray Splasher (Uncharged)</b>: Increased damage rate and range. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes: The uncharged shot was underwhelming so this buff makes it more of a threat especially given its high ammo usage.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Ray Splasher (Charged)</b>: Removed self damage. Removed damage cooldown; this means the weapon not only deals damage at a higher rate but multiple turret damage can now stack.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes:  Turrets were overnerfed and rendered useless. These changes make overlapping turrets deadly at close range but less effective at long range, making them more managable at a distance, and allowing them to be the "Magnet Mine of the air", effective for denying air space but less effective for ground defense.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Gravity Well (Uncharged)</b>: Wells can now be destroyed by enemy attacks to the core. Each well has 2 HP. Ray Splasher deals double damage, allowing it to easily destroy wells. Only one well can now be shot at a time, but pull power is doubled. Wells can longer pass through walls.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary3" style="display:none"><li><i>GM19's notes:  Wells could prove to be annoying and difficult to counter, so by making them destroyable, there are more options to fight against it. It also makes the weapon weakness more effective against it. Since wells are now easily destroyed and only one of them can be active, the pull power was increased to compensate.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Gravity Well (Charged)</b>: Gravity time increased to 4 seconds. Now shoots a well projectile. This deals no damage but can be destroyed to stop the vertical gravity effect, and has 4 HP. Ray Splasher deals double damage to it. X is no longer vulnerable for the entire duration of the gravity effect, but shooting the intial well does take some time. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary4" style="display:none"><li><i>GM19's notes:  Charged gravity well was rendered a little too short to be effective. Now it lasts longer while allowing the effect to be countered by destroying the well, and allowing interesting and strategic combos by X on airborne enemies, especially with the double buster upgrade. In addition, the real MMX3 game involves shooting a projectile upwards, so this change is more authentic.</i></li></ul>
+</li>
+
+</ul>
+
+<h4>X Armor Reworks</h4>
+
+<ul>
+<li>
+  <p><b>All armors:</b> Added mixable armor system. X can now combine armor pieces from any armor set (the menu will no longer lock you out of the other armor sets if you upgrade armor from one armor set). When mixing armors, armor set bonuses cannot be used (Hadouken, Shoryuken, Chips + Golden Armor). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary6" style="display:none"><li><i>GM19's notes:  A highly requested feature, this did not turn out too hard to implement for the amount of depth and strategy it adds to the game, so at last, here it is! A consequence of this system was that it requried careful rework of the existing armor effects to be more balanced with respect to one another, as there needs to be a reason to use any armor piece at any given time. This was a good thing ultimately, as it forces better balance of the armor sets as a whole.</i></li></ul>
+</li>
+
+<li>
+  <p><b>All armors:</b> Helmet upgrades no longer protect against stomps or headshots. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary7" style="display:none"><li><i>GM19's notes:  The rework for Vile and Axl has more justification on this change. But from X's perspective, having to know to equip a certain armor to counter Vile/Axl could be obscure knowledge, especially for new players. It also caused helmet upgrades to be more complex to read and understand in the menu. Ideally each armor upgrade could be explained in just a couple words, and not have a wide variety of obscure effects. From the Vile/Axl perspective, it didn't seem fair that one cheap upgrade could render their character much less effective.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X1 Helmet</b>: No longer shows enemy health. Now grants a headbutt attack like in MMX1. Headbutts do 3 damage with a flinch but require you to carefully jump upwards from underneath a midair enemy to hit them. If combined with an air dash from the X3 boots, it will deal double (6) damage.  <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary8" style="display:none"><li><i>GM19's notes:  It not only makes the X1 helmet upgrade more authentic to the real games, but also gives it a unique niche of allowing X to deal more damage, giving the X2 helmet more of a use and a time to shine.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X1 Boots</b>: No longer grants global 110% speed. Now increases just the ground dash speed by 15% (which does not carry over to air speed if X jumps out of the ground dash). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes:  The old X1 boots upgrade was a little overtuned and gave X too much mobility relative to other characters. By moving this to the ground dash only, it makes the extra speed only attainable with more risk and less flexibility (you'll have to stay on the ground, rendering you vulnerable to anti-ground threats).</i></li></ul>
+</li>
+
+<li>
+  <p><b>X2 Armor</b>: Giga Crush now reduces damage taken by 1/8 (12.5%).<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary1" style="display:none"><li><i>GM19's notes: X2 armor, while powerful offensively, was a little lackluster defensively. Therefore a defensive boost was given to it, not as much as the light armor, but enough to make it more of a tempting choice. It's also authentic to the real games since in MMX2 it also had a secondary effect of reducing damage.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X2 Boots</b>: No longer grants two air dashes. (This was moved to the X3 chip upgrade.) Instead, increases air dash speed by 15%. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes:  This change makes a good counterpart to the X1 boots upgrade. It's nearly the same, but applies to air dash speed instead of ground dash speed. As such, you'll chose this pair of boots if you want air mobility and the X1 boots if you want to move faster on the ground. Depending on the current anti-ground or anti-air threat level in the match, and the map layout, choose accordingly.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X3 Chest</b>: Barrier now applies on any hit, not just flinching blows. For non-flinching hits, the barrier lasts 1 second. For flinching blows, the barrier time is increased to 2 seconds. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary3" style="display:none"><li><i>GM19's notes:  This was a very situational armor piece that was not useful for rapid fire weapons such as the uncharged X weapons or Axl Bullets. Even for flinching blows, it could be countered by waiting its short duration out. By making it apply to any hit, and giving the flinch barrier some more time, the armor is now more effective in any situation, making it a strong contender with the Light chest armor for damage reduction and fully justifying the 6 scrap cost. While the improvement may seem really powerful, remember that the initial hit that activates the barrier doesn't have any damage reduction. Therefore, you can still circumvent this armor completely by using slower but more powerful attacks and timing your attacks until after the barrier fades; good weapons for this include X's charge shots, Zero's Z-buster or Rakukojin, Vile's Front Runner/stun specials and Axl's explosion/copy shot headshots.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X3 Buster</b>: The hyper buster's 4 smaller ball projectiles can now all hit at once. This allows a single shot to do up to 12 damage. (4 for the center ball, 8 for the smaller balls if all 4 hit for 2 damage). In addition, Hyper Buster charge is no longer lost on death. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary4" style="display:none"><li><i>GM19's notes:  The Hyper Buster wasn't really an effective weapon, since it was slow and could only do up to 6 damage (and that wasn't even guaranteed). Certainly, it would not be picked over the X1 fast charge or X2 double charge. With this change, the weapon becomes much more dangerous at close range, resembling a shotgun. With this change, hopefully the Hyper Buster will stand toe-to-toe with the X1 double charge and X2 double buster as a mighty weapon that can tear through enemies. Note that while the shot can now do up to 12 damage, it requires hitting an enemy at a very precise location at point blank range, so it won't happen very often and puts X at great risk when attempting to doing so. At range, it's much more likely you'll score a 6 or 8 hit.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X3 Boots</b>: Increased up dash speed and height. Also allows X to now shoot while up-dashing. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes:  This upgrade was not used very often due to its limitations and slow dash speed. This change will hopefully make it useful not only for the occasional out-of-reach ledge on certain maps, but also to dodge attacks in combat and more easily launch attacks from high up and out of harm's way.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X3 Head Chip</b>: Doubled the healing rate and reduced time to heal from 4 to 2 seconds. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: This was a rarely used chip part and slowed down X's kill rate too much. Making the healing faster will increase incentive of using it instead of just picking up health packs, or dying to respawn faster.</i></li></ul>
+</li>
+
+<li>
+  <p><b>X3 Boots Chip</b>: Now grants two of any air dash (sideways or up). You can even mix any order of them. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: it made sense to move the old X2 boots upgrade to the X3 chip part because the effect was very similar, while buffing an underutilized chip part at the same time to give it more versatility.</i></li></ul>
+</li>
+
+<li>
+  <p><b>All X3 Chips</b>: If a chip is equipped, X can no longer earn scrap or transform into Golden X. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: with the buffs to Max Armor and chips, the Max Armor is now powerful enough to contend with the other two armors, even without chips. Therefore, to offset this buff, X players will now have to make a choice between either using enhancement chips, or holding out until they can gain access to Golden Armor, just like in the real SNES game.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Golden Armor</b>: Can no longer gain scrap on kills. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: with the buffs to Max Armor and chips, Golden Armor is now a lot stronger, so this helps prevent snowballing and having to constantly face Golden X's in matches.</i></li></ul>
+</li>
+
+</ul>
+
+<h3>Section 3: Zero Reworks</h3>
+
+<p>As with the previous rework, Zero was changed the least as I feel like he is in an acceptable spot. The stats confirm this, as he's right in the middle in most cases - better than X, but worse than Vile/Axl.</p>
+
+<ul>
+
+<li>
+  <p><b>Ryuenjin</b>: Now applies two seconds of burn in addition to 4 damage up front. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary6" style="display:none"><li><i>GM19's notes: Previously there were not many situations where Zero would use Ryuenjin over E-Blade due to E-Blade's much greater damage potential. With the burn effect, Ryuenjin can now deal 6 damage in a single hit. Given that it's easier to land a single hit with Ryuenjin as opposed to multiple E-Blade hits, this gives the move more use for igniting grounded enemies that wouldn't take a lot of E-Blade damage.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Purple Raijingeki</b>: Attack animation now faster. Also no longer prevents up/down specials out of a 3-slash ground combo. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary7" style="display:none"><li><i>GM19's notes: This move was under-used and in need of a buff. It also unintentionally blocked some combos, so that was fixed.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Guard</b>: No longer blocks Axl Bullet headshots. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary8" style="display:none"><li><i>GM19's notes: The Axl rework section has more details, but this is similar in rationale to the X helmet change no longer blocking headshots. It makes playing Axl feel less helpless and reduces the dominance of the counter triangle.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Black Zero</b>: Fractional damage values now rounded up. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes: This was simply a cleanup for better elegance and a slight buff in one. Fractional damages values generally should be avoided to make game rules and the damage text UI less ugly and complicated. </i></li></ul>
+</li>
+
+<li>
+  <p><b>Black Zero</b>: Other Zeroes can no longer block saber swings. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes: This was a common request to make Black Zero less counterable by a single button and to make the 10 scrap investment less likely to go to waste.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Black Zero</b>: Can no longer carry the flag as Black Zero. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes: This was done more to make things consistent with White Axl not being able to pick up the flag. But it does make sense given Black Zero's destructive power.</i></li></ul>
+</li>
+
+<li>
+  <p><b>1v1</b>: Health increased to 32 bars. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes: 1v1 balance stats showed that Zero wasn't winning that often in 1v1, so the reduced health may not be need and was was reverted to make things more consistent and avoid one-off hacky rule adjustments.</i></li></ul>
+</li>
+
+</ul>
+
+<h3>Section 4: Vile Reworks</h3>
+
+<p>Vile probably received one of the biggest reworks, completely overhauling his design. Two recurring problems and complaints about the character were that: a) he was too strong in his Ride Armor and b) he was too weak outside of his Ride Armor. Originally designed as a tank character for team modes better at sponging attacks instead of dishing them out, this made him ineffective in deathmatches, and so his Ride Armor offensive capabilities ended up being buffed to the point of dominance. This rework attempts to address these problems.</p>
+
+<ul>
+
+<li>
+  <p><b>Vile</b>: no longer spawns with a Ride Armor. Instead, he can now switch between several capable weapons. The first armor slot is the Front Runner and the second is the Vulcan. (More on these in the next bullets.) The third weapon slot now allows him to summon his various Ride Armors for 5 scrap apiece. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes:  This change completely flip flops the way Vile works. Instead of starting off nigh-indestructable with a Ride Armor and getting pathetically weak when losing it, Vile starts off decently strong but gains access to more destructive tools as the game goes on. As Ride Armors are very difficult and frustrating to fight with lag, reducing Ride Armor frequency in matches as well as making Vile more independent without it, is better for both the Vile players and players fighting against alike. In addition this makes Vile more playable on maps not conductive to Ride Armors and less dominant on ones where certain Ride Armors (like Frog in water maps) can really rip apart the competition.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile</b>: gains the Front Runner Cannon in slot 1. Can be used both on the ground and the air. On the ground, it can now be aimed at both a 30 and 60 degree angle, just like in MHX, allowing Vile to counter air threats more easily. It can also now be fired in the air, but air shots travel slower and can only be aimed 30 degrees up or down. Also can be used when wall sliding, crouching, and climbing ladders. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary1" style="display:none"><li><i>GM19's notes:  Previously a weapon exclusive to Vile MK-II, this was now given to normal Vile as well to allow him to be effective at combat. (After all, he uses it in MHX, so it didn't make sense for it to be exclusive to Vile MK-II.) As mentioned it's a great anti-air weapon, a place where unarmored, and even armored Vile typically struggled. It's also now usable from more animation states, allowing Vile to remain a threat whether he's on the ground, in the air or climbing.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile</b>: gains the Vulcan finger gun in slot 2. This is a rapid fire machine gun that has a high damage rate, but can only shoot straight ahead. Can be used from all places the Front Runner cannon could be used (ground, air, etc). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes: This is a signature and iconic weapon of Vile so it was added his arsenal to complement the Front Runner. While the Front Runner focuses on aim flexibility and anti-air, the Vulcan is better and more damaging for grounded and stunned targets but will have a hard time hitting mobile foes.<br/>Thanks to the mods Seyro and R-Titan for providing both the idea/request, and some of the base sprites for this weapon!</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile</b>: stun shot, air bombs, napalm and rocket punch were moved to the Special button. Stun shot is neutral ground special, air bombs are air special, napalm is down special on the ground, and rocket punch is side special on the ground. Summoning mechs is now done via weapon slot 3 and will open an additional weapon slot menu to select the appropriate mech. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary3" style="display:none"><li><i>GM19's notes: by giving Vile a class of "special moves" that can be activated in conjunction with weapon shots, he distinguishes himself from X and plays more like an X and Zero hybrid, relying on combos from chaining several moves together as opposed to just weapon switch tactics. It also allows Vile to have a large variety of moves without needing a weapon select mechanic like X.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile</b>: Air bombs now lauched faster, and decreased the height requirement for the move to activate <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary4" style="display:none"><li><i>GM19's notes: This wasn't a very useful move, but rather than removing an iconic attack from the first Mega Man X, it was buffed to be a better and less clunky air-to-surface attack.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile</b>: Rocket punch speed and napalm damage rate increased. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: Vile needs to start off stronger now that he doesn't spawn with a ride armor.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile MK-II</b>: Now activated via an explicit "revive" mechanic. When Vile is killed, for about two seconds before his body explodes out of existance, you'll have the option to quickly revive him on the spot for 5 scrap as Vile MK-II. While in the revive animation, Vile MK-II is invulnerable to damage and regains all his health back. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary6" style="display:none"><li><i>GM19's notes: This was the original intention for Vile MK-II all-along but was not initially done in the X3 update due to its complexity. This mechanic gives Vile a unique ability to turn the tide of a match with a pivotal revive, especially in objective modes, while matching the lore of Mega Man X3's Vile MK-II resurrection and further reinforcing Vile's character trait of seemingly being impossible to kill, be it his ride armor that takes hits and dies for him, or Vile himself being revived again and again.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile MK-II</b>: The shield on his back now reduces damage by half, rounded down. If an attack deals exactly one damage, it is blocked completely. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary7" style="display:none"><li><i>GM19's notes:  This change gives Vile MK-II better survivability as well as a use for that shield on his back. It applies even in Ride Armors, so helps survivability there as well, and makes Vile MK-II + Ride Armor combination well worth the cost.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile MK-II</b>: Napalm grenade now leaves a fire trail and applies a burn effect of 1 second for the trail and 2 seconds for the main projectile. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary8" style="display:none"><li><i>GM19's notes: Another original intention for Vile MK-II in the X3 update. With the new burn effect, it becomes even better, allowing Vile MK-II to ignite swaths of enemies, providing a great reason to use Vile MK-II.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Vile MK-II</b>: Gains a health-draining grab attack. Activate with dash + special. Enemies grabbed will be immobile for up to 4 seconds and can have up to 8 health leeched and transferred to Vile MK-II. However, like most stun moves, this can be mashed out of. The grab's damage ignores defense boosts. Note that the grab will not work if done in a spot that would clip the victim into a wall or other obstacle.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary9" style="display:none"><li><i>GM19's notes: Unique to all other abilities in MMXOD, this attack provides a health drain mechanic. It's great for healing a weakened MK-II Vile in preperation for a Goliath summon, and finishing weakened foes off while simultaneously healing Vile MK-II, and can give Vile MK-II more survivability, but this move leaves you wide open to other enemies, so be careful.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Goliath Ride Armor</b>: Now must be manually summoned by Vile MK-II after reviving, and costs 10 scrap as opposed to 5 for the other Ride Armors making for a total costs of 15 to access Goliath (5 for MK-II and 10 for the armor). <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes: Making Goliath a unique Vile MK-II skill makes perfect sense given its association with Vile MK-II only. The increase in cost justifies its destructive power.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Normal and Goliath Ride Armor</b>: Can no longer hover. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary1" style="display:none"><li><i>GM19's notes: The Ride Armor hover was really intended as a quality-of-life measure, to allow Vile to maneuver above ledges that otherwise would just be out of reach, without having to constantly eject from and summon the mech. That came from a time where Vile was really weak outside his armor and was always expected to be inside of it. Now, Ride Armor is more of a choice and asset then a necessity, so the hover is less useful. As for the stunlock and additional head defense the hover provides, that was actually not the intended purpose, and makes the Ride Armor much harder to counter. Because unarmored Vile is much stronger now, and the main counter to an armored Vile (Axl Bullets) have been reduced in effectiveness, such frustrating perks of the hover aren't really urgently needed anymore.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Hawk/Frog Ride Armor</b>: Added 1 second of flinch cooldown to stomps. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes: Hawk had a very powerful stunlock technique much like the normal armor's punches, so it was time to remove that to make Hawk less frustrating, especially with the X helmet revert.</i></li></ul>
+</li>
+
+<!--
+<li>
+  <p><b>Frog Ride Armor</b>: Increased torpedo cooldown to 1 second. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes: Frog was dominant underwater. Nerfing the missile fire rate will help lower the damage rate and make it more counterable.</i></li></ul>
+</li>
+-->
+
+<li>
+  <p><b>All ride armors</b>: Can no longer gain scrap on kills. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: the goal with this rework was to make Ride Armors less common and more of a reward and asset for Vile. If scrap could be obtained on Ride Armor kills, it could quickly snowball and allow Vile to get a mech nearly every life. With the power level of some mechs in certain situations (i.e. Frog in water) that would be less than desirable.</i></li></ul>
+</li>
+
+<li>
+  <p><b>All Ride Armors</b>: Vile now launches a single Napalm grenade with SPECIAL when ducking in any Ride Armor. No longer alternates between air bomb and napalm, and MK-II will launch his fire grenade instead. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes: This was another ability that was a relic of a Vile with less options. It can give Vile too much DPS inside a Ride Armor when combined with punches, so the grenade count was reduced to one and changed to the napalm. This also makes the move consistent with unarmored Vile's napalm controls, and allows Vile to launch a napalm safely. For Vile MK-II, this is rather huge, since the napalm is much more effective, making him synergize well with Ride Armors and justfying the 10 scrap cost to make that happen.</i></li></ul>
+</li>
+
+<li>
+  <p><b>All Ride Armors</b>: X Helmet upgrades no longer reduce stomp damage and flinch. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary3" style="display:none"><li><i>GM19's notes: X could render a major part of Vile's stun lock DPS void with a 2 scrap upgrade. This upgrade was an important check to Vile's stomp stunlock power back when Vile mechs were common. X couldn't deal with Vile as effectively as Axl, and Zero was designed to be countered by Vile in the old triangle model. Regardless, this should not be needed anymore given that only Hawk can hover now and Ride Armors are much rarer.</i></li></ul>
+</li>
+
+</ul>
+
+<h3>Section 5: Axl Reworks</h3>
+
+<p><b>Summary</b>: Axl's win rate and kill rate are unsurpassed by any character. Part of this is due to the small player base and the fact that there are few newbie Axl players. However, the high precision and damage rate of the Axl Bullets are also a contributing factor. In the right hands, a good Axl player can single handedly demolish an entire server. The goal of this rework was to slow down Axl's kill rate potential in matches, and reduce reliance and dependence on the Axl Bullets, shifting some of its power to the lesser used Copy Shot/A-Trans mechanic. As the signature ability of Axl, transformations were quite underused, so they received an overhaul and much greater attention and polish.</p>
+
+<ul>
+
+<li>
+  <p><b>Axl Bullets</b>: Added a bullet spread mechanic. The amount of current spread is indicated by how far the crosshair lines are apart. Spread increases greatly the faster Axl is moving and is lowest when standing still. Spread will rise over time the longer the shot is held down. Note that the spread pattern is completely deterministic and that White Axl's Double Bullets do not have any spread.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary4" style="display:none"><li><i>GM19's notes: This change will force Axl to fire in bursts to maintain accuracy and reduce the effectiveness of running away and shooting at the same time, reducing kill rate in DMs. Given that the Axl Bullet's fire rate resembles a machine gun/assault rifle, and Axl's gameplay borrows heavily from gun games like COD, it makes sense for something that shoots so fast and can deal so much damage with headshots to have high bullet spread/recoil, like in most FPSes. The goal here is not to feel like a nerf but to add depth to Axl's shooting mechanics and make shot control, along with aim, the focal part of playing Axl. It also gives the Ray Gun a purpose and niche, to kite enemies chasing Axl, as that gun retains its 100% accuracy. Since the spread is deterministic, with expert level control you can actually maintain proper accuracy if you understand the pattern, though this takes an insane amount of practice and dedication.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Axl Bullets</b>: Headshots no longer prevented by X helmets or blocked by Zero guard. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: it did not feel good for Axl players to not be able to headshot an X or hit a blocking Zero at all. With the bullet spread changes, the Axl Bullets should no longer be perfectly accurate, high DPS killing machines, so these extreme counters should not be needed anymore since the Axl Bullets should no longer have extreme killing power. Overall, these two balance changes aim to reduce extremes in balance, i.e. having an extremely powerful weapon checked by an extremely powerful counter.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Axl Bullets</b>: Auto aim for 8-way modes (directional aim with controller analog setting set to no) now targets the head.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary6" style="display:none"><li><i>GM19's notes: The default aim mode of directional aim on keyboard could be clunky and difficult to be effective with, discouraging new players from exploring Axl. This change will help new players achieve more with Axl on their first attempts with the characters and give them a positive first impression, hopefully increasing the Axl pick rate. While this change may seem excessive, 8-way aim modes are considered so ineffective that even this change may not be enough to match the power of cursor aim, but I will closely monitor its effectiveness. Note that other non-cursor aim modes (i.e. angular) that allow for 360 aim will still target the body with auto-aim, since those modes allow for more precision and could potentially be broken with a headshot assist on top of that.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Blast Launcher</b>: Reduced ammo usage by half. Reduced damage of primary fire (grenades) from 3 to 2. Increased cooldown of alt fire (explosion) from 1.25 s to 1.5 s. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary7" style="display:none"><li><i>GM19's notes: Another change to reduce Axl's kill rate in DM's while making things less extreme and more fair. Reducing ammo usage and damage at once ensures a slower rate of damage but a more steady, consistent period of fire before having to reload.</i></li></ul>
+</li>
+
+<li>
+  <p><b>Blast Launcher</b>: Horizontal self-knockback from rocket jumps increased and no longer fade over time if the direction of the knockback is held. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary8" style="display:none"><li><i>GM19's notes: Axl's rocket jumps granted excellent vertical mobility but poor horizontal mobility. To make rocket jumping more powerful and interesting, and open up a new area of exploration and techniques for Axl players, the X velocity has been buffed. This also helps justify the 4 self damage cost since it was rather painful for not too much mobility on many maps.</i></li></ul>
+</li>
+
+<li>
+  <p><b>All Axl Weapons</b>: Will no longer reload if switched to another weapon. In order to reload a weapon you must have it selected. When ammo is empty, a HUD message will indicate the time until the weapon automatically reloads. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary4" style="display:none"><li><i>GM19's notes: because Axl's weapons have such high DPS and assist potential, allowing them to recharge while switched to another weapon ensured that Axl could consistently output an absurdly high amount of damage at all times. By forcing reload delays, Axl's kill rate in DM's is reduced, and enemies now have a chance to close in on Axl and finish him off when he's vulnerable reloading. It also increases incentive to use transformations since those immediately reload all weapons.</i></li></ul>
+</li>
+
+<li>
+  <p><b>A-Trans</b>: When a transformation is selected in your inventory, pressing SPECIAL now reveals detailed information on the character you would transform into, such as name, weapons and ammo, armor, etc. You can now copy Rakuhouha ammo and even White Axl and Black Zero hyper modes, if you managed to kill one of those. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary0" style="display:none"><li><i>GM19's notes: The first of a bunch of polish changes and reworks to Axl's Copy abilities. With this change, use of transformations is now much more strategic, as Axl can now know which transformation to use at what time, and decide on the best strategy. Need to capture a heavily defended position? Turn into that White Axl transformation you managed to nab and lay siege on it with unlimited bombs. Low on HP? Turn into that head-chip X or MK-II Vile to gain your HP back!</i></li></ul>
+</li>
+
+<li>
+  <p><b>A-Trans</b>: Reworked transformation controls. When transformed, SPECIAL no longer reverts back to Axl. Instead the transformed character will have an additional weapon slot at the end that can be switched to and used for reverting to Axl. Therefore, all abilities can now be used for all transformed characters. This includes hyper modes as well. The only exception is summoning mechs as Vile, due to netcode limitations. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary1" style="display:none"><li><i>GM19's notes: With this change, transformations are no longer gimmicks only useful for refilling Axl gun ammo, but powerful options to gain more kills or defenses in many situations. Using limited abilities of X and Zero such as Giga Crush and Rakuhouha is a good bet if they came with enough ammo (you can check transformation info using the new special button preview mentioned previously). Overall this gives Axl much more options and utility for using hard-earned transformations.</i></li></ul>
+</li>
+
+<li>
+  <p><b>A-Trans</b>: When disguised, Axl now gains an "Assassination" ability in the second to last weapon slot. Charge this weapon all the way up and unleash it on an unsuspecting foe for 8 damage, or an instant kill if aimed at the head. Upon releasing the shot, Axl's disguise is immediately lost. This move can be only held at 1 second of max charge before being automatically released.<span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary2" style="display:none"><li><i>GM19's notes: it's finally here, the long requested "backstab" mechanic when disguised! The assassination mechanic makes Axl a feared spy/sniper hybrid when disguised, able to pick off key threats with good aim when behind enemy lines. Though a one-hit kill may seem very strong, it'll take some decent skill to land those consistently.<br/>Fun fact: this ability took inspiration from the MMX7 cutscene where Axl assassinates Aluce: <a href="https://www.youtube.com/watch?v=Dzxwk7bG5To&t=158s" target="_blank">https://www.youtube.com/watch?v=Dzxwk7bG5To&t=158s</a></i></li></ul>
+</li>
+
+<li>
+  <p><b>A-Trans</b>: Now costs 1 scrap to activate transformations. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary3" style="display:none"><li><i>GM19's notes: with the vastly increased power level of A-Trans from all the aformentioned changes, it's important to keep a check in its power. Therefore, transformation will now require one scrap. This is to offset the otherwise "free" stuff you can get like hyper modes, ready-to-use Rakuhouhas, assassinations, etc. I will look into tweaking this number if it ends up being too cheap.</i></li></ul>
+</li>
+
+<li>
+  <p><b>White Axl</b>: Transformation is no longer affected by gravity, and can transition into the hover state immediately on transformation by holding down JUMP during the transformation. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary5" style="display:none"><li><i>GM19's notes: White Axl was clunky in several areas compared to Black Zero and the transformation physics was one of them. With these changes Axl can transform in the air without worrying about falling to his death and start off hovering immediately, which are major quality of life changes and make White Axl feel much better without significantly increasing its power level.</i></li></ul>
+</li>
+
+<li>
+  <p><b>White Axl</b>: now immune to self damage on knockback, but can no longer pick up the flag. <span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary6" style="display:none"><li><i>GM19's notes: White Axl does not provide a speed boost, unlike Black Zero. To offset this, rocket jump damage immunity should help immensely, allowing a skilled Axl to blast around the maps at breakneck speeds looking for targets, and chasing them down. To prevent being able to quickly return home with the flag with zero damage penalty, White Axl can no longer pick up the flag.</i></li></ul>
+</li>
+
+</ul>
+
+</body>
+</html>
