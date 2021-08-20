@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 10.1</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 10.1</h1>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li>Fixed a bug where Axl could appear to be set on fire when using dodge roll when not on fire.</li>
+  <li>Fixed a bug where Copy Shot couldn't copy MK-II Vile and a few other hyper modes in certain situations.</li>
+  <li>Fixed a bug where Goliath Ride Armor would not sync over the network.</li>
+  <li>Fixed a bug where Vile MK-II could grab invisible enemies.</li>
+  <li>Fixed a bug where charged Gravity Well would not work in online matches.</li>
+  <li>Fixed a bug where X2 buster and X3 saber glow effect would reveal invisible X's.</li>
+  <li>Fixed a bug where players could upgrade X armor with scrap from other characters.</li>
+  <li>Fixed a bug where no "ding" sound would play on the player's screen in online matches when MK2's shield is hit by a 1 hp attack.</li>
+  <li>Fixed some shoot sprite transition errors for X and Vile.</li>
+  <li>Fixed a bug where Vile death explosions were not synced over the network.</li>
+</ul>
+
+<h3>Improvements</h3>
+
+<ul>
+  <li>The home page now has all the download links, to make the non self-contained versions more accessible.</li>
+  <li>Improved Vile jump animation.</li>
+  <li>Quarry red flag moved to a lower spot since it was out of reach of a normal jump with new physics.</li>
+  <li>Directional and Angular Axl aim modes now have a laser sight for better aiming when Assassination is selected. Note that this is not visible to other players.</li>
+  <li>The circle effect of Vile MK-II revive no longer syncs over the network. This was done to prevent confusion with Giga Crush.</li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<h4>Mega Man X</h4>
+
+<ul>
+<li>The X3 buster's cross shot balls in the second part of the attack can no longer all strike at once, but only one at a time. Damage of the balls increased to 3. This reduces the maximum damage of a single cross shot from 12 to 7.</li>
+<li>Reworked Hyper Buster weapon and renamed it to "Hyper Charge" in game documentation. Will now allow X to store up to 2 fully charged shots (4 with Buster chip part) of whatever weapon is equipped in slot 1. Hyper Charge will immediately shoot a charged shot of the weapon in that slot, while only consuming Hyper Charge ammo. To prevent spam and infringing upon the X2 Buster's role, there is a 2 second cooldown before another Hyper Charge shot can be fired.</li>
+<li>Increased Homing Torpedo cooldown from 0.5 seconds to 0.75 seconds.</li>
+<li>Reduced Fire Wave burn time applied by half (From 1 second per hit to 0.5 second per hit).</li>
+<li>Increased the time it takes for X3 Head Chip to start healing after last taking damage from 2 to 4 seconds.</li>
+<li>Max Armor chest part barrier time reduced from 1s/2s on flinch to 0.75s/1.5s on flinch. This will allow more weapons to bypass the armor completely, as the initial hit that activates the barrier doesn't have any damage reduction.</li>
+</ul>
+
+<h4>Vile</h4>
+
+<ul>
+<li>Ride Armors can now earn scrap on kills.</li>
+<li>Normal and Goliath Ride Armor dash speed increased to 100%. This allows it to dash as fast as the other characters, matching the speed of the Ride Armor dash in the real SNES games.</li>
+<li>Goliath Ride Armor now fully heals Vile MK-II on both entering it for the first time, and when it blows up with Vile still in it.</li>
+<li>Increased Frog Ride Armor torpedo cooldown from 0.75 seconds to 1 second.</li>
+<li>Greatly reduced the ending lag of Vile's Front Runner and Stun Shot, allowing him to move almost immediately after firing these weapons.</li>
+<li>Increased the speed of air Front Runner shots to match that of ground ones.</li>
+<li>Can now uncrouch when shooting Vulcan.</li>
+<li>Vulcan can now be used when dashing.</li>
+<li>Front Runner can now be used when dashing. This will cancel the dash however.</li>
+<li>Increased the speed of Vile's stun cannon shots.</li>
+<li>Vile MK-II's stun shot now replaced with the missle shots from his X3 boss fights. These can be fired rapidly and will stun and do 1 damage.</li>
+</li>
+
+</ul>
+
+<h4>Axl</h4>
+
+<ul>
+<li>Reverted Axl Bullet spread change. Axl Bullets are now perfectly accurate again.</li>
+<li>Axl Bullet headshot damage modifier reduced to 1.5x.</li>
+<li>There is now a 0.25 second delay when switching Axl weapons before the new weapon can be fired.</li>
+<li>Axl no longer undisguises if Assassination is released before full charge.</li>
+<li>Increased amount of time Assassination can be kept at full charge before it is automatically released from 1 to 2 seconds.</li>
+</ul>
+
+</body>
+</html>
