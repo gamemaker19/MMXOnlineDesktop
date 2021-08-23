@@ -39,9 +39,13 @@ hr {
   margin-bottom: 10px; 
 }
 
-.non-windows {
-  display:inline-block;
-  width:682px;
+#non-windows {
+  width: 100%;
+  border: none;
+}
+
+#non-windows td {
+  border: none;
 }
 
 #mac {
@@ -83,27 +87,28 @@ hr {
 
 <hr style="background:white;">
 
-<div class="non-windows" id="mac">
+<table id="non-windows">
+  <tr>
+    <td style="padding-left: 75px">
+      <h2 style="text-align:center">Download links (Mac)</h2>
 
-  <h2 style="text-align:center">Download links (Mac)</h2>
+      <div style="text-align: center">
+        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v10.2/MMXOnlineV10_2_mac.zip'">🍎 Download (v10.2, 64 bit)</button>
+      </div>
 
-  <div style="text-align: center">
-    <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v10.2/MMXOnlineV10_2_mac.zip'">🍎 Download (v10.2, 64 bit)</button>
-  </div>
+      <div style="text-align: center;"><i>See the <a href='help.html#mac'>help</a> page for more help on Mac installation.</i></div>
+    </td>
+    <td style="padding-right: 75px">
+      <h2 style="text-align:center">Download links (Linux)</h2>
 
-  <div style="text-align: center;"><i>See the <a href='help.html#mac'>help</a> page for more help on Mac installation.</i></div>
+      <div style="text-align: center">
+        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v10.2/MMXOnlineV10_2_debian_x64_sc.zip'">🐧 Download (v10.2, 64 bit)</button>
+      </div>
 
-</div>
-
-<div class="non-windows">
-  <h2 style="text-align:center">Download links (Linux)</h2>
-
-  <div style="text-align: center">
-    <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v10.2/MMXOnlineV10_2_debian_x64_sc.zip'">🐧 Download (v10.2, 64 bit)</button>
-  </div>
-
-  <div style="text-align: center;"><i>See the <a href='help.html#linux'>help</a> page for more help on Linux installation.</i></div>
-</div>
+      <div style="text-align: center;"><i>See the <a href='help.html#linux'>help</a> page for more help on Linux installation.</i></div>
+    </td>
+  </tr>
+</table>
 
 <hr style="background:white">
 
