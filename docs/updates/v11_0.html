@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 11.0</title>
+
+<style type="text/css">
+  .buff,.nerf {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: cover;
+    margin-top: -8px;
+    margin-right: 5px;
+  }
+
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 11.0 : The Game Mode Update</h1>
+
+<p>Dive into all new game modes like King of the Hill and Elimination in this v11.0 MMXOD update! Whereas the last v10.0 update focused on character changes and reworks, the focus of this v11.0 update is on providing additional ways to play, new maps, more options, and interface improvements. 1v1 also got some additional attention and improvements, and also with v11.0 comes a return of the long lost "Large Camera" mode. There are also some balance changes as well, which as usual are based on a combination of community feedback and win rate statistics.</p>
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>Added new "King of the Hill" game mode.</p>
+  <ul>
+  <li>A single neutral control point, the "hill", exists on the middle of the map. In order to win, Red or Blue needs to capture the point and hold it for 3 minutes.</li>
+  <li>The hill can be re-captured by the enemy team after your own team captures it, and doing so will freeze your team's 3 minute countdown timer until you re-capture it back.</li>
+  <li>The TF2 wiki has a good overview of the game mode as it works nearly idential to that game: https://wiki.teamfortress.com/wiki/King_of_the_Hill.</li>
+  <li>Overall, King of the Hill was meant to be a simpler version of Control Point, easier for new players to understand and play, and less reliant on teamwork and better suited for casual players.</li>
+  <li>Like with Control Point, not every map supports King of the Hill, and they don't necessarily always overlap.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added "Elimination" and "Team Elimination" game mode.</p> 
+  <ul>
+  <li>It's a battle for survival. You only have a limited amount of lives (configurable in match settings), and once you run out, you can't respawn anymore!</li>
+  <li>In regular (FFA) elimination, the last one standing wins the match.</li>
+  <li>In Team Elimination, the team that eliminates all players on the other team first wins.</li>
+  <li>The fewer lives you have, the more scrap you earn.</li>
+  <li>If playing with 2 lives or fewer, everyone starts off with double the amount of HP.</li>
+  <li>Note that if you join a match late, or leave and rejoin, you won't be able to participate until next round and will be moved to Spectate.</li>
+  </ul>
+</li>
+
+<li>
+  <p>1v1 format now uses Elimination mode rules.</p> 
+  <ul>
+  <li>This was a logical choice for the mode as the current kill system is kind of confusing and counter-intuitive for 1v1.</li>
+  <li>Life counts will now display in the top left/right HUD in the mode.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added the following large maps: Sigma3, Powerplant2.</p>
+  <ul>
+    <li>Sigma3 takes place in the third Sigma Fortress stage in MMX1 and consists of an underwater middle portion. Enemies will have to pass through this underwater segment to reach the enemy base, so expect intense aquatic firefights mid-map to secure map control.</li>
+    <li>Powerplant2 is identical in layout to Powerplant1, but with a unique twist: the power is out, and the whole map will flicker from extremely dim to pitch dark every couple of seconds (just like in the real game if you beat Storm Eagle first). You can still see your character and some effects/projectiles, but enemies and walls will be completely invisible during blackouts.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Re-added Large Camera mode back into the game.</p> 
+  <ul>
+  <li>It works just like it did back in v4.0 when it was first released.</li>
+  <li>Not every map supports this mode, but future updates may increase the number of maps that support this mode.</li>
+  <li>There are even some new 1v1 maps that support this mode (see below) and for 1v1 it's enabled by default.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added new 1v1 maps and reworked some existing ones. 1v1 maps now can be larger than a fixed 298x224 screen and are no longer always fixed cam.</p> 
+  <ul>
+  <li>Added Sigma1_1v1. This 1v1 map, for a first, has three floating platforms in a similar fashion to Smash Bros's "Battlefield" stage. These will be sure to add some more mobility, variety and spice to 1v1 matches. Supports large camera.</li>
+  <li>Airport 1v1 size increased and now takes place on the Death Rogumer airship in the same layout that Storm Eagle was fought in MMX1. Similar to Smash Bros's "Final Destination" stage in size and layout. Supports large camera.</li>
+  <li>Factory 1v1 changed to take place in Flame Mammoth's bossroom. This map is large enough to scroll a bit to the left and right, and there's a conveyer belt here that will move players to the left constantly, so adjust your movements accordingly!</li>
+  <li>Added Hunter Base 1v1, a relatively straightforward, long side-scrolling 1v1 map where you fought the intro boss Maoh the Giant in MMX3.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added a new "destructable wall" mechanic. In certain maps, there are now obstacles that can be destroyed with certain weapons. Maps that now have destructable walls:</p>
+  <ul>
+    <li>Hunter Base. You'll be able to destroy a long row of walls to open up a shortcut into the enemy base.</li>
+    <li>Quarry. You'll be able to destroy a long row of rocks to open up a shortcut into the enemy base, as well as an opening down to the middle part of the map.</li>
+    <li>Factory and Airport now have the destructable blocks from MMX1.</li>
+    <li>Sigma4_1v1 now patches the hole in the middle with destructable blocks. Destroy these and the battlers can fall to their doom!</li>
+    <li>Gallery has two small blocks that can be destroyed to access two large health capsules.</li>
+  </ul>
+  <p>Weapons that can break destructible walls/blocks:</p>
+  <ul>
+    <li>X: Light Helmet Headbutt (from below), Giga Crush, Homing Torpedo (uncharged and charged), Spin Wheel (uncharged), Magnet Mine (uncharged), Triad Thunder (charged, quake only), Tornado Fang (uncharged and charged)</li>
+    <li>Zero: Rakuhouha, Rekkoha</li>
+    <li>Vile: N and K armor punches, K armor drill attacks, H and F armor missiles</li>
+    <li>Axl: Blast Launcher (primary and alt fire)</li>
+  </ul>
+</li>
+
+</ul>
+
+<h3>Interface/Misc Improvements</h3>
+
+<ul>
+<li>
+  <p>Consolidated the character and weapon select menu into one when joining a match.</p>
+  <ul>
+    <li>In addition, you'll be able to use this menu to change your character and weapons after a match ends, before the next one starts.</li>
+    <li>Selecting the X armor set in 1v1 is made more obvious as it was moved to a separate selection row.</li>
+  </ul>
+</li>
+<li>The Create Match settings no longer change the kill count when changing maps, and now support scroll acceleration when changing numeric settings (hold down left/right arrow).</li>
+<li>
+  <p>You can now have separate controls for each character.</p>
+  <ul>
+    <li>In the Controls menu, you'll be able to select which character you want to configure controls for by pressing LEFT/RIGHT on either Keyboard or Controller.</li>
+    <li>The "ALL" option is the default, and has common controls for all characters.</li>
+    <li>Controls not bound on individual character configs fall back to the "ALL" control config.</li>
+    <li>Character specific controls, such as Axl's aim keys, must be bound in the character specific config.</li>
+    <li>Axl is unique in that he has three configs now: one for each of his different aim modes (DIRECTIONAL, ANGULAR, CURSOR).</li>
+  </ul>
+</li>
+<li>
+  <p>The Settings menu was better organized to move different controls into different sections. There is now a general section and a section for each character's specific options. Also added the following settings:</p>
+  <ul>
+    <li>(General) Preferred character. Lets you change the character selected by default every time the game is re-opened.</li>
+    <li>(X) Hyper buster slot. Lets you change the slot used by the Hyper Buster weapon (defaults to slot 1).</li>
+    <li>(X) Preferred weapons. Lets you change the set of wepaons selected by default every time the game is re-opened.</li>
+    <li>(X) Preferred armor. Lets you change the armor set menu selected by default as well as the 1v1 armor set.</li>
+    <li>(X) Enable/disable "Grid mode". Can enable for 1v1 matches only, or globally. In Grid Mode, you hold down WeaponR to open a grid of weapons in which you push arrow keys to quickly change to a specific weapon. Works similarly to "Weapon Wheel" menus in other games. This is great for X in 1v1 where it would be difficult and unwiedly to switch to a certain weapon with number hotkeys or scrolling.</li>
+    <li>(Zero) Swap air slash and Kuuenbu button inputs.</li>
+    <li>(Vile) Enable/disable "Grid mode". Works just like the X setting.</li>
+    <li>(Vile) Change weapon ordering. By default it's Front Runner/Vulcan/Ride Armors but you can change the order to any of the 6 possible permutations.</li>
+    <li>(Axl) Enable/disable "Grid mode". Note that currently, this doesn't apply to Cursor mode.</li>
+    <li>(Axl) Change weapon ordering. By default it's Axl Bullet/Ray Gun/Blast Launcher but you can change the order to any of the 6 possible permutations.</li>
+  </ul>
+</li>
+
+<li>Added standalone Goliath armor sprite JSONs instead of sharing them with the N Ride Armor sprites. This was previously done as a hack to cut down the time to release the X3 update, and is now cleaned up to allow for easier tweaking and modding of the Goliath armor sprites.</li>
+<li>Improved Goliath armor sprites and fixed some offset errors. (Credit: Gacel)</li>
+<li>Fixed some mixable armor spritesheet errors. (Credit: Bando)</li>
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Fixed a bug where Hyper Buster could be unequipped to quickly fire Double Buster shots.</li>
+<li>Fixed a bug where Vile couldn't shoot the Front Runner when wall kicking.</li>
+<li>Fixed a bug where Strike Chain could hook to walls with the "unclimable" property (i.e. map boundary walls).</li>
+<li>Fixed a bug where X2 helmet armor scans could persist even when equipping a different helmet.</li>
+<li>Fixed a bug where CPU could change armors in 1v1.</li>
+<li>Fixed a bug where X could headbutt when in spawn invuln frames.</li>
+<li>Fixed a bug where Vile MK-II could sometimes have the wrong weapon equipped.</li>
+<li>Vile MK-II grab will no longer immediately snap enemies to the hand position but smoothly moves them to the hand, preventing camera snapping weirdness in high latency conditions.</li>
+<li>Vile MK-II grab fixed so that it now properly favors the defender. Invincibility moves like Revive, Giga Crush and Rakuhouha should no longer be interruptable even with lag.</li>
+<li>Vile MK-II shield no longer blocks attacks from the front fired at point blank inside of him.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>Maps</p>
+<ul>
+  <li>Sigma1: moved red flag closer to spawn and blue flag further away from spawn.</li>
+  <li>Gallery: moved red flag closer to spawn.</li>
+  <li>Power Center: moved red flag closer to spawn.</li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>X2 helmet armor now automatically scans enemies in front of X that have not been scanned yet. It can still be activated manually with SPECIAL, and you'll need to scan an enemy a second time to tag their location.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Name tag of enemies scanned by X are now red-colored and italic, to make it easier to distinguish friend from foe.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>X2 boots now increases dash duration by 15% to make it consistent with the X1 boots behavior.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>In 1v1 modes X can now activate Giga Crush and Hyper Buster with SPECIAL.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>X can now headbutt enemies when grappling diagonally upwards to a wall with Strike Chain.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Sonic Slicer projectiles no longer disappear on contact and will pass through enemies.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Electric Spark and Triad Thunder now have a "mini-flinch" shocking effect, causing a brief 5 frame flinch.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Triad Thunder damage reverted back to 2 (from 3).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Reduced up dash duration of X3 boots.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increased cooldown of Hadouken to 1 second.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gold Armor no longer protects against headshots and can now be killed in one hit by Assassination.</li>
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Black Zero now fully heals on activation.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increased cooldown of Rakuhouha to 1 second.</li>
+</ul>
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Increased Vulcan damage rate and projectile speed.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Increased N and G Ride Armor jump height by 15%.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>In 1v1 modes, Vile now can summon one Ride Armor per life at the cost of half his HP bar (as there is no scrap in 1v1).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>When Vile's Ride Armor is destroyed, will automatically switch to weapon slot 1.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile can now select Ride Armors when in spawn invuln frames.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Stun missiles can now be fired in the Goliath with SPECIAL. Goliath buster shot binding moved to WeaponL/WeaponR.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II can no longer earn scrap on kills.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II fire grenade impact damage reduced from 2 to 1, and fire trail damage rate reduced 2 per second to 1 per second.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II fire grenade cooldown increased to 4 seconds (matching MK-I's napalm).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II max grab time/healing reduced to 3 seconds/6 bars of healing.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Goliath armor no longer heals Vile on destruction, only activation.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II can no longer shoot stun missiles when dashing.</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>White Axl now fully heals on activation.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Slightly increased headshot hitbox size which should help prevent instances of failed headshots and assassinations when aimed too high.</li>
+</ul>
+
+</ul>
+
+</body>
+</html>
