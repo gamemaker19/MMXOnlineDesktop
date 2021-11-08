@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Character Win Rates</title>
+  <meta name="google-signin-client_id" content="885808863111-dmag674bqqicgdpkivvnneanc2qghqdq.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+</head>
+<body>
+
+<h1>Character Win Rates</h1>
+
+<!-- The Sign-in button. This will run `main()` on success. -->
+<p class="g-signin2" data-onsuccess="main"></p>
+
+<div id="root-container" style="display:none">
+  <div id="char-selector">
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_X')">MMX</button>
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_Zero')">Zero</button>
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_Vile')">Vile</button>
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_AxlCursor')">Axl Cursor</button>
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_AxlDirectional')">Axl Directional</button>
+    <button onclick="onQueryCharClicked('dm_unique_win_rate_AxlAngular')">Axl Angular</button>
+  </div>
+
+  <div id="char-options" style="display:none">
+    <button onclick="setWinThreshold(0)">Win Threshold 0</button>
+    <button onclick="setWinThreshold(1)">Win Threshold 1</button>
+    <br>
+    <button onclick="setGameThreshold(1)">Game Threshold 1</button>
+    <button onclick="setGameThreshold(2)">Game Threshold 2</button>
+    <button onclick="setGameThreshold(3)">Game Threshold 3</button>
+    <br>
+    <button onclick="setCountPlayerOnce()">Count players once</button>
+  </div>
+</div>
+
+<h1 id="title"></h1>
+
+<!-- The API response will be printed here. -->
+<!--<textarea cols="80" rows="5" id="query-output"></textarea>-->
+<pre id="file-content"></pre>
+
+<script src="querier.js?v=3"></script>
+<script>
+
+function main() {
+  document.getElementById('root-container').style.display = 'inline-block';
+}
+
+function onQueryCharClicked(actionName) {
+  document.getElementById('char-selector').style.display = 'none';
+  document.getElementById('char-options').style.display = 'inline-block';
+  var pieces = actionName.split('_');
+  document.getElementById('title').innerHTML = pieces[pieces.length - 1];
+  queryReports(actionName, onResult);
+}
+
+function onResult(response) {
+
+  //var formattedJson = JSON.stringify(response.result, null, 2);
+  //var element = document.getElementById('query-output');
+  //element.textContent = formattedJson;
+
+  window.gameThreshold = 1;
+  window.winThreshold = 0;
+  window.countPlayerOnce = false;
+
+  window.resultFunction = function() {
+    var element = document.getElementById('file-content');
+    element.textContent = convert(response.result);
+  }
+  window.resultFunction();
+}
+
+function setWinThreshold(num) {
+  window.winThreshold = num;
+  window.resultFunction();
+}
+
+function setGameThreshold(num) {
+  window.gameThreshold = num;
+  window.resultFunction();
+}
+
+function setCountPlayerOnce() {
+  window.countPlayerOnce = !window.countPlayerOnce;
+  window.resultFunction();
+}
+
+function getFixedLine(line) {
+  var fixedLine = "";
+  var startQuote = false;
+  for (var i = 0; i < line.length; i++) {
+    if (line[i] === '"') {
+      startQuote = !startQuote;
+      continue;
+    }
+    if (startQuote && line[i] == ',') {
+    } else {
+      fixedLine += line[i];
+    }
+  }
+  return fixedLine;
+}
+
+function convert(response) {
+
+  var nameToWinrate = {};
+
+  for (var row of response.reports[0].data.rows) {
+    var guidAndName = row.dimensions[2];
+    var count = row.metrics[0].values[0];
+    var total = row.metrics[0].values[1];
+    var avg = row.metrics[0].values[2];
+  
+    var guid = guidAndName.substring(0, 43);
+    var name = guidAndName.substring(44);
+    var count = parseInt(count);
+    var total = parseInt(total);
+    if (!Number.isFinite(count) || !Number.isFinite(total)) continue;
+
+    if (!nameToWinrate[guid]) {
+      let names = new Set();
+      names.add(name);
+      nameToWinrate[guid] = {
+        count: count,
+        total: total,
+        names: names
+      };
+
+    }
+    else {
+      nameToWinrate[guid].count += count;
+      nameToWinrate[guid].total += total;
+      nameToWinrate[guid].names.add(name)
+    }
+  }
+
+  var totalWinRate = 0;
+  var totalCount = 0;
+
+  var totalWinRate2 = 0;
+  var totalCount2 = 0;
+
+  for (var key of Object.keys(nameToWinrate)) {
+    if (nameToWinrate[key].count < window.gameThreshold) {
+      delete nameToWinrate[key];
+      continue;
+    }
+    if (nameToWinrate[key].total < window.winThreshold) {
+      delete nameToWinrate[key];
+      continue;
+    }
+    nameToWinrate[key].avg = nameToWinrate[key].total / nameToWinrate[key].count;
+    totalWinRate += nameToWinrate[key].total;
+    totalCount += nameToWinrate[key].count;
+
+    totalWinRate2 += nameToWinrate[key].avg;
+    totalCount2++;
+  }
+
+  if (!window.countPlayerOnce) {
+    var avgWinRate = (totalWinRate/totalCount).toFixed(2);
+  } else {
+    var avgWinRate = (totalWinRate2/totalCount2).toFixed(2);
+  }
+  return "Average: " + avgWinRate + "\n" + JSON.stringify(sortDict(nameToWinrate), null, 2);
+}
+
+function sortDict(dict) {
+  // Create items array
+  var items = Object.keys(dict).map(function(key) {
+    return {
+      name: key,
+      names: dict[key].names,
+      count: dict[key].count,
+      total: dict[key].total,
+      avg: dict[key].avg,
+    };
+  });
+
+  // Sort the array based on the second element
+  items.sort(function(first, second) {
+    return second.avg - first.avg;
+  });
+
+  var list = [];
+  for (var item of items) {
+    list.push(item.name + "_" + getNames(item.names) + ":" + item.avg.toFixed(2) + " (" + item.count + ")");
+  }
+  return list;
+}
+
+function getNames(names) {
+  var str = "";
+  for (var name of names) {
+    str += name + ",";
+  }
+  return str;
+}
+</script>
+
+<!-- Load the JavaScript API client and Sign-in library. -->
+<script src="https://apis.google.com/js/client:platform.js"></script>
+
+</body>
+</html>

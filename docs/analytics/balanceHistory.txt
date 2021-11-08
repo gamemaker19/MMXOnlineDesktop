@@ -1,0 +1,8 @@
+9/3/2021: v11.0
+9/4/2021: v11.1
+9/11/2021: v11.2 - Lots of balance changes: Mini flinch nerfed, headshotable Ride Armors, Zero wall double jump, hadouken cooldown, etc
+9/12/2021: v11.3
+9/18/2021: v11.4 - Fire wave nerf, tornado nerf, spin wheel range nerf, torpedo nerf, misc x weapon buffs, vile air bomb/rocket punch buff
+9/21/2021: v11.5 - Chameleon sting nerf
+9/25/2021: v11.6
+10/02/2021: v11.7

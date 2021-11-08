@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Weapon Kills</title>
+  <meta name="google-signin-client_id" content="885808863111-dmag674bqqicgdpkivvnneanc2qghqdq.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+</head>
+<body>
+
+<style>
+
+.char {
+  display: inline-block;
+  margin-right: 25px;
+  vertical-align: top;
+}
+
+</style>
+
+<h1>Weapon Kills</h1>
+
+<!-- The Sign-in button. This will run `main()` on success. -->
+<p class="g-signin2" data-onsuccess="main"></p>
+
+<div id="root-container" style="display:none">
+  <button onclick="sortByAverageFun()">Sort by average</button>
+  <button onclick="splitByWeaponFun()">Split by weapon</button>
+</div>
+
+<h1 id="title"></h1>
+
+<!-- The API response will be printed here. -->
+<textarea cols="80" rows="5" id="query-output"></textarea>
+<pre id="file-content"></pre>
+
+<script type="text/javascript" src="weapons.js?v=1"></script>
+<script src="querier.js?v=3"></script>
+<script>
+
+function main() {
+  document.getElementById('root-container').style.display = 'inline-block';
+  queryReports("weapon_kills", onResult);
+}
+
+function onResult(response) {
+
+  //var formattedJson = JSON.stringify(response.result, null, 2);
+  //var element = document.getElementById('query-output');
+  //element.textContent = formattedJson;
+
+  window.sortByAvg = false;
+  window.splitByWeapon = false;
+
+  window.resultFunction = function() {
+    displayContents(response.result);
+  }
+  window.resultFunction();
+}
+
+function sortByAverageFun() {
+  window.sortByAvg = !window.sortByAvg;
+  resultFunction();
+}
+
+function splitByWeaponFun() {
+  window.splitByWeapon = !window.splitByWeapon;
+  resultFunction();
+}
+
+function displayContents(response) {
+  var element = document.getElementById('file-content');
+  element.innerHTML = convert(response);
+}
+
+function convert(response) {
+
+  var xWeapons = {};
+  var zeroWeapons = {};
+  var vileWeapons = {};
+  var axlWeapons = {};
+
+  for (var row of response.reports[0].data.rows) {
+    
+    var name = row.dimensions[2];
+    var count = parseInt(row.metrics[0].values[0]);
+    var total = parseInt(row.metrics[0].values[1]);
+    var avg = parseInt(row.metrics[0].values[2]);
+
+    if (!Number.isFinite(count) || !Number.isFinite(avg)) continue;
+
+    if (name !== "Burn4" && name.startsWith("Burn")) {
+      continue;
+    }
+    if (!name) continue;
+
+    if (xWeaponMap[name]) {
+      incWep(xWeapons, window.splitByWeapon ? name : xWeaponMap[name], count, total);
+    }
+    else if (zeroWeaponMap[name]) {
+      incWep(zeroWeapons, window.splitByWeapon ? name : zeroWeaponMap[name], count, total);
+    }
+    else if (vileWeaponMap[name]) {
+      incWep(vileWeapons, window.splitByWeapon ? name : vileWeaponMap[name], count, total);
+    }
+    else if (axlWeaponMap[name]) {
+      incWep(axlWeapons, window.splitByWeapon ? name : axlWeaponMap[name], count, total);
+    }
+    else if (name !== "Burn") {
+      alert("Weapon " + name + " not found!");
+      throw "Weapon not found";
+    }
+  }
+
+  var listOfLists = [
+    sortDict(xWeapons),
+    sortDict(zeroWeapons),
+    sortDict(vileWeapons),
+    sortDict(axlWeapons)
+  ];
+
+  var retStr = "";
+  for (var i = 0; i < listOfLists.length; i++) {
+    retStr += "<div class='char'>"
+    if (i == 0) retStr += "<b>X WEAPONS</b><br><br>";
+    if (i == 1) retStr += "<b>ZERO WEAPONS</b><br><br>";
+    if (i == 2) retStr += "<b>VILE WEAPONS</b><br><br>";
+    if (i == 3) retStr += "<b>AXL WEAPONS</b><br><br>";
+    for (var wep of listOfLists[i]) {
+      retStr += wep.name + ": " + wep.total + "<br>";  // + " (avg: " + wep.avg.toFixed(2) + ")\n";
+    }
+    retStr += "</div>";
+  }
+
+  return retStr;
+}
+
+function incWep(dict, name, count, total) {
+  if (!dict[name]) {
+    dict[name] = {
+      count: count,
+      total: total
+    };
+  }
+  else {
+    dict[name].count += count;
+    dict[name].total += total;
+  }
+}
+
+function sortDict(dict) {
+
+  var items = Object.keys(dict).map(function(key) {
+    return {
+      name: key,
+      count: dict[key].count,
+      total: dict[key].total,
+      avg: dict[key].total / dict[key].count 
+    };
+  });
+
+  items.sort(function(first, second) {
+    if (window.sortByAvg) return second.avg - first.avg;
+    else return second.total - first.total;
+  });
+
+  return items;
+}
+
+</script>
+
+<!-- Load the JavaScript API client and Sign-in library. -->
+<script src="https://apis.google.com/js/client:platform.js"></script>
+
+</body>
+</html>
