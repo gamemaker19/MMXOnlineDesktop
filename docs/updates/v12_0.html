@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 12.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block");	
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 12.0: The Axl Update, Part 2</h1>
+
+<p>Brandish six new Axl guns in this v12.0 update! In addition to a variety of new weapons and abilities, Axl has been improved and reworked in many other ways to make him more fluid to play and control. In particular, directional aim mode has been given serious attention and revamp. Other changes in this update include mostly balance tweaks and bug fixes.</p>
+
+<h3>Axl Weapon/Ability Changes</h3>
+
+<p>Note: see the <a href="../characters.html?character=axl">Axl Character Guide</a> for full details on the new weapons and abilities.</p>
+
+<ul>
+<li>
+  <p>Axl gets six new guns from MMX8, and can switch between them in the select weapon menu, similar to X. (However, Axl will always need the Axl Bullet equipped in slot 1, as it's present in most of his spritework, as well as providing him with his integral Copy Shot and Assassination abilities.)
+  <ul>
+  <li><b>Black Arrow</b>: Shoots homing arrows made of dark energy. These arrows can headshot and can even damage enemies when stuck to walls.</li>
+  <li><b>Spiral Magnum</b>: A powerful magnum that can headshot and pass through walls and enemies.</li>
+  <li><b>Bound Blaster</b>: Shoots energy blasts that bounce off walls. Each bounce increases damage and speed. </li>
+  <li><b>Plasma Gun</b>: Shoots an EMP blast that deals minor damage but causes a full flinch as well as disabling energy-based shields and barriers.</li>
+  <li><b>Ice Gattling</b>: An icy minigun. Can freeze enemies if they are hit with multiple shots in quick succession, but needs to rev up first.</li>
+  <li><b>Flame Burner</b>: This flamethrower can burn swaths of enemies but has a rather gaping minimum range.</li>
+  </ul>
+  </p>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>Axl was rather limited in options compared to other characters, especially X. Whereas X has over 24 weapons, Axl only had 3. These new firearms grant Axl a larger variety of tools to make him more effective in more situations, and make the character more interesting and deep.<br>Thanks to frequest contributer Bando for providing the arm sprites for these weapons!</i></li></ul>
+
+</li>
+
+<li>
+  <p>In addition, all of Axl's MMX7 weapons have been added as well. The way it works is that each of Axl's X8 guns will actually fire one of his X7 weapons if alt fire (special button/right mouse) is pressed. Here's the mapping below:</p> 
+  <ul>
+  <li><b>Blast Launcher => Explosion</b>: This remains the same; it's the Explosion weapon from X7.</li>
+  <li><b>Ray Gun => Splash Laser</b>: Shoots a beam of water that deals no damage but can push enemies away and even propel Axl in the air. Also extinguishes any enemies or allies hit.</li>
+  <li><b>Black Arrow => Wind Cutter</b>: Fires a homing boomerang-like wind projectile returns to Axl on hit.</li>
+  <li><b>Spiral Magnum => Sniper Missile</b>: Shoots a missile that Axl can remote control. Can be destroyed; has 6 health and lasts 5 seconds. Damage dealt is proportional to how long it flew before exploding.</li>
+  <li><b>Bound Blaster => Moving Wheel</b>: Fires a wheel that bounces off walls, much like Spin Wheel.</li>
+  <li><b>Plasma Gun => Volt Tornado</b>: An electrically charged tornado. Mini-flinches enemies caught in the high-voltage storm.</li>
+  <li><b>Ice Gattling => Gaea Shield</b>: A defensive shield that functions very similarly to charged Frost Shield.</li>
+  <li><b>Flame Burner => Circle Blaze</b>: Shoots a large fireball that explodes on contact, burning foes in the blast radius.</li>
+  </ul>
+  <p>You'll even be able to customize the alt fire for Axl's X8 guns in the weapon select menus (press MENU SECONDARY key binding, default "C" on keyboard with the gun selected). Each X8 gun has an additional, original alt fire ability that can be selected to replace the X7 weapon:</p>
+  <ul>
+  <li><b>Blast Launcher</b>: You'll be able to manually detonate your grenades (they won't explode unless detonated manually).</li>
+  <li><b>Ray Gun</b>: Generates a hitscan laser beam that instantly damages enemies in its path. The longer it is on an enemy, the more damage it will do, which will reward good tracking aim.</li>
+  <li><b>Black Arrow</b>: Shoots three arrows in a fan pattern on a longer cooldown.</li>
+  <li><b>Spiral Magnum</b>: Adds a scope to the weapon, allowing Axl to zoom in and snipe enemies from a distance.</li>
+  <li><b>Bound Blaster</b>: Shoots a sonar beacon that reveals nearby enemies.</li>
+  <li><b>Plasma Gun</b>: Generates a hitscan beam of electricity that mini-flinches and locks onto nearby targets.</li>
+  <li><b>Ice Gattling</b>: Will rev the minigun without shooting it.</li>
+  <li><b>Flame Burner</b>: Shoots out a blast of compressed air. Can be used to push enemies away, propel yourself in the air, and even reflect enemy projectiles.</li>
+  </ul>
+  
+  <p>Finally, note that each weapon now has a different White Axl effect. See the Axl character guide for more details.</p>
+
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>This alt fire system elegantly merges Axl's X7 and X8 weaponry, giving Axl even more options and customizability without requiring additional guns and sprites not present in MMX7 or MMX8. Effectively, it triples the amount of options Axl has. In general, the default X7 alt fire weapons are highly damaging and great for new players whereas the replacable alt fire techiniques are special techniques suited for more advanced players. Many of them take skill and effort to make the most out of them but if mastered, can make Axl a formidable and versatile threat in any match. </i></li></ul>
+
+</li>
+
+<li><p>Axl Bullets/Copy Shot: now have infinite ammo, but can no longer headshot.</p>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>Previously, the Axl Bullets were practically Axl's only viable option, along with the occasional Explosion switch. Therefore, they had to be very strong. However, headshots did take some skill to pull off, and therefore new players or players without the right aim setup would suffer from lowered DPS with the drawback of limited ammo and none of the benefits. With this change, Axl Bullets are more forgiving to new players and prevent situations where Axl could run out of ammo for all 3 of his weapons and become defenseless until they could recharge.<br/> Ultimately, A-Bullet is now more of a support and backup weapon than a primary killing tool, as well as still providing the critical role of obtaining DNA cores. With Axl's new weapons, he has more options now and should not need to rely on the A-Bullet to secure kills. For example, the Black Arrow and Spiral Magnum, two new weapons that can headshot, have effectively replaced the role of regular Axl Bullets / Copy Shots headshots, respectively, so Axl players should use these if they want high damage precision on an ammo limitation. </i></li></ul>
+</li>
+
+<li><p>All other Axl weapons now have limited ammo and will no longer recharge on their own. (Weapon energy capsules, transformations, and White Axl activation will still replenish ammo.)</p>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    This change is complementary to giving the A-Bullet infinite ammo. It serves as a check to the power creep introduced with the buffs to Ray Gun / Blast Launcher and the 6 new weapons. It also makes DNA Cores and White Axl more valuable because they can restore ammo for these powerful weapons, an otherwise scarce resource. Axl players can now use the infinite ammo copy shot to more reliabily secure DNA cores, helping offset this ammo limitation.
+  </i></li></ul>
+</li>
+
+<li><p>Copy Shot cooldown decreased to 0.3 seconds, can now be charged at 3 additional levels (gaining damage and speed with each charge level), and now awards DNA Cores as long as an enemy was hit with a Copy Shot projectile in the last two seconds before dying.</p>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+  Aquiring DNA Cores could be a frustrating and inconsistent task for Axl, with limited ammo and not earning DNA Cores on assists or on kills being stolen. This change, along with the infinte ammo, should make it much easier and consistent. However, to offset these large number of buffs, the level 1 copy shot projectile speed was greatly reduced - see the next bullet for more details there.</i></li></ul>
+</li>
+
+<li><p>Axl Bullets and Copy Shots now have a projectile animation and hitbox (previously were using a raycast system for collision detection which required greater precision). However, their projectile speeds were reduced.</p>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+  These changes were made to the projectile sprites and properties to make it more authentic with the visuals from MMX7/MMX8, while toning down their power in some ways and making them more reliable in others. The projectiles were made slower but given hitboxes. This makes it require less precision to land, but does make it harder to land shots on a moving target, sometimes requiring leading/prediction. From the enemy's point of view, Axl Bullets should be easier to dodge, harder to have their kills stolen with, and it should be easier to chase an Axl without getting destroyed. Now, the Axl Bullet speed and visuals are more in line with the X-Buster (though still almost twice as fast), whereas the Copy Shot was significantly slowed down to better resemble the X8 copy shot speed. However, with the infinite ammo it's far easier to secure copy shot kills now and the ability to charge it get DNA Cores on assists are significant counter-buffs to this authentic change. The slower projectile speeds also do help reduce a problem where shots could sometimes go through straight enemies without damaging them (especially with the old Copy Shot).</i></li></ul>
+</li>
+
+<li>The headshot modifier was increased to 2x, for the new and existing weapons that can headshot (Black Arrow, Spiral Magnum, Assassination).
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+  The 1.5x modifier for Axl Bullets was kind of an awkward rule in a game where nearly all damage values are rounded to whole values. Yet increasing it to 2x would have made the Axl Bullets too strong given their high rate of fire, but since they don't headshot anymore, this is no longer an issue. For Assassination, this makes it more consistent as well since before it had a 2x modifier even though A-Bullet only was 1.5x, causing inconsistency and confusion to new players.
+    </i></li></ul>
+</li>
+<li>"Armor-piercing" attribute now added for Spiral Magnum and Assassination. This attribute allows these weapons to completely ignore enemy defense buffs (X armors/barriers, Zero guard, Vile back shield). In addition, Black Zero and White Axl can now be headshot.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+  A much needed change giving Axl significantly more options for dealing with heavily armored foes, previously an arduous task due to Axl Bullets being Axl's only viable option. For Assassination, it makes the rules more consistent and easier to understand why it can kill on a headshot even if defense modifiers are in place. The same goes with the two time limited hyper modes, which were previously immune to headshots as opposed to the other hyper modes which are not. But to help offset this nerf, they've been given an increase in duration from 10s to 12s.</i></li></ul>
+</li>
+
+<li>Dodge roll now favors the defender, but added a one second cooldown to the move. Also increased burn time removed per roll from 1 to 2.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+  Dodge Roll was previously inconsistent and unreliable under high latency conditions. It was also inconsistent with Rakuhouha, a defensive move that does favor the defender. With this change, Axl should be dodging things much more reliably, which should hopefully see increased use of the move. The one second cooldown ensures that Axl can't spam it and be invulnerable all game.</i></li></ul>
+</li>
+
+<li>Can now activate dodge roll by double tapping the dash key. This behavior can be disabled with the "double tap to dash" setting.</li>
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    This should help players activate dodge roll more easily for certain control setups. It's similar to the MMX7 Axl controls - however, in that game, you could activate dodge roll by pressing the dash button any time during a dash. This could cause too much conflict with MMXO dash manueveurs and thus was not implemented for now. The current implementation helps save on the number of key bindings and options that would have to be added (there are already a lot for Axl).
+  </i></li></ul>
+
+<li>Reworked Axl weapon switch cooldown system to be proportional to the weapon cooldown that is being switched out of. For example, if you shoot an Axl Bullet and then immediately switch to Blast Launcher, the cooldown before firing again would no longer be a flat 0.25s but would be 0.25s * (axl bullet cooldown completion percent at time of switch). If you wait for the Axl Bullet cooldown (0.15s) to expire before switching, there will be no cooldown. 
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    Weapon switching as Axl previously did not feel fluid due to the 0.25 second cooldown. It could be hard to switch to a Blast Launcher explosion, for example, even if the Axl Bullet was not fired recently. With this change, there are now more situations where Axl can immediately fire after switching a weapon, while still helping prevent abusing burst damage with quick weapon switches (a bigger problem with some of the new weapons now).
+  </i></li></ul>
+</li>
+
+<li>Can now climb walls and shoot with two handed weapons without having to switch to the Axl bullet.</li>
+<li>Blast Launcher grenade damage increased from 2 to 3, projectile speed increased, and ammo reduced from 4 to 2.</li>
+<li>Blast Launcher primary and alt fire now have separate cooldown meters and can be alternated to shoot both at a higher rate than when they shared the same cooldown.</li>
+<li>Blast Launcher grenades can no longer be reflected.</li>
+<li>Ray Gun primary fire damage rate and speed significantly increased.</li>
+<li>When transformed, you can now press SPECIAL on the untransform weapon slot to keep the transformation in your inventory after untransforming, at the cost of two scrap. Note that hyper mode DNA Cores will lose their hyper status the next time they are re-used.</li>
+<li>Added a "quick assassinate" option to the Assassination weapon. By pressing SPECIAL with it selected, you'll be able to immediately throw out an Assassin bullet at the cost of two scrap.</li>
+<li>Assassination charge no longer has a time limit.</li>
+<li>Assassination was made into a hitscan move, instantly damaging enemies in its line of sight. Though it makes it more consistent, it will also take more precise aim to land a hit since the hitbox is now essentially a single pixel/single pixel line.</li>
+<li>Assassination now locks on with aim assist.</li>
+<li>Aim assist now shows enemy health. In addition, enemy health for targets now shown with any weapon equipped, not just the Axl Bullets.</li>
+<li>When transformed as Zero, you can now switch weapon slots with WeaponL/R instead of guarding. To guard, you must hold the DOWN key while holding WeaponL/R.</li>
+
+</ul>
+
+<h3>Axl Control/Options Changes</h3>
+
+<p>Special attention was given to improving Directional Aim. As the default selected aim option, it will be the ones new players will most likely use, and thus needs to be as polished as possible to help attract and retain Axl players. In addition, it could be underwhelming in many situations compared to Cursor aim, yet unfair in others.</p>
+<p>Please note the distinction between "Directional" and "8-way" aim wordings in the bullets below. The former refers to Directional aim as a whole, including analog aim. The latter only covers directional aim with analog aim turned off.</p>
+
+<ul>
+  
+<li>Directional aim lock-on reworked. The closer you are to an enemy, the greater the angle leeway is (it's no longer a hard cutline at 22.5 degrees).
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    The old lock-on system became weaker the closer you were to an enemy due to more extreme angle values. With this change, Axl players should remain locked on to opponents more easily the closer they are, even if they are in the air.
+  </i></li></ul>
+</li>
+
+<li>8-way aim now smoothly transitions between the 8 possible aim angles, instead of immediately snapping to them, similarly to the aim system in MMX8.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    This change not only makes Axl's animations more smooth visually, but allows him to fire at an additional range of angles with good timing. Note that it doesn't apply to analog aim, which doesn't benefit from this change since it's already capable of 360 aim.
+  </i></li></ul>
+</li>
+
+<li>The "Aim Backwards" key now has an effect for two-handed weapons. When held with these weapons equipped, it allows Axl to backpedal backwards while still aiming forward. 
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    This key had no effect for weapons like the Blast Launcher. It would look quite strange to be able to aim such large weapons backwards at any angle, after all. A compromise is to allow this key to lock Axl's direction with these weapons, thereby allowing him to retreat and attack at the same time, much like with one-handed guns.
+  </i></li></ul>
+</li>
+
+<li>Consolidated "Aim Backwards" and "Aim Lock" controls into one, "Aim Key". Added an "Aim Key Function" setting for Axl that can be configured to to change the function of this key. In addition, added an "Aim Key Behavior" Axl setting that can be set to either "Hold" (default) or "Toggle" to make the aim key function togglable by pressing the button instead of requiring it to be held.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>
+    This helped consolidate redundant settings into one and make there less of them, reducing clutter and complexity. The ability to toggle the aim key provides an additional control option that can be less hard and tiring on the fingers.
+  </i></li></ul>
+</li>
+
+<li>Added a new aim key function, "Lock Aim" (the old one was renamed to "Lock Position"). This aim key will lock Axl's current aim angle, but not his movement.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>This was a frequent suggestion and was added as a third option for the new "Aim Key" system. It allows directional Axl to attack in the same direction even when retreating, as well as easily concentrate his fire in a general direction.</i></li></ul>
+</li>
+
+<li>Added a new setting to 8-way aim that allows Axl to remain in place when aiming diagonally. This is enabled by default. Note that it won't lock Axl in place if he is dashing.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>This change was intended to make Axl aiming feel more precise and controllable, preventing him from wandering off when trying to aim at 45 degree angles. It makes Axl feel and play more like how he did in MMX8, while still allowing run and gun tactics when moving straight ahead, or when dashing. (Since Axl doesn't need to press left or right to aim left or right, it's not necessary to lock his aim when those are held.)</i></li></ul>
+</li>
+
+<li>8-way aim no longer auto-aims to the head.
+  <p class="p-sc"><span class="sc" onclick="sc()">Show commentary</span></p>
+  <ul class="commentary" style="display:none"><li><i>This turned out to be too strong while not solving the inherit control issues of 8-way Axl. With the various improvements, it should no longer be needed. In addition, it could get in the way for non-headshot weapons (which there are a lot of now).</i></li></ul>
+</li>
+
+</ul>
+
+<p>Finally, as a consequence of spending so much effort and dedication to improving Directional Aim, I have removed Angular Aim from the game. This was I felt a necessary sacrifice, for many reasons:
+  <ul>
+    <li>Having to maintain more than two aim modes proved to be too much development effort. It's better to have fewer high quality aim modes that get more time and attention than a lot of low quality, unpolished ones.</li>
+    <li>Too many aim modes caused a lot of complexity and clutter in the menus, and to new players trying out the character.</li>
+    <li>The user base of Angular aim mode was extremely low. Most people either changed to Cursor or stuck with Directional.</li>
+    <li>A lot of the improvements and additions to Directional Aim mode help solve the problems and provide the playstyle that Angular was trying to address.</li>
+  </ul>
+</p>
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Fixed several sprites not having headshot POIs which could cause assassination headshots to fail on these sprites.</li>
+<li>Fixed an issue where Black Zero and White Axl could enter the flinch state under laggy conditions. The flinch check is now run defender side.</li>
+<li>Fixed various bugs with ladders where the character's momentum sometimes wouldn't be stopped when entering the ladder climb state, causing their position to desync.</li>
+<li>Fixed a bug where sometimes the wrong DNA Core transformation could be used.</li>
+<li>Fixed a bug where undisguising as Axl in 1-2 live elimination modes would reduce max health to 16.</li>
+</ul>
+
+<h3>Misc improvements</h3>
+
+<ul>
+<li>When inflicted with a status condition that can be mashed out of, you will now see a meter above your character indicating the progress of the status as well as your mash contribution (which will appear in red).</li>
+<li>In offline training mode, weapon DPS is now shown after killing the CPU. The DPS calculation starts on your first attack in the CPU's life, and ends when the CPU dies. This can be used to anaylze DPS for various weapons for balance analysis and discussion.</li>
+<li>In training mode, Axl now has unlimited uses of White Axl per life, to facilitate testing.</li>
+<li>Spectate mode no longer locks the cursor if Axl was selected.</li>
+<li>Several sprite animations were polished/improved/cleaned up.</li>
+<li>X's arms will now glow (for both the X player and opponents) if he has a Hyper Charge ready.</li>
+</ul>
+
+<h3>Balance changes (Non-Axl)</h3>
+
+<p>General</p>
+
+<ul>
+  <li>Removed all ceiling spikes from Doppler Lab stage.</li>
+  <li>Bonus scrap when behind now only awarded if the player's scrap count is less than 15. Otherwise, only 1 scrap is awarded.</li>
+  <li>Black Zero, White Axl and Vile MK-II revive now have 0.5s of invulnerability after activating.</li>
+  <li>Black Zero and White Axl now have full CC (crowd control) immunity. This includes things like knockback, slowdown, and grappling moves.</li>
+  <li>Increased duration of Black Zero and White Axl from 10 to 12 seconds.</li>
+  <li>Most of the game's defensive maneuvers, not just Dodge Roll, now favor the defender. This includes activating a charged Chameleon Sting and ducking in a mech as Vile.</li>
+  <li>Moves that use scrap no longer award scrap on kill. This includes Hadouken, Shoryouken, Z-Buster and the newly added Quick Assassinate.</li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Chameleon Sting invisibility time reduced to 8 seconds.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Rolling Shield damage cooldown decreased from 0.5s to 0.33s, and reduced ammo usage when ramming foes by half.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Fire Wave ammo usage reduced to pre-nerf levels if not at level 1 charge or higher.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Electric Spark mini-flinch cooldown of 1 second added.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Electric Spark now has a startup animation (like in the real game), adding startup lag to the move.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Storm Tornado's damage cooldown increased from 0.33s to 0.5s.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Boomerang Cutter damaged reduced from 3 to 2 per boomerang.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Shotgun Ice freezing favors the attacker now.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Shotgun Ice freezing now uses the Ice Gattling system and must connect multiple times to freeze.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Crystal Hunter cooldown increased from 1s to 1.25s.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Crystal Hunter time reduced from 5 to 4s, slowdown reduced from 50% to 25%, and can now only have one rift on the map at a time.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Bubble Splash ammo consumption increased greatly when at level 1 charge or higher, and increased slightly when not.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Sonic Slicer's startup lag reduced, and projectile speed increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Parasitic Bomb projectile speed increased.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Parasitic Bomb can no longer be used with the flag.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Spinning Blade cooldown reverted to 1.25s (was 1s).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Gravity Well reworked. No longer pulls; now deals 2 damage per hit. Can no longer be destroyed and can go through walls again.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Triad Thunder mini-flinch cooldown of 1 second added.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Tornado Fang: two drills can now attack at once, effectively doubling the DPS if they both maintain contact.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Headbutt damage reduced from 3 to 2, and flinch time reduced by half.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Headbutt now destroys small blocks in 1 hit, like in the real game.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Max Head Part now only reveals a small radius surrounding X (about 1.5 screens).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyper Charge now consumes 50% ammo of whatever special weapon it is firing, in addition to Hyper Charge ammo. (The X Buster is unaffected.)</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyper Charge now has a cooldown after using level 2 or 3 charged X buster.</li>
+
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyouretsuzan now has a minimum height requirement above the ground for a freeze to occur. (This height is the same as Vile's air bomb height.)</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Rakuhouha projectiles now favor the defender.</li>
+</ul>
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile now has an energy bar that works similarly to MHX. All attacks will drain this meter, but it will recharge quickly when not attacking. Vulcan uses the greatest energy by far and can no longer be spammed indefinitely. Weapon capsules will refill this bar faster and allow attacks to temporarily cease consuming ammo as it refills.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile now has super armor when summoning mechs, granting immunity to flinch.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>K-Armor punch cooldown reduced from 1s to 0.8 s, and movement speed increased from 60% to 70%.</li>
+
+</ul>
+
+</body>
+</html>
