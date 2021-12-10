@@ -19,11 +19,10 @@ function queryReports(eventAction, onResult) {
           viewId: VIEW_ID,
           dateRanges: [
             {
-              startDate: '2021-11-25',
+              startDate: '2021-12-03',
               endDate: 'today'
             }
           ],
-          samplingLevel: "LARGE",
           dimensions: [
             {
               name: 'ga:eventCategory'
