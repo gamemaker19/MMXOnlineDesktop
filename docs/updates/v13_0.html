@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 13.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 13.0: The Loadout Update</h1>
+
+<p>The focus of this major update was adding new techniques and weapons for Zero and Vile, as well as the ability to customize their weapon slots. Every character now has the concept of a "loadout" that can be changed before and during a match to suit playstyles or to adapt to a certain situation in a match. Gone are the days where only X (and more recently, Axl) players could switch and customize their weapons!</p>
+
+<p>In addition, this update brings along with it many new additions, improvements, bug fixes and balance changes. Optimization efforts have continued, with more options and graphics settings that can be configured for lower end machines.</p>
+
+<h3>Loadout Menu</h3>
+
+<p>Every character now has a "loadout" menu. This takes the place of the "select weapon" menu previously used only by X and Axl (but for X and Axl, remains virtually the same). As it's now a common feature for every character to be able to swap weapons, this loadout menu also has been added to the main menu screen so players can change their loadout without having to be in a match, using the same interface. Loadout changes are saved across game sessions. This change makes the "preferred weapon" options for X and Axl obsolete, so these have been removed.</p>
+
+<h3>New Zero Abilities</h3>
+
+<p>Zero gets several new swappable techniques that can be customized in the newly added "loadout" menu. The uppercut, down thrust, giga attack and hyper mode can be customized. For the uppercut and down thrust, both the special input and attack input can be customized, so Zero can use two of these at a time. Here are each of the slots and the techniques that can be equipped in each:</p>
+<ul>
+<li><b>Uppercut</b>: Ryuenjin, E-Blade, Rising (New!)</li>
+<li><b>Down Thrust</b>: Hyouretsuzan, Rakukojin, Quake Blazer (New!)</li>
+<li><b>Giga Attack</b>: Rakuhouha, Rekkoha (No longer BZ exclusive), C-Flasher (New!)</li>
+<li><b>Hyper Mode</b>: Black Zero, Awakened Zero (New!)</li>
+</ul>
+<p>Here's a description of the new abilities mentioned above:
+  <ul>
+    <li><b>Rising</b>: An element-neutral uppercut, this move originates from Mega Man Xtreme. Not only is it significantly faster than Ryuenjin and E-Blade, but it can even be used in midair to gain extra height (but not after a double jump or air dash). However, its speed and mobility is offset by its lower damage of 3 and lack of flinch.</li>
+    <li><b>Quake Blazer</b>: A fiery down thrust that can not only burn enemies it hits, but explodes on contact, knocking enemies downwards and possibly "spiking" them into a pit. Zero can also bounce off enemies in this fashion by pressing the JUMP key on contact, thereby avoiding the landing lag and enabling a follow-up attack. Zero can even control the downwards trajectory unlike with the other dive moves, but these bonuses are offset by its relatively low damage and lack of flinch.</li>
+    <li><b>C-Flasher</b>: A giga attack that like Rakuhouha and Rekkoha, makes Zero invincible when using. Though it deals less damage than Rakuhouha (3) and no flinch, it can pierce enemies, and it is also favor the attacker (like Rekkoha). It also consumes less energy (only 25%, or 8 bars) so is great defensively to help block damage more frequently.</li>
+  </ul>
+</p>
+
+<p>In addition, Zero gets a new Hyper Mode, Awakened Zero from Mega Man X5! This hyper form surrounds Zero with a fiery aura that deals contact damage to enemies too close. It also grants Zero many powerful ranged abilities:</p>
+<ul>
+  <li><b>Saber Shot</b>: Replaces sword ground combo. A sword swing that not only deals 4 damage with flinch but also launches a 4 damage sword projectile.</li>
+  <li><b>Shin Messenkou</b>: Replaces giga attack. This move launches several balls of energy upwards on the left and right of Zero, giving it good horizontal and vertical coverage.</li>
+  <li><b>Shingetsurin</b>: Replaces Z-Buster. Shoots spinning rings of blue energy that can home in on enemies. Every level of Z-Buster charge shoots out another Shingetsurin projectile.</li>
+</ul>
+<p>Awakened Zero costs 10 scrap to activate, like Black Zero. Unlike Black Zero, Awakened Zero will not use 10 scrap immediately, but slowly deplete scrap at a rate of 1 scrap every 2 seconds while it's active. If not stopped and killed within 30 seconds (about 15 scrap consumed), Awakened Zero will enter an invincible phase where his Saber Shot is replaced with Genmu, which launches two giant crescent waves from his saber that deal 12 damage! However, in this phase the scrap drain rate is doubled. If you don't deal with Awakened Zero quickly, he'll become extremely dangerous and nigh-unstoppable and his rampage will only end when his scrap supply runs dry.</p>
+
+<p>Finally, the double-buster combo from X3 has been added to Black Zero. You'll now be able to charge up to level 4 and unleash two charged Z-Buster shots in rapid succession, followed by a saber shot. If you pull it off, this will make short work of even full health enemies.</p>
+
+</ul>
+
+<h3>New Vile Abilities</h3>
+
+<p>Many Vile weapons from Mega Man MHX have been added, and like with Zero, these are configured in a new loadout menu that can be accessed both in game and in the main menu. Vile can change the weapon for his various weapon categories below:</p> 
+
+<ul>
+<li><b>Cannon</b>: Front Runner, Longshot Gizmo (New!), Fat Boy (New!)</li>
+<li><b>Vulcan</b>: Cherry Blast, Distance Needler (New!), Buckshot Dance (New!)</li>
+<li><b>Missile</b>: Stun Shot, Humerus Crush (New!), Popcorn Demon (New!)</li>
+<li><b>Rocket Punch</b>: Go-Getter Right, Spoiled Brat (New!), Infinity Gig (New!)</li>
+<li><b>Napalm</b>: Rumbling Bang, Fire Grenade, Splash Hit (New!)</li>
+<li><b>Ball</b>: Air Bombs, Stun Balls, Peace Out Roller (New!)</li>
+</ul>
+
+<p>See the Vile character guide for more details on these weapons. Note that Vile has not lost any moves, and the first ones listed in each category are the old ones. Also note that some of Vile MK-II's moves have become swappable moves for Vile MK-I as well, with increased energy cost to compensate for the power creep. In return, Vile MK-II now has half cooldown on all weapons (except Missile which is already over twice as fast) and can now shoot the cannon at an enemy during a grab.</p>
+
+<p>Vile also gets a Giga Crush-like move: the Necro Burst from MHX. It's not a laser (as MHX lasers weren't added in this update), and is instead activated by holding the SPECIAL button to charge; at full charge, release to generate a massive energy blast that can deal up to 8 damage with a full flinch to nearby enemies (enemies further away from the blast radius will take less damage and flinch). Though powerful, this move drains Vile's entire energy bar, so use it carefully. Necro Burst can even be used in Ride Armors. Although the blast will blow it up, this can be used to your advantage: if you unleash a Necro Burst while ducking in a mech, you'll blow it up from the inside, sending deadly Ride Armor shrapnel in all directions, dealing additional damage on top of the blast!</p>
+
+<p>In addition, Vile can now upgrade his armor, like X. Two armors are available, both originating from MHX.</p>
+<ul>
+  <li><b>Frozen Castle</b>: 5 scrap. By utilizing a thin layer of ice, this armor reduces damage by 25%. The ice attribute makes the armor ineffective against fire attacks, which will temporarily disable the armor until the burn effect ends.</li>
+  <li><b>Speed Devil</b>: 5 scrap. A layer of atmospheric pressure increases Vile's movement speed by 10%. Unlike with X's boots, Vile's speed is increased everywhere, not just for ground or air dashes, and the speed carries over on dash jumps.</li>
+</ul>
+
+<p>Some of Vile's Ride Armors have also received some new abilities and attention as well:</p>
+<ul>
+  <li><b>Hawk Armor</b>: Can now shoot missiles downwards by holding DOWN when shooting. In addition, can drop a pair of whatever Napalm he has equipped from the Mech's feet, with DOWN + SPECIAL, though the cooldown is twice as long to compensate for the dual bomb drop.</li>
+  <li><b>Frog Armor</b>: This mech gains some moves inspired by Mario Bros. On land, it can now "triple jump" by doing three jumps in rapid succession, with each jump gaining more height. Also on land, the frog armor can now dash jump now to travel more quickly horizontally at an expense of reduced jump height. Finally, on both land and in the water, the mech gains a "ground pound" move that can be performed by pressing the DASH + DOWN button in midair, which will send the mech straight down, crushing enemies. Even if you miss, it generates a shockwave that knocks nearby enemies off their feet. And if you hit someone in midair, you can knock them straight down, "spiking" them in pits like with Zero's new Quake Blazer.</li>
+</ul>
+
+<p>Finally, Vile also received some quality of life improvements in the menus/HUD:</p>
+<ul>
+  <li>The Ride Armor weapon slot, when activated, no longer opens a new set of weapons but simply expands a vertical menu selection of mechs to choose with UP/DOWN. You can quickly switch back to Vulcan/Cannon with WeaponL/R without having to select a back button.</li>
+  <li>Added a Vile setting to prevent accidentally switching to the Ride Armor slot. If enabled, you'll need to press the "3" number key to open the mech select HUD, but it will open automatically, and you can even press 1-5 as a hotkey to automatically select N/K/H/F/G armor, respectively.
+    <ul>
+      <li>Grid Mode setting for Vile was removed, as it would conflict with the setting above, and wasn't used much at all.</li>
+      <li>For the same reasons, the weapon ordering setting no longer allows orderings that move the mech slot to slot 1 or 2.</li>
+    </ul>
+  </li>
+  <li>Added a Vile setting to swap WeaponL/R and Special input for firing the Goliath buster.</li>
+  <li>If Vile loses a Ride Armor, the Ride Armor weapon slot is removed, as Vile could not summon any more mechs in his current life, anyway.</li>
+</ul>
+
+<h3>Other New Additions</h3>
+
+<p>Axl gets a new hyper mode that he can configure in his loadout menu. It's "Stealth Mode" from Mega Man X Command Mission, and it makes him invisible and invincible for 12 seconds while it's active, much like Chameleon Sting. However, Axl can freely attack and shoot while in this state. It's a more defensive hyper mode when compared to White Axl and also great for sneaking into enemy ranks unnoticed, though it lacks the raw power and mobility of White Axl.</p>
+
+<h3>Misc improvements/changes</h3>
+
+<ul>
+<li>Added a new Graphics settings subsection below "General" and moved all the graphics settings here. In addition, there are several new options that can be lowered to improve performance on lower end machines:
+  <ul>
+    <li>Text quality: if set to "Low", the text quality is reduced, but this can greatly improve performance as it will batch up all text and HUD draw calls and avoid redraws every frame.</li>
+    <li>Particle quality: mostly affects Axl's vector graphics projectiles. Set this to low if the match lags if there are a lot of bound blaster shots/flame burner flames/etc.</li>
+  </ul>
+</li>
+<li>In addition, there's a "Preset Quality" graphics setting that the game will try to infer and auto-set based on your video card texture size. You'll need to set this to "Custom" to be able to change the settings underneath it individually.
+  <ul><li>The existing options, "Enable Shaders" and "Enable Post Processing", can be set to no, for a performance increase as well.</li></ul></li>
+<li>Added a setting to not kill your character when editing their loadout in a match.</li>
+<li>Training map/mode can no longer be selected in public online matches.</li>
+<li>Additional improvements to various sprites/animations.</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Fixed an issue with Sigma Virus briefly covering the whole map during timer transitions.</li>
+<li>Fixed a tiling issue with Deep Sea Base map.</li>
+<li>Fixed a visual bug with Giant Dam map if optimized assets were used.</li>
+<li>Fixed a bug where Parasitic Bomb could ram into players in spawn i-frames.</li>
+<li>Fixed a bug where Triad Thunder could mini-flinch more than once per triangle.</li>
+<li>Fixed a bug where Spin Wheel, Charged Fire Wave and a few other weapons could improperly move allies and enemies due to faulty collision settings.</li>
+<li>Fixed a bug where ice slow effect was affecting White Axl and Black Zero.</li>
+<li>Fixed an issue where timer was being set by default for Training map.</li>
+<li>Fixed a bug where Axl lock-on would not work if transformed as another Axl. The "Undisguise" weapon slot will still not lock-on, so you can switch to it to avoid giving away your disguise in team modes.</li>
+<li>Fixed a bug where X3 armor could activate on moves that dealt 0 damage.</li>
+<li>Fixed a bug where Axl arms would not be drawn when DNA core equipped to other players in online.</li>
+<li>Fixed a bug where some of the such as igIce would not load due to being missing from the fallback "shaders2" folder.</li>
+
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>Mega Man X</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyper Charge for X-Buster now consumes 25% ammo for each of the two shots of the cross shot animation. This makes the complete cross shot take 50% ammo (25% for the first shot which deals 4 damage, and 25% for the second which deals 3 damage). However, if X only has 25% hyper charge ammo, he can still fire only the first cross shot and deal 4 damage. Note that if at 50% or more hyper charge ammo, both shots will automatically be fired, and there's no way to manually fire just one.</li>
+</ul>
+
+<p>Vile</p>
+
+<!--
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+</ul>
+-->
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile MK-II now has reduced cooldown on napalms, cannons and balls.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increased cooldown of Fire Bomb by 2x.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increased energy usage of air stun balls.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Increased number of air bombs dropped from 2 to 3 per attack.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Air bombs no longer mini-flinch and cost more energy. (Mini-flinch was moved to the new Peace-Out Roller ball attack.)</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Kangaroo Armor can now chain dash when Vile is ducking (though the dash speed is reduced by half).</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Axl can now dash and roll with two-handed weapons (Blast Launcher, Ice Gattling, Flame Burner). However, the dash speed is 75% of the normal dash speed, and Axl can't dash when revving Ice Gattling.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Dodge roll cooldown increased from 1s to 1.5s.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Blast Launcher grenade ammo usage doubled.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Explosion flinch time halved.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Spiral Magnum sniper scope range and recticle size increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Sniper Missile speed now increases with time, and can no longer be detonated immediately after firing (must wait 0.5s) which should help prevent accidental detonations.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sniper Missile hitbox size increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Volt Tornado now travels forward after being active for a short period, much like its behavior in the real MMX7 game.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Improved Assassination and Sniper hitreg and headshot detection. This should make it feel more consistent than before.</li>
+
+</ul>
+
+</body>
+</html>

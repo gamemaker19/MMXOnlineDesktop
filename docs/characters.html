@@ -59,6 +59,15 @@
   border-top: none;
 }
 
+.vile-table {
+}
+
+.vile-table th, td {
+  padding: 10px;
+  border: 1px solid white;
+  line-height: 28px;
+}
+
 button img {
   margin-top: -5px;
 }
@@ -150,71 +159,103 @@ button img {
 
   <p>Raijingeki ("Thunder God Attack")</p>
   <ul>
-    <li>Controls: Special button on ground</li>
+    <li>Default input: Special button on ground</li>
     <li>Damage: 2 per hit (8 hits max)</li>
     <li>Description: Zero electrically charges his Z-Saber and thrusts it forward, dealing massive damage to anyone hit by it. The closer the victim is to Zero, the more hits will be inflicted. However, this move is quite slow and leaves you open, so use it carefully. A faster but weaker purple colored variant can also be chained after the first or second swing of the Z-Saber combo.</li>
   </ul>
   <p>Ryuenjin ("Dragon Flame Blade")</p>
   <ul>
-    <li>Controls: Up + Special button on ground</it>
+    <li>Default input: Up + Special button on ground</it>
     <li>Damage: 4 per hit (2 hits max), applies 2 seconds of burn</li>
     <li>Description: Zero performs a flaming uppercut with his Z-Saber, damaging and burning enemies it hits. This is great for hitting enemies above you and enemies in the air while simultaneously gaining height. But bear in mind, it can't deal damage underwater.</li>
   </ul>
   <p>Hyouretsuzan ("Ice Fury Slash")</p>
   <ul>
-    <li>Controls: Down + Special button in air</li>
+    <li>Default input: Down + Special button in air</li>
     <li>Damage: 4</li>
     <li>Description: Zero thrusts his Z-Saber down, encases it in ice, and falls straight down to the ground, freezing any foes hit by it for 2 seconds max. This can be mashed out of rather quickly, however.</li>
   </ul>
   <p>Rakuhouha ("Falling Feng Crush")</p>
   <ul>
-    <li>Controls: Down + Special button on ground</li>
+    <li>Default input: Down + Special button on ground</li>
     <li>Damage: 4 per energy ball</li>
-    <li>Description: Zero punches the ground, radiating 9 energy balls in a fan shape from his position. Zero also becomes invincible for the duration of the move. This move runs on an ammo meter that fills as Zero takes damage. It costs half the entire bar, so it can only be used sparingly.</li>
+    <li>Cost: 16 energy</li>
+    <li>Description: Zero's standard giga attack. Upon use, he punches the ground, radiating 9 energy balls in a fan shape from his position. Zero also becomes invincible for the duration of the move. This move runs on an ammo meter that fills as Zero takes damage. It costs half the entire bar, so it can only be used sparingly.</li>
   </ul>
   <p>Shippuuga ("Hurricane Fang")</p>
   <ul>
-    <li>Controls: Special button while dashing on ground</li>
+    <li>Default input: Special button while dashing on ground</li>
     <li>Damage: 2</li>
     <li>Description: This is a special dash attack that deals less damage than the normal dash attack and has a smaller hitbox but it will cause a flinch on hit. Follow up with an attack of your choice for an effective combo.</li>
   </ul>
   <p>Kuuenzan ("Air Circling Slash")</p>
   <ul>
-    <li>Controls: Special button in the air</li>
+    <li>Default input: Special button in the air</li>
     <li>Damage: 2</li>
     <li>Description: This air attack will cover an area all around Zero, but deals less damage than the normal air attack. Consider using underwater where the Ryuenjin is ineffective.</li>
   </ul>
   <p>Guard</p>
   <ul>
-    <li>Controls: Weapon Left or Weapon Right (Default A or S on keyboard)</li>
+    <li>Default input: Weapon Left or Weapon Right (Default A or S on keyboard)</li>
     <li>Description: Zero holds his Z-Saber in front of him, reflecting projectiles that can be reflected, as well as reducing damage by half from hits that cannot be reflected. It also removes all forms of knockback and can deflect other Zero's Z-Saber swings.</li>
   </ul>
 
-  In addition, some of these techniques have "alternate" versions that can be activated with ATTACK btn instead of SPECIAL. These are below:
+  <p>
+  In addition, some of these techniques have alternate versions that can be activated with ATTACK btn instead of SPECIAL. You can configure these alternate versions in the loadout menu, and even replace the special input version as well. These are below:</p>
 
   <p>E-Blade (Electric Blade)</p>
   <ul>
-    <li>Controls: Up + Attack button on ground</it>
+    <li>Default input: Up + Attack button on ground</it>
     <li>Damage: 3 per hit</li>
-    <li>Description: Zero performs an electrical uppercut with his Z-Saber. Unlike with Ryuenjin, it flinches, and deals a larger amount of lower damage hits. However it's got a smaller hitbox, so space your attack more carefully. Also unlike its fiery cousin, it can actually deal damage underwater, so it's your only option of the two in water maps.</li>
+    <li>Description: Zero performs an electrical uppercut with his Z-Saber. Unlike with Ryuenjin, it flinches, and deals a larger amount of lower damage hits. However it's got a smaller hitbox, so space your attack more carefully.</li>
   </ul>
+  <p>Rising</p>
+  <ul>
+    <li>Default input: N/A (Can replace Ryuenjin or E-Blade)</it>
+    <li>Damage: 3</li>
+    <li>Description: Zero performs an element-neutral uppercut. Not only is it significantly faster than Ryuenjin and E-Blade, but it can even be used in midair to gain extra height (but not after a double jump or air dash). However, its speed and mobility is offset by its lower damage and lack of flinch.</li>
+  </ul>
+
   <p>Rakukojin ("Falling Steel Edge")</p>
   <ul>
-    <li>Controls: Down + Attack button in air</li>
+    <li>Default input: Down + Attack button in air</li>
     <li>Damage: 4+</li>
     <li>Description: Zero's Z-Saber becomes a large metal sword, and he drops straight down to the ground with it, dealing serious damage to anything it strikes. Though it can't freeze like the Hyouretsuzan, it deals more damage the higher the height Zero drops from, up to a whopping 14 max if you land from over 2 screens above. Note that if Zero's fall speed is slown down (i.e. he's underwater), the move deals less damage.</li>
+  </ul>
+  <p>Quake Blazer</p>
+  <ul>
+    <li>Default input: N/A (Can replace Hyouretsuzan or Rakukojin)</li>
+    <li>Damage: 4+</li>
+    <li>Description: A fiery down thrust that can not only burn enemies it hits, but explodes on contact, knocking enemies downwards and possibly "spiking" them into a pit. Zero can also bounce off enemies in this fashion by pressing the JUMP key on contact, thereby avoiding the landing lag and enabling a follow-up attack. Zero can even control the downwards trajectory unlike with the other dive moves, but these bonuses are offset by its relatively low damage and lack of flinch. It can't deal damage underwater.</li>
+  </ul>
+
+  <p>Rekkoha</p>
+  <ul>
+    <li>Default input: N/A (Can replace Rakuhouha)</li>
+    <li>Damage: 4 per hit</li>
+    <li>Energy Cost: 32</li>
+    <li>This giga move is a powered up Rakuhouha that fires light beams that rain down on foes in the whole screen; it's sure to cause some serious damage and cleanup if you can pull it off. However, it's offset by its high energy cost, requiring the whole bar to use.</li>
+  </ul>
+
+  <p>C-Flasher</p>
+  <ul>
+    <li>Default input: N/A (Can replace Rakuhouha)</li>
+    <li>Damage: 3</li>
+    <li>Energy Cost: 8</li>
+    <li>A giga attack that like Rakuhouha and Rekkoha, makes Zero invincible when using. Though it deals less damage than Rakuhouha (3) and no flinch, it can pierce enemies. It also consumes less energy (only 25%, or 8 bars) so is great defensively to help block damage more frequently.</li>
   </ul>
 
   <p>Zero also has a ranged weapon: the Zero Buster. To fire it, hold down the ATTACK button to charge and then release. It's stronger than the X-Buster, but each shot consumes one scrap, so you can only use it sparingly. It's a great approach option for stunning enemies before closing in on them, but if you use it excessively, you'll lose out on the Black Zero upgrade, so weigh your options carefully. When playing with a lower amount of players, it can be more useful than Black Zero since the latter may only net you one or two kills before your armor runs out, less than what 10 Zero Buster shots could likely accomplish, assuming your aim is good and you can land those shots.</p>
 
-  <p>Finally, Zero has a "hyper" mode where he can transform into Black Zero for the cost of 10 scrap. To activate this ability, hold down the attack button to charge and release to transform into Hyper Zero for 12 seconds. While transforming you are invincible. While you are Black Zero:</p>
+  <p>Zero has a "hyper" mode where he can transform into Black Zero for the cost of 10 scrap. To activate this ability, hold down the attack button to charge and release to transform into Hyper Zero for 12 seconds. While transforming you are invincible. While you are Black Zero:</p>
   <ul>
     <li>All attacks will deal 1.5x damage and flinch.</li>
     <li>Movement speed is increased.</li>
     <li>You cannot flinch yourself from attacks.</li>
     <li>You are immune to most of the game's knockback/status effects.</li>
-    <li>You can unleash the mighty Rekkoha technique. To do so, simply use Rakuhouha with a full ammo meter. This move is a powered up Rakuhouha that fires light beams that rain down on foes in the whole screen; it's sure to cause some serious damage and cleanup if you can pull it off.</li>
   </ul>
+
+  <p>In addition, Zero has a second hyper mode, Awakened Zero. You can swap this out with Black Zero in the loadout menu. Awakened Zero is activated the same way as Black Zero but does not use 10 scrap immediately; instead it slowly depletes scrap at a rate of 1 scrap every 2 seconds while it's active. If not stopped and killed within 30 seconds (about 15 scrap consumed), Awakened Zero will enter an invincible phase where his Saber Shot is replaced with Genmu, which launches two giant crescent waves from his saber that deal 12 damage! However, in this phase the scrap drain rate is doubled. If you don't deal with Awakened Zero quickly, he'll become extremely dangerous and nigh-unstoppable and his rampage will only end when his scrap supply runs dry.</p>
 
   <h4>Strategy/remarks</h4>
   <p>As Zero, you are an aggressive close-quarters-combat and ambush character. You close in on your opponents and quickly dispatch them with combos from the high-damaging z-saber. In team modes, you charge in the battle and let your ranged allies shoot unimpeded. In FFA modes, you relentlessly hunt down other maverick hunters, ambushing whenever possible to prevent retreats.</p>
@@ -253,28 +294,166 @@ button img {
   <p>Vile does not spawn with any Ride Armors and it costs 5 scrap to summon a Ride Armor, so he must progress thorugh a match and earn kills before calling down the big guns. He comes with three switchable weapons: the Front Runner, the Vulcan and the aformentioned Ride Armor slot. In addition, SPECIAL button activates many secondary abilities, which tend to be debilitating traps and bombs that provide effective support for his regular weapons.</p>
   
   <h4>Weapons</h4>
-  <p>Vile can switch between two capabile weapons in slot 1 and slot 2. These weapons, in addition to his specials run on a shared energy meter that rapidly regenerates when not attacking.</p>
+  <p>Vile can switch between two capable weapons in slot 1 and slot 2. These weapons, in addition to his specials run on a shared energy meter that rapidly regenerates when not attacking.</p>
 
-  <h5>Front Runner (3 damage)</h5>
-  <p>A powerful shot that Vile fires from his shoulder cannon. It can be aimed upwards at two different angles: 60 degrees (hold up) or 30 degrees (hold forward + up). It can even be fired in the air, where it can be aimed upwards or downwards at 30 degrees, and when wall sliding and climbing. Overall this weapon is great for anti-air, kiting enemies, and otherwise hitting enemies at odd angles, but it's raw damage isn't the highest.</p>
+  <h5>Cannon (weapon slot 1)</h5>
+  <p>Vile's iconic shoulder cannon. On the ground it can be aimed upwards at two different angles: upwards (hold up) or diagonally upwards (hold forward + up). It can even be fired in the air, where it can be aimed upwards or downwards at 30 degrees, and when wall sliding and climbing. Overall this weapon is great for anti-air, kiting enemies, and otherwise hitting enemies at odd angles, but it's raw damage isn't the highest.</p>
+  <p>Here are the different cannons Vile can equip in his loadout menu:</p>
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Front Runner (Default)</td>
+      <td>Damage: 3<br/>Cooldown: 0.75<br/>Energy: 8</td>
+      <td>This is Vile's basic cannon and is a good all-around power shot.</td>
+    </tr>
+    <tr>
+      <td>Longshot Gizmo</td>
+      <td>Damage: 2 per hit<br/>Cooldown: 0.15<br/>Energy: 7 per shot</td>
+      <td>Vile shoots 5 weaker cannon shots in rapid succession. If Vile doesn't have enough energy, he won't shoot all 5 shots. While it's being used, he is immobile. This deals great burst damage but leaves you vulnerable during and after use.</td>
+    </tr>
+    <tr>
+      <td>Fat Boy</td>
+      <td>Damage: 4<br/>Cooldown: 0.75<br/>Energy: 24 per shot</td>
+      <td>A powerful shot that deals a full flinch on hit. Its high energy cost means it can't be fired rapidly.</td>
+    </tr>
+  </table>
 
-  <h5>Vulcan (1 damage per bullet)</h5>
-  <p>Vile's iconic and deadly finger cannon. It shoots very rapidly and deals a high rate of fire, but can only shoot straight ahead. It's best unleashed on grounded threats. Stun your enemy first to ensure the most damage, and to prevent Zero from reflecting the bullets.</p>
-
+  <h5>Vulcan (weapon slot 2)</h5>
+  <p>Vile's deadly finger machine gun. It shoots very rapidly and deals a high rate of fire, but can only shoot straight ahead. It's best unleashed on grounded threats. Stun your enemy first to ensure the most damage, and to prevent Zero from reflecting the bullets.</p>
+  <p>Here are the different vulcans Vile can equip in his loadout menu:</p>
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Cherry Blast (Default)</td>
+      <td>Damage: 1<br/>Cooldown: 0.1<br/>Energy: 10 per second</td>
+      <td>With a range of about half a screen and a rapid fire rate, this vulcan is easy to use.</td>
+    </tr>
+    <tr>
+      <td>Distance Needler</td>
+      <td>Damage: 2<br/>Cooldown: 0.3<br/>Energy: 6 per shot</td>
+      <td>While this vulcan has a slower rate of fire, it deals more damage, goes further and faster, and can pierce enemies.</td>
+    </tr>
+    <tr>
+      <td>Buckshot Dance</td>
+      <td>Damage: 1<br/>Cooldown: 0.75<br/>Energy: 10 per second</td>
+      <td>This vulcan fires more bullets, dealing more damage up close, but the spread makes it ineffective at long range.</td>
+    </tr>
+  </table>
   <h4>Specials</h4>
   <p>Vile's special moves can be activated with the SPECIAL button and can be used in conjunction with his normal weapons as effective support abilities.</p>
 
-  <h5>Ground Neutral Special: Stun Shot</h5>
-  <p>A slow moving ball of electricity that will stun enemies for two seconds if it hits. It's fired from Vile's shoulder cannon and so can be aimed at the same angles as the Front Runner. </p>
+  <h5>Missiles</h5>
+  
+  <p>Missiles are activated by pressing SPECIAL button on the ground without any directional input. They tend to shoot either stunning or explosive shots.</p>
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Stun Shot (Default)</td>
+      <td>Damage: 0<br/>Cooldown: 0.75<br/>Energy: 8</td>
+      <td>Vile's stun shot from MMX1, it deals no damage but stops enemies in its tracks. Like with the cannon, it can be aimed up or down. As Vile MK-II, this is powered up and deals 1 damage per hit but travels a bit slower.</td>
+    </tr>
+    <tr>
+      <td>Humerus Crush</td>
+      <td>Damage: 3<br/>Cooldown: 0.75<br/>Energy: 8</td>
+      <td>One of Vile's MHX missiles. It shoots straight and deals decent damage, but doesn't stun. Good for an extra burst of damage in combos.</td>
+    </tr>
+    <tr>
+      <td>Popcorn Demon</td>
+      <td>Damage: 2<br/>Cooldown: 0.75<br/>Energy: 12</td>
+      <td>This missile splits into 3 after travelling a certain distance or when SPECIAL is pressed. Time or space it so that all 3 hit for major damage.</td>
+    </tr>
+  </table>
 
-  <h5>Ground Special + Forward: Rocket Punch (3 damage)</h5>
-  <p>Vile launches his fist at enemies to teach them a lesson. The fist moves very quickly and applies a full flinch, but leaves Vile vulnerable until it returns to his arm. Hold the shot down to make the fist go further; if held down for the full time, this move has the most range of any Vile weapon.</p>
+  <h5>Rocket Punches</h5>
+ 
+  <p>Rocket punches launch Vile's fist at enemies and are activated by pressing SPECIAL button on the ground + LEFT or RIGHT.</p>
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Go-Getter Right (Default)</td>
+      <td>Damage: 3<br/>Cooldown: 1<br/>Energy: 8</td>
+      <td>Vile launches his fist at enemies to teach them a lesson. The fist moves very quickly and applies a full flinch, but leaves Vile vulnerable until it returns to his arm. Hold the shot down to make the fist go further. It also can be aimed with UP/DOWN.</td>
+    </tr>
+    <tr>
+      <td>Spoiled Brat</td>
+      <td>Damage: 2<br/>Cooldown: 0.2<br/>Energy: 8</td>
+      <td>This rocket punch fires at a much faster rate and doesn't need to return to Vile before he can resume control. However, it is weaker and doesn't flinch foes.</td>
+    </tr>
+    <tr>
+      <td>Infinity Gig</td>
+      <td>Damage: 3<br/>Cooldown: 1<br/>Energy: 16</td>
+      <td>This rocket punch homes in on enemies but has a higher energy cost and can't be aimed up or down manually like with Go-Getter Right.</td>
+    </tr>
+  </table>
 
-  <h5>Ground Special + Down: Napalm Grenade</h5>
-  <p>Vile ejects a grenade from his knee. The explosion deals two damage and spews hot napalm in an area, dealing an additional 1 damage over time if opponents are standing in the hot substance. Effective for area denial. Combine with the stun shot to ensure opponents stay in the Napalm for longer.</p>
+  <h5>Napalms</h5>
 
-  <h5>Air Neutral Special: Air Bombs (2 damage)</h5>
-  <p>Vile releases two bombs from his knee that drop downwards and split into two faster moving projectiles. This is an effective move for hitting enemies directly below you where the Front Runner couldn't reach.</p>
+  <p>Napalms are activated by pressing SPECIAL button on the ground + DOWN. These launch a bomb from Vile's knee with various splash damage effects upon explosion. Though they have high cooldowns, they tend to cause lots of damage in an area.</p>
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Rumbling Bang (Default)</td>
+      <td>Damage: 8<br/>Cooldown: 2<br/>Energy: 8</td>
+      <td>Vile ejects a grenade from his knee. The explosion deals two damage and spews hot napalm in an area, dealing an additional 1 damage over time if opponents are standing in the hot substance. Effective for area denial. Combine with the stun shot to ensure opponents stay in the Napalm for longer.</td>
+    </tr>
+    <tr>
+      <td>Fire Grenade</td>
+      <td>Damage: 2 (grenade), 1+ (flames,burn)<br/>Cooldown: 4<br/>Energy: 16</td>
+      <td>This napalm travels along the ground, laying a path of fire that burns enemies on hit.</td>
+    </tr>
+    <tr>
+      <td>Splash Hit</td>
+      <td>Damage: 1 per hit<br/>Cooldown: 3<br/>Energy: 16</td>
+      <td>This napalm explodes into a whirlwind that has good vertial range and can even suck enemies in that are too close.</td>
+    </tr>
+  </table>
+
+  <h5>Balls</h5>
+
+  <p>Balls are activated by pressing SPECIAL button in the air. These drop projectiles from Vile's knee with various effects. They are effective air-to-surface weapons.</p>
+
+  <table class="vile-table">
+    <tr>
+      <th>Weapon</th>
+      <th width="250px">Stats</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Air Bombs (Default)</td>
+      <td>Damage: 2 per bomb<br/>Cooldown: 1<br/>Energy: 8 per ball</td>
+      <td>Vile releases three bombs from his knee that drop downwards and split into two faster moving projectiles. This is an effective move for hitting enemies directly below you where the Front Runner couldn't reach.</td>
+    </tr>
+    <tr>
+      <td>Stun Balls</td>
+      <td>Damage: 0<br/>Cooldown: 1<br/>Energy: 5 per ball</td>
+      <td>This move shoots out a fan of stun shots from Vile's knee that deal no damage, but stun enemies for two seconds, like with the Stun Shot missile.</td>
+    </tr>
+    <tr>
+      <td>Peace-Out Roller</td>
+      <td>Damage: 3 per hit (2 hits max)<br/>Cooldown: 1<br/>Energy: 16</td>
+      <td>Launches a ball of electricity that splits into two upon making contact with a surface. Like with all electric moves, it causes a "mini-flinch" on hit, temporarily shocking enemies.</td>
+    </tr>
+  </table>
 
   <h4>Ride Armor Types</h4>
   <p>Vile can choose between 4 different Ride Armors to summon in weapon slot 3. Once you've summoned a mech, use this weapon slot to recall it to your location at any time when you are out of the mech.</p>
@@ -286,19 +465,27 @@ button img {
   <p>A slower but stronger Ride Armor. Its spiked fists deal a full 6 damage on hit but swing slower than the normal Ride Armor. The punch can also be charged to fire a chain attack that can attack enemies further away, and the charge-up drilling will also damage enemies close to the Ride Armor. Dashing is possible while charging.</p>
 
   <h5>Hawk Ride Armor (H-Type)</h5>
-  <p>This is the only Ride Armor with flight capabilities (hold down JUMP in the air to hover, which runs on a fuel meter that recharges after landing). It lacks a punch, instead firing two fast moving missiles that travel straight ahead and deal two damage each. It only has 24 bars of life, so be careful and use the mobility to avoid powerful attacks. You can also dive bomb foes with the stomp which can be an effective tactic against grounded foes that would otherwise be difficult to hit from the air with your missiles. Note that this Ride Armor will short out and self destruct in 15 seconds if it submerges underwater.</p>
+  <p>This is the only Ride Armor with flight capabilities (hold down JUMP in the air to hover, which runs on a fuel meter that recharges after landing). It lacks a punch, instead firing two fast moving missiles that travel straight ahead and deal two damage each. Missiles can also be shot straight down by holding DOWN key before shooting. This mech only has 24 bars of life, so be careful and use the mobility to avoid powerful attacks. You can also dive bomb foes with the stomp which can be an effective tactic against grounded foes that would otherwise be difficult to hit from the air with your missiles. You can also drop two of whatever Napalm Vile has equipped from the mech's feet, with DOWN + SPECIAL, though the cooldown is twice as long. Note that this Ride Armor will short out and self destruct in 15 seconds if it submerges underwater.</p>
 
   <h5>Frog Ride Armor (F-Type)</h5>
-  <p>This Ride Armor really shines in the water, where it can launch torpedos that home in on foes, as well as swim (hold down JUMP in the water to rise upwards, which runs on a fuel meter that recharges after landing). It's no slouch on the land either, where it excels at jumping, having the highest jump of all Ride Armors, and, naturally, being well suited for stomping on enemies. However its mobility on land is compromised as it cannot walk, only jump. The torpedos won't travel forward when shot on land but will still drop straight down so you can drop them on enemies below you; combine this with stomps for extra damage output. Note that this Ride Armor only has 24 bars of life, so avoid taking too much damage if you can. It also has no arms so cannot punch.</p>
+  <p>This Ride Armor really shines in the water, where it can launch torpedos that home in on foes, as well as swim (hold down JUMP in the water to rise upwards, which runs on a fuel meter that recharges after landing). It's no slouch on the land either, where it excels at jumping, having the highest jump of all Ride Armors, and, naturally, being well suited for stomping on enemies. On land, it can only jump, not walk, but you will jump higher on every consecutive jump, for up to 3 jumps, and can jump further by holding down the DASH key. The torpedos won't travel forward when shot on land but will still drop straight down so you can drop them on enemies below you; combine this with stomps for extra damage output. Note that this Ride Armor only has 24 bars of life, so avoid taking too much damage if you can. It also has no arms so cannot punch. However, it comes with a ground pound move (DASH + DOWN in the air) which can crush enemies below you and send enemies in the air straight down. Even if it misses, grounded enemies will get knocked off their feet if they are close to the shockwave.</p>
 
   <h4>Vile MK-II</h4>
-  <p>After dying as "normal" Vile, if you have 5 scrap, you can revive yourself on the spot as Vile MK II (press the Special button on the respawn screen). Vile MK II comes with improved specials: his stun shot now shoots stun missiles that deal 1 damage in addition to stunning, his rocket punch homes in on targets, his air bombs turns into a barrage of stun shots that deal 1 damage, and his napalm turns into a moving flame piller that can burn enemies and leaves behind a trail. He also gains access to an additional special move, the health-leeching grab, that can be activated with DASH + SPECIAL. If you grab a foe, you can drain up to 6 damage at the rate of 1 damage every half second, but this move can be mashed out of and leaves Vile vulnerable, so be careful. The grab's damage ignores defense boosts. Note that the grab will not work if done in a spot that would clip the victim into a wall or other obstacle.</p>
+  <p>After dying as "normal" Vile, if you have 5 scrap, you can revive yourself on the spot as Vile MK II (press the Special button on the respawn screen). Vile MK II has greatly lower cooldown on most of his moves. He also gains access to an additional special move, the health-leeching grab, that can be activated with DASH + SPECIAL. If you grab a foe, you can drain up to 6 damage at the rate of 1 damage every half second, but this move can be mashed out of and leaves Vile vulnerable, so be careful. The grab's damage ignores defense boosts. Note that the grab will not work if done in a spot that would clip the victim into a wall or other obstacle.</p>
   <p>Vile MK-II also comes with a shield on his back that reduces damage from attacks from behind by 50%. It also prevents Vile from flinching from attacks from behind. If an attack deals one damage, it is blocked completely. The shield even protects Vile's back in Ride Armors. Try to take advantage of this passive trait whenever possible and turn your back to your enemies when your weapons or specials are on cooldown.</p>
   <p>As Vile MK-II, if you have 10 scrap, you can even summon the mighty Goliath Ride Armor! This armor functions similary to the N-type, except it deals more damage, has a dash punch (hold down ATTACK while dashing), and has a ranged attack (press the SPECIAL button in the mech).</p>
 
+ <h4>Vile Body Armor Upgrades</h4>
+ <p>Vile has two armors he can equip at the cost of scrap, similar to X, in the Upgrade Armor in-game menu. Here are the armors below:</p>
+ <ul>
+  <li><b>Frozen Castle</b>: 5 scrap. By utilizing a thin layer of ice, this armor reduces damage by 25%. The ice attribute makes the armor ineffective against fire attacks, which will temporarily disable the armor until the burn effect ends.</li>
+  <li><b>Speed Devil</b>: 5 scrap. A layer of atmospheric pressure increases Vile's movement speed by 10%. Unlike with X's boots, Vile's speed is increased everywhere, not just for ground or air dashes, and the speed carries over on dash jumps.</li>
+</ul>
+
   <h4>Strategy/remarks</h4>
-  <p>Outside of his mech, Vile has capable ranged weapons, but requires use of his special abilities to get the most damage out of them. You'll want to stun enemies and then combo them with a series of quick attacks in succession, such as a napalm + cannon blast + rocket punch, or a stun shot + napalm + vulcan burst.</p>
+  <p>Outside of his mech, Vile has capable ranged weapons, but requires use of his special abilities to get the most damage out of them. You'll want to stun enemies and then combo them with a series of quick attacks in succession, such as a napalm + cannon blast + rocket punch, or a stun shot + napalm + vulcan burst. Vulcan is really damaging but eats up ammo quick, so try to use it judiciously.</p>
   <p>Inside of his mech, Vile can really shine as a "tank" type character, soaking up damage for the team and protecting allies on the front lines, while serving as a diversion and front-line brawler while your teammates can score free hits from a safe distance. Mechs are also a great counter to Zero, but less effective against Axl. Smart foes will try to target your exposed head sticking out of the cockpit seat. To counter this weakness, press down arrow to have Vile duck inside of the mech, which protects Vile's life bar. However, you cannot move when hiding like this, only punch, so expect alert foes to back up out of melee range and try to whittle down your ride armor health. You can try to counter this by popping out of your mech and shooting your stun shot to take advantage of their further range.</p>
+  <p>Vile MK-II can deal serious damage with his grab, followed up by cannon shots + a rocket punch finisher on the hapless enemy. His faster rate of fire ensures that weapons like the Front-Runner cannon have a better chance to shine than his un-upgraded form. However, most Vulcans don't get any boosts from MK-II, so it's not as useful in this mode than in Vile MK-I. Reviving as MK-II at the right time can be pivotal for your team, allowing capturing or defending a critical objective. But in other situations it could be a waste of 5 scrap and cause you to quickly get killed, so time your revives carefully.</p>
  
 <h4>X Matchup</h4>
 <p>Outside of a mech, fight X players carefully. You both have primarily ranged attacks, but X can be faster, stronger and more defensive with enough armor upgrades. Try to match upgraded X armors with either Ride Armors or MK-II to keep up with his rising power level.</p>
@@ -469,13 +656,15 @@ button img {
   <li>Ice Gattling: No rev time, and freezes enemies immediately. Gaea Shield lasts twice as long.</li>
   <li>Flame Burner: Burn time applied per hit is much longer. Also spreads mini-flames on floors and walls.</li>
 </ul>
+<p><b>Stealth Mode</b></p>
+<p>This is a second hyper mode that can be swapped with White Axl in the loadout menu for Axl. It trades raw offensive power for defense and stealth, fully cloaking and rendering Axl invisible and invincible to enemies while the effect lasts (much like charged Chameleon Sting). However, Axl can still attack and shoot all his weapons while cloaked, making it effective at damaging enemies without retaliation, forcing them to flee.</p>
 
 </p>
 
 <h4>Strategy/remarks</h4>
 <p>As you'd expect from a former Red Alert assassin, Axl is a character that specializes in infiltration, sabotage, and eliminating key threats. His ability to aim his shots anywhere on the screen at range (unlike X) make him quite effective at taking out foes causing major issues for the team, such as Vile players in Ride Armors (who are easily dispatched as all hits to Vile in the Mech count as headshots). In objective modes, use his Copy Shot ability to sneak behind enemy lines. Try to act like the enemy team while disguised, while making your way to the objective. Assassinate key threats causing trouble for the team, such as Viles in Ride Armors, Golden X's, etc.</p>
 <p>In FFA modes, Axl can also be devastating in the hands of a skilled aimer, able to pick off opponents with ease. Your Copy Shot is great not only for getting kills, but for the ammo refills it provides during the transformation.</p>
-<p>Axl, however, is not without his weaknesses. He does require a lot of skill, aim and multitasking to play and is not recommended for beginners. As a ranged specialist, Axl has trouble with melee attackers that can quickly close the distance due to Axl's minimum range (he can't hit enemies too close).However, Axl is lethal in the hands of a master, and player skill can make up for most of his weaknesses.</p>
+<p>Axl, however, is not without his weaknesses. He does require a lot of skill, aim and multitasking to play and is not recommended for beginners. As a ranged specialist, Axl has trouble with melee attackers that can quickly close the distance due to Axl's minimum range (he can't hit enemies too close). However, Axl is lethal in the hands of a master, and player skill can make up for most of his weaknesses.</p>
 
 <h4>X Matchup</h4>
 <p>If X is using the Max chest armor or Rolling Shield, he'll be able to significantly reduce damage from your rapid fire options, so use the Plasma Gun's primary fire to dispel these barriers before launching a rapid-fire barrage. Alternatively, focus on damaging him with burst damage options such as Blast Launcher explosions. You can also hit him in the head with an assassin's bullet, which will immediately eliminate him before his barrier can kick in, but this is not effective against Rolling Shield. The assassination is also effective for dealing with Golden X's causing trouble, bypassing his head chip healing completely. Spiral Magnum is a good answer to armored X's as well, since the primary fire ignores enemy defense boosts.</p>
