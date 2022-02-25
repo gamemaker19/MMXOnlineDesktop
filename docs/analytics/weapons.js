@@ -95,7 +95,16 @@ var zeroWeaponMap = {
 	"ZSabercrouch": "ZSaber",
 	"ZSaberdash": "ZSaber",
 	"ZSaberladder": "ZSaber",
-	"ZSaberslide": "ZSaber"
+	"ZSaberslide": "ZSaber",
+	"AwakenedAura": "AwakenedAura",
+	"CFlasher": "CFlasher",
+	"Gemnu": "Gemnu",
+	"QuakeBlazer": "QuakeBlazer",
+	"QuakeBlazerFlame": "QuakeBlazerFlame",
+	"Rising": "Rising",
+	"Shingetsurin": "Shingetsurin",
+	"ShinMessenkou": "ShinMessenkou",
+	"ZSaberProjSwing": "ZSaberProjSwing",
 };
 
 var vileWeaponMap = {
@@ -118,7 +127,23 @@ var vileWeaponMap = {
 	"StunShot": "StunShot",
 	"VileBomb": "VileBomb",
 	"VileMK2Grab": "VileMK2Grab",
-	"Vulcan": "Vulcan"
+	"Vulcan": "Vulcan",
+	"BuckshotDance": "BuckshotDance",
+	"DistanceNeedler": "DistanceNeedler",
+	"FatBoy": "FatBoy",
+	"InfinityGig": "InfinityGig",
+	"MechFrogGroundPound": "MechFrogGroundPound",
+	"MechFrogStompShockwave": "MechFrogStompShockwave",
+	"NapalmGrenadeSplashHit": "NapalmGrenadeSplashHit",
+	"NapalmSplashHit": "NapalmSplashHit",
+	"NecroBurst": "NecroBurst",
+	"NecroBurstShrapnel": "NecroBurstShrapnel",
+	"PeaceOutRoller": "PeaceOutRoller",
+	"PopcornDemon": "PopcornDemon",
+	"PopcornDemonSplit": "PopcornDemonSplit",
+	"SpoiledBrat": "SpoiledBrat",
+	"VileMissile": "VileMissile",
+	"LongshotGizmo": "LongshotGizmo",
 };
 
 var axlWeaponMap = {

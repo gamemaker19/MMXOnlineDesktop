@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 14.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 14.0: The Sigma Update</h1>
+
+<p>The Day of Σ finally arrives, with Commander Sigma becoming the final playable character in MMXOD! At last, the main antagonist of the X series is now an official character, along with his Mavericks. Sigma's gameplay is unique amongst the cast in that he can summon various Mavericks as sub-characters, each with their own small but focused moveset. Sigma can issue commands to these Mavericks or even take full control of them on the battlefield.</p>
+
+<p>X has risen and adapted to this new threat as well. He can now unleash his mysterious Unlimited Potential, a new hyper mode for unarmored X, to combat his nemesis. X also gets a few other powerful new options in this update, such as an optional X6-esque Beam Saber that can be used as unarmored X only, as well as the long-requested Ultimate Armor!</p>
+
+<p>There were a lot of folks that contributed something to this update, and a lot of pre-existing fan art made this update possible, so check out the credits page if you're curious to see who did what. Thanks to all that made this update possible!</p>
+
+<h3>New Additions</h3>
+
+<ul>
+<li>
+  <p>Added Sigma as a character, along with his 8 Mavericks from X1, plus his pet wolf Velguarder.</p>
+  <ul>
+  <li>Sigma is a hybrid melee/ranged character. Swing his saber with the ATTACK key, and shoot beams from his forehead with the SPECIAL key.</li>
+  <li>Sigma's special ability is summoning Mavericks. Each Maverick costs scrap to summon, and you can configure a loadout of two Mavericks to summon onto the battlefield.</li>
+  <li>Sigma has several "command modes" you can choose between, to determine how you control your summoned Mavericks.
+    <ul>
+      <li><b>Summoner</b>: When summoned, Mavericks attack on their own. Mavericks cost 3 scrap in this mode.</li>
+      <li><b>Puppeteer</b>: When summoned, Mavericks can be controlled directly. Mavericks cost 3 scrap in this mode.</li>
+      <li><b>Striker</b>: When summoned, Mavericks attack once, then leave. Mavericks don't cost scrap in this mode.</li>
+      <li><b>Tag Team</b>: When summoned, Mavericks swap out with Sigma, becoming fully playable as a standalone character. Mavericks cost 5 scrap in this mode.</li>
+    </ul>
+  </li>
+
+  <li>Mavericks have special interactions with certain other Maverick and X weapons:
+    <ul>
+      <li>Each Maverick is weak to both an X weapon and another Maverick weapon.</li>
+      <li>Each Maverick has attacks that are strong against both an X weapon and another Maverick.</li>
+      <li>If X kills a Maverick, he will gain their special weapon in his inventory for the rest of his current life, or, if he already has it, its ammo will be fully replenished.</li>
+    </ul>
+  </li>
+  <li>Sigma's Hyper Mode is Wolf Sigma (the final boss form from MMX1) and is a 10-scrap revival-based hyper mode. Activate it upon death have Sigma's head pop off and attach itself to an enormous, fearsome wolf suit! Though this suit is immobile, you'll be able to move the hands around to reach enemies off-screen.</li>
+  <li>See more info on Sigma and his Mavericks/Command Modes in the new Sigma character guide: <a href="../characters.html?character=sigma">Character Guide</a></li>
+  </ul>
+</li>
+
+<li>
+  <p>Added Unlimited Potential, a 10-scrap revival-based hypermode exclusive to unarmored X. Activate by pressing SPECIAL immediately after dying to begin the revival process. After a sequence with Dr. Light's spirit, X's unlimited evolutionary potential will kick in, refilling his health and ammo, and granting him the following properties:</p>
+  <ul>
+    <li>X-buster shoots level 2 shots by default. For special weapons, fire rate is doubled.</li>
+    <li>Charge speed is doubled.</li>
+    <li>Can shoot and charge at the same time.</li>
+    <li>Lasts until death, but X's health will drain at a rate of 1 bar per second. X will die after his health drains to 0.</li>
+    <li>Gives X a command grab activated the same way as Mk-II Vile's, that can leech health from enemies. Use this move to prolong the hyper mode for as long as possible. The grab can even affect other hyper modes.</li>
+  </ul>
+</li>
+
+<li>
+  <p>Added Ultimate Armor for X. In MMXOD, the Ultimate Armor grants the effects of all three X armors and all four X3 chips when activated! It's so powerful that it can only be activated once per match. There are two ways to activate Ultimate Armor X:</p>
+  <ul>
+    <li>Buy every single armor part for all 3 armors. The Ultimate Armor then becomes available for activation with SPECIAL button. After dying with the Ultimate Armor, you'll have to wait 60 seconds before you can activate it again.</li>
+    <li>With the Gold Armor equipped, you can upgrade further to the Ultimate Armor for 10 scrap with SPECIAL button.</li>
+  </ul>
+  <p>In addition to all the X armors and chips, the Ultimate Armor also grants the following effects:</p>
+  <ul>
+    <li>Grants X the Nova Strike, a powerful tackle that makes X invulnerable when it's used. It can even be aimed up or down.</li>
+    <li>Allows X to hover in the air, like Axl, by pressing JUMP in midair. If you hold JUMP, you can hover backwards.</li>
+  </ul>
+</li>
+
+<li>
+  <p>X can now re-equip any armor part previously purchased in a match, without having to rebuy it, if unequipping the part or purchasing the part from a different set. This makes armor mixing and mid-match armor swaps a more viable strategy.</p>
+</li>
+
+<li>
+  <p>Unarmored X can now equip the X6 Beam Saber in the loadout menu. Press SPECIAL to swing it for 3 damage, or 2 damage in the air. If equipped, X won't be able to upgrade his armor.</p>
+</li>
+
+<li>
+  <p>Added two new maps: X-hunter 2 (a large map), and Doppler 1v1 (where MK-II Vile was fought in MMX3).</p>
+</li>
+
+</ul>
+
+<h3>Misc improvements/changes</h3>
+
+<ul>
+<li>Added a new dynamic "music source" system to the game. Some scenarios, like Wolf Sigma and X's Unlimited Potential revive, will cause the music to change if the player is close to the music source.</li>
+<li>Tips on respawn now show targeted tips based on your current character.</li>
+<li>Cleaned up various sprite animations.</li>
+<li>Various maps have had their corrider heights increased to make them more maneuverable for Sigma and his Mavericks, as well as Ride Armors.</li>
+<li>Camera shaking effects are now experienced by other players as well if they are close enough.</li>
+<li>X no longer loses charge progress when cycling over empty weapon.</li>
+<li>Bots will now mash a random amount when hit with a mashable move, better simulating the behavior of human opponents.</li>
+<li>The flag will now be dropped if somehow picked up in a state that should prevent it (White Axl, Black Zero, UP X). This prevents an exploit where these modes could carry the flag.</li>
+<li>Speed Devil armor will now give Vile a purple trail effect.</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+  <li>Fixed Axl scope zoom issues by no longer constraining the camera to no-scroll zones.</li>
+  <li>Fixed an Axl weapon switch exploit with fast inputs/turbo macros.</li>
+  <li>Fixed a bug where characters could dash backwards in midair.</li>
+  <li>Fixed a bug where Vile sometimes couldn't jump out of ride armors if colliding with certain map areas.</li>
+  <li>Fixed a bug where Frozen Castle upgrade gave both defense and speed, and Speed Devil upgrade wouldn't give speed.</li>
+  <li>Fixed a bug where Speed Burner wouldn't cause any recoil damage.</li>
+  <li>Fixed a bug where X couldn't ride the charge Shotgun Ice sled.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>General</p>
+<ul>
+  <li>Significantly reduced mashing requirements when low on health.</li>
+  <li>Burn damage can no longer grant assists. It must cause the killing blow to award kills/scrap to players.</li>
+  <li>Increased Zero and Vile's crouch hitboxes to better match their sprite height, which will make them more vulnerable to moves such as Assassination and Rocket Punch.</li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>X-Buster: Level 3 (yellow) charge shot now only deals half flinch.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Headbutt now has a flinch cooldown of 1 second.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Homing Torpedo shoot cooldown decreased from 0.75 to 0.625.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Homing Torpedo ammo usage increased to 2.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Uncharged Storm Tornado no longer pushes, but now deals damage again. This distinguishes it from Storm Eagle's Storm Tornado, which pushes but deals no damage (like in the real MMX1).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Storm Tornado ammo usage increased to 2.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Charged Boomerang Cutter hitboxes were tweaked to better match the animation. This should make both aiming and dodging the boomerangs less confusing and more consistent.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Shotgun Ice now freezes instantly on contact.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Shotgun Ice sled no longer damages enemies or falls to the ground until it is fully formed.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Uncharged Spin Wheel reworked. No longer deals 3 damage before disappearing; instead, it works much like Tornado Fang, slowing down both itself and foes on contact, dealing multiple quick hits of 1 damage.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Spin Wheel ammo usage increased to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Crystal Hunter ammo usage increased to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Strike Chain range and pull speed reduced while carrying the flag.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Acid Burst shoot cooldown reduced from 0.75s to 0.5s.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Parasitic Bomb effect no longer lost on mini-flinch.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Parasitic Bomb can now be used with Double Buster and Hyper Charge.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Spinning Blade now has a flinch cooldown of 1 second.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Ray Splasher no longer shoots randomly but in a cone pattern, much like uncharged.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Ray Splasher health reduced from 6 to 4.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Ray Splasher now only lasts 4 seconds, and can only have one on the map at a time.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Gravity Well now has a gravitational effect again. However, its radius has been greatly reduced since 11.7, only affecting enemies that are actually making contact with and taking damage from the well hitbox itself. In addition, the gravitational effect will completely halt y-axis momentum, making it harder to drop foes in pits with it.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Gravity Well can now be manually opened up by pressing SHOOT, without having to wait for it to come to a complete stop.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Gravity Well behavior reworked to match the X3 behavior. The well will now return to X after spending its max time on the map. It must return to X before he can shoot another Well.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Gravity Well can now be retracted manually by pressing SHOOT when it's still active.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Gravity Well ammo usage increased to 2.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Gravity Well now damages enemies carried into the ceiling if they hit it at a certain speed.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Frost Shield ground spikes can now be damaged by any weapons that can damage cracked walls, in addition to all fire attacks. Each spike has 4 hit points.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Frost Shield ammo usage increased to 2.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Tornado Fang now deals flinch, but now has a flinch cooldown of 1 second.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Tornado Fang damage reduced from 2 to 1.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>All armor costs reduced from 2 head / 6 body / 4 arm / 3 boots, to 1 head / 3 body / 4 arm / 2 boots.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>X1 chest now reduces flinch time by using a shorter flinch animation.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>X1 chest damage reduction reduced from 1/4 to 1/8.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>X3 chest damage reduction reduced from 50% blue / 75% orange to 25% blue / 50% orange.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Head chip can no longer heal X when invisible.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Cross Shot: balls from second part now only deal 1 damage and no flinch, but all 4 can hit at once for a total of 4 extra damage.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hyper Charge slot setting change now applies after the next respawn, without having to leave the match anymore.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hyper Charge cooldown reduced by half for X-Buster only.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyper Charge behavior for the following weapons was reworked: Chameleon Sting, Rolling Shield, Bubble Splash. No longer preserves the effect of these weapons' charge shots by switching from them to Hyper Buster and vice versa. Instead, using Hyper Charge on these weapons will simply switch to that weapon before activating the charged effect.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Hyper Charge no longer flashes X's arms when it can be fired, as this can now cause confusion with the new Unlimited Potential hyper. Instead, like in MMX3, X will have a special charge effect when the weapon is active.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Reduced Gold Armor cost to 5 scrap, and can now earn scrap on kills.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Gold Armor Beam Saber hitboxes improved to better match the animation; now hits above and behind X as well.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gold Armor beam saber attack damage reduced from 8/4 to 4/4.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gold Armor no longer immune to DoT effects like burn and acid.</li>
+
+</ul>
+
+<p>Zero</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Zero can no longer double jump or use midair Rising with the flag.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero's Shingetsurin now costs 1 scrap to shoot.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero's Shin Messenkou now runs on a meter that fills on damage taken, like with his other Giga Attacks.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Black Zero saber swings now go through all shields (Frost Shield, Gaea Shield, etc).</li>
+</ul>
+
+<p>Vile</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Longshot Gizmo damage reduced from 2+2+2+2+2 to 3+2+1+1+1 (from 10 max to 8 max).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Longshot Gizmo no longer recovers E-bar while it's being used. Firing all 5 shots will leave Vile with a completely empty E bar.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fat Boy projectile energy cost increased to 24.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fat Boy projectile speed and range reduced.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Humerus Crush and Popcorn Demon can now damage cracked walls.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Humerus Crush speed and range increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Spoiled Brat now deals half flinch on hit, with a flinch cooldown of 1 second.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Infinity Gig now can aquire targets mid-flight.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fire Grenade burn time per hit reduced to 1.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Air Bomb explosions and bombs can now both deal damage at once. This increase the damage potential of the move.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Peace Out Roller hit cooldown increased from 0.15s to 0.5s. This makes it only capable of hitting the same foe once.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Frog Armor can now jump out of deep water by holding UP before jumping (like with Launch Octopus).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Frog Armor jump height reduced while carrying the flag.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Speed Devil armor now increases speed by 15% (was 10%).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile MK-II grab now has super armor.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile MK-II grab hitbox size increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Vile MK-II grab time increased to 4 seconds max.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Goliath Armor now has 64 HP that comes in two "layers" of 32 HP each. The first layer acts as a shield and shows up as blue bars overlayed on the health meter. This shield layer will take hits for the Goliath Armor, and when it's empty, the Goliath Armor's real hit points will be exposed. The shield can even absorb insta-kill moves like Hadouken, protecting the Goliath from immediate destruction. However, the shield layer can't be healed.</li>
+</ul>
+
+<p>Axl</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Copy Shot now maxes out at 4 damage at yellow charge. Red charge won't increase the damage or speed and its only difference from yellow charge now is the ability to activate Hyper Modes.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Splash Laser now deals 1 damage per hit.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Explosion damage reduced to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Reduced Explosion self knockback with flag.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Black Arrow cooldown decreased from 0.5s (1s alt) to 0.4s (0.8s alt).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Wind Cutter damage increased to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wind Cutter ammo increased to 4.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Moving Wheel start damage reduced to 3.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Bound Blaster sonar beacons now last twice as long.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Volt Tornado cooldown now activated after shooting Plasma Gun primary fire.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Volt Tornado now lasts a shorter amount of time after moving forward.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Gaea Shield can now reflect projectiles.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Gaea Shield can no longer be destroyed by Rolling/Frost Shield.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Ice Gattling rev alt fire now revs the minigun twice as fast.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Burner ammo usage increased by 50%.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Burner range reduced, and no longer passes through enemies.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Airblast self knockback reduced by 33%, and more when carrying the flag.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Airblast now deals 33% more knockback to enemies, and grounded enemies won't have knockback resistance.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Airblast can now reflect missile-type weapons, such as Homing Torpedo, Vile and Ride Armor missiles, and Blast Launcher grenades.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Can no longer hover while carrying the flag.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Stealth Mode's reveal time on shoot was reduced by half.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Stealth Mode reworked to behave like Awakened Zero. It no longer consumes 10 scrap immediately, but drains it over time, lasting for as long as Axl has scrap. In addition, Axl can now cancel Stealth Mode by charging up Copy Shot all the way.</li>
+</ul>
+
+</body>
+</html>

@@ -7,7 +7,11 @@
   <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
 </head>
 <body>
-
+<style>
+.selected {
+  border: 1px solid blue;
+}  
+</style>
 <h1>Character Win Rates</h1>
 
 <!-- The Sign-in button. This will run `main()` on success. -->
@@ -22,25 +26,25 @@
     <button onclick="onQueryCharClicked('dm_unique_win_rate_AxlCursor')">Axl Cursor</button>
   </div>
 
+  <h1 id="title"></h1>
+
   <div id="char-options" style="display:none">
-    <button onclick="setWinThreshold(0)">Win Threshold 0</button>
-    <button onclick="setWinThreshold(1)">Win Threshold 1</button>
+    <button id="wt0" class="selected" onclick="setWinThreshold(0)">Win Threshold 0</button>
+    <button id="wt1" onclick="setWinThreshold(1)">Win Threshold 1</button>
     <br>
-    <button onclick="setGameThreshold(1)">Game Threshold 1</button>
-    <button onclick="setGameThreshold(2)">Game Threshold 2</button>
-    <button onclick="setGameThreshold(3)">Game Threshold 3</button>
+    <button id="gt1" class="selected" onclick="setGameThreshold(1)">Game Threshold 1</button>
+    <button id="gt2" onclick="setGameThreshold(2)">Game Threshold 2</button>
+    <button id="gt3" onclick="setGameThreshold(3)">Game Threshold 3</button>
     <br>
-    <button onclick="setCountPlayerOnce()">Count players once</button>
+    <button id="cpo" onclick="setCountPlayerOnce()">Count players once</button>
   </div>
 </div>
-
-<h1 id="title"></h1>
 
 <!-- The API response will be printed here. -->
 <!--<textarea cols="80" rows="5" id="query-output"></textarea>-->
 <pre id="file-content"></pre>
 
-<script src="querier.js?v=3"></script>
+<script src="querier.js?v=4"></script>
 <script>
 
 function main() {
@@ -48,11 +52,17 @@ function main() {
 }
 
 function onQueryCharClicked(actionName) {
-  document.getElementById('char-selector').style.display = 'none';
+  // document.getElementById('char-selector').style.display = 'none';
   document.getElementById('char-options').style.display = 'inline-block';
   var pieces = actionName.split('_');
   document.getElementById('title').innerHTML = pieces[pieces.length - 1];
   queryReports(actionName, onResult);
+  document.getElementById("wt0").classList.remove("selected");
+  document.getElementById("wt1").classList.remove("selected");
+  document.getElementById("gt1").classList.remove("selected");
+  document.getElementById("gt2").classList.remove("selected");
+  document.getElementById("gt3").classList.remove("selected");
+  document.getElementById("cpo").classList.remove("selected");
 }
 
 function onResult(response) {
@@ -74,16 +84,28 @@ function onResult(response) {
 
 function setWinThreshold(num) {
   window.winThreshold = num;
+  document.getElementById("wt0").classList.remove("selected");
+  document.getElementById("wt1").classList.remove("selected");
+  if (num === 0) document.getElementById("wt0").classList.add("selected");
+  if (num === 1) document.getElementById("wt1").classList.add("selected");
   window.resultFunction();
 }
 
 function setGameThreshold(num) {
   window.gameThreshold = num;
+  document.getElementById("gt1").classList.remove("selected");
+  document.getElementById("gt2").classList.remove("selected");
+  document.getElementById("gt3").classList.remove("selected");
+  if (num === 1) document.getElementById("gt1").classList.add("selected");
+  if (num === 2) document.getElementById("gt2").classList.add("selected");
+  if (num === 3) document.getElementById("gt3").classList.add("selected");
   window.resultFunction();
 }
 
 function setCountPlayerOnce() {
   window.countPlayerOnce = !window.countPlayerOnce;
+  document.getElementById("cpo").classList.remove("selected");
+  if (window.countPlayerOnce) document.getElementById("cpo").classList.add("selected");
   window.resultFunction();
 }
 
@@ -161,10 +183,14 @@ function convert(response) {
 
   if (!window.countPlayerOnce) {
     var avgWinRate = (totalWinRate/totalCount).toFixed(2);
+    var totalDisplay = totalCount;
   } else {
     var avgWinRate = (totalWinRate2/totalCount2).toFixed(2);
+    var totalDisplay = totalCount2;
   }
-  return "Average: " + avgWinRate + "\n" + JSON.stringify(sortDict(nameToWinrate), null, 2);
+  return "Average: " + avgWinRate + "\n" +
+    "Total: " + totalDisplay + "\n" +
+    JSON.stringify(sortDict(nameToWinrate), null, 2);
 }
 
 function sortDict(dict) {

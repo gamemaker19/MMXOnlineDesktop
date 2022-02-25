@@ -34,8 +34,8 @@
 <textarea cols="80" rows="5" id="query-output"></textarea>
 <pre id="file-content"></pre>
 
-<script type="text/javascript" src="weapons.js?v=2"></script>
-<script src="querier.js?v=6"></script>
+<script type="text/javascript" src="weapons.js?v=3"></script>
+<script src="querier.js?v=7"></script>
 <script>
 
 function main() {
@@ -75,6 +75,7 @@ function displayContents(response) {
 
 function convert(response) {
 
+  var weaponsNotFound = [];
   var xWeapons = {};
   var zeroWeapons = {};
   var vileWeapons = {};
@@ -107,8 +108,7 @@ function convert(response) {
       incWep(axlWeapons, window.splitByWeapon ? name : axlWeaponMap[name], count, total);
     }
     else if (name !== "Burn") {
-      alert("Weapon " + name + " not found!");
-      throw "Weapon not found";
+      weaponsNotFound.push(name);
     }
   }
 
@@ -130,6 +130,11 @@ function convert(response) {
       retStr += wep.name + ": " + wep.total + "<br>";  // + " (avg: " + wep.avg.toFixed(2) + ")\n";
     }
     retStr += "</div>";
+  }
+
+  if (weaponsNotFound.length > 0) {
+    alert("Could not find one or more weapons. Check console log for details.");
+    console.log(weaponsNotFound);
   }
 
   return retStr;

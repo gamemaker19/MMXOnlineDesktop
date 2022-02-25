@@ -8,3 +8,6 @@
 10/02/2021: v11.7
 11/25/2021: v12.0
 12/04/2021: v12.3
+12/20/2021: v13.0 - Loadout update
+12/21/2021: v13.1 - Bug fixes only
+12/25/2021: v13.2 - Various nerfs to things like c-flasher, necro burst, etc.
