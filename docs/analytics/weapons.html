@@ -34,8 +34,8 @@
 <textarea cols="80" rows="5" id="query-output"></textarea>
 <pre id="file-content"></pre>
 
-<script type="text/javascript" src="weapons.js?v=3"></script>
-<script src="querier.js?v=7"></script>
+<script type="text/javascript" src="weapons.js?v=10"></script>
+<script src="querier.js?v=10"></script>
 <script>
 
 function main() {
@@ -80,6 +80,7 @@ function convert(response) {
   var zeroWeapons = {};
   var vileWeapons = {};
   var axlWeapons = {};
+  var sigmaWeapons = {};
 
   for (var row of response.reports[0].data.rows) {
     
@@ -107,6 +108,9 @@ function convert(response) {
     else if (axlWeaponMap[name]) {
       incWep(axlWeapons, window.splitByWeapon ? name : axlWeaponMap[name], count, total);
     }
+    else if (sigmaWeaponMap[name]) {
+      incWep(sigmaWeapons, window.splitByWeapon ? name : sigmaWeaponMap[name], count, total);
+    }
     else if (name !== "Burn") {
       weaponsNotFound.push(name);
     }
@@ -116,7 +120,8 @@ function convert(response) {
     sortDict(xWeapons),
     sortDict(zeroWeapons),
     sortDict(vileWeapons),
-    sortDict(axlWeapons)
+    sortDict(axlWeapons),
+    sortDict(sigmaWeapons)
   ];
 
   var retStr = "";
@@ -126,6 +131,7 @@ function convert(response) {
     if (i == 1) retStr += "<b>ZERO WEAPONS</b><br><br>";
     if (i == 2) retStr += "<b>VILE WEAPONS</b><br><br>";
     if (i == 3) retStr += "<b>AXL WEAPONS</b><br><br>";
+    if (i == 4) retStr += "<b>SIGMA WEAPONS</b><br><br>";
     for (var wep of listOfLists[i]) {
       retStr += wep.name + ": " + wep.total + "<br>";  // + " (avg: " + wep.avg.toFixed(2) + ")\n";
     }

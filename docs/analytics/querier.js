@@ -19,7 +19,7 @@ function queryReports(eventAction, onResult) {
           viewId: VIEW_ID,
           dateRanges: [
             {
-              startDate: '2021-12-25',
+              startDate: '2022-03-06',
               endDate: 'today'
             }
           ],

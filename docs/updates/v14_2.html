@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 14.2</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 14.2</h1>
+
+<h3>Bug Fixes/Improvements</h3>
+<ul>
+<li>Fixed a bug where Gaea Shield would try to reflect every single projectile in the game, as opposed to only the same ones reflectable by Zero.</li>
+<li>Fixed a bug where Gaea Shield would reflect teammate's projectiles.</li>
+<li>Fixed a bug where optimized Maverick sprite file was too big, going over the 1024x1024 pixel limit, by splitting it into 3.</li>
+<li>Fixed a bug where Sigma could get stuck in a slash loop if attacking right when touching the ground after a wall dash.</li>
+<li>Fixed a bug where Unlimited Potential X would permanently remain in the "flattened" visual state after getting stomped.</li>
+<li>Fixed a bug where Hyper Charge could be used with the flag.</li>
+<li>Fixed a bug where Maverick weaknesses weren't applying against X, or against other Mavericks.</li>
+<li>Fixed a bug where Wolf Sigma head Z-Index ordering could sometimes be rendered below the suit.</li>
+<li>Fixed a bug where Wolf Sigma would play the win animation even on a loss.</li>
+<li>Fixed a bug where Tag-Team Sigma sometimes couldn't switch back to Sigma (or to another Maverick).</li>
+<li>Fixed a bug where Flame Mammoth could use fire and oil underwater.</li>
+<li>Fixed a bug where health bars would not show for Unlimited Potential.</li>
+<li>Fixed several occurrances of revive animations blocking projectile shots.</li>
+<li>Fixed a bug where kills and scrap would not be earned on killing Mavericks.</li>
+<li>Maverick deaths no longer count as Sigma deaths, which was confusing and also caused issues in Elimination.</li>
+<li>Fixed a bug where Wolf Sigma would not credit scrap/kill. In addition, this bug may fix or help reduce a long running issue with kills not crediting on laggy players.</li>
+<li>Fixed a bug where Dead Lift, Energy Drain, Unlimited Potential Grab, and Gravity Well could affect cc-immune hyper modes.</li>
+<li>Fixed a bug where some new melee attacks introduced in 14.0 (X6 Saber, Maverick melee moves, etc) favored both attacker and defender, causing lag issues.</li>
+<li>Fixed a bug with Maverick name and healthbar labels double-rendering on allies.</li>
+<li>Fixed a bug where Sigma couldn't be selected as a preferred character in Settings.</li>
+<li>Fixed a visual bug with Rekkoha pillars.</li>
+<li>Fixed a bug where Unlimited Potential X could equip armors.</li>
+<li>Fixed a bug where Longshot Gizmo could cancel command grabs.</li>
+<li>Fixed a bug where Vile crouch frames and other animations could sometimes result in shooting a "ghost" cannon shot that consumes ammo but doesn't actually fire a shot.</li>
+<li>Fixed a bug where Mavericks could be switched to when carrying the flag.</li>
+<li>Fixed a bug where if Sigma got frozen while controlling a Maverick, he would lose control.</li>
+<li>Fixed a bug where Sting Chameleon sometimes couldn't manually uncloak.</li>
+<li>Fixed a bug where Striker summons could stay on the map forever by adding a 3-second timer before they disappear.</li>
+<li>Fixed a ceiling that was too low for Sigma in X-Hunter 1 map.</li>
+<li>Applied various sprite animation improvements for several different characters submitted by various community members. See credits for details.</li>
+
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>Mega Man X</p>
+
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Uncharged Storm Tornado: Added a minor pushback effect. This is not as strong as Storm Eagle's.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Gravity Well: Reduced pull strength.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>(Undocumented 14.0 change) Cycling over an empty weapon slot will no longer cause loss of charge.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: Reduced health drain rate by half when not shooting a weapon.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Ultimate Armor: Time between uses increased from 1 minute to 2 minutes.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Giga Crush: added a 1 second cooldown between uses.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Nova Strike: increased ammo usage from 25% to 50%.</li>
+
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Longshot Gizmo: damage is now dependent on the amount of E-bar remaining. The less E-bar, the less damage.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Longshot Gizmo: can no longer change direction when in use.</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wind Cutter: damage reduced from 3 to 2.</li>
+</ul>
+
+<p>Sigma</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Increased Guard damage reduction from 25% to 50%.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Added ladder and wall slide saber attacks.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner, Puppeteer and Tag-Team modes will now allow free re-summons if Sigma is killed when they still have health. They will be recalled with the amount of health they had when Sigma died.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Summoner/Puppeteer Maverick cost increased to 5.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Puppeteer mode now has an option in Settings that allows Sigma to control Mavericks by holding down WeaponL or WeaponR, as opposed to switching to their slot which is the default behavior. Note that with this setting on, WeaponL or WeaponR must be held to remain on a Maverick slot, or it will switch to the Sigma slot.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner/Puppeteer: by pressing DOWN + SPECIAL, Sigma can now toggle between a "follow" and "hold position" command issued to his Mavericks. The former will result in all Mavericks trying to follow him wherever he goes, and the latter will have them stay where they are. The default is "hold position".</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Mavericks now award double scrap when killed.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Mavericks can now be flinched by weaknesses.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Maverick weakness flinch cooldown added. This makes certain weaknesses like Fire Wave vs Chill Penguin more managable.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chill Penguin: added a longer cooldown to Ice Breath move.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Spark Mandrill: each move now shares the same cooldown, significantly reducing the potential attack rate.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: now loses his armor when HP reduced to half.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Launch Octopus: basic missile attack now deals 3 damage, but can only hit once, reducing the potential DPS.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Launch Octopus: Homing Torpedo range and homing strength reduced.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Boomer Kuwanger: added a grab cooldown on enemies for Dead Lift, which prevents an Infinite with low ceilings.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Boomer Kuwanger: added a cooldown to Teleport that increases the more it's used/spammed. If not used in a while the cooldown will return to original levels.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Storm Eagle: increased air speed by 25%.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Storm Eagle: Storm Tornado now deals damage. However, its damage output is half that of X's storm tornado, while it has significantly more knockback.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Storm Eagle: underwater air and dive speed reduced by 25%.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sting Chameleon: After uncloaking, there is now a cooldown before you can cloak again.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Mammoth: added a height requirement for Jump Press, and reduced the fall speed of the move.</li>
+</ul>
+
+</body>
+</html>
