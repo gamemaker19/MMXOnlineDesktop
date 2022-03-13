@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 14.4</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 14.4</h1>
+
+<p>Asset Changes? Yes</p>
+
+<h3>Additions/Improvements</h3>
+
+<ul>
+  <li>Added official support for the Developer Console, which has been an undocumented feature for a while now. This can be turned on in the Settings Menu. If enabled, Developer Console commands can be run by pressing the BACKQUOTE key in a match. These can be useful for testing and experimentation, but most commands can't be run in online matches to prevent cheating. See the developer console documentation page for more notes and commands: <a href="../developerconsole.html">Developer Console</a></li>
+  <li>Sigma can now summon Mavericks in 1v1, but can only use Striker command mode.</li>
+  <li>The enemy AI's loadout in Training now matches that of the player, allowing for easier testing.</li>
+  <li>Added a setting to allow full sprite mods (such as adding/removing frames, POIs/hitboxes, etc). To prevent gameplay tampering, if this setting is turned on, you can't play online; only offline bot matches are supported.</li>
+  <li>The "Use Optimized Assets" setting now defaults to "No" unless the user's preset graphics config was set to low or medium.</li>
+  <li>Added a setting, "Matchmaking Timeout", that controls timeout to matchmaking network calls. This defaults to 3 seconds. (Before, the timeout was 20 seconds and not configurable so on a server outage, it would take forever to load matches in Join Server menu.) It can be decreased to reduce the amount of time it takes to fetch the match list during server outages, but if set too low, matchmaking calls may fail even if servers are up.</li>
+  <li>Added additional X/Zero/Axl sprite fixes and improvements provided by Bozo.</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+  <li>Made some improvements in the server code to help prevent random server crashes.</li>
+  <li>Made some improvements in the netcode to help fix lingering i-frame issues on respawn.</li>
+  <li>Fixed a bug where the Mavericks' initial move in Striker/Summon modes was inconsistent if using the ATTACK key.</li>
+  <li>Fixed an exploit where Awakened Zero could quickly launch z-saber projectiles on ladders.</li>
+  <li>Fixed a bug where Assassination couldn't be charged with Sigma disguise.</li>
+  <li>Vile's Vulcans now will only recharge when not in the shoot animation. This fixes an exploit where Vulcan could dish out near-normal amounts of DPS by rapidly pressing SHOOT even when E-empty was empty.</li>
+  <li>Fixed a bug where Back Shield could block Unlimited Potential and Launch Octopus drain attacks.</li>
+  <li>Fixed a bug where Axl could shoot a copy shot in invuln frames.</li>
+  <li>Fixed a bug where Chill Penguin blizzard could push cc-immune hyper modes.</li>
+  <li>Fixed a bug where cloaked Sting Chameleon could die from environmental hazards.</li>
+  <li>Fixed a bug where Gravity Well could pull things it shouldn't be able to pull, such as destructable walls.</li>
+  <li>Fixed a bug where Armored Armadillo would not play explosion animation/sounds if killed with no armor.</li>
+  <li>Fixed a bug where Mavericks could be hurt in the warp out state, causing them to enter a glitched state.</li>
+  <li>Fixed a bug where Double Buster kill feed entry was showing the X lemon shot.</li>
+  <li>Fixed a bug where charged Tornado Fang wouldn't damage cracked walls/frost shields.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>Mega Man X</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gravity Well pull power further reduced.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gravity Well time reduced to 2 seconds.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: Can now cancel Dr. Light cutscene shortly (about 2 seconds in) after it starts, by pressing SPECIAL again.</li>
+</ul>
+
+<p>Vile</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Necro Burst can now damage cracked walls.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Buckshot Dance ammo usage increased by 20%.</li>
+</ul>
+
+<p>Sigma</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Decreased sword swing cooldown from 1.25s to 1s.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Wall dash move can now be performed on the ground by pressing SPECIAL when dashing, but from the ground it's slower.</li>
+  <li><img src="../assets/images/rework.png" class="rework" title="rework"/>Sigma no longer can air-dash after a wall dash, but now has dash speed momentum after a wall dash.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner mode: Maverick cost decreased to 4.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Puppeteer mode: Maverick cost decreased to 3.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Puppeteer mode: Saber cooldown timer now runs even when controlling a Maverick.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Puppeteer mode: Sigma now guards when controlling a Maverick.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Striker mode: can now only have one Maverick on the field at a time.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Storm Eagle: Baby eagles are now destroyable.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Storm Eagle: Added a height limit to how high players can fly (matching the same behavior as Hawk).</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: If re-summoned at <50% health, armor will be removed.</li>
+</ul>
+
+</body>
+</html>

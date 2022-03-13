@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>MMXOD Developer Console</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<style>
+.vile-table th, td {
+  padding: 10px;
+  border: 1px solid white;
+  line-height: 28px;
+}
+</style>
+
+<h1>Developer Console Overview</h1>
+
+<p>The developer console is a tool that can be enabled in General Settings ("enable dev console"). Once enabled, you can bring it up in a match by pressing BACKQUOTE key on the keyboard, and type in/enter commands.</p>
+<p>There are various commands that can be used for testing, experimentation and troubleshooting. In addition, some commands can have arguments (follow the command with a space and then the argument).</p>
+<p>For example, one argument that applies to any command is "q" which instructs to quit the developer console after running the command, so running <code>die q</code> in the console will result in killing yourself and then exiting the console.</p>
+<p>The developer console can be opened in any match, offline or online, but for online matches, only a subset of commands are supported, to prevent cheating.</p>
+
+<h2>Command List</h2>
+
+<p><i>Note: the command list will grow over time, and not everything will be documented all the time.</i></p>
+
+<table class="vile-table">
+    <tr>
+      <th>Command</th>
+      <th width="250px">Arguments</th>
+      <th width="100px">Online</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>scrap</td>
+      <td>(Required) an integer</td>
+      <td>No</td>
+      <td>Gives the player the amount of scrap specified in the argument. You can provide an argument of <code>max</code> instead of an integer as a shorthand for 9999.<br/>Example: <code>scrap 10</code> to give 10 scrap to the player.</td>
+    </tr>
+    <tr>
+      <td>die</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Kills the current player.</td>
+    </tr>
+    <tr>
+      <td>diagnostics</td>
+      <td>None</td>
+      <td>Yes</td>
+      <td>Show (or hide if it's open) a window that gives various statistics about game performance. Note that the network settings won't show any data outside of debug builds, but the gameobject count and other fields can be useful for assessing framerate issues.</td>
+    </tr>
+    <tr>
+      <td>aiattack</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes all AIs press attack over and over again.</td>
+    </tr>
+    <tr>
+      <td>aijump</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes all AIs press jump over and over again.</td>
+    </tr>
+    <tr>
+      <td>aiguard</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes Zero AIs guard.</td>
+    </tr>
+    <tr>
+      <td>aicrouch</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes all AIs crouch.</td>
+    </tr>
+    <tr>
+      <td>aistop</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes all AIs stop doing anything.</td>
+    </tr>
+    <tr>
+      <td>aikill</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Kills the first AI found.</td>
+    </tr>
+    <tr>
+      <td>aiswitch</td>
+      <td>(Required) an integer<br/>(Optional) <code>a</code></li></td>
+      <td>No</td>
+      <td>Makes the first AI found switch to weapon slot number provided as argument. An additional argument of <code>a</code> will also cause the AI to start attacking after the switch.<br/>Example: <code>aiswitch 3 a</code> to have the AI switch to the third weapon slot and fire it.</td>
+    </tr>
+  </table>
+
+</body>
+</html>
