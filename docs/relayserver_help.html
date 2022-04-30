@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>MMXOD Sprite Editor Help</title>
+
+<style>
+  td {
+    padding: 5px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+<h1>MMXOD Relay Server Help</h1>
+
+<p>If you are interested in hosting low-latency LAN matches or servers, come no further. This detailed guide will explain how the Relay Server works, how to host your own servers, and more.</p>
+
+<h2 id="windows">Installation/Getting Started</h2>
+
+<p>Download the program from the Tools section of the site. As of right now, this only works on Windows 64-bit versions, and requires .NET 5 to be installed. Download .NET 5 <a target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/5.0/runtime">here</a>. Make sure you download the "Run console apps" version, x64.</p>
+
+<p>This program is a command-line utility. However, it accepts no input and is extremely simple: just open it and leave it running. If the firewall prompt comes up, enable it for private networks. That's all you need to do, and now people can connect to your server.</p>
+
+<h2>LAN</h2>
+
+<p>To host a LAN match, first run RelayServer.exe (NOT the MMX.exe file) in the unzipped folder, then create a match, choosing the "LAN" option before entering the Host Server menu. Now people on your private network can see the LAN matches you create if they choose the "LAN" option before entering the Join Server menu. It will automatically search PCs on your LAN for ones running the MMXOD Relay Server.</p>
+<p>This is not guaranteed to work, so if no results show up, players may need to connect by IP address by pressing ESCAPE. The host should type ipconfig in a Command Prompt window to obtain their IPv4 address for players to connect to. This may be the case if hosting a LAN match on a VPN or a large business-class internal network, as opposed to a typical private home network in the 192.168.1.* range.</p>
+
+<h2>Custom Online Server</h2>
+
+<p>To host a public MMXOD server (also known as a "Region" in the in-game menu jargon) you'll need a Windows 64-bit server with a public ip address. It'll need to meet certain minimum requirements: too weak or low bandwidth servers may struggle with running the Relay Server, especially with multiple concurrent matches. Simply download the Relay Server and run it on your server. Make sure you enable TCP and UDP ports 14242-14342 (this gives 100 ports/concurrent matches, go over 14342 if you need more).</p>
+<p>As long as the exe is running, people will be able to connect to your server if they add a region.txt in the game folder with an entry that points to your public server ip. Then they will connect to that region instead of the 3 official regions on startup. Here is the region.txt format (it is JSON):</p>
+<pre style="color:white">
+{
+  "name": "YOUR_REGION_NAME",
+  "ip": "YOUR_SERVER_IP"
+}
+</pre>
+
+<h2>Updating</h2>
+
+<p>Every update changelog should now indicate if a new Relay Server version must be downloaded. If so, you'll need download the update and run it on the server for clients on the new version to connect and create/join matches.</p>
+<p>If an update comes that does not require a new Relay Server version, you only will need to open overrideversion.txt in the Relay Server folder and set it to the new client version.</p>
+<p>Note that these steps are only necessary for supporting new client versions. If you have an old version of the game you are fond of, you can stay on it, and play with others in it, if you run both the old Relay Server version and the old game client versions. However you can only go as far back as 15.0, the first Relay Server public release.</p>
+
+</body>
+</html>
