@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 15.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 15.0: The LAN Update</h1>
+
+<p>At last, MMXOD is now playable on LAN! Enjoy low-lag matches you'd never get playing online, and experience the game in a whole new way.</p>
+<p>To enable LAN, the Relay Server that is required for hosting servers has been exposed to the public. This is particularly exciting as it marks a major milestone for the game, reducing dependence on the official servers. Not only can LAN matches be hosted, you can even host online matches on your own servers or VPNs that you own. Entire new, separate communities can be created by hosting non-official servers in infrastructure or VPNs of your choice. Latency can be reduced for communities not close to any of the 3 official servers (i.e. Europe, Asia).</p> <p>These new additions allow the game to continue to survive and thrive, even after it comes time for the official servers to shut down. No server will last forever, and MMXOD's are no exception, but this update ensures MMXOD can live on in the community even after its official lifespan is over.</p>
+<p>In addition to LAN, the focus of this update was improving the game's netcode and introducing new netcode models that make the game more enjoyable and less frustrating. In particular, a new "favor the defender" option is now available when hosting any online match. This is also exciting as it introduces a new skill that was previously not possible in most online matches: dodging. Dodging is at the core of most of the real Mega Man X games, and it finally becomes reliable even in laggy online matches.</p>
+
+<p>As this update is focused on netcode, it also brings along several netcode-themed bug fixes and improvements.</p>
+
+<h3>Relay Server</h3>
+
+<p>The Relay Server is now available for download in the tools section of the site: <a href="../tools.html">Tools</a>. More details can be found on that page, but this tool allows you to host your own MMXOD server. Hosting on a LAN, like a home network, allows others on the LAN to connect to your matches (see below).</p>
+
+<h3>LAN</h3>
+
+<p>You now have the option to host LAN matches. You'll need to download and run the Relay Server first. Once it's running, you can create LAN matches. Other PCs on your LAN running the game (or even a separate instance of the game on the same PC) can then join the LAN match.</p>
+
+<p>LAN mode is great for 1v1'ing a friend locally in the same home/building network, or hosting LAN parties with a group of friends in-person, for very low-latency matches (usually less than 5 ping).</p>
+
+<p>However, LAN is not limited to local networks and you can even host LAN matches over the internet on VPNs like Hamachi. While the latency will be much higher, it could still be significantly lower than using an official server, if everyone on the VPN is situated close together.</p>
+
+<h3>Custom Server Hosting</h3>
+
+<p>If you own a server with a public ip address, you can even host the Relay Server there, allowing any player in the world to connect to your public server. Players will need to put a region.txt file in the game folder that points to your server ip address to connect to your custom region. However your server has to meet certain criteria. See this help page for details: <a href="../relayserver_help.html">relayserver_help.html</a></p>
+
+<h3>New Netcode Options</h3>
+
+<p>When creating an online match, you'll now be able to set two options: "Favor the Attacker" and "Favor the Defender". Here are the differences:</p>
+
+<h4>Favor the Attacker</h4>
+<ul><li>
+<p>This is the default mode, and was the previous model used by MMXOD pre-15.0, but now has a ping threshold option. For any players under this ping threshold (defaults to 100) their attacks will connect if they hit on their screen. For players that go over this ping, their attacks will favor the defender instead (see below). This ensures that players with laggy connections don't ruin the experience for everyone. The max ping threshold that can be set is 500.</p>
+</li></ul>
+
+<h4>Favor the Defender</h4>
+<ul><li>
+<p>In this mode, attacks will only connect if they hit on the enemy (defender) screen. While it makes dodging attacks reliable, hitting targets becomes less reliable: you'll need to lead your shots on moving foes or else attacks may miss. Note that in 1v1, this mode is always applied and cannot be changed; this is to counteract the power that melee characters have in small, cramped 1v1 maps.</p>
+</li></ul>
+
+<p>Not all moves will behave consistently under these two settings. For example, defensive abilities such as Rakuhouha and Dodge Roll will still always favor the defender, no matter which setting is chosen. Axl's hitscan and headshot detection always favors the attacker. Certain command grabs will always favor the attacker but only for the health drain effect.</p>
+
+<p>Because ping is now an important detail people need to pay attention to, the main menu will now show the ping of the different regions and servers to the player, allowing them to choose the one closest to them for the most optimal gameplay.</p>
+
+</ul>
+
+<h3>Other Improvements</h3>
+
+<ul>
+  <li>Matches can now accept two additional spectators even if full at 10 players. However, they won't be able to stop spectating until there are less than 10 active players.</li>
+  <li>Added automatic AFK kicks. If no input is detected for a certain amount of time, players will be moved to spectate, or kicked if there are already 2 spectators and 10 active players.</li>
+  <li>1v1 now allows for more than 2 players, though the menu will warn you first. It is now possible to bypass this warning. Note that more than 2 players in 1v1 is not officially supported as of now and could result in strange bugs or confusing behavior.</li>
+  <li>Connectivity timeout reduced from 30 to 15 seconds.</li>
+  <li>Player attacks will no longer connect when "connectivity issues detected" is shown. However, the threshold to get into this state has been increased.</li>
+  <li>Status like acid, freeze no longer applied in defender-favored states like Dodge Roll.</li>
+  <li>The scoreboard now has netcode info such as region and netcode model.</li>
+  <li>Further reduced low health mashing requirements.</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+  <li>Fixed a bug where switching teams would always send the player to blue, which could force autobalance. Should now join team with lower player count.</li>
+  <li>Fixed a bug where Vile air bomb split projectiles wouldn't sync over the network.</li>
+  <li>Fixed a bug where Sigma hand beam projectiles wouldn't sync over the network.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>Mega Man X</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hadouken: No longer always favors the defender. It will instead respect the current netcode option.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Giga Crush: Removed cooldown, which will also fix the issue with not being able to shoot after it's used.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Ultimate Armor Reworked:
+  <ul>
+    <li>No longer grants effects of all 3 armors and 4 chips.</li>
+    <li>No longer unlocked by purchasing every armor piece in the game.</li>
+    <li>Instead, it can be purchased for 10 scrap if X has 4 armor parts equipped, applying Ultimate Armor abilities on top of the current armor set abilities.</li>
+    <li>Level 3 X-Buster now shoots the Plasma Shot, a powerful piercing shot that can leave behind 3 lingering energy balls.</li>
+    <li>Max Armor X can equip Ultimate Armor on top of Gold Armor, but X must equip the Gold Armor first.</li>
+  </ul>
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Rakuhouha: No longer always favors the defender. It will instead respect the current netcode option.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hyouretsuzan: Removed freeze restrictions.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero: If killed, will immediately lose all 10 scrap.</li>
+</ul>
+
+<p>Vile</p>
+
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Stun Shot: No longer removes charge.</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Splash Laser: Reduced DPS by half.</li>
+</ul>
+
+</body>
+</html>
