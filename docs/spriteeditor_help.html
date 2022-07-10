@@ -27,19 +27,19 @@
 
 <h2 id="windows">Installation/Getting Started</h2>
 
-<p>Download the program from the Tools section of the site, and then unzip it. Note that right now, this program is only for Windows. Run "MMXOD Editor.exe" in the program folder. Follow the prompt to select an assets folder where the program will make its edits. Afterwards, the program will load all sprites for editing. If you need to change it, edit the assetPath string in the "config.json" file that gets generated in the program folder (be sure to use forward slashes in the path), or simply delete config.json and re-run the program to select a new path in the UI.</p>
+<p>Download the editor from the Tools section of the site, and then unzip it. Note that right now, this program is only for Windows. Run "MMXOD Sprite Editor.exe" in the program folder. Follow the prompt to select an assets folder where the program will make its edits. Afterwards, the program will load all sprites for editing. If you need to change it, edit the assetPath string in the "config.json" file that gets generated in the program folder (be sure to use forward slashes in the path), or simply delete config.json and re-run the program to select a new path in the UI.</p>
 
 <p>config.json is the settings file with all persistent settings that the program uses that gets saved to disk, and you can put it in a Documents folder called "MMXOD Editor" to have the program look there instead of the program folder on startup. Otherwise you will have to copy-paste it over every time the editor gets a new update.</p>
 
 <h2>Basic Architecture</h2>
 
-<p>In MMXOD, sprite data is stored in two folders: the "assets\sprites" folder which has JSON files, each of which represents a single sprite and contains the metadata for that sprite, as well as the "assets\spritesheets" folder which has the spritesheet images that the sprites use.</p>
-
 <p>A sprite is the base entity for MMXOD graphics/rendering/drawing. It is better thought of as an animation, as it is a collection of frames. Each sprite maps to one spritesheet, and the frames are rectangles in this spritesheet. Each frame can have data such as hitboxes and the top-level sprite has top-level sprite/animation metadata.</p>
 
-<p>The editor allows you to modify the JSONs, but won't help you for modifying actual image files. For modifying the spritesheet PNGs, use an external drawing program like Photoshop, Aseprite, Paint.NET, Gimp, etc. You'll have to reload the program after saving any changes to the PNGs.</p>
+<p>In MMXOD, sprite data is stored in three folders: the "assets\sprites" folder and the "assets\sprites_visualmods" folder which has JSON files, each of which represents a single sprite and contains the metadata for that sprite, and the "assets\spritesheets" folder which has the spritesheet images that the sprites use.</p>
 
-<p>Right now only visual data modifications in the JSONs will be picked up by the game, to prevent gameplay abuse. Visual data includes things like frame image rectangles and offsets. Otherwise people could easily cheat by modding in 1-frame Raijingekis, hitboxes filling the whole screen/map, sprites or frames immune to headshots, etc. In addition, adding or removing to the frame count would not be supported by the game's netcode.</p>
+<p>The difference between "assets\sprites" and "assets\sprites_visualmods" is that changes to "assets\sprites" will change the game's checksum version, meaning you can only play online with those who made the same exact edits. So, if you just want to mod visual aspects of sprites, to get around this there's a separate folder for that, "assets\sprites_visualmods". Copy-paste into this folder the sprite JSONs you want to visually mod only, and switch the editor's context to that folder (using the "sprites_visualmods folder" button at the top menu of the editor). Only visual edits to JSONs in this folder will be respected, but you can still play online with anyone else.</p>
+
+<p>The editor allows you to modify the JSONs, but won't help you for modifying actual image files. For modifying the spritesheet PNGs, use an external drawing program like Photoshop, Aseprite, Paint.NET, Gimp, etc. You'll have to reload the program after saving any changes to the PNGs.</p>
 
 <h2>UI Component Overview</h2>
 
@@ -48,11 +48,11 @@
 <img width="1250px" src="assets/images/sprite_editor_help1.PNG" />
 
 <ul>
-  <li>1. New sprite button: Click this to add a new sprite, though it won't be of use in mods since the game will not read new custom sprites.</li>
+  <li>1. New sprite button: Click this to add a new sprite. For most mods this will not be of use since the game generally won't read new custom sprites. The one exception is custom map sprites (more on that in the Map Editor help guide).</li>
   <li>2 & 3. Filter options: enter a comma separated list of strings to filter the sprite list (#4) by. Can use the filter mode to determine matching criteria. Filters are saved between sessions.</li>
   <li>4. Sprite list: shows all the sprites meeting the filter criteria, or all sprites in MMXOD if no filter is applied. A sprite is represented by a JSON file in the sprite folder and encompasses a set of frames in a certain spritesheet. Click on a sprite to select it, which it can then be edited in the components to the right. A * appears next to a sprite name if it has unsaved changes. You can switch sprites any time without having to save it beforehand.</li>
   <li>5. Sprite display: shows the current frame of the current selected sprite, as well as any hitboxes and POIs (positions of interest). Can also play an animation of the current sprite if "Play" button is clicked in section 6.</li>
-  <li>6. Sprite properties: has a bunch of action buttons, and properties that can be changed for both the top level sprite and frame-specific ones. You generally won't change most of these for mods as they won't have an effect.
+  <li>6. Sprite properties: has a bunch of action buttons, and properties that can be changed for both the top level sprite and frame-specific ones.
     <ul>
       <li>Play button: plays the current animation. Click it again to stop.</li>
       <li>Save button: saves all changes in the current selected sprite to disk.</li>
@@ -63,14 +63,14 @@
       <li>Alignment: Specifies origin point of the sprite.</li>
       <li>Wrap mode: Specifies looping behavior of the animation.</li>
       <li>Custom Align X/Y: customizes the origin point offset.</li>
-      <li>Global/Frame Hitboxes: You can add hitboxes here, used for collision detection for attack sprites. But they don't have any effect for mods, as the game won't respect changes you make here. This is to prevent abuse like giving an attack enormous screen-filling hitboxes, etc.</li>
-      <li>Frame POIs: positions of interest defined on the frame. Used for things like projectile shoot positions, headshot origin point (flag "h"), etc. Like with hitboxes, changes here won't be respected by the game as they affect gameplay.</li>
+      <li>Global/Frame Hitboxes: You can add hitboxes here, used for collision detection for attack sprites.</li>
+      <li>Frame POIs: positions of interest defined on the frame. Used for things like projectile shoot positions, headshot origin point (flag "h"), etc.</li>
     </ul>
   </li>
   <li>7. Spritesheet display. Shows the spritesheet used by the current sprite's frames. Note that a sprite can only have one associated spritesheet so all frames for your animation must be in a single image file. You can select pixel clumps here by clicking on areas in this display, and it will try to give you a rectangle selection representing a discrete image using a "flood fill" algorithm. This is the primary means of adding/changing frame rectangles in the sprite. In addition you can rectangle select sections to grab, useful for getting separate clumps of pixels in one frame for situations where separate "islands" of pixel clumps make up a single frame (for example, some of Zero's air slash sprites in the screenshot). It also outlines in blue the frame rectangles used by the sprite and labels them with the frame number. Your current rectangle selection is green-bordered.</li>
   <li>8. Frame list. A list of all frames in the sprite, followed by their duration, x offset, y offset, frame rectangle, and a bunch of utility buttons. Each entry can be selected by clicking on it to change the current frame displayed in the Sprite display. You will be doing this a lot so there is a hotkey: Q goes to the previous frame and E goes to the next one.
     <ul>
-      <li>secs: duration in seconds. At 60 FPS, 1 frame is roughly 0.16 s, 2 is 0.33 s, etc. However, since this affects gameplay, changing it has no effect.</li>
+      <li>duration: the duration in frames. At 60 FPS, 1 frame is roughly 0.16 s, 2 is 0.33 s, etc.</li>
       <li>x-off/y-off: x and y offsets of the frame. Change these to better align frames for smooth animations. You'll be changing these a lot, so there is a hotkey: WASD for move up/left/down/right. If you hold down LSHIFT you will move 10 pixels at a time.</li>
       <li>Utility buttons: only the 5th button (replace frame) is usable in the public version. It will take whatever rectangle selection you have in the spritesheet display and replace the current frame with it. Alternatively, have one frame selected and press this button on another frame to copy over the frame rectangle. Can also be activated with R hotkey.</li>
       <li>frame rect: the topleft x/topleft y/botright x/botright y coords of the current frame rectangle. Change this if the sprite rectangle cuts off some of the actual frame image (or is too big).</li>
@@ -96,6 +96,8 @@
 
 <p>Hotkeys are important to be productive. You should have your left hand on WASD and your right hand on the mouse (like in an FPS). This allows you to quickly edit sprite frame positioning with WASD while switching frames with Q/E with your left hand. Your right hand can add frames in the spritesheet display and press buttons.</p>
 
+<p>Modding frames and hitboxes in "assets\sprites" can open up the possibility of new attacks, but for some sprites this can introduce bugs and instability. For example, some attacks are coded by the engine to read off a certain frame number for an effect, so removing that frame can have unintended consequences. Remember that you can only play online with others who have the same "assets\sprites" changes as you do.</p>
+
 <h2>Hotkeys</h2>
 
 <ul>
@@ -109,6 +111,22 @@
   <li>Escape: Exit Ghost mode</li>
   <li>Ctrl+Mouse Wheel: Zoom sprite display in/out (must click on sprite display first to gain focus on it)</li>
 </ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3>2.0.0</h3>
+<ul>
+  <li>Introduced Map Editor in the same MMXOD Editor bundle.</li>
+  <li>Frame duration now represented in game frames as opposed to seconds, to simplify animation editing. 1 frame is 1/60 of a second.</li>
+  <li>Introduced a button to reload the editor in the top ribbon. This will refresh spritesheet image changes made in external programs. However it's equivalent to closing and re-opening the app so it will prompt you for confirmation first warning you'll lose unsaved changes.</li>
+  <li>"assets\sprites" folder can now be modded freely (removed the allowUnsupportedActions config flag). However, changes in this folder will change the game checksum version, meaning you can only play with others online who have the same changes.</li>
+  <li>Added a button to change from the "assets\sprites_visualmods" folder, where you can make visual sprite changes only without changing the game checksum version, to the "assets\sprites" folder, and back. Note that it defaults to "assets\sprites_visualmods" which is empty so you'll need to copy+paste any sprites you want to visually mod from the assets\sprites folder.</li> 
+  <li>The allowUnsupportedActions flag is no longer respected (it will always block unsupported actions in the sprites_visualmods folder, and never in the sprites folder.)</li>
+  <li>Added a "force dirty" button that lets you enable save button even if there were no changes perceived by the editor.</li>
+</ul>
+
+<h3>1.0.0</h3>
+<ul><li>Initial release of MMXOD Sprite Editor.</li></ul>
 
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>MMXOD Developer Console</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<style>
+.vile-table th, td {
+  padding: 10px;
+  border: 1px solid white;
+  line-height: 28px;
+}
+</style>
+
+<h1>Audio Modding Overview</h1>
+
+<p>Modding MMXOD audio generally doesn't require many tools. The only one that's recommended is an audio file editing tool like Audacity (you can download this tool for free online). Aside from that everything is just done in the file system, as MMXOD audio modding was designed to not require any special tools or separate text files; everything is done via dot delimited file extensions.</p>
+<p>There are three types of audio in MMXOD: sounds, music and voices. Each one uses a separate system so it's important to understand the differences and consult the right section for the right steps.</p>
+<p>If on Windows, before starting to mod sounds, it's highly recommended to change the folder properties of any folder with audio files. Right click the folder, go to the Customize tab, and under "Optimize this folder for", select "General items" if it's not already selected. This will stop Windows Explorer from trying to enumerate track data for each audio file which takes forever when opening large audio folders. Be sure to do it on the root folder that encompasses all the audio and select the "Also apply this template to all subfolders" checkbox to recursively apply the setting to all subfolders. (Note, behind the scenes this will place a hidden desktop.ini file in the folder.)</p>
+
+<h2>Sound Mods</h2>
+
+<p>The assets\sounds folder contains the in-game sounds, and are further organized by character folder. Any of these existing sounds can be replaced with new sounds to change them in the game.</p>
+<p>You can't add or remove sounds in this folder or any subfolders without changing the game's checksum version, which would force others to do the same edits you did to play in the same matches you host. So don't do that. You shouldn't need to, anyway as there's no use. If you need to make a sound silent, you can use a tool like Audacity and edit the sound file itself.</p>
+<p>Sounds in this folder must either be .wav or .ogg. If a sound is too big, or improperly formatted, it might not work. Opening in Audacity and exporting as .wav or .ogg could fix things. Also note, a sound must have a length greater than 0 seconds or the game will error out, so if you make a sound silent you need to add at least a small period of silence in the track.</p>
+<p>There are some sounds you might want to be specific to a character, but are shared by multiple characters. For example, you may want a unique jump sound for a certain character. This is possible via the assets\sounds_overrides folder. Create an override sound file with the same base name in this folder, but add the character id string before .ogg in the file extension, for example <code>jump.zero.ogg</code>. This tells the engine that when playing this sound for the character, it'll use the character-specific override instead of the shared sound. Note this won't work for all sounds, only ones the game engine plays at the character's position.</p>
+<p>The character id strings are <code>mmx</code>, <code>zero</code>, <code>vile</code>, <code>axl</code> and <code>sigma</code> (note, Maverick sounds are all shared by sigma).</p>
+<p>You can also leverage assets\sounds_overrides for overriding sounds globally (not specific to a character). Just exclude the character in the file extension, i.e. <code>jump.ogg</code>. This has the same effect as simply replacing the file in assets\sounds and is simply a cleaner method. Note that files in assets\sounds_overrides don't need to match the folder structure in assets\sounds, as all overrides are done on file names (for this reason, you can't have duplicate sound files in assets\sounds or the game will error out.)</p>
+<p>NOTE: character voices are a special type of sound and you should not follow the above steps for them. See the Voice Mods section below, as they have separate steps due to the unique characteristics of voice lines.</p>
+
+<h2>Music Mods</h2>
+
+<p>All music (except custom map music) is in the assets\music folder. The format must be ogg. To loop the music, the file name should end with <code>.[START TIME].[END TIME].ogg</code> where the start and end times are decimal numbers in seconds, representing the point in the track in which to loop. Note, you need to use comma for the decimal point. For example, <code>highway.44,44.87,463.ogg</code> tells the game to start looping at 44,44 seconds in go back to the start loop position at 87,463 seconds (for people in the US, UK and other locales that use dot for decimal, this is 44.44 seconds - 87.463 seconds.) Look at any music file for an example. Note that you'll need to configure Windows Explorer to show file name extensions, if you have not already, or else you won't be able to access the dots after the file name (for how to do this, just google the steps, it's pretty standard).</p>
+
+<p>This same format for music looping is used by every music file, regardless of location. Custom maps use it, too.</p>
+
+<p>The format can also be extended even further, if you want a version of a music that plays for a specific character only. Here's the extended format: <code>.[START TIME].[END TIME].[mmx|zero|vile|axl|sigma].ogg</code>. For example, adding a file called <code>highway.7,017.106,772.vile.ogg</code> to the music folder will tell the game to play this music file with the specified looping (start at 7,017 seconds and end at 106,772 seconds) on the highway stage if Vile is selected. You'll need to keep the original highway music file or else the game will error out if not Vile.</p>
+
+<h2>Voice Mods</h2>
+
+<p>Voices are the most complex audio type, so read carefully to get all the details. Be sure to download the official voice pack from the bonuses section of this website so you can follow along.</p>
+<p>A "voice" is simply a special sound file that is interpreted differently by the game engine. The file type is the same as a regular sound and follows the same rules: only wav/ogg, etc. But voices are treated specially by the game engine. For example, only one of them can play at a time per character, and there are rules and overrides when a voice can interrupt another voice.</p>
+<p>Voices are placed in the assets\voices folder. In the official voice pack, if you open the voices folder you'll see folders for each character. However you'll also see a ".v50" at the end of some of the character folders. This tells the game to reduce the volume by 50% for all sounds in this folder, a huge time-saving feature to properly normalize voice volumes. This format can also be applied directly to voice audio files as well.</p>
+<p>Open the X folder. You will find a bunch of wav and ogg sounds, with a bunch of differing file extension formats. In general, here's the extension format:</p>
+<code>[NAME].[ID].[w|s|v[VOLUME PERCENT]|mmx|zero|vile|axl|sigma]</code>
+<ul>
+  <li><code>[NAME]</code> is the name of the sound file. It should match one of two things: the sprite animation name of the sound you want to play when the character enters this sprite, OR the name of a sound file (without extension) played at the character's position that you want the voice to apply <i>on top of</i> (this is useful for things like weapon sounds which could be part of the same sprite animation).</li>
+  <li><code>[ID]</code> is a positive integer. You can start at 0 or 1 if you like, it doesn't matter. You should put different numbers for the same [NAME] if you want a character to alternate between random voice clips for the same animation/weapon shot. Every character has examples of this in their voice folder, so check it out for a reference. It's even possible to have a base sound without this extension, and later ones with the same [NAME] that do have numbers, and it would still alternate randomly between them.</li>
+  <li><code>w</code> means "wait for the character's previous voice to finish, before playing this voice." Generally good for frequent voices like jump clips, or ones that would repeat at an overly high frequency like Fire Wave.</li>
+  <li><code>s</code> is kind of the opposite; it means "stop the character's previous voice and immediately play this voice".</li>
+  <li><code>v[VOLUME PERCENT]</code> means reduce the volume of this sound by VOLUME PERCENT, a number from 0 to 100 (representing the volume percent). You can't increase the volume, only decrease it. For example, v50 reduces the volume by half.</li>
+  <li>The character flags (mmx, zero, vile, axl, sigma) are used to indicate that this voice should only play for a certain character. It's good for cases where a shared weapon sound may have more than one voiceover (i.e. tornado is used by both Storm Eagle and X, so X's sound has .mmx whereas the sigma one for Storm Eagle has .sigma at the end.</li>
+</ul>
+<p>If you want a sound with a certain time delay before playing, you will need to edit the voice file and add in silence in the beginning. Zero's Raijingeki voice clip is an example of this in action.</p>
+<p>There isn't a system right now to re-use a voice clip for multiple different animations without copy-pasting the clip. This could get really complicated and the sound system was meant to be simple and not require tools or separate txt files.</p>
+
+</body>
+</html>

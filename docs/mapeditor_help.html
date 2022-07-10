@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>MMXOD Map Editor Help</title>
+
+<style>
+  table th, td {
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    line-height: 28px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+<h1>MMXOD Map Editor Help</h1>
+
+<p>Welcome to the custom map modding scene for MMXOD! Here you will learn how to use the map editor tool. Previously this was used only by Gamemaker19 to develop the game, but was released to the public to allow others to create their own custom maps, and share them with the public in a self-contained package.</p>
+
+<h2 id="windows">Installation/Getting Started</h2>
+
+<p>Download the editor from the Tools section of the site, and then unzip it. Note that right now, this program is only for Windows. Run "MMXOD Map Editor.bat" in the program folder, this will launch the map editor. Follow the prompt to select an assets folder where the program will read/write map files. Afterwards, the program will load all maps for editing. If you need to change it, edit the assetPath string in the "config.json" file that gets generated in the program folder (be sure to use forward slashes in the path), or simply delete config.json and re-run the program to select a new path in the UI.</p>
+
+<p>config.json is the settings file with all persistent settings that the program uses that gets saved to disk, and you can put it in a Documents folder called "MMXOD Editor" to have the program look there instead of the program folder on startup. Otherwise you will have to copy-paste it over every time the editor gets a new update.</p>
+
+<h2>Basic Architecture</h2>
+
+<p>In MMXOD, custom maps are stored in the "assets\maps_custom" folder. This is both where you do custom map editing and where you install custom maps downloaded from the internet.</p>
+
+<p>A custom map is represented by a top-level folder in the "assets\maps_custom" folder which encompasses all the map data in one self-contained package. A custom map should never have any dependencies on files outside this folder. This allows you to zip up the map folder and provide it for others to easily download and install without additional steps. The folder name must always match the map name and if renamed will cause errors. Inside the folder, there are several different possible files:</p>
+
+<ul>
+  <li><b>map.json</b>: This file will always have the same name and represents the map data, with all the metadata, collision boxes, etc.</li>
+  <li><b>mirrored.json</b>:If your map is configured to be mirrored, this will represent the mirrored version of the map, which is auto-generated from the base map.json file on every save.</li>
+  <li><b>Image files:</b> usually named background.png, backwall.png, parallax.png or foreground.png, depending on purpose. Map image files are to be put in the top level folder. The names don't actually matter, but you should stick to the convention mentioned. More on what the 4 map image categories mentioned mean later on in this guide.</b></li>
+  <li><b>music.ogg file</b>: to make your custom map have music, add a music.ogg file. This supports looping in the same file extension format as regular game music. See <a href="audio_modding.html">audio modding</a> for more details on the loop format.</li>
+  <li><b>thumbnail.png</b>: Add an optional but recommended thumbnail for your map in the map select screen. Should be 102x102 pixels and use the same border style as the others.</li>
+  <li><b>sprites folder</b>: If your map will use map sprite animations, they need to be in this folder. It needs to be named "sprites" and contain a file called "spritesheet.png" as the background. Map sprites use the same format/system as regular sprites and are also created/edited in the Sprite Editor, but in a special flow. More on that later in this guide on Map Sprites.</li>
+</ul>
+
+<p>The "assets\maps" folder has the game's official maps. In general the format is similar, but with a few differences, such as music, map sprites and some map images being part of the shared game package (i.e. in assets/maps_shared or elsewhere). The editor does let you mod official maps, but any changes to them will change the game's checksum version, forcing others to download your same edits to play with games you host online.</p>
+
+<h2>UI Component Overview</h2>
+
+<p>Here's an overview of the high level UI sections of the map editor.</p>
+
+<img width="1250px" src="assets/images/map_editor_help1.PNG" />
+
+<h4>1. Map List</h4>
+<p>This section contains the list of maps and allows you add, change and filter maps.</p>
+
+<h4>2. Object List</h4>
+<p>This section contains the list of objects, which are the templates or blueprints of things that you can place on the map. Objects are the basic building block of MMXOD maps. Instances are the instances of objects that are on the map. To place an object on the map, select a specific object in this list, then click on the Map Canvas (#3) to place it at your mouse position. There are two categories of objects: Shape objects and non-shape objects. Shape objects are represented by a collision shape (a set of points) on the Map Canvas and can be resized. Non-shape objects represent an entity at a specific position that can't be resized. For more details on objects and their properties, see the Objects section later on in this guide.</p>
+
+<h4>3. Map Canvas</h4>
+<p>This canvas visually shows the map and allows you to select and manipulate instances. Click on an instance and to select it, and drag to move it. Drag select is also supported to select multiple instances, though the list of actions that apply to multiple instances at once is limited to bulk move, delete, resize, and a few others. Press the Delete button with one or more instances selected to delete them. If instances are on top of one another, to select the instances further down, hold down CTRL and click again to cycle downwards until you reach the one below.</p>
+
+<h4>4. Map Toolbar</h4>
+<p>Contains map actions/tools/settings:</p>
+<ul>
+  <li>Save: self-explanatory; saves the map to disk.</li>
+  <li>Force Dirty: you can only save the map if there are pending changes. But in some cases you need to save even if there aren't (or there's a bug causing Save to be grayed out). In either case you can hit this to activate the Save button even if there are no pending changes detected.</li>
+  <li>Unhide All: Unhides all hidden instances.</li>
+  <li>Zoom Level: change the zoom level of the map. 2 = 200%, 3 = 300%, etc. This can be slow for large maps especially on slower PC's so use judiciously.</li>
+  <li>Canvas Size: here you can adjust the size of the Map Canvas to your liking.</li>
+  <li>Clicked Mouse Coords: clicking on the Map Canvas will populate this with the clicked mouse coordinates. This can be useful for several things like determining mirror point, various calculations, etc.</li>
+</ul>
+
+<h4>5. Map Data</h4>
+<p>Contains the top-level data fields of the map representing map data that the game engine reads from/uses, that are saved to disk when you save the map:</p>
+<ul>
+  <li>Short Name: The name of the map in the Join Server screen. 14 chars max. If empty, auto-populated on save.</li>
+  <li>Display Name: The name of the map in the Join Server screen. 25 chars max. If empty, auto-populated on save.</li>
+  <li>Custom Map Download Url: An optional but highly recommended field. This tells users in-game where they can download your map, if they don't have it but try to join your match. Max 128 characters.</li>
+  <li>Map Size: The size of the map in-game. Normally you don't need to worry about populating this as it gets auto-populated based on the background image, but you can override it if you wish.</li>
+  <li>Mirror X: If you want your map to be mirrored around an x-axis, set the X position here. A yellow divider line will then show up on the canvas and every time you save, a mirrored version of your map will also be generated (regenerated if it already exists) and saved. All instances to the left of the mirror axis will be cloned and mirrored to the right of it, and all instances to the right of the mirror axis will be removed from the mirrored version. The exception is control points (because CP is by nature an asymmetrical game mode) and map sprites with "DoNotMirror" set to true. The mirrored variant will appear in the map list and be viewable for verification purposes but since it's autogenerated, you can't save any changes to it. You must modify the base map to make changes to the mirrored map indirectly. Change the Mirror X back to 0 if you don't want your map to be mirrored anymore, but you'll have to manually delete the mirrored.json map file as well to clean up.</li>
+  <li>Mirrored Only: This setting is only applicable to mirror maps (i.e. if Mirror X was set to a non-zero value). It tells the game that you can only play this map on mirror mode. This should be set if you have a map that is mirrored but does not have a non-mirrored variant.</li>
+  <li>Mirror Map Images: Only applies to mirror maps. Checked by default. Uncheck if you don't want mirror maps to programmatically flip the map images (background, etc) which is useful if you have a mirrored map but the background images aren't actually fully mirrored (or would look weird if mirrored, i.e. have text that would be reversed on the right side). If you uncheck this you are responsible for manually mirroring all background images across the mirror x position in an image editing program.</li>
+  <li>Supports Large Cam: Check this if you want your map to support large camera mode. If you do, be sure your map is large enough to fit in the camera and doesn't use No Scrolls, otherwise it will look weird/get buggy in large camera mode. It also may require parallax overrides, an advanced subject. Overall, don't try support large camera in your maps until you are an expert in the tool and map system. Even then it's a lot more work so be prepared.</li>
+  <li>Default Large Cam: Check this if you want your map's default mode to be large camera when creating a match.</li>
+  <li>BG Color Hex: Not commonly used. Set a 6-digit hex value representing the background color of the map in the absence of any map image files (background, parallax, etc). Sometimes useful for "extending" a parallax that is too small.</li>
+  <li>Background: One of the 4 types of map image, this is generally the most important and all maps should have it. It's the image that best represents the collision boxes of the map. The dropdown is pre-populated with images in the map folder, so make sure they're there first, or else you'll need to reload the editor to refresh. The checkbox allows you to hide the background on the map canvas but this UI widget doesn't do anything else or get saved to disk or anything. To actually remove the background you have to set it to the first empty selection in the dropdown.</li>
+  <li>Foreground: This map image is drawn on a layer on top of all game objects, and isn't needed for all maps.</li>
+  <li>Backwall: You can further extract a "Backwall" image out of "Background" if you wish. If you do so, Background should only have the pixels representing collision boxes, and Backwall should have the background walls best represented by the Backwall Zone object. Currently the only use for this is making Wolf Sigma render above Backwall pixels but below Background pixels. (Note: backwall zones that Sting Chameleon can climb are not affected by this image, only by the backwall zone instances.) It adds extra polish to your map but isn't required.</li>
+  <li>Parallaxes: The fourth, and most complex type of map image. Parallaxes represent distant background layers in your map, typically representing the sky and distant landscapes. Their defining trait is their slower scroll speed compared to the other 3 images which scroll along with the camera at the same speed. A map can have any number of parallaxes or none at all. Currently there isn't an option to wrap and repeat parallaxes so you need to make sure your parallax is large enough to encompass the whole map size (typically half of the map width/height). To add one press Add new. Here are the parallax fields:
+    <ul>
+      <li>Parallax Start X/Y: the top-left map position at which the parallax will be drawn. 
+      Usually zero for both.</li>
+      <li>Parallax X/Y Speed: the speed at which the parallax will scroll, as a percentage of camera scroll speed. Usually 0.5 for both. Smaller values would indicate more distant parallaxes, but you'd rarely change these unless your map has multiple parallaxes and you need to align their transitions (i.e. see Volcanic Zone for an example).</li>
+      <li>Parallax Mirror X: Only for mirrored maps. Parallax presents a problem for programmatic mirroring. For all other map images, they are naturally mirrored at the same position as the map Mirror X and this poses no issues. But since parallaxes scroll at a different speed, their Mirrored X could easily be off. As a rule of thumb, set this to half the mirrored position, and adjust as necessary. You'll want to make sure that A) the mirror x position doesn't look weird and B) you cover enough width for the whole map when scrolling. Overall this is more of an art than a science and very complex so don't mess with Mirror Maps/parallaxes until you are an expert in the tool/map system.</li>
+      <li>Parallax Scroll Speed X/Y: Only to be set for maps that have a scrolling background, like airport_md and dinosaurtank. Specifies the scroll speed for the X and Y directions. The unit is pixels per second. For reference, in-game screen size is 298x224 pixels.</li>
+      <li>Is Large Cam Override: Only for large camera maps, this should only be selected for a parallax entry below an existing one, to signify that it's the parallax entry that will override the one above it for large camera modes. This may be needed for large camera maps if the existing parallax setup doesn't cover large camera well. Open volcaniczone map for an example.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4>6. Selected instance data</h4>
+
+<p>This section is only populated if an instance is selected. It shows all the data fields configured for that instance.</p>
+
+<ul>
+  <li>Name: the name of the instance, auto-generated on create. Should be unique. The checkbox on the left allows you to hide the instance in the map canvas. Hidden instances have a gray background in the instance list.</li>
+  <li>Object: shows the object type of the instance (can't be changed after instance creation).</li>
+  <li>x/y: Position of the instance.</li>
+  <li>Enabled in: you can set your instance to be enabled in non-mirrored only, mirrored only, or both (default).</li>
+  <li>Properties: a group of settings that is usually specific and context-sensitive to the object type. All objects/instances use the same properties format (a raw JSON string) and you can edit this raw string in the properties text box if you'd like to set the instance properties, but this isn't recommended most of the time. You should use the context senstive toggle buttons to the right of the properties box which will add it/remove it for you, when clicked. The objects section later on will go more in depth on all the specific properties of all object types.</li>
+</ul>
+
+<h4>7. Instances</h4>
+
+<p>A list of all instances in the map. You can select and delete instances here, not just on the map canvas. They are sorted by their object type. Instances that are off-screen will be highlighted red as an indication that they should be deleted (most of the time).</p>
+
+<h4>8. Top Ribbon</h4>
+
+<p>This toolbar at the top allows you to:</p>
+<ul>
+  <li>"Reload editor", which applies any map image file changes, but save your changes first since you'll lose unsaved changes.</li>
+  <li>"Change to maps folder" which lets you change to the maps folder from the maps_custom folder and vice versa. When making custom maps you should be in the maps_custom folder but you might want to check out the offical map structure as a guide (or even edit them in a full-blown checksum mod).</li>
+  <li>"Edit Map sprites" which changes the editor context to the Sprite Editor tool within the selected custom map sprites folder. You'll need to click this to edit custom map sprites for your map. Before clicking this, you need to manually create a "sprites" folder with a "spritesheet.png" file in your custom map folder.</li>
+</ul>
+
+<h2>Basic Steps/Flow</h2>
+
+<p>Generally you'll follow these set of steps to create and edit maps:</p>
+
+<ol>
+  <li>Make sure you are in the right context. The map list should be titled "Custom Maps" if you are making custom maps, or "Official Maps" if you want to view/edit official maps.</li>
+  <li>In the Maps List click New Map.</li>
+  <li>Enter a name for the map, then click "Add". The name should end in _1v1 for small maps and _md for medium maps. Otherwise it needs to be alphanumeric only (the editor should validate for  you).</li>
+  <li>Verify the map folder is created in maps_custom with a saved map.json file. Add your map images and sprite folder as applicable, then reload the editor.</li>
+  <li>Fill out map properties (names, urls, etc).</li>
+  <li>Apply map images (i.e. background, foreground, etc).</li>
+  <li>Add collision and at least 4 spawn points. These are always needed.</li>
+  <li>To ensure bots have proper pathfindings, you'll need to add Nodes and Jump Zones to the map, covered in Objects and Properties. This is a complex subject, and time consuming, but without it, bots on your map will be <b>really</b> stupid. You usually can skimp by on this step on 1v1 or to a lesser extent, medium maps.</li>
+  <li>Add any optional embellishments, i.e. mirrored, large cam, parallaxes, flags, hills/control points, etc.</li>
+  <li>Save the map; if any validation errors pop up, correct them.</li>
+  <li>Add a thumbnail image and music (if desired).</li>
+  <li>Test your custom map in the real game. If the game crashes when trying to load, or start your map, it's probably an issue with the map (though ideally there will eventually be enough validation in the tool to prevent saving bad map data.) Test all game modes supported, bot pathfinding, etc.</li>
+</ol>
+
+<h2>Objects and Properties</h2>
+
+<p>Now that you've got a basic overview of the interface and map creation flow, read this section to understand the various object types and their properties.</p>
+
+<h3>Collision Shape (Type: Shape)</h3>
+<p>The most important object. Defines collision boundaries for your map. With a collision shape (or any shape object instance) selected, press TAB to open the vertex editor, where you can drag-move vertices horizontally or vertically to create slopes. You can also delete a shape point in the selected instance data section to turn the shape into a triangle, but you can't delete more than one point, nor can you have shapes with more than 4 vertices. You can press E with a collision shape selected to have the program attempt to snap vertices to nearby collision shapes and align them. </p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Boundary</td>
+    <td>true</td>
+    <td>Indicates that a wall represents a vertical level boundary, typically used for the leftmost and rightmost walls in a map. It will enlarge the top points of the wall to an extremely high value making jumping over it virtually impossible. It has the same effect as unclimbable so you don't need to set unclimbable as well.</td>
+  </tr>
+  <tr>
+    <td>Unclimbable</td>
+    <td>true</td>
+    <td>Indicates that this wall cannot be climbed.</td>
+  </tr>
+  <tr>
+    <td>Pit Wall</td>
+    <td>true</td>
+    <td>Indicates that this wall is a side of a bottomless pit. It adds an unclimbable section on the bottom, which prevents players from camping too low in pit walls and also prevents players from going straight through the pit walls without requiring map creators to set the bottom points of the wall to an extremely low value.</td>
+  </tr>
+    <tr>
+    <td>Slippery</td>
+    <td>true</td>
+    <td>Set to true to make a wall slippery, like ice. Currently only used by frozentown.</td>
+  </tr>
+</table>
+
+<h3>Water Zone (Type: Shape)</h3>
+<p>Defines underwater areas of the map. Fairly self explanatory. As of right now it won't draw any transparent water in-game, so you'll have to manually add foreground images to do that.</p>
+
+<h3>Backwall Zone (Type: Shape)</h3>
+<p>Defines areas on the map where Sting Chameleon can climb. If using backwall images, should correspond with those. Please don't forget to add this to your custom maps. Don't neglect Sting Chameleon!</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Is Exclusion</td>
+    <td>true</td>
+    <td>You can put backwalls on top of other backwalls and indicate that the backwall shape is meant to be a gap in the backwall, like a hole/window. This can significantly save on the number of backwalls you have to put in certain parts of the map.</td>
+  </tr>
+</table>
+
+<h3>No Scroll (Type: Shape)</h3>
+<p>Defines areas on the map where the camera is not allowed to scroll. If the camera ends up in these regions, it will either snap out immediately or next time the camera is moved, depending on the properties set on the instance. No scrolls are quite complex and painful to deal with and even detrimental to gameplay so it's best to avoid custom maps with no scroll zones unless you're really trying hard to create an authentic map from a real game. Tip: press B on the map canvas to visualize the in-game screen size to help you place No Scrolls properly.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Free Dir</td>
+    <td>left, right, up, down</td>
+    <td>Specify the direction to free the camera if it ends up in this No Scroll zone. This is required.</td>
+  </tr>
+  <tr>
+    <td>Snap</td>
+    <td>true</td>
+    <td>If set, the camera will snap out immediately if it ends up in this No Scroll. Typically this is used for diagonal No Scroll zones in maps like Forest and Gallery. A lot of old maps still set this option, but generally new maps should favor not setting it unless necessary.</td>
+  </tr>
+</table>
+
+<h3>Kill Zone (Type: Shape)</h3>
+<p>Defines areas on the map where players will be immediately killed. Good for spikes, lava and bottomless pits that aren't located at the bottom of the map height.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Kill Invuln</td>
+    <td>true</td>
+    <td>If set, kill the player even if they are invisible (cloaked). Should only be set for pit kill zones.</td>
+  </tr>
+</table>
+
+<h3>Jump Zone (Type: Shape)</h3>
+<p>Defines areas on the map where bots will be forced to constantly jump if colliding with the zone.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Force Dir</td>
+    <td>left, right</td>
+    <td>Direction to force the AI to move when in this jump zone. Useful for pit walls.</td>
+  </tr>
+</table>
+
+<h3>Ladder (Type: Shape)</h3>
+<p>Defines areas on the map that are climbable ladders. You don't need, and shouldn't put a wall on top, the game engine will do it automatically. However, if applicable ladders should be surrounded by walls with the same top line Y position as the ladder's.</p>
+
+<h3>Spawn Point (Type: Non-shape)</h3>
+<p>The most important non-shape object. Defines where players can spawn. Every map needs at least 4 of these. They need to be on top of a wall or you'll get a glitchy spawn point.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Flip X</td>
+    <td>true</td>
+    <td>If set, indicates to spawn the player facing left instead of right.</td>
+  </tr>
+</table>
+
+<h3>Red Spawn / Blue Spawn (Type: Non-shape)</h3>
+<p>Non-neutral spawn points used in objective-based team modes only. Note that if not set, red spawns will automatically have Flip X set to true. Maps in general should have blue on the left, red on the right.</p>
+
+<h3>Red Flag / Blue Flag (Type: Non-shape)</h3>
+<p>Both are needed for CTF mode/large maps. You should put a node on top of the flag so the AI can pick it up.</p>
+
+<h3>Control Point (Type: Non-shape)</h3>
+<p>This represents either a hill (KOTH mode) or a control point (CP mode). The presence of these with the right properties indicates to the game that your map supports KOTH and/or CP. You should put a node on top of the point so the AI can capture it.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>CP Num</td>
+    <td>1, 2</td>
+    <td>Needed for CP mode. Specifies if this is the first point or the second point (the second point can't be captured until after the first one is).</td>
+  </tr>
+    <tr>
+    <td>Hill</td>
+    <td>true</td>
+    <td>Needed for KOTH mode. Indicates that this is a hill in KOTH modes. You can reuse the same hill as a control point in CP.</td>
+  </tr>
+</table>
+
+<h3>Large/Small Health/Ammo (Type: Non-shape)</h3>
+<p>These four objects represent capsule pickup spawn points.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Exclude in DM</td>
+    <td>true</td>
+    <td>Pickup should not be in deathmatch mode.</td>
+  </tr>
+  <tr>
+    <td>Exclude in CTF</td>
+    <td>true</td>
+    <td>Pickup should not be in ctf mode.</td>
+  </tr>
+  <tr>
+    <td>Exclude in CP</td>
+    <td>true</td>
+    <td>Pickup should not be in cp mode.</td>
+  </tr>
+  <tr>
+    <td>Exclude in KOTH</td>
+    <td>true</td>
+    <td>Pickup should not be in koth mode.</td>
+  </tr>
+  <tr>
+    <td>Include in DM Only</td>
+    <td>true</td>
+    <td>Pickup should only be in deathmatch mode. Don't set both this and any of the ones above at once.</td>
+  </tr>
+</table>
+
+<h3>Ride Armor (Type: Non-shape)</h3>
+<p>A neutral ride armor spawn point. It supports the same properties as ammo pickups and spawn points, in addition to a Type property.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>n, k, h, f</td>
+    <td>Type of ride armor. N=normal,K=kangaroo,H=hawk,F=frog</td>
+  </tr>
+</table>
+
+<h3>Map Sprite (Type: Non-shape)</h3>
+<p>Represents a map sprite, a sprite that is shown on the map in the background. Map sprites can also be destructable.</p>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Sprite Name</td>
+    <td>Custom map sprite name</td>
+    <td>Required. Name of sprite in your custom map's sprites folder to use for this map sprite.</td>
+  </tr>
+  <tr>
+    <td>Repeat X/Y</td>
+    <td>Any positive integer</td>
+    <td>A shorthand way to create a grid of map sprites. Represents the number of columns/rows, respectively.</td>
+  </tr>
+  <tr>
+    <td>Repeat X/Y Padding</td>
+    <td>Any positive integer</td>
+    <td>Only to be set if Repeat X/Y are set, respectively. The amount of space between rows/columns in the grid of map sprites.</td>
+  </tr>
+  <tr>
+    <td>Z Index</td>
+    <td>aboveForeground, aboveInstances, aboveBackground, aboveBackwall, aboveParallax</td>
+    <td>
+      aboveForeground: Draws map sprite above foreground layer.<br>
+      aboveInstances: Draws map sprite above instances layer.<br>
+      aboveBackground: Draws map sprite above background layer (default).<br>
+      aboveBackwall: Draws map sprite above backwall layer.<br>
+      aboveParallax: Draws map sprite above parallax layer.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>Parallax Index</td>
+    <td>Any positive integer</td>
+    <td>The one-indexed index of the parallax layer at which to draw this map sprite. Setting this indicates that the map sprite is drawn in the parallax layer, and the Z-Index property above, if set, is ignored. For example if you have 2 parallaxes and want this to be drawn on the second parallax, set the index to 2. Giant Dam is currently the only user of this, to animate the background dams, but it can be useful for things like twinkling stars in a night sky parallax.</td>
+  </tr>
+  <tr>
+    <td>Flip X</td>
+    <td>true</td>
+    <td>If set, the map sprite is flipped on its X axis.</td>
+  </tr>
+  <tr>
+    <td>Do Not Mirror</td>
+    <td>true</td>
+    <td>Mirrored maps only. If set, the map sprite will not be mirrored. If applied to map sprites to the right of the mirror x, they won't be removed from the autogenerated mirrored map.</td>
+  </tr>
+  <tr>
+    <td>Destructable Flag</td>
+    <td>1, 2, 3</td>
+    <td>Set to 1 to indicate it's a small destructable tile (headbuttable), 2 for a large destructable (unheadbuttable) and 3 for a large destructable that can be destroyed by any weapon, not just explosive weapons.</td>
+  </tr>
+  <tr>
+    <td>Destructable Health</td>
+    <td>Any positive integer</td>
+    <td>If the destructable flag is set, amount of health to give the destructable. If not set, defaults to 12.</td>
+  </tr>
+  <tr>
+    <td>Destroy Instance</td>
+    <td>An instance name</td>
+    <td>Set the name of an instance here to destroy along with the destructable when it's destroyed.</td>
+  </tr>
+  <tr>
+    <td>Gib Sprite</td>
+    <td>Custom map sprite name</td>
+    <td>If the destructable flag is set, this specifies an optional sprite to use for the explosion animation "gibs" (broken pieces) after the destructable map sprite is destroyed. Each frame of the sprite indicates a separate gib and the number of frames is the number of gibs to draw. You can put POIs on the map sprite to indicate where to draw explosion animations when the destructable is destroyed.</td>
+  </tr>
+
+</table>
+
+<h3>Node (Type: Non-shape)</h3>
+<p>A "navmesh" node. This is important for bot pathfinding in large, objective-based maps. It's the most complex object by far and the only one with a relational linking system. A map with proper pathfinding consists of multiple interconnected nodes (collectively called a Navmesh) with each connection itself having certain properties. How well your bots maneuver through you map depends on your skill and effort in setting up the map's navmesh.</p>
+<p>To link nodes, select two of them and press V. To unlink, press X. N allows you to link in one direction only, indicating that a bot can only go from the first to the second node and not the other way around.</p>
+<p>Each link on a node is represented by a box to the right of the properties text box with the neighbor name at the top, and you can press the delete button to delete the connection. There are properties at the node top level, as well as separate ones in the box that are specific to each connection.</p>
+
+<p><b>Top level node properties</b></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Connect To Self If Mirrored</td>
+    <td>true</td>
+    <td>Only for mirrored maps, in which it tells the mirror generation to link this node with its mirrored equivalent. This is needed to connect the left and right sides of the mirror map nav mesh.</td>
+  </tr>
+</table>
+
+<p><b>Node connection properties</b></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Ladder Climb Dir</td>
+    <td>up/down</td>
+    <td>If set, indicates that the neighboring node is to be reached by climbing a ladder, either up or down (configurable).</td>
+  </tr>
+  <tr>
+    <td>Wall Climb Dir</td>
+    <td>left, right</td>
+    <td>If set, indicates that the neighboring node is to be reached by continuously climbing up and pushing either left or right (configurable).</td>
+  </tr>
+  <tr>
+    <td>Platform Jump Dir</td>
+    <td>left, right</td>
+    <td>If set, indicates that the neighboring node is to be reached by jumping upwards and then pushing either left or right (configurable) when a platform is detected in that direction. This is to be used if jumping up to a floating platform where there's no wall below. Otherwise if you just use a jump zone, the bot would push left/right for too long and not make it up the platform, and go under it instead.</td>
+  </tr>
+  <tr>
+    <td>Include Jump Zones</td>
+    <td>CSV string (or empty)</td>
+    <td>CSV (comma-separated values) string of jump zone instance <b>numbers</b> (not the full instance name). If set, the jump zones in this CSV will only be active if transitioning to this neighbor node. This isn't commonly used or needed. An example value is <code>1,2</code>. An empty string means to ignore all jump zones when transitioning to this neighbor node.</td>
+  </tr>
+  <tr>
+    <td>Dash</td>
+    <td>true</td>
+    <td>Indicates to dash when transitioning to this neighbor.</td>
+  </tr>
+  <tr>
+    <td>Ladder Drop</td>
+    <td>true</td>
+    <td>Should only be put in a ladder shape, in between two nodes sandwiching a ladder. Tells bots climbing the ladder to drop from it at this point if going to the neighbor node. Currently only used by Safari Park's ladder, see that map for the rationale of this use case.</td>
+  </tr>
+  <tr>
+    <td>To Air Node</td>
+    <td>true</td>
+    <td>You need to set this if the neighbor node is in the air and not close to the ground. This is needed for vertical wall climbing node connections (quarry's left shaft has a good example of why you'd need this, so study that map's navmesh for the rationale of this use case.)</td>
+  </tr>
+</table>
+
+<h2>Tips and Best Practices</h2>
+
+<ul>
+  <li>Map editing is complex, so it's recommended you start simple, first with 1v1 maps, then moving onto medium maps, and eventually simple large maps as you expand your skills.</li>
+  <li>As with the sprite editor, you should use hotkeys. For some actions hotkeys are the only way to trigger them. To see a list of hotkeys, press F1 in the editor.</li>
+  <li>Also as with the map editor, remember, this is a free and low-quality "product" made by a single person in their spare time that isn't even the main game and will not get the same attention so expect lots of bugs, be careful in the UI, and save frequently. Closing and re-opening the editor, or reloading it, may be the only way to get out of a bugged state.</li>
+  <li>Be careful when zooming in on large maps, this may be slow on weaker machines the more you zoom and even cause a crash. If it's a problem for many, I may optimize this in a future update.</li>
+  <li>One of the best ways to learn how to do something in a map is to open an existing map in the editor, and study/copy its structure. This is especially the case for nav mesh setup which often requires both attention to detail and even creativity at times.</li>
+  <li>Remember to add map boundaries (ceilings, left and right walls marked with "boundary" property, etc.) Don't let players get in out-of-bounds spot where they can remain indefinitely.</li>
+  <li>If you want to rename a map:
+    <ol>
+      <li>Create a new map in the editor with the new name. (This ensures you get map name validation)</li>
+      <li>Copy over the contents of the old map folder into this new map folder.</li>
+      <li>Open map.json, change all references to your map name in the JSON fields (i.e. with Find and Replace), and save. Be careful if your map name is a broad/general word and matches some metadata fields in the JSON. You should manually replace if that's the case.</li>
+      <li>If your map is mirrored you will need to force dirty and save the map in the editor to re-generate the proper mirrored.json.</li>
+    </ol>
+  </li>
+  <li>Eventually you can even tackle special options like mirrored, large cam, etc, but these are very complex, time consuming and may not be worth it for most use cases. For example, mirrored maps are mostly a time saver but the complexity may not be worth it for a casual map developer as it has an enormous learning curve. Mirrored maps also can be buggy and require advanced workarounds and were more made for the developer to save time than custom map creators. In general, avoid the following map features (especially in combination with each other) unless you are an expert:
+    <ul>
+      <li>Mirrored maps</li>
+      <li>Large camera mode</li>
+      <li>Multiple parallaxes</li>
+      <li>Parallax map sprites</li>
+      <li>No Scroll zones</li>
+    </ul>
+  </li>
+  <li>
+    If you do wish to make mirrored maps, follow these guidelines:
+    <ul>
+      <li>Instances with an X position exactly at the mirror X position will not be mirrored, so place instances right at the point of symmetry here (nodes, control points, pickups, etc).</li>
+      <li>For No Scrolls, don't have a non-rectangular instance cross the mirror X position.</li>
+      <li>Make sure to set the instance's mirror enabled flag appropriately.</li>
+      <li>It's a lot simpler to make a mirrored map that only supports mirrored. Otherwise you have to support both the mirrored and non-mirrored version which exposes a lot of corner cases and nuances.</li>
+    </ul>
+  </li>
+  <li>Navmesh Guidelines:
+    <ul>
+      <li>Large maps with CTF should always have a navmesh. 1v1 maps generally don't need it unless they have pits. Medium maps are a middle ground, some may need it depending on the size and layout.</li>
+      <li>Objectives (flags, control points) should always have a node on top of them.</li>
+      <li>For maps with uneven terrain and lots of pits, (i.e. volcaniczone and weathercontrol) generally, more nodes means better AI.</li>
+      <li>One-way nodes are good for dropping down from heights.</li>
+    </ul>
+  </li>
+  <li>Jump Zone Guidelines:
+    <ul>
+      <li>Don't forget to add Jump Zones to your map where needed, even on small bumps on the ground, or else bots will get stuck.</li>
+      <li>Try to avoid jump zones that are too large, lest they block certain nav mesh paths. Opt for a larger amount of smaller and focused jump zones.</li>
+      <li>For gaps that require pressing jump close to the ledge, Jump Zones should be as far away from ledges as possible. Remember that only the hitbox needs to collide with the jump zone for the bot to jump, and the hitbox will jut out off the ledge by a good deal even if the character is still on the ledge.</li>
+    </ul>
+  </li>
+  <li>Map Size Guidelines:
+    <ul>
+      <li>1v1 maps should be small enough to allow all Mavericks to be able to maneuver through the entire map.</li>
+      <li>Don't put flags or control points in non-large maps, this is not supported.</li>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3>2.0.0</h3>
+<ul><li>Initial release of MMXOD Map Editor.</li></ul>
+
+</body>
+</html>

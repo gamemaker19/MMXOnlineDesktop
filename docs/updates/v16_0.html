@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 16.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 16.0: The Custom Map and Voice Update</h1>
+
+<p>This major update focuses on taking modding and customizability to the next level. At last, the map editor used to create MMXOD maps has been exposed to the public! This allows the community to independently create custom maps, and share them with the world. As this update is focused on maps, some new map options were added, including the option to mirror some maps for more balanced matches.</p>
+<p>Another major moddable feature was the introduction of an optional voice system, giving more life to the characters when playing the game. Other customizability-related features added include custom match options, where you can tweak a variety of settings to your heart's content, opening up a wide variety of possible customized game modes.</p>
+
+<h3>MMXOD Map Editor</h3>
+
+<p>The MMXOD map editor is now available for download in the tools section of the site: <a href="../tools.html">Tools</a>. This editor is actually the same exe as the Sprite Editor and comes packaged in the same download, but you'll need to run the "MMXOD Map Editor.bat" file to launch the map editor instead. Refer to the editor help guide in the tools section of the site for more details on how to use this editor to create maps, best practices, FAQ, etc.</p>
+
+<h3>Custom Map Support</h3>
+
+<p>Using the aformentioned editor you'll now be able to create your own custom maps. A custom map consists of a top-level folder containing various map files. Installing a custom map is easy, simply move the folder representing the custom map into the assets\maps_custom folder. Then when you are in the host menu, you can change the "Map Pool" from "Official" to "Custom" to select your map.</p>
+<p>To avoid too many non-standard matches, there's a limit of one custom map that can be hosted in any region at a time. Remember, custom maps the community creates aren't bundled with the game. So everyone you play with needs to download and install your custom map. If a player tries to join your match but does not have the custom match, they will be presented with a download link (which the map creator would specify when creating the map in the map editor) where they should go to get it.</p>
+
+<h3>Nine Pre-Bundled Custom Maps</h3>
+
+<p>Custom maps made by the community will not be bundled with the official game. Community members will have to host the map files and share the link, in places such as the discord, MediaFire, their own website, etc. However, to kick things off, I've bundled 9 custom maps made by GM19 myself, as examples and demonstrations of how far you can take the system. There are 3 1v1 maps, 3 medium maps and 3 large maps:
+  <h4>Small Custom Maps</h4>
+  <ul>
+    <li><b>Final Destination 1v1</b>: MMXOD meets Super Smash Bros. Melee! This is a large and flat 1v1 stage that's very similar to airport_1v1. Best enjoyed in large camera.</li>
+    <li><b>Guile Stage 1v1</b>: Guile's theme goes with anything, including MMXOD. It's a flat stage with 2 destructable crates on the left and right. This map showcases the new map sprite animation system in great detail.</li>
+    <li><b>Floral Fury 1v1</b>: In celebration of the recent Cuphead DLC. Cagney Carnation himself appears as an animated map sprite and is even destroyable (though he has a buttload of health like in the real game). Try pitting yourself in a 1v3 against 3 enemy Sigmas in this map for a true Cuphead-esque difficult and frustrating fight!</li>
+  </ul>
+  <h4>Medium Custom Maps</h4>
+  <ul>
+    <li><b>Cutman Stage</b>: Go back to Mega Man X's classic roots in this medium stage based off the original NES Mega Man.</li>
+    <li><b>Facility</b>: A tribute to Strike Force Heroes, a game whose map design could be lend interesting ideas to MMXOD. Combine it with Large Camera and all Axls for a truely authentic SFH experience.</li>
+    <li><b>Ruined Street</b>: Dr. Light, Rush and Bass appear in this simple, flat medium stage from Mega Man's first 16-bit appearance.</li>
+  </ul>
+  <h4>Large Custom Maps</h4>
+  <ul>
+    <li><b>Resistance Base</b>: Travel 100 years after the Mega Man X timeline in this Mega Man Zero large map. Inspired by Warior555's MMZ Online map of the same name. Set the match to all Zeroes to get yourself a true Mega Man Zero experience.</li>
+    <li><b>2fort</b>: Taken from Gang Garrison 2. This is a very large map based off the iconic TF2 map. CTF games will sure be wild in this match with all the flank routes.</li>
+    <li><b>Blood Gulch</b>: The beloved, classic Halo map adapted to MMXOD! Neutral Ride Armors are all over the place on this map to match the feel of Halo's vehicular gameplay.</li>
+  </ul>
+</p>
+
+<h3>Custom Voice System</h3>
+
+<p>By default, vanilla MMXOD won't have voices. This is to preserve the 16-bit feel. However, with the new voice engine you can now mod in voices easily. To start things off and provide a template, I've provided an official voice pack in the "Bonuses" section of the website here: <a href="../bonuses.html">Bonuses</a>. See that section of the website for more details, but in summary, you can stick a "Voices" folder in the assets folder with sound files named and structured in a certain way to get unique character voices on any animation or weapon shot. No special MMXOD tools are required for this, just Windows file explorer, and perhaps a good sound editor like Audacity.</p>
+<p>In addition to voices, there were a few more sound modding features added, including the ability to override certain sounds in the new assets/sounds_overrides folder globally or by character, and the ability to have character-specific music. See the <a href="../audio_modding.html">Audio Modding Guide</a> for mode details.</p>
+
+<h3>Heart Tanks and Sub Tanks</h3>
+
+<p>A frequently requested addition, every character can now bolster their equipment in the new Upgrade Menu. For X and Vile this is a separate screen in their armor menu. For every other character it is accessed in the same place as X and Vile's armor menu.
+<p>Each heart tank purchased adds 2 HP to the character's max life pool and lasts until the end of the match. Up to 8 heart tanks can be bought. The cost of a heart tank starts at 3 scrap but increases the more you buy. Heart Tanks must be re-bought for every different character; there isn't a shared pool. Note that heart tanks purchased as Sigma will also apply to Mavericks in Tag Team mode; similarly heart tanks purchased as Vile will also apply to Ride Armors with less than 32 max HP.</p>
+<p>Sub tanks can also be purchased as items that last for the rest of the match. Up to 4 sub tanks can be purchased, and each sub tank costs 5 scrap. Any healing at full health will fill the first available tank with capacity. Each tank holds up to 16 HP. In the upgrade menu, players can use purchased tanks to heal themselves, as long as they are alive and not at max health, emptying the tank in the process. Like with heart tanks, sub tanks are character specific and must be re-purchased for every different character. To make healing with a sub tank in the midst of battle easier, your in-game menu positions will now be saved whenever closed and re-opened.</p>
+<p>Overall these new options, available to every character, are sure to add a lot of strategy and depth to the game, and finally allows characters other than X or Vile to upgrade themselves as the match progresses, ensuring they're not left behind. These options can also help patch up some weaknesses of certain characters, such as survivability, and open up new play styles previously not viable.</p>
+
+<h3>Mega Man X4 Online: Deathmatch!</h3>
+
+<p>The long-awaited, but ill-fated sequel to MMXOD is now available as a demo! I had originally started working on this roughly a year ago but gave up on it due to the investment and playerbase of the current game, and honestly at this point it's unlikely I'll ever finish it. However, I've finally decided to release the work done so far to the public, in the "Bonuses" section of the website here: <a href="../bonuses.html">Bonuses</a>. Given this update is all about maps and voices, this was a good oppertunity to finally unveil an X4 concept of MMXOD to the public. Interested modders can use the content in this demo to add in X's X4 voice and the X4 maps to MMXOD, which can be good exercises to get up to speed with the new tools.</p>
+
+<h3>Custom Match Settings</h3>
+
+<p>In offline and private matches only, you'll be able to configure a wide variety of special custom settings, in the host menu (under "Custom Match Settings"). These options let you go wild with all sorts of game mode ideas, like a "Maverick" mode where one player has increased HP and attack power and must defeat everyone else to win. Here are the current settings that can be configured:</p>
+<ul>
+  <li>Hyper Mode Match: Only applies to 1v1. In this mode:
+    <ul>
+      <li>X spawns with his Ultimate Armor, applied on top of whatever armor set was chosen. Nova Strike has unlimited ammo in this mode.</li>
+      <li>Zero spawns with either Black or Awakened Zero, depending on loadout.</li>
+      <li>Vile spawns as MK-II and has access to Goliath.</li>
+      <li>Axl spawns as either White Axl or Stealth Axl, depending on loadout. Double Bullet has an ammo bar in this mode.</li>
+      <li>Sigma spawns without any Mavericks, but when killed, revives as Wolf Sigma with another 32 HP.</li>
+    </ul>
+  </li>
+  <li>Start scrap.</li>
+  <li>Start heart tank count.</li>
+  <li>Start sub tank count.</li>
+  <li>Health modifier (100-400%). Can be applied all up or to red/blue team separately.</li>
+  <li>Damage modifier (100-400%). Can be applied all up or to red/blue team separately.</li>
+  <li>Mono character. If set, all players can only play as this character. Can be applied all up or to red/blue team separately.</li>
+</ul>
+
+<h3>New Map Settings</h3>
+
+<p>Given that this update is all about maps and customization, I've taken the oppertunity to introduce some frequent map suggestions:
+<ul>
+  <li><b>Mirrored</b>: Certain maps now have the option to be mirrored around a certain x-axis position. This is configurable in the Map Editor on a per-map basis and is entirely programmatic, being derived from a base map file based on an algorithm. In addition to saving a lot of time and maintenance effort for map creators, programmatic mirroring allows the same map to be played with or without mirrored mode on (which can specified in the Create Match menu).</li>
+  <li><b>Neutral Ride Armors</b>: Vile is no longer the sole mech weapons master. Now any character can join in on the destruction, even in online matches! Maps can now have neutral Ride Armors spawned in pre-specified locations. Certain official maps now incorporate neutral Ride Armors, such as Mountain and Sigma 2.</li>
+</ul>
+</p>
+
+<h3>New Match Settings</h3>
+<ul>
+  <li><b>Play as Mavericks (1v1 only):</b> In 1v1 maps only you can play as Mavericks. Not just a tag-team minion of Sigma, but as a completely standalone character! The AI can also be configured as Mavericks (see below) which can even allow for boss rush - like custom modes.</li>
+  <li><b>1v1 Map Teams</b>: 1v1v1v1 is now an official sanctioned mode (though only up to 4 players; any more than that and you're in unsupported territory). You can configure teams in any combination (i.e. 2v2, 1v3, 1v2, etc).</li>
+  <li><b>Advanced CPU settings:</b> You can now specify the characters and teams of CPU bots even before the match begins, in any mode, offline or online. (In Host Menu, press the Menu Secondary button, default C on keyboard, when on the CPU count setting.) This is great, for example, if you want a challenge and pit yourself against 3 bots in a 1v1 map, or if you want to pair up with a friend to take down a high HP/damage configured CPU Maverick.</li>
+</ul>
+
+<h3>Modded Game Versions</h3>
+<p>Previously, modders could not change certain aspects of sprites (i.e. hitboxes) without being blocked from playing online. This was to prevent gameplay tampering. v16.0 introduces a new modding system based on "checksums". Any changes to a certain set of files that can impact gameplay will result in a unique "checksum" being generated by the game. This is in essence a unique fingerprint of your changes made to gameplay files. Like with the client game verison, the checksum is now sent to the server everytime a match is created online. Only clients with the same checksum can connect to a match created with a specific checksum. Due to these changes, the old <code>allowFullSpriteMods</code> setting was no longer needed, and thus removed.</p>
+<p>As part of this change, there is now a assets\sprites_visualmods folder. The existing folder, assets\sprites, is now the source of truth for sprite gameplay data. Any changes to sprites here will result in a different checksum being generated. If you just want to apply visual mods as in previous versions, put your overrides in the assets\sprites_visualmods folder to override existing JSON alignment and offset settings, which won't impact the checksum version.</p>
+<p>Remember that mods aren't supported if used optimized sprites. In fact, if that setting is on it tells the game to use assets\sprites_optimized as the override sprite folder instead of assets\sprites_visualmods.</p>
+<p>Official maps are also now part of this checksum system. These maps are in the assets\maps folder and edits to these map files will generate a new checksum. As with sprite mods, modders can still host matches with map gameplay edits, but only players with the same exact edits can join that match.</p>
+<p>Adding or removing sound files in the assets\sounds folder also modifies the checksum (for netcode-related reasons) so don't do this unintentionally. The contents of sound files however can be changed without any effects.</p>
+<p>If you make any changes that would change the checksum from the current official version, the main menu will show a "Mod Checksum" label below the actual game version with the checksum. You can copy your checksum to the clipboard at any time by pressing F1 on the main menu.</p>
+
+<h3>A tribute to Jape</h3>
+
+<p>Last but not least, I want to reserve a special section to dedicate the 16.x family of updates to influential MMXOD streamer and community moderator Jape, who unfortunately passed away recently before he could experience and stream this v16.0 update. Jape would frequently and passionately host MMXOD tournaments and streams, bringing much-needed attention to the game. Jape in fact has faithfully streamed every major update since 1.0 and it pains me that this time around he is no longer here to stream v16.0 or any future update ever again. Jape was even the reason for this game's very existance, due to his initial stream which motivated me to add online to what was once a browser-only prototype. His importance to the community cannot be overstated, and so I've decided to honor his memory in the following ways in this update:</p>
+
+<h4>Jape Tribute 1v1 Map</h4>
+<p>As this update's focused on maps, I decided to convert community member/moderator Michael Felstein's Jape tribute poster into a 1v1 map (thanks Michael for making this on short notice). Even though it's not a stage that's part of the Mega Man X games, this map is still in the official map pool, and will be placed as the first 1v1 map available for selection for the rest of 16.x, as a tribute to Jape's legacy on the game.</p>
+<h4>Jape Memorial Statues</h4>
+<p>I've also placed some Jape memorial statues in the center of various maps (credit and thanks to Metsu/Astral for making these). These will remain for the rest of 16.x as a way to dedicate this update family to him. Come 17.0 and beyond, these statues will appear every last week of July, to honor the time period in which he has passed on. The maps in which they were placed are as follows, and are usually either maps Jape himself was fond of or hosted in the finals in one of his tourneys:
+<ul>
+  <li>Gallery (Jape's personal favorite)</li>
+  <li>Highway</li>
+  <li>Sigma 2</li>
+  <li>Central Computer</li>
+  <li>Dinosaur Tank</li>
+  <li>Forest</li>
+  <li>Factory</li>
+  <li>Jape Tribute 1v1</li>
+</ul>
+</p>
+
+<h3>Other Improvements/Changes</h3>
+<ul>
+  <li>Sprite editor (now fused with the map editor as a unified "MMXOD Editor" program) updated to 2.0. See the changelog at the bottom of the sprite editor page for the changes: <a href="../spriteeditor_help.html#changelog">Sprite Editor Changelog</a></li>
+  <li>Increased threshold required to activate "Connectivity Issues Detected", which should reduce the frequency of this occurring and resulting in fewer attacks failing to connect.</li>
+  <li>.ini system for music looping removed and replaced with a simpler solution. Music files simply are now suffixed with the format".[START TIME].[END TIME].ogg" where the start and end times use comma for the decimal point. If you are using inis for music mods please convert them to use this new system.</li>
+  <li>Organized sounds folder better, with character-specific folders. Some sounds were split out to be made more granular and allow for easier modding (for example, rakuhouha is now separate from crash, wall kick has its own sound separate from land, etc).</li>
+  <li>As part of the custom map changes, map backgrounds have been reworked: there is no longer a common backgrounds folder nor is there background optimization (the game engine will split it up into tiles in-game so the 1024x1024 tiles don't need to be saved to disk.)</li>
+  <li>Many official maps have been tweaked to support mirrored and have had layout changes and navmesh improvements as well.</li>
+  <li>AFK timer now kicks non-spectating AFK players instead of moving them to spectate. (Players already in spectate are unaffected.)</li>
+  <li>Match settings are now saved across sessions. They are saved/loaded in a matchSettingsOnline.txt file (matchSettingsOffline.txt for offline matches) in the game folder that you can extract and save, or even share with the community, to share your custom game modes.</li>
+  <li>Black Zero now plays X3 Zero theme when active.</li>
+  <li>Various maps have had ladder slot sizes increased, allowing Sting Chameleon to descend down them.</li>
+  <li>Various maps now have a separate "backwall" layer that is drawn behind Wolf Sigma. This is an optional layer that makes Wolf Sigma look better by not blocking map geometry pixels to other players.</li>
+  <li>Bot pathfinding in general has been improved and augmented with new map features like better nav mesh node transitions. For example, they'll now be able to cross Sigma 1's chasms on the moving platforms much of the time.</li>
+  <li>A new match setting was added specifically for Training, that if turned on, allows the use of custom loadouts in training (as opposed to getting all weapons/Mavericks).</li>
+  <li>CTF now enters "overtime" if either team's flag is not at its base pedestal when time runs out. Only once both flags have been returned or captured, will the match end.</li>
+  <li>If the flag drops into a pit, an updraft will now carry it back up, instead of the flag returning back to the enemy base. This makes CTF matches in pit-heavy maps less frustrating.</li>
+
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+  <li>Fixed negative time showing before AFK kick.</li>
+  <li>Fixed a bug where Strike Chain hook could dissapear after hitting a wall.</li>
+  <li>Fixed a bug where 3 Axl arms would render when grabbed.</li>
+  <li>Fixed a bug where Sigma could wall dash off unclimbable walls.</li>
+</ul>
+
+<h3>Balance changes/Reworks</h3>
+
+<p>General</p>
+
+<ul>
+  <li>Reduced max scrap earned per kill when behind from 5 to 3.</li>
+  <li>Large health and ammo capsule healing reduced from 10 to 8 bars.</li>
+  <li>Moves that use scrap now award scrap again on kill. (Z-Buster, Assassination)</li>
+  <li>Whirlpool moves (Splash Hit, Launch Octopus Whirlpool) now have 2x sucking power underwater.</li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<!--
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Spin Wheel: reduced to 1 damage per spoke, but all 8 can hit more easily now for up to 8 damage.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Speed Burner: increased recoil damage from 1 to 2.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Hadouken/Shoryuken: can now only be used at full health and with buster selected, but no longer costs scrap.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hyper Charge and Giga Crush no longer preserve ammo after death. With Heart and Sub Tanks it should now be easier to keep X alive long enough to use these moves.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>No longer locked out of upgrading armors if X6 saber is unequiped. This also fixes a bug where X sometimes could get locked out of the armor menu.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Ultimate Armor Giga Buster no longer shoots 2 plasma shots. The second shot is the standard X2 buster level 4 shot.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Nova Strike: now uses ammo again.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Cross Shot/Hyper Charge X-Buster: can now turn around when using this attack.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Giga Crush/Nova Strike: Added settings where X can now activate these via SPECIAL button (down special for Giga Crush, side special for Nova Strike). Note that if the settings are on, X can no longer switch to these weapons, and thus cannot refill their ammo with capsules. Also note that if both are turned on, downwards Nova Strike is no longer possible.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Gold and Ultimate armor: changed activation method. Now must first navigate to armor menu, and then press SPECIAL, to upgrade. While it slows down activation a bit it helps free up the SPECIAL button for X and reduce accidental activations.</li>
+
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>3-Swing Ground Combo: Increased combo speed, and can now turn around before each swing.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Raijingeki/Purple Raijingeki: now pierces defense.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Rekkoha: energy cost reduced from 32 to 24 bars.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>C-Flasher: now pierces defense.</li>
+</ul>
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Stun Shot/Stun Balls: can no longer stun enemies recently grabbed.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Stun Shot/Stun Balls: Zero and Sigma can now block this move with Guard.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Fat Boy: increased projectile speed.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Air Bombs: damage increased to 3 and now fires in the same direction (but can use LEFT/RIGHT to change).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Peace-out Roller: increased E-bar use to 24.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Frozen Castle:
+  <ul>
+    <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Reduced damage reduction from 1/4 to 1/8.</li>
+    <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Scrap cost reduced to 3.</li>
+    <li><img src="../assets/images/buff.png" class="buff" title="buff"/>No longer removed by fire attacks</li>
+  </ul>
+</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Speed Devil: Scrap cost reduced to 3; speed boost reduced from 15% to 10%.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Distance Needler: now pierces defense.</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Axl Bullets: now recharges ammo when not active, albeit at half the normal rate.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>All One-Handed Weapons: 25% reduction in fire rate when shooting backwards.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Spiral Magnum: can now zoom in on Large Camera mode.</li>
+</ul>
+
+<p>Sigma</p>
+
+<ul>
+
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner: introduced a new "Attack Move" command (LEFT/RIGHT + SPECIAL). This causes active Mavericks to keep walking in Sigma's direction at the time of issuing the command, attacking any foes along the way.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner/Puppeter: added an option for Mavericks to follow Sigma by default.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Puppeteer: Removed 25% defense buff. With the introduction of Heart and Sub Tanks it should be easier to keep Sigma alive.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Tag-Team: swapping now has a start-up delay of 0.5 seconds where the player is vulnerable and cannot move.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Sting Chameleon: can now climb background walls by pressing UP when in front of them. (Climbable areas are configured in the map editor on a per-map basis as "Backwall Zones".)</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Storm Eagle: Storm Tornado now has separate ground and air cooldowns.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Storm Eagle: now has a flight limit bar (like Hawk armor). When this is empty, Storm Eagle is forced to descend.</li>
+</ul>
+
+</body>
+</html>
