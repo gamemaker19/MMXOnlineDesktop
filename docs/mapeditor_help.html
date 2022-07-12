@@ -406,7 +406,7 @@
   <tr>
     <td>Destructable Flag</td>
     <td>1, 2, 3</td>
-    <td>Set to 1 to indicate it's a small destructable tile (headbuttable), 2 for a large destructable (unheadbuttable) and 3 for a large destructable that can be destroyed by any weapon, not just explosive weapons.</td>
+    <td>Set to 1 to indicate it's a small destructable tile (headbuttable), 2 for a large destructable (unheadbuttable) and 3 for a large destructable that can be destroyed by any weapon, not just explosive weapons. You can put POIs on the map sprite to indicate where to draw explosion animations when the destructable is destroyed. Note, the map sprite needs a global hitbox with "trigger" assigned for it to be damageable by attacks.</td>
   </tr>
   <tr>
     <td>Destructable Health</td>
@@ -421,7 +421,7 @@
   <tr>
     <td>Gib Sprite</td>
     <td>Custom map sprite name</td>
-    <td>If the destructable flag is set, this specifies an optional sprite to use for the explosion animation "gibs" (broken pieces) after the destructable map sprite is destroyed. Each frame of the sprite indicates a separate gib and the number of frames is the number of gibs to draw. You can put POIs on the map sprite to indicate where to draw explosion animations when the destructable is destroyed.</td>
+    <td>If the destructable flag is set, this specifies an optional sprite to use for the explosion animation "gibs" (broken pieces) after the destructable map sprite is destroyed. Each frame of the sprite indicates a separate gib and the number of frames is the number of gibs to draw.</td>
   </tr>
 
 </table>
