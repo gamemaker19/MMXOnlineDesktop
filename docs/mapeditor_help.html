@@ -365,7 +365,7 @@
   <tr>
     <td>Sprite Name</td>
     <td>Custom map sprite name</td>
-    <td>Required. Name of sprite in your custom map's sprites folder to use for this map sprite.</td>
+    <td>Required. Name of sprite in your custom map's sprites folder to use for this map sprite. When making the map sprite, don't forget to set the sprite wrap mode as loop if it's a looping animation (which it probably will be if it's a map sprite).</td>
   </tr>
   <tr>
     <td>Repeat X/Y</td>
@@ -406,7 +406,7 @@
   <tr>
     <td>Destructable Flag</td>
     <td>1, 2, 3</td>
-    <td>Set to 1 to indicate it's a small destructable tile (headbuttable), 2 for a large destructable (unheadbuttable) and 3 for a large destructable that can be destroyed by any weapon, not just explosive weapons. You can put POIs on the map sprite to indicate where to draw explosion animations when the destructable is destroyed. Note, the map sprite needs a global hitbox with "trigger" assigned for it to be damageable by attacks.</td>
+    <td>Set to 1 to indicate it's a small destructable tile (headbuttable), 2 for a large destructable (unheadbuttable) and 3 for a large destructable that can be destroyed by any weapon, not just explosive weapons. Note, the map sprite needs a global hitbox with the "trigger" option checked for it to be damageable by attacks. You can put POIs on the map sprite to indicate where to draw explosion animations when the destructable is destroyed.</td>
   </tr>
   <tr>
     <td>Destructable Health</td>
@@ -498,6 +498,9 @@
   <li>Be careful when zooming in on large maps, this may be slow on weaker machines the more you zoom and even cause a crash. If it's a problem for many, I may optimize this in a future update.</li>
   <li>One of the best ways to learn how to do something in a map is to open an existing map in the editor, and study/copy its structure. This is especially the case for nav mesh setup which often requires both attention to detail and even creativity at times.</li>
   <li>Remember to add map boundaries (ceilings, left and right walls marked with "boundary" property, etc.) Don't let players get in out-of-bounds spot where they can remain indefinitely.</li>
+  <li>Make sure your music is not too loud. Test your map in-game and if the music is louder than the sounds, use a tool like Audacity to reduce its volume.</li>
+  <li>Don't forget to place backwall zones to support Sting Chameleon climbing.</li>
+  <li>While a backwall image is optional, it helps Wolf Sigma render properly on your map. Separating the backwall in a separate layer can also make editing the map background image geometry easier and more maintainable.</li>
   <li>If you want to rename a map:
     <ol>
       <li>Create a new map in the editor with the new name. (This ensures you get map name validation)</li>
@@ -543,7 +546,6 @@
     <ul>
       <li>1v1 maps should be small enough to allow all Mavericks to be able to maneuver through the entire map.</li>
       <li>Don't put flags or control points in non-large maps, this is not supported.</li>
-      <li></li>
     </ul>
   </li>
 </ul>

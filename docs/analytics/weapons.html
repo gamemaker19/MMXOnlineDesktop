@@ -94,6 +94,7 @@ function convert(response) {
     if (name !== "Burn4" && name.startsWith("Burn")) {
       continue;
     }
+    if (name === "SigmaVirus") continue;
     if (!name) continue;
 
     if (xWeaponMap[name]) {

@@ -72,6 +72,9 @@ var xWeaponMap = {
 	"XSaber": "XSaber",
     "NovaStrike": "NovaStrike",
     "UPGrab": "UPGrab",
+    "BusterX3Plasma": "BusterX3Plasma",
+    "BusterX3PlasmaHit": "BusterX3Plasma",
+    "SpeedBurnerRecoil": "SpeedBurnerRecoil",
 };
 
 var zeroWeaponMap = {
@@ -205,6 +208,7 @@ var sigmaWeaponMap = {
     "LaunchOMissle": "LaunchOMissle",
     "LaunchOTorpedo": "LaunchOTorpedo",
     "LaunchOWhirlpool": "LaunchOWhirlpool",
+    "LaunchODrain": "LaunchODrain",
     "SigmaBall": "SigmaBall",
     "SigmaHand": "SigmaHand",
     "SigmaHandElecBeam": "SigmaHandElecBeam",

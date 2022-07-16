@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 16.2</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 16.2</h1>
+
+<p>Asset Changes? No</p>
+<p>Relay Server Update? No</p>
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Removed X preferred armor option as it's no longer used. This fixes a crash in the character select menu if this option was set to X2 or X3.</li>
+<li>Fixed a bug where Sting Chameleon couldn't climb all the way up ladders.</li>
+<li>Fixed a bug in the Wait Menu where the map name was displaying the match name.</li>
+<li>Fixed command grabs not working offline.</li>
+<li>Fixed a bug where Chill Penguin could not break ice statues with taunt.</li>
+<li>Fixed a bug where Rekkoha pillars and Wolf Sigma in Large Camera mode would not spawn at the right Y position.</li>
+<li>Fixed a cooldown exploit with Nova Strike.</li>
+<li>Fixed an issue where in 1v1, any player was able to join the battle when the fight has already started. Now they will be moved to spectate.</li>
+<li>Fixed a bug where neutral Ride Armors would recover all HP when changing owners.</li>
+<li>Fixed a bug where Giga Crush/Nova Strike directional inputs could allow X to shoot weapons in the death animation.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>General</p>
+
+<ul>
+<li>Giga Attack ammo gain now proportional to max health. The greater the max health, the less giga ammo granted on damage taken.</li>
+<li>Reworked scrap awarding system:
+  <ul>
+    <li>Now works based on multiplicative modifiers. The base scrap earned is dependent on how far behind you are and can be 1-3 scrap per kill (as with before).</li>
+    <li>Killing a Maverick increases the base modifier by 2x (as with before).</li>
+    <li>Killing a player with 4 or more heart tanks (24 or more life bars) now increases the base modifier by 2x.</li>
+    <li>Killing a 5 scrap Hyper Mode (Golden X, MK-II, etc) now increases the base modifier by 2x.</li>
+    <li>Killing a 10 scrap Hyper Mode (UP/UAX, Black Zero, etc) now increases the base modifier by 3x.</li>
+    <li>These modifiers can stack. For example, if heavily behind and you kill an 8 heart tank Black Zero, the raw scrap gained is 3x2x3=18 scrap.</li>
+    <li>Remember, the existing 15 scrap limit (which prevents hoarding) still applies. If over 15 scrap you will always earn 1 scrap per kill. If under 15 scrap you can only gain enough to go up to 15.</li>
+  </ul>
+</li>
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Rekkoha ammo usage reverted to 32 bars.</li>
+</ul>
+
+<p>Sigma</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Summoner: no longer will issue attack move command when dashing, which should help prevent accidental attack moves.</li>
+<li>
+  <img src="../assets/images/buff.png" class="buff" title="buff"/>Added a new scrap gain ability exclusive to Sigma called "War Economy":
+  <ul>
+    <li>Each Maverick in Sigma's loadout not yet purchased and deployed to combat will fund Sigma's war efforts behind the scenes, providing 1 scrap every 10 seconds.</li>
+    <li>This ability does not apply to Striker Mode since Mavericks in this mode are always considered "deployed".</li>
+  </ul>
+</li>
+</ul>
+
+
+</body>
+</html>
