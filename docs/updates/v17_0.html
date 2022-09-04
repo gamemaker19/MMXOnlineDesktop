@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 17.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 17.0: The Loadout Update, Part 2</h1>
+
+<p>This update is a sequel to v13.0, the first Loadout Update, adding more loadout options for Zero and Vile. Zero gets several new moves from X5-X8, most notably a new "brawler"-type playstyle with the K-Knuckle, while Vile gets Cutters and Flamethrowers, in addition to a new laser option that can replace Necro Burst. In addition, this update adds additional Axl guns from <i>Mega Man X: Command Mission</i> and a crafting system for him as well, so it can be considered a spiritual sucessor to update v12.0 (The Axl Update Part 2) as well.</p>
+<p>The other major change introduced in this update was the long-awaited Design Refresh. Nearly every UI and HUD in the game has been improved to more closely match the SNES games, as well as made more intuitive in many cases. The game now uses bitmap fonts instead of the tff-file vector font system, which should also help with optimization as well.</p>
+
+<h3>New Zero Abilities</h3>
+
+<p>Zero now gains additional categories of weapons of which he can swap in his Loadout menu. These categories are as follows:</p>
+
+<h4>Melee</h4>
+<ul>
+<li>Z-Saber: the default option. Zero's trusty Z-Saber. This doesn't change.</li>
+<li>K-Knuckle: a pair of brass knuckles. If equipped, Zero loses his saber and saber-based techniques but can punch and kick enemies! All sword techniques are replaced with brawler moves. For example dash attack is replaced with a spin kick, sword uppercuts with punch uppercuts, and the air slash is replaced with an air kick. This option gives Zero a different playstyle that is more high risk, high reward compared to a saber set.</li>
+</ul>
+
+<h4>Ground Special</h4>
+<ul>
+  <li>Raijingeki: The default option. Remains unchanged.</li>
+  <li>Suiretsuzen: A long-ranged water element spear. It has good range but can't damage enemies close by.</li>
+  <li>T-Breaker: This mighty hammer can destroy barriers, flatten foes and knock them off their feet with the shockwave.</li>
+</ul>
+
+<h4>Air Special</h4>
+<ul>
+  <li>Kuuenbu: The default option, which is Zero's existing mid-air spin slash.</li>
+  <li>F-Splasher: A mid-air dash attack. It increases Zero's speed and can be aimed up and down.</li>
+  <li>Hyoroga: Activate by pressing near a ceiling during a jump. Zero will cling on to the ceiling and can then rain down icicles with ATTACK.</li>
+</ul>
+
+</ul>
+
+<h3>New Vile Abilities</h3>
+
+<p>Vile completes his MHX arsenal with the addition of Cutters, Flamethrowers and Lasers.</p> 
+
+<h4>Cutters</h4>
+<p>Cutters are activated with UP+SPECIAL on the ground. They are good anti-air options. This input conflicts with aiming Stun Shot upwards, so if you still want to do so, you have the option to have no cutter equipped at all (which is the default).</p>
+<ul>
+  <li>Quick Homesick: the standard cutter. It works a lot like Boomerang Cutter; it'll return to Vile, replenishing some E-bar in the process, and fetching any pickups it hit on the way.</li>
+  <li>Parasite Sword: it won't return to Vile, but grows in size as it travels.</li>
+  <li>Marooned Tomahawk: shoots cutters that don't return to Vile but remain in place for a few seconds. Great for static defense. The longer SPECIAL is held, the further it goes.</li>
+</ul>
+
+<h4>Flamethrowers</h4>
+<p>Flamethrowers are activated with DOWN+SPECIAL in the air. They are good air-to-surface weapons and tend to burn or freeze enemies, but use a lot of energy.</p>
+<ul>
+  <li>Wild Horse Kick: the default flamethrower. It shoots flames downwards and can burn enemies.</li>
+  <li>Dragon's Wrath: it cannot burn foes, but its green flames travel in a horizontal trajectory and bounces off the floor, making it good for enemies in front of you.</li>
+  <li>Sea Dragon's Rage: an icy version of Wild Horse Kick. Instead of burning, it can freeze foes, and is currently the only weapon in Vile's arsenal that can do so. It's also the only flamethrower that can work underwater.</li>
+</ul>
+
+<h4>Lasers</h4>
+<p>Lasers are activated by holding down SPECIAL to charge, and releasing when fully charged. Previously Necro Burst was the only "laser". With the edition of Rising Specter, this now becomes a swappable loadout option.</p>
+<ul>
+  <li>Rising Specter: the new default laser. A powerful purple-colored laser that deals 6 damage + flinch. It cannot be aimed, but damages enemies diagonally upwards, making it decent at low-altitude anti-air.</li>
+  <li>Necro Burst: the same self-damaging blast as it was before.</li>
+</ul>
+
+<h3>New Axl Guns/Crafting</h3>
+
+<p>Axl can now craft upgrades for his default weapon, the Axl Bullet. Upgrades can be crafted in Axl's loadout menu. Each weapon has a unique set of crafting recipies based on a specific character DNA Core. For example, Mettaur Crash requires any combination of 3 scrap or X DNA Cores.</p>
+<p>Once crafted, Axl can switch to the upgraded gun or back to the Axl Bullets at any time. Crafted guns generally have similar properties as the Axl Bullets they replace, with additional bonuses on top. However, these powerful firearms can't earn Axl scrap, nor can they be used as White Axl.</p>
+
+<ul>
+  <li>Mettaur Crash: Can pass through walls and enemies, and pierce defenses. Based on X DNA Core.</li>
+  <li>Beast Killer: A shotgun-like weapon that deals 2x damage to Mavericks and Ride Armors. Based on Zero DNA Core.</li>
+  <li>Machine Bullets: Fires two bullets per shot, but less accurate. Based on Vile DNA Core.</li>
+  <li>Double Bullets: Previously a White Axl exclusive, this is now moved to an Axl crafting upgrade. However it now runs on ammo, limiting its destructiveness. Based on Axl DNA Core.</li>
+  <li>Revolver Barrel: Deals 2x damage on headshots. Based on Sigma DNA Core.</li>
+  <li>Ancient Gun: Has all bonuses of other craftable upgrades in one. Though extremely strong, it is lost on death, and requires either 15 scrap, or all 5 characters' DNA Core (to support this, Axl can now carry up to 5 DNA Cores, increased from 4.)</li>
+</ul>
+
+<h3>Design Refresh</h3>
+
+<p>The game's UI has received a major facelift. Menu and HUD designs are now more similar to the ones in <i>Mega Man X</i>, <i>Mega Man X2</i> and <i>Mega Man X3,</i> with menu sounds to boot. As part of this change, the game now uses bitmap fonts as opposed to vector fonts. Bitmap fonts use PNG files which should cause less problems on old machines than vector fonts (which relied on .tff files in the assets/fonts folder).</p>
+
+<p>As part of this change, some menus were redesigned to be more intuitive and informative. For example, Zero and Vile's loadout menus now have visual icons, and the Settings menu now displays help text for each setting.</p>
+
+<h3>Other Improvements/Changes</h3>
+<ul>
+<li>Some improvements and fixes were made with the official Voice Pack. Download v2 at the <a href="https://gamemaker19.github.io/MMXOnlineDesktop/bonuses.html">Bonuses Page</a> in the game website.</li>
+<li>Relay Server/LAN documentation on website was updated to be more comprehensive. See the current guide: <a href="https://gamemaker19.github.io/MMXOnlineDesktop/relayserver_help.html">Relay Server Help</a></li>
+<li>LAN menus were made more intuitive, hinting at the user to join by IP if trying to load LAN matches failed. In addition, the match IP will appear in the host's Wait Menu and Scoreboard in-game, which others can use to join directly.</li>
+<li>LAN matches now allow for custom match settings, like with private matches.</li>
+<li>Additional Developer Console commands documented. See the current list here: <a href="https://gamemaker19.github.io/MMXOnlineDesktop/developerconsole.html">Developer Console Help</a></li>
+<li>Increased name character limit from 7 to 8.</li>
+<li>Reduced the unclimbable y position of pit walls, making it easier to climb out of them.</li>
+<li>Gold and Ultimate armors can now be purchased in Heart Tank/Sub Tank menu.</li>
+<li>Added settings to prevent automatic suicide on changing characters or loadout.</li>
+<li>Added a suicide button in the Match Options menu. This can be used to quickly kill yourself if the options above are set.</li>
+<li>Autobalanced players will get 5 scrap as compensation.</li>
+<li>Rumbling Bang will now render optimized particles if low quality particle setting is on.</li>
+<li>Added a cursor to Wait Menu, which can now be used instead of 0-9 keys to assign teams to players.</li>
+<li>Jape Statues have been removed for now. They will automatically return every last week of June to honor the period in which he passed away.</li>
+<li>"Variable X" theme now plays in Jape Tribute 1v1 map.</li>
+<li>Changed Black Zero theme to Zero's theme from MMX1.</li>
+<li>The in-game menu, as well as chat, can now be activated after a match ends. This allows you to change loadout for the next match as well as character.</li>
+<li>Improved Crystal Hunter charged effect if post-processing or shaders are disabled.</li>
+<li>Improved the Dodge Roll cooldown indicator to a spinner icon.</li>
+<li>Zero gets a new setting that allows you to visualize Giga Attack cooldown with the same spinner as Axl's dodge roll.</li>
+<li>White Axl and Black Zero now show indicating icons above their heads if shaders are disabled.</li>
+<li>The icon for Axl's alt fire on weapon icons was changed from the letter "A" to "B" to be more clear with respect to the new Axl menu changes.</li>
+<li>Added "knocked over" sprites for Sigma.</li>
+<li>Gave Goliath armor a shoot animation.</li>
+<li>Changed charged Chameleon Sting appearance to use a rainbow palette, similar to how it looked in <i>Mega Man X</i>.</li>
+<li>Changed Stealth Mode appearance to a blue outline, similar to how it looked in <i>Mega Man X: Command Mission.</i></li>
+<li>Large Mountain map now has destructable igloos.</li>
+<li>Frozen Town was inverted in Mirror Modes.</li>
+<li>X-Hunter 2 map was reworked to have a chasm in the middle, among a few other changes.</li>
+<li>New joiners now join random team instead of blue all the time.</li>
+<li>In CTF, dropped flags now have an indicator showing how much time before they will be returned to base.</li>
+<li>In CTF Overtime, dropped flags will now return to base at 5x the rate.</li>
+<li>The flag can now be dropped by holding DASH for 1 second. It can be picked up again after 1 second.</li>
+<li>Scoring flag now awards 5 scrap.</li>
+<li>Chill Penguin input to break ice statues changed to DOWN when standing. This allows you to still taunt and show your enemies who's boss without sacrificing your ice statues in the process.</li>
+<li>Ice Statue count now shown under Chill Penguin's inventory icon.</li>
+<li>Applied a variety of hitbox and sprite improvements submitted by various community members. (See credits page for more details/names)</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Fixed various issues (collision, camera, etc) issues in the following maps: Hunterbase, Deep Sea Base, Airborne Aircraft Carrier, Robot Junkyard, Airport.</li>
+<li>Fixed a bug where Frost Shield and Gaea Shield would block allied Zero's slashes.</li>
+<li>Fixed a bug where Golden & Ultimate Armor displayed incorrectly in Axl disguise menu.</li>
+<li>Fixed a bug where Awakened Aura animation was too fast in hyper mode 1v1.</li>
+<li>Fixed a bug where Rekkoha and Giga Crush could show 32 bars but still be greyed out.</li>
+<li>Fixed an index-out-of-bounds crash in Host Menu.</li>
+<li>Removed extra arrow on Wolf Sigma in large camera mode.</li>
+<li>Can no longer earn Sub Tank energy while healing from one. This prevents a bug where the Sub Tank icon lingers above the player's head.</li>
+<li>Fixed a bug where pickups retrieved by Boomerang Cutter would float in the air if not collected.</li>
+<li>Fixed a bug where deaths were sometimes not counting in elimination, giving players a free life.</li>
+<li>Fixed duplicate player entries in Wait Menu.</li>
+<li>Fixed a Voice Pack bug where Mavericks were using the "die" sound when being hurt by a weakness.</li>
+<li>Fixed a bug where leaving spectate mode in team modes could send you to the team with more players, resulting in a forced autobalance on a different player.</li>
+<li>Fixed a bug where Mavericks don't count as team kills in team modes.</li>
+<li>Fixed a bug where Mavericks can't lose stocks in 1v1 Hyper Mode matches.</li>
+<li>Fixed various netcode sync issues with pickup spawning.</li>
+<li>Fixed various issues with flag desyncs which could occasionally break CTF matches, especially in long matches.</li>
+<li>Fixed some additional optimization issues in long matches.</li>
+<li>Fixed a bug where flag updraft particles were not rendering for non-host players.</li>
+<li>Fixed a bug/regression where Black Zero's saber would not go through Frost Shield and guarding swordsmen.</li>
+<li>Fixed a bug with missing Vile jump shoot sprites.</li>
+<li>Fixed a bug where Wolf Sigma could activate in any location, including above pits and hazards.</li>
+<li>Fixed a bug where Nova Strike and Giga Crush special button inputs could be used in stunned states.</li>
+<li>Fixed health bar and Sub Tank indicator on Wolf Sigma being too high up.</li>
+<li>Fixed Double Bullet arm position on various sprites.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>General</p>
+
+<ul>
+  <li>Suiciding now deducts -1 kills and scrap. This includes suicides from changing characters or loadout, so use the new settings if this is a concern, or only switch when dead.</li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<!--
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Headbutt: Added a short time period that must pass before the move can deal damage, which should prevent headbutts on grounded enemies.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Plasma Shot: Reduced projectile size and number of balls left behind from 3 to 1.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Nova Strike: Increased ammo cost from 25% to 50%.</li>
+
+</ul>
+
+<p>Zero</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Purple Raijingeki: increased damage per hit from 2 to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Three-Sword Combo: damage and flinch of third hit now dependent on how fast the combo is executed:
+  <ul>
+    <li>Fastest speed: 2 damage, half flinch</li>
+    <li>Middle speed: 3: damage: full flinch</li>
+    <li>Slowest speed: 4 damage, full flinch</li>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Rakukojin: reduced height damage modifier by 33%.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Rising: reduced damage to 2.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Rising: can now rise Zero further in the air if the ATTACK or SPECIAL button is held.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Quake Blazer: now restricted to max of 3 bounces on an enemy before having to land.</li>
+
+</ul>
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Go-Getter Right: reduced speed and range.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Longshot Gizmo: damage increased to 2-2-2-2-2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K Armor: damage reduced from 6 to 4.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K Armor: reduced speed while unducked dash-charging by 25%.</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>One-handed weapons: Rate of fire reduction when aiming backwards now proportional to how far Axl is aiming backwards instead of a flat 25%.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>One-handed weapons: Movement speed reduced when shooting backwards, proportional to how far Axl is aiming backwards (25% reduction max).</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Two-handed weapons: Reduced barrel length, decreasing the minimum range zone.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Headshot collision detection improved to be more consistent and reliable, especially with shots aimed near the top of the head.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Blast Launcher: detonate alt fire damage increased from 3 to 4, and blast radius increased by 1.5x.</li>
+  <li><img src="../assets/images/rework.png" class="rework" title="rework"/>Blast Launcher: detonate alt fire no longer explodes on contact, but projectile bounciness reduced to 0.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wind Cutter: no longer passes through enemies.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Plasma Gun: damage increased from 2 to 3.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Ice Gattling: now freezes twice as fast on headshot.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Ice Gattling: can now be shot when Gaea Shield active.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Gaea Shield: increased time from 5 seconds to 10.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Assassination now instantly hits the frame when shot which should make it feel more reliable (previously there were a few frames delay). Also, a red skull icon will now indicate if the shot will be deadly, helping players gauge when to shoot (and report any bugs).</li>
+  <li><img src="../assets/images/rework.png" class="rework" title="rework"/>White Axl: no longer grants Double Bullet. Instead, the Axl Bullet will shoot level 2 copy shots on primary fire and level 3 copy shots on secondary fire (at the same rate the of the regular Axl Bullet primary/secondary fires).</li>
+</ul>
+
+<p>Sigma</p>
+
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chill Penguin: Ice statue damage reduced from 4 to 2 when in the spawning animation.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chill Penguin: Sliding hit cooldown increased from 0.5s to 0.75s.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: Roll hit cooldown increased from 0.5s to 0.75s.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: Roll damage reduced from 4 to 3.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Spark Mandrill: punch move can now break destructable walls.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Flame Mammoth: increased rate of fire for Oiling and Fire Wave (cooldown reduced from 0.75s to 0.5s).</li>
+</ul>
+
+</body>
+</html>

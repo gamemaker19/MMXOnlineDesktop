@@ -60,6 +60,30 @@
       <td>Show (or hide if it's open) a window that gives various statistics about game performance. Note that the network settings won't show any data outside of debug builds, but the gameobject count and other fields can be useful for assessing framerate issues.</td>
     </tr>
     <tr>
+      <td>hitbox</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Shows/hides various hitbox and other internal data visually, useful for troubleshooting bugs.</td>
+    </tr>
+    <tr>
+      <td>dna</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Gives the player 10 DNA cores based on the current enemy.</td>
+    </tr>
+    <tr>
+      <td>subtank</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Gives the player Sub Tank #1 (if not purchased) and fills it to the max.</td>
+    </tr>
+    <tr>
+      <td>health</td>
+      <td>(Required) an integer</td>
+      <td>No</td>
+      <td>Sets the health of the current player to the integer specified.</td>
+    </tr>
+    <tr>
       <td>aiattack</td>
       <td>None</td>
       <td>No</td>
@@ -101,7 +125,38 @@
       <td>No</td>
       <td>Makes the first AI found switch to weapon slot number provided as argument. An additional argument of <code>a</code> will also cause the AI to start attacking after the switch.<br/>Example: <code>aiswitch 3 a</code> to have the AI switch to the third weapon slot and fire it.</td>
     </tr>
+    <tr>
+      <td>freeze</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Freezes the current player.</td>
+    </tr>
+    <tr>
+      <td>hurt</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Makes the current player flinch.</td>
+    </tr>
+    <tr>
+      <td>checksum</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Prints the checksum of the current map.</td>
+    </tr>
+    <tr>
+      <td>timeleft</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Reduces the remaining time to 5 seconds.</td>
+    </tr>
+    <tr>
+      <td>ult</td>
+      <td>None</td>
+      <td>No</td>
+      <td>Immediately applies ultimate armor.</td>
+    </tr>
   </table>
 
+<br/>
 </body>
 </html>

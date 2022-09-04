@@ -33,12 +33,22 @@
 
 <h2>LAN</h2>
 
-<p>To host a LAN match, first run RelayServer.exe (NOT the MMX.exe file) in the unzipped folder, then create a match, choosing the "LAN" option before entering the Host Server menu. Now people on your private network can see the LAN matches you create if they choose the "LAN" option before entering the Join Server menu. It will automatically search PCs on your LAN for ones running the MMXOD Relay Server.</p>
-<p>This is not guaranteed to work, so if no results show up, players may need to connect by IP address by pressing ESCAPE. The host should type ipconfig in a Command Prompt window to obtain their IPv4 address for players to connect to. This may be the case if hosting a LAN match on a VPN or a large business-class internal network, as opposed to a typical private home network in the 192.168.1.* range.</p>
+<p>To host a LAN match, first run RelayServer.exe (NOT the MMX.exe file) in the unzipped folder, then create a match, choosing the "LAN" option before entering the Host Server menu. Players on your private network can then attempt to look up the LAN matches you create if they choose the "LAN" option before entering the Join Server menu. It will automatically search PCs on your LAN for ones running the MMXOD Relay Server.</p>
+<p>Note that the automatic LAN match lookup may not always find matches hosted in your LAN. This could be the case if hosting a LAN match on a VPN or a large business-class internal network (as opposed to a typical private home network in the 192.168.1.* range). If no results show up even if someone hosted a match, the others will need to directly connect by IP address by pressing ESCAPE in the Join Menu. They should type in the IP address of the host. This IP can be found in the host's "Waiting for Players" screen, under the match name (or if the match already started, in the scoreboard in the top-right).</p>
+<p>Once a player has submitted the host's IP, the Join Match menu should now find and show the match that the host created, which you can then join.</p>
+<p>If connecting by direct IP is still not working, try these troubleshooting steps:</p>
+<ul>
+  <li>Ensure that everyone's firewall is set to allow the game and relay server exes.</li>
+  <li>Make sure your LAN and the devices connected to it are configured properly and are allowed to communicate with one another. Usually you can run the <code>ping</code> command on Windows to validate this, but this is OS-dependent and is a complex subject.</li>
+  <li>If for some reason the IP address is missing in the host's match UI, or then one listed does not work, try having the host manually get their IP address by running the <code>ipconfig</code> command in Windows Command Prompt. Use the one on the right network adapter (usually Ethernet or Wi-Fi) that is labeled "IPv4 Address" or similar. If this doesn't work either, then depending on your specific VPN or network configuration, you may need to use another IP address (answers will vary depending on exact VPN vendor or network setup).</li>
+  <li>Ensure anti-viruses aren't blocking the MMXOD network communications.</li>
+  <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
+</ul>
+<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
 
-<h2>Custom Online Server</h2>
+<h2>Custom Internet Server</h2>
 
-<p>To host a public MMXOD server (also known as a "Region" in the in-game menu jargon) you'll need a Windows 64-bit server with a public ip address. It'll need to meet certain minimum requirements: too weak or low bandwidth servers may struggle with running the Relay Server, especially with multiple concurrent matches. Simply download the Relay Server and run it on your server. Make sure you enable TCP and UDP ports 14242-14342 (this gives 100 ports/concurrent matches, go over 14342 if you need more).</p>
+<p>To host a public MMXOD server (also known as a "Region" in the in-game menu jargon) on the internet, you'll need a Windows 64-bit server with a public ip address. It'll need to meet certain minimum requirements: too weak or low bandwidth servers may struggle with running the Relay Server, especially with multiple concurrent matches. Simply download the Relay Server and run it on your server. Make sure you enable TCP and UDP ports 14242-14342 (this gives 100 ports/concurrent matches, go over 14342 if you need more).</p>
 <p>As long as the exe is running, people will be able to connect to your server if they add a region.txt in the game folder with an entry that points to your public server ip. Then they will connect to that region instead of the 3 official regions on startup. Here is the region.txt format (it is JSON):</p>
 <pre style="color:white">
 {
@@ -46,6 +56,13 @@
   "ip": "YOUR_SERVER_IP"
 }
 </pre>
+
+<p>Troubleshooting:</p>
+<ul>
+  <li>Verify your server IP is connectable to anyone on the internet (i.e. try pinging it with <code>ping</code> command).</li>
+  <li>Ensure no firewall or anti-virus is blocking the ports mentioned above (both server and client side).</li>
+  <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
+</ul>
 
 <h2>Updating</h2>
 
