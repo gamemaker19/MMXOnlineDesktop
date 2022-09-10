@@ -110,6 +110,18 @@ var zeroWeaponMap = {
 	"Shingetsurin": "Shingetsurin",
 	"ShinMessenkou": "ShinMessenkou",
 	"ZSaberProjSwing": "ZSaberProjSwing",
+    "FSplasher": "FSplasher",
+    "HyorogaProj": "HyorogaProj",
+    "HyorogaSwing": "HyorogaSwing",
+    "KKnuckle": "KKnuckle",
+    "KKnuckle2": "KKnuckle2",
+    "KKnuckleAirKick": "KKnuckleAirKick",
+    "KKnuckleDropKick": "KKnuckleDropKick",
+    "KKnuckleMegaPunch": "KKnuckleMegaPunch",
+    "KKnuckleShoryuken": "KKnuckleShoryuken",
+    "KKnuckleSpinKick": "KKnuckleSpinKick",
+    "SuiretsusanProj": "SuiretsusanProj",
+    "TBreaker": "TBreaker",
 };
 
 var vileWeaponMap = {
@@ -150,6 +162,13 @@ var vileWeaponMap = {
 	"SpoiledBrat": "SpoiledBrat",
 	"VileMissile": "VileMissile",
 	"LongshotGizmo": "LongshotGizmo",
+	"DragonsWrath": "DragonsWrath",
+    "QuickHomesick": "QuickHomesick",
+    "SeaDragonRage": "SeaDragonRage",
+    "WildHorseKick": "WildHorseKick",
+    "RisingSpecter": "RisingSpecter",
+    "ParasiteSword": "ParasiteSword",
+    "MaroonedTomahawk": "MaroonedTomahawk",
 };
 
 var axlWeaponMap = {
@@ -185,7 +204,14 @@ var axlWeaponMap = {
     "FlameBurner2": "FlameBurner2",
     "FlameBurnerHyper": "FlameBurner",
     "CircleBlaze": "CircleBlaze",
-    "CircleBlazeExplosion": "CircleBlaze"
+    "CircleBlazeExplosion": "CircleBlaze",
+    "AncientGun": "AncientGun",
+    "BeastKiller": "BeastKiller",
+    "RevolverBarrel": "RevolverBarrel",
+    "IceGattlingHeadshot": "IceGattlingHeadshot",
+    "MachineBullets": "MachineBullets",
+    "MetteurCrash": "MetteurCrash",
+    "SpinWheelChargedStart": "SpinWheelChargedStart",
 };
 
 var sigmaWeaponMap = {
