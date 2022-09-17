@@ -55,6 +55,13 @@ hr {
 
 <body class="container">
 
+<script>
+  function showAVMessage() {
+    var targetEl = document.getElementById("avMessage");
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
 <div id="logo-wrapper">
   <img id="logo" src="assets/images/logo.png?v=1.0.2" />
 </div>
@@ -72,19 +79,25 @@ hr {
 <h2 style="text-align:center">Download links (Windows)</h2>
 
 <div style="text-align: center">
-  <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2_win_x86_sc.zip'">⊞ Download (v17.2)</button>
+  <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3_win_x86_sc.zip'">⊞ Download (v17.3)</button>
 </div>
 
 <div style="text-align: center;"><i>See the <a href='help.html#windows'>help</a> page for more help on Windows installation.</i></div>
+
+  <div style="text-align:center"><i><a href="javascript:showAVMessage()">Having anti-virus issues?</a></i></div>
+  <div id="avMessage" style="display:none">
+    <p><i><small>Some people have reported that the main Windows download is flagged as malware by Windows Defender or other anti-virus programs. However, there is a large community that plays the game and there is no evidence of any malware being present. Either allow the exe in your anti-virus settings, or try downloading the other Windows versions below (windows 64 bit or non-self contained versions) which are less likely to be flagged as a false positive.</i></small></p>
+    <p><i><small>If you have a Mac or Linux installed, download the Mac or Linux versions as they are virtually guaranteed not to have any virus flagging issues since Mac and Linux lack viruses and generally don't use or need an anti-virus.</i></small></p>
+  </div>
 
 <hr style="background:white;">
 
 <h2 style="text-align:center">Additional downloads (advanced users only)</h2>
 
 <div style="text-align: center;">
-  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2_win_x86.zip">Windows x86 non-SC (v17.2)</a><br/>
-  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2_win_x64.zip">Windows x64 non-SC (v17.2)</a><br/>
-  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2_win_x64_sc.zip">Windows x64 SC (v17.2)</a><br/>
+  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3_win_x86.zip">Windows x86 non-SC (v17.3)</a><br/>
+  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3_win_x64.zip">Windows x64 non-SC (v17.3)</a><br/>
+  <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3_win_x64_sc.zip">Windows x64 SC (v17.3)</a><br/>
   <a href="https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/assets.zip">Assets folder only (v17.2)</a>
 </div>
 
@@ -98,7 +111,7 @@ hr {
       <h2 style="text-align:center">Download links (Mac)</h2>
 
       <div style="text-align: center">
-        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2.app.zip'">🍎 Download (v17.2)</button>
+        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3.app.zip'">🍎 Download (v17.3)</button>
       </div>
 
       <div style="text-align: center;"><i>See the <a href='help.html#mac'>help</a> page for more help on Mac installation.</i></div>
@@ -107,7 +120,7 @@ hr {
       <h2 style="text-align:center">Download links (Linux)</h2>
 
       <div style="text-align: center">
-        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.2/MMXOnlineV17_2_debian_x64_sc.zip'">🐧 Download (v17.2)</button>
+        <button style="display:inline-block" onclick="location.href='https://github.com/gamemaker19/MMXOnline/releases/download/v17.3/MMXOnlineV17_3_debian_x64_sc.zip'">🐧 Download (v17.3)</button>
       </div>
 
       <div style="text-align: center;"><i>See the <a href='help.html#linux'>help</a> page for more help on Linux installation.</i></div>
