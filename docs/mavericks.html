@@ -50,7 +50,7 @@
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  padding: 16px 12px;
   border: 1px solid #ccc;
   border-top: none;
 }
@@ -73,7 +73,23 @@ button img {
 
 <h2>Sigma's Maverick Forces</h2>
 
-<div></div><div class="weapon-label">Chill Penguin</div><div class="clearfix"></div>
+<div class="tab">
+  <button class="tablinks active" onclick="openChar(event, 'X1')">
+    X1 Mavericks
+  </button>
+  <button class="tablinks" onclick="openChar(event, 'X2')">
+    X2 Mavericks
+  </button>
+  <!--
+  <button class="tablinks" onclick="openChar(event, 'X3')">
+    X3 Mavericks
+  </button>
+-->
+</div>
+
+<div id="X1" class="tabcontent" style="display:block">
+
+<div class="weapon-label">Chill Penguin</div><div class="clearfix"></div>
 <img class="mavImg" src="assets/images/mavChillP.png" />
 <p class="weapon-stats">
 <b>Attack:</b> Shotgun Ice<br>
@@ -155,7 +171,138 @@ button img {
 <b>Special:</b> Ice Breath<br>
 <b>Dash Move:</b> Pounce<br>
 </p>
-<p>Velguarder, Sigma's faithful pet, is unique among Mavericks in that he can climb walls. This gives him extra mobility in maps such as Airport and Power Control. His Pounce is great not only directly against enemies, but as a fast dash that can allow you to quickly cover lots of ground. Pounce can also be used from a wall. However, be careful as Pounce can cause you to accidentally fall to your death, as you can't change direction when it's used. His ice breath can be aimed further with the ARROW keys and you can turn around when using it. As you'd expect, the Fire and Ice breath will burn and freeze, respectively.</p>
+<p>Velguarder, Sigma's faithful pet, is one of the few Mavericks that can climb walls. This gives him extra mobility in maps such as Airport and Power Control. His Pounce is great not only directly against enemies, but as a fast dash that can allow you to quickly cover lots of ground. Pounce can also be used from a wall. However, be careful as Pounce can cause you to accidentally fall to your death, as you can't change direction when it's used. His ice breath can be aimed further with the ARROW keys and you can turn around when using it. As you'd expect, the Fire and Ice breath will burn and freeze, respectively.</p>
+
+</div>
+
+<!--X2 MAVERICK SECTION-->
+
+<div id="X2" class="tabcontent">
+
+<div></div><div class="weapon-label">Wire Sponge</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavWSponge.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Strike Chain<br>
+<b>Special:</b> Seeding<br>
+<b>Dash Move:</b> Lightning<br>
+</p>
+<p>Wire Sponge is an unusually complex Maverick with many options. On the surface, he appears to be an excellent grappler. His Strike Chain goes further the longer you hold down ATTACK before releasing, and can pull you towards walls or yank in enemies from afar. Once a foe is within your clutches, you can then charge up another Strike Chain to damage them with the wind-up when they are within melee range. The chain's windup can also block projectiles, making it a versatile tool. Strike Chain can also be aimed upwards with ATTACK + UP which lets you grapple onto ceilings. He can also cling onto side walls with LEFT/RIGHT, and jump off them; use this ability to prevent falling into pits when grappling.</p>
+<p>Seeding will plant robotic seeds which sprout into vines upon contact with the ground, wall or ceiling. These act as mines and are effective when combined with Strike Chain; yank an enemy into your vines for maximum damage. Seeds can be planted both on the ground and when hanging on the ceiling; you can control the seed's direction with ARROW KEY and the launch power by how long SPECIAL is held.</p>
+<p>Lighting is Wire Sponge's wild card. You need to hold it for 4 seconds to fully charge up, and are vulnerable while doing so, but if successful will summon a vicious thunderstorm dealing massive damage to all on-screen targets.</p>
+
+<div></div><div class="weapon-label">Wheel Gator</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavWheelG.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Biting/Eating/Spitting<br>
+<b>Special:</b> Spin Wheel<br>
+<b>Dash Move:</b> Drill Charge<br>
+</p>
+<!--; hold it to keep Gator's mouth gaping open, allowing him to eat projectiles. Once eaten, he can spit them back out by pressing ATTACK again; these shots automatically target enemies and the amount spat depends on the damage of the eaten projectile. !-->
+<p>Wheel Gator is a slow but fearsome Maverick with powerful attacks designed to cause as much flinching and pain to enemies as possible. His bite deals heavy damage but comes out slow with a short range. Wheel Gator can also bite upwards by pressing UP + ATTACK, which will lock enemies in his jaws, forcing them to mash to escape. Spin Wheel launches two bouncing wheels that slice through enemies, causing them to flinch in pain. Drill Charge provides even more flinch in a very rapid multi-hit attack.</p>
+
+<div></div><div class="weapon-label">Bubble Crab</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavBCrab.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Bubble Splash<br>
+<b>Special:</b> Bubble Shield / Summon Crablings<br>
+<b>Dash Move:</b> Claws<br>
+</p>
+<p>The second Maverick of Sigma's forces to be specialized for aquatic combat, Bubble Crab excels in underwater maps. Bubble Splash deals low damage but if you hold down ATTACK you'll shoot many rings of bubbles in rapid succession. Press SPECIAL to activate Bubble Shield, which protects Bubble Crab from projectiles with an 8 hit point shield. It also allows him to float indefinitely when underwater (hold down JUMP) giving him great mobility in that environment. Even when on land, you'll jump higher if you press JUMP when landing, bouncing off the ground at a great height. While the bubble shield is up, press SPECIAL again to launch robotic crablings that can damage enemies for you. His claws can be used both on the ground and when jumping, and deal heavy damage, but will immediately pop his bubble shield if it is active.</p>
+
+<div></div><div class="weapon-label">Flame Stag</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavFStag.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Fireballs<br>
+<b>Special:</b> Grab/Uppercut<br>
+<b>Dash Move:</b> Speed Burner<br>
+</p>
+<p>Flame Stag is a fast, fiery threat with plenty of burn options. His fireballs can be launched twice in succession and travel along walls upon contact. His Speed Burner can be charged - the longer you hold DASH, the farther you'll go when released. If you grab an enemy, you'll take them to the skies before crashing back down; do this under a ceiling for extra damage when smashing them to the ceiling. You can also grab enemies out of a Speed Burner dash by pressing SPECIAL when it is in progress.</p>
+
+<div></div><div class="weapon-label">Morph Moth</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavMorphM.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Silk Shot (Cocoon) / Energy Beam (Moth)<br>
+<b>Special:</b> Ceiling Thread (Cocoon) / Scrap Absorb (Cocoon, Hanging) / Powder (Moth, Flight)<br>
+<b>Dash Move:</b> Spinning (Cocoon) / Sweep (Moth, Flight)<br>
+</p>
+<p>Morph Moth is actually two Mavericks in one, with two distinct phases: the Cocoon phase and the Moth phase. Both are effective healers for not just teammates, but Sigma himself in, particuarly Summoner and Pupeeteer modes.</p>
+<p>The cocoon form is the starting form. Its main attack is Silk Shot which launches hunks of junk metal upwards, damaging enemies and healing allies alike, but this runs on limited ammo that slowly recharges. Holding DASH causes the cocoon to spin, dealing damage to enemies on contact. Note that while firing Silk Shot also spins the cocoon, you can hold DASH to spin independently of firing Silk Shot, conserving ammo. Press SPECIAL to launch a thread that can latch onto ceilings, where you can swing from side to side to toss junk all over the place. When hanging from the ceiling, the cocoon gets an additional move, the ability to absorb scrap metal by holding SPECIAL, allowing you to grow in size. Upon reaching a certain size or if reduced to less than 50% HP, you'll automatically transform into Morph Moth's true Moth form (whichever comes first).</p>
+<p>Morph Moth's moth form can fly, like Storm Eagle, but also like the eagle, the moth's flight abilities are limited by a slowly draining flight meter. Morph Moth can shoot energy beams both on the ground and in the air with ATTACK, and this can be aimed. Morph Moth can also sweep quickly in the air if holding DASH while flying. Pressing ATTACK or SPECIAL while sweeping, you can drop powder that stuns enemies and heals allies, but this move drains your flight meter faster. After stunning an enemy with the powder, see if you can quickly follow up with an energy beam before they mash out.</p>
+
+<div></div><div class="weapon-label">Magna Centipede</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavMagnaC.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Shuriken (Press) / Magnet Mine (Hold)<br>
+<b>Special:</b> Magnet Pull<br>
+<b>Dash Move:</b> Teleport<br>
+</p>
+<p>Magna Centipede is a swift and cunning ninja. His primary attack fires Shurikens in a cone pattern, great for enemies up close or just filling a battlefield with projectiles. Hold ATTACK to enter a telekinesis mode where Magna Centipede turns his tail segments into his signature Magnet Mine attack; control the circling mines with ARROW keys. SPECIAL will pull enemies towards Magna Centipede's tail, draining their health on contact. After pressing DASH to teleport, use ARROW keys to control where you will re-appear. By pressing UP and DOWN you can even teleport to the ceiling, upside down. When on the ceiling you can use all your moves as normal and gravity is reversed, effectively turning the map upside down for Magna Centipede. Use this to sneak to the objective unnoticed. You can return to the ground (or go back to the ceiling) by pressing SPECIAL in the air.</p>
+
+<div></div><div class="weapon-label">Crystal Snail</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavCSnail.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Crystal Hunter (Out of shell) / Shell Slam (Inside shell)<br>
+<b>Special:</b> Time Slow (Inside shell)<br>
+<b>Dash Move:</b> Withdraw<br>
+</p>
+<p>Despite having the slowest base speed in the game, Crystal Snail provides excellent defense and crippling slowdown and ensnaring status effects. His Crystal Hunter fires three globs that can freeze enemies in their tracks. This is the only move he can use outside of his shell. Press DASH to withdraw into your shell. This provides invulnerability to all attacks but you can only hide in your shell for so long. While in the shell you have two additional moves at your disposal. You can press and hold ATTACK to charge up a tackle move and release with good timing to fly in the desired direction. This not only causes great damage (and more to crystalized enemies) but negates Crystal Snail's poor speed. Hold SPECIAL inside the shell to charge up Crystal Snail's slowdown move. Release to unleash a charged Crystal Hunter that unlike with X, will follow Crystal Snail's position. Be careful of Magnet Mine - this will knock you out of your shell! Without his shell, Crystal Snail is marginally faster and even gets a dash move that can damage crystalized enemies, but loses most of his shell-based utility, so use that extra speed to get back in your shell.</p>
+
+<div></div><div class="weapon-label">Overdrive Ostrich</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavOverdriveO.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Sonic Slicer (horizontal)<br>
+<b>Special:</b> Sonic Slicer (vertical)<br>
+<b>Dash Move:</b> Jump Kick<br/>
+</p>
+<p>In stark contrast to Crystal Snail, Overdrive Ostrich is the fastest Maverick in the game. At top speed he will trample and damage anything he runs into. However, he must accelerate before reaching full speed, and when sprinting, he lacks agility: he will skid and brake if you try to turn directions or run into a wall. Jumping before turning helps alleviate this flaw. Aside from his outstanding maximum speed, Overdrive Ostrich is pretty basic. As a projectile, he has two forms of Sonic Slicer. The upward one covers a wide area but can be dodged in the space between the falling slicers, while the horizontal one has a higher rate of fire. Jump Kick can damage enemies without having to reach full speed.</p>
+
+<div></div><div class="weapon-label">Fake Zero</div><div class="clearfix"></div>
+<img class="mavImg" src="assets/images/mavFakeZero.png" />
+<p class="weapon-stats">
+<b>Attack:</b> Z-Buster Level 2 (Idle), Z-Saber (Dashing)<br>
+<b>Special:</b> Z-Buster Level 3<br>
+<b>Dash Move:</b> Ground Punch<br>
+</p>
+<p>Neo Sigma's fake replica of Zero deviates from the real one in that it focuses primarily on powerful buster weaponry from range at the cost of clunky, awkward mobility. ATTACK shoots level two Z-Buster shots at a high rate of fire. SPECIAL performs a 3-part combo: two level 3 Z-Buster shots followed by a sword beam. This combo is highly damaging but uses heavy amounts of buster energy. Finally, DASH has Fake Zero punch the ground, firing fragments in an upward pattern, but unlike the similar Rakuhouha, this doesn't provide invulnerability frames. While dashing, Fake Zero can also hold ATTACK to pull out his sword and damage enemies in the way.</p>
+
+</div>
+
+<script>
+function openChar(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('game');
+
+if (myParam == "x1") {
+  openChar({currentTarget:document.getElementById("X1")}, "X1")
+}
+if (myParam == "x2") {
+  openChar({currentTarget:document.getElementById("X2")}, "X2")
+}
+if (myParam == "x3") {
+  openChar({currentTarget:document.getElementById("X3")}, "X3")
+}
+
+</script>
 
 </body>
 </html>

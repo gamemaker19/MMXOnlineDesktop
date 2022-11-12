@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 18.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 18.0: The Sigma Update Part II</h1>
+
+<p>At last! After three major versions since his MMXOD debut, Sigma finally becomes the focus of a major update, with his Neo Sigma form and Mavericks from <i>Mega Man X2</i> joining the fray.</p>
+<p>While this update focuses primarily on Sigma, there were also a few additional options added for X as well, another character who has not received attention for quite some time. These options give him more flexibility on the battlefield, improving upon his existing theme of adaptability.</p>
+
+<h3>Neo Sigma</h3>
+
+<p>Added X2 Sigma Form (Neo Sigma). The X1 form (Commander Sigma) is the default; you can change your form in the Sigma Loadout menu.
+<ul>
+<li>As opposed to Commander Sigma, Neo Sigma focuses on raw offense and damage at the expense of range.</li>
+<li>ATTACK swings his claws; press it again for a second swipe which will deal more damage and flinch foes.</li>
+<li>UP/DOWN ATTACK will make Neo Sigma dive up/down, damaging enemies above/below him. The up attack can only be used on the ground, and the down attack only in the air.</li>
+<li>Much like Zero, Neo Sigma has a bar that charges on damage taken. At half bar, pressing SPECIAL will unleash several electric balls, and at full bar, Sigma will unleash a powerful electric column. Both these moves grant invuln frames for their duration.</li>
+</ul>
+</p>
+
+<h3>X2 Mavericks</h3>
+
+<p>Added the eight X2 Mavericks and Fake Zero (the 9th Maverick) as options in Sigma's loadout.
+<ul>
+  <li>See the X2 Maverick guide for more details: <a target="_blank" href="../mavericks.html?game=X2">Maverick Guide</a></li>
+  <li>Note, X2 Mavericks can be mixed with X1 Mavericks in the Sigma loadout, and do not require Neo Sigma to be selected.</li>
+  <li>The exception is 1v1 duels, where the Sigma form in your loadout determines the 9 Mavericks you spawn with.</li>
+</ul>
+</p>
+
+<h3>Viral Sigma</h3>
+
+<p>Neo Sigma's Hyper Mode is Viral Sigma (the final boss from MMX2) and like Wolf Sigma is a 10-scrap revival-based hyper mode. Activate it on death to emerge as Sigma's true form: a sentient, floating computer virus.
+<ul>
+  <li>Press ATTACK to have Viral Sigma shoot Mechaniloids. All Mechaniloids cause contact damage, are always FTD, and last 16 seconds. Use WEAPON LEFT/WEAPON RIGHT to switch between Mechaniloids:
+    <ul>
+      <li>Tiranos: Costs 3 Ammo. A tank with high HP and a ranged attack.</li>
+      <li>Scriver: Costs 2 Ammo. A hopper with a strong melee attack.</li>
+      <li>Fishern: Costs 2 Ammo. A fish that swims around and deals contact damage. Only usable in water.</li>
+      <li>Tubamail-S: Costs 1 Ammo. A bird that flies into enemies, blowing up in the process and dealing heavy damage. Only usable out of water.</li>
+    </ul>
+  </li>
+  <li>Press SPECIAL to have Viral Sigma shoot a beam straight down to the ground; it slowly loses range the longer it's held, but the range will recharge over time.</li>
+  <li>Press DASH + ARROW key to have Viral Sigma tackle foes in the direction held.</li>
+  <li>Hold JUMP when near an enemy to attempt to possess them. You'll need to hold it for about 2 seconds. If successful, Viral Sigma will possess the enemy player and take full control over them! However, you cannot use attack or special buttons on the possessed character; these buttons will instead cause you to stop possessing the victim. A possess lasts 12 seconds, but the enemy can mash buttons to regain control faster. A successful possess will also refill Mechaniloid ammo.</li>
+</ul>
+</p>
+
+<h3>X Additions</h3>
+
+<p>Reworked the "MELEE" slot in X's loadout:</p>
+<ul>
+  <li>Renamed to "SPECIAL KEY" to now represent the fact that it controls what the SPECIAL key does for X.</li>
+  <li>The default option ("DEFAULT") allows upgrading armors as normal, and activates armor-specific abilities.</li>
+  <li>The Beam Saber slot remains and works the same.</li>
+  <li>A third option to this slot was added: the ability to shoot X-buster with SPECIAL, regardless of equipped weapon (much like in MMX4-MMX6).
+    <ul>
+      <li>It can be charged with SPECIAL as well but you can't shoot while charging, unlike with Unlimited Potential X.</li>
+      <li>It does not work with Unlimited Potential X.</li>
+      <li>After firing a special weapon, the cooldown before you can shoot the buster via SPECIAL is half the normal cooldown (when compared to just switching to the X-Buster in your inventory.)</li>
+      <li>Like with Beam Saber, armors cannot be used with this option selected.</li>
+    </ul>
+  </li>
+  <li>Can now switch immediately between the SPECIAL options without losing a life (much like Axl's crafted guns).
+    <ul>
+      <li>If a non-default option is selected, armor selection will be disabled.</li>
+      <li>If armors are equipped, the SPECIAL slot will not be changable.</li>
+      <li>X can now unequip all armors to regain access to the SPECIAL slot without having to die and respawn first.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Reworked X3 chip system:</p>
+<ul>
+  <li>Added ability to change chips on the fly with full X3 armor.
+    <ul>
+      <li>UP + SPECIAL switches to Head Chip.</li>
+      <li>DOWN + SPECIAL switches to Foot Chip.</li>
+      <li>LEFT/RIGHT + SPECIAL switches to Arm Chip.</li>
+      <li>NEUTRAL SPECIAL switches to Body Chip.</li>
+    </ul>
+  </li>
+  <li>If a chip is equipped, X is now locked out of the Golden Armor (but not Ultimate Armor) for the rest of the match.</li>
+</ul>
+
+<p>X can now unequip Golden and Ultimate Armor:</p>
+<ul>
+  <li>In the armor menu, press C to unequip Golden or Ultimate Armor if it's equipped.</li>
+  <li>If you unequip Golden or Ultimate Armor, you'll be able to re-equip it at no cost, if you already purchased it in your current life.</li>
+  <li>These changes for X ensure that he will never get in a situation where he runs out of weapon energy and he has to suicide to regain the ability to attack foes. You'll always be able to unequip your way into either Beam Saber or Special Buster, even if you do not have X-Buster in loadout slot 1-3.</li>
+</ul>
+
+<h3>Misc improvements/changes</h3>
+
+<ul>
+<li>The official Voice Pack was updated to v3 with updates for Neo Sigma, so be sure to download it from Bonuses page if you are a Voice Pack user: <a href="https://gamemaker19.github.io/MMXOnlineDesktop/bonuses.html">Bonuses Page</a></li>
+<li>Added new font options: Vector and Hybrid. Vector is the old font system where it reads from the tff files. Hybrid will use Vector in-game and Bitmap in menus. Bitmap is recommended for older machines as it's the fastest and will cause the least amount of issues, crashes, etc.</li>
+<li>Added ability to disable Heart Tanks and Sub Tanks in matches. The default is enabled.</li>
+<li>Damage text now shown when damaging Ride Armors and Mavericks.</li>
+<li>In Team Deathmatch and CTF, new joiners now join the losing team if player counts are equal.</li>
+<li>Polished collision boxes and other properties for a wide variety of maps.</li>
+</ul>
+
+<h3>Bug fixes</h3>
+
+<ul>
+  <li>Fixed an exploit where Giga Crush could be used on Hyper Charge.</li>
+  <li>Fixed an exploit where Vile could use other characters' scrap to upgrade himself.</li>
+  <li>Fixed an exploit where Vile could shoot Vulcan quickly without consuming ammo.</li>
+  <li>Fixed an exploit where charged Parasitic Bomb could have infinite ammo if used with Hyper Charge.</li>
+  <li>Fixed visual charge effect bug if it was active for too long.</li>
+  <li>Fixed a variety of cases where attacks were always FTA even in FTD modes (mostly for Maverick melee attacks).</li>
+  <li>Fixed a bug where F-Splasher sound did not sync.</li>
+  <li>Fixed charged Shotgun Ice offset, and stop firing when dead or hurt.</li>
+  <li>Improved collision system when hitting corners. Now characters will not get stuck in previous situations (such as Storm Eagle diving into a corner, Zero Hyoroga'ing to an inclined ceiling, etc.)</li>
+  <li>Map boundary ceilings (such as the one in Forest or Sigma1) can no longer be used for ceiling abilities (Hyoroga, Blizzard, etc).</li>
+  <li>Fixed a bug where S.Mandrill could move on ceiling in Puppeteer when he was not being controlled.</li>
+  <li>Fixed a bug where Revolver Barrel and Ancient Gun could not headshot a character in a Ride Armor.</li>
+  <li>Fixed a bug where Strike Chain would go through Ride Armors and Mavericks.</li>
+  <li>Fixed a bug known as "Recall Cancel" where Sigma interrupt the Maverick recall animation and re-summon and control Mavericks if recalled in Puppeteer mode.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>General</p>
+
+<ul>
+  <li>
+    The following weapons now work like Burn damage and cannot award assists (but can still score the killing blow):
+    <ul>
+      <li>Uncharged Storm Tornado (Both X and Storm Eagle)</li>
+      <li>Charged Boomerang Cutter</li>
+      <li>Fire Grenade</li>
+      <li>Volt Tornado</li>
+      <li>Flame Burner</li>
+    </ul>
+  </li>
+  <li>Killing a player with 4 Heart Tanks now grants 1 extra scrap, and 8 tanks grants 2 scrap. (8 was required previously for just 1.)</li>
+  <li>Sub Tanks:
+  <ul>
+    <li>Energy capacity increased to 16 bars.</li>
+    <li>Now locks character in upgrade screen until finished healing.</li>
+    <li>A 1-second cooldown now starts before a sub tank can be used (starts when you enter the menu). This prevents quick uses in the middle of battle and also prevents macro users from gaining an unfair advantage.</li>
+    <li>Can no longer be used when invisible.</li>
+  </ul>
+  </li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged X-Buster shot range reduced to roughly 3/4 of a screen (was 1 screen before).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chameleon Sting: Now drains ammo when in use. When the ammo bar runs out, X will uncloak. Uncharged shots while invisible now reduced to 4 ammo to compensate.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Boomerang Cutter: now pierces enemies.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Spin Wheel: non-diagonal spokes now deal 2 damage. If all spokes connect, a max of 12 damage can be achieved.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Speed Burner burn time reduced from 2 to 1.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Unlimited Potential: X-Buster now runs on a recharging ammo meter.</li>
+
+</ul>
+
+<p>Zero</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Knuckle first hit no longer flinches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Knuckle second hit reduced to 3 damage, and now only half flinches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Knuckle dash attack now only half flinches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>T-Breaker and Suiretsusen (spear): significantly increased start up and lag time.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Black Zero: moves that do not flinch now only half-flinch. Burn damage inflicted no longer flinches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero: Shingetsurin (donuts) damage rate decreased by half.</li>
+</ul>
+
+<p>Vile</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Ride Armors: can now be flinched by any move that would flinch a normal character.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Air Bombs: reduced number of bombs launched from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Splash Hit: damage rate decreased from 5 hits per second to 3 hits per second.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Peace out Roller: decreased energy usage from 24 to 16, but increased cooldown from 1s to 1.25s.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Marooned Tomahawk: damage reduced from 3 to 1. Damage rate increased from 2 hits/sec to 3 hits/sec.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sea Dragon's Rage: hits required to freeze increased from 2 to 4.</li>
+</ul>
+
+<p>Axl</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Bound Blaster: Doubled ammo usage of primary fire.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Ancient Gun: Now has Beast Killer properties.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Dodge Roll: now grants invuln frames on first and last animation frame again.</li>
+</ul>
+
+<p>Sigma</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Puppeteer: 25% passive defense added back. This no longer stacks with guard which will only increase it to 50%.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Puppeteer: the "puppet cancel" bug was removed by default but made into an official setting that can be turned back on in Sigma's settings menu. If enabled, switching to Mavericks in Puppeteer will continue the behavior of reverting them to their idle state. When puppet cancelling, 0.25 seconds of cooldown are now added to all cooldown-enabled moves, to prevent spam.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Tag Team reworked:
+  <ul>
+    <li>Maverick HP increased to 32.</li>
+    <li>Scrap cost increased to 6.</li>
+    <li>Mavericks in Tag Team can now be flinched depending on their size category.</li>
+    <ul>
+      <li>Large Mavericks (Spark Mandrill, Flame Mammoth, Wheel Gator) cannot be flinched.</li>
+      <li>Small Mavericks (Chill Penguin, Velguarder, Bubble Crab, Morph Moth Cocoon Form, Crystal Snail) take expected flinch from attacks.</li>
+      <li>Medium Mavericks (all others) take half the expected flinch from attacks.</li>
+    </ul>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sigma's dash speed reduced to 2x (was 2.5x) to be consistent with other characters.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sigma's head beams now run on a recharging ammo bar.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Chill Penguin: changed the hotkey for destroying statues. Now must hold TAUNT and then press DOWN or UP to destroy statues. In addition, you can destroy only the left or right statue if you have 2, with TAUNT + LEFT or RIGHT, respectively.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chill Penguin: reduced freeze time of ice breath from 5 to 2 seconds.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Spark Mandrill: Reworked cooldown system to be more fluid by never setting the cooldown of another move to more than the one currently used, or to more than the max cooldown of a move.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: added a recharging "roll" bar. Roll now costs 8 ammo and will drain when in use. When empty, Armored Armadillo will stop rolling.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Boomer Kuwanger: added a recharging "teleport" bar. Teleport now costs 8 ammo.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Boomer Kuwanger: can now grab immediately out of a teleport.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Launch Octopus: cooldown for Whirlpool move now activates after exiting the Drain state, preventing quickly draining multiple foes in succession.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sting Chameleon: added a recharing "cloak" bar. Cloak now costs 8 ammo and will drain when in use. When empty, Sting Chameleon will stop cloaking.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Velguarder: added flinch cooldown of 1 second for pounce attack.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma: Added time limit for how long a hand can remain off-screen. After this time limit expires, the hand will be forced back to its original position.</li>
+</ul>
+
+</body>
+</html>
