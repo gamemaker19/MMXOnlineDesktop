@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 18.2</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 18.2</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? No</p>
+
+<h3>Improvements</h3>
+<ul>
+  <li>X2 mavericks can now be selected in 1v1.</li>
+  <li>Optimized shader code to reuse shaders and avoid recompiling the shader on every actor spawn.</li>
+  <li>Applied several shader fixes (X's palette and a few others) for older GPUs.</li>
+  <li>Added a graphics option for full screen rounding for low resolution monitors.</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li>Fixed a bug/exploit where X could upgrade armor with special buster.</li>
+  <li>Fixed a Vulcan ammo exploit.</li>
+  <li>Fixed a bug where Zero could reflect projectiles from behind.</li>
+  <li>Fixed a visual bug with Flame Stag's antler in grab fall animation.</li>
+  <li>Fixed a bug where Flame Stag's grab fall had collision issues on some inclines.</li>
+  <li>Fixed water zone issues with Giant Dam and Forest2 maps.</li>
+  <li>Fixed a bug where attack hitboxes could collide with spikes, killing the player.</li>
+  <li>Fixed a bug where Fake Zero would stop dashing after moving a certain distance.</li>
+  <li>Fixed a bug where Viral sigma wouldn't stop moving if hit by knockback damage.</li>
+  <li>Fixed a bug where Magna Centipede could teleport into lava or spikes.</li>
+  <li>Fixed a bug where Magna Centipede Magnet Mine stopped damaging sometimes.</li>
+  <li>Fixed a bug where teleporting as Magna Centipede could mess up the camera.</li>
+  <li>Fixed a bug where Heart Tanks could add HP to Mavericks/Ride Armors in the current life.</li>
+  <li>Fixed a bug where certain Mavericks could latch onto moving walls.</li>
+  <li>Fixed a bug where damage text was too large in large camera.</li>
+  <li>Fixed a bug where Wolf Sigma could not revive next to Viral Sigma.</li>
+  <li>Fixed a bug where Vile could get stuck in ride armor menu if entering a neutral ride armor with Vile ride armor menu open.</li>
+  <li>Fixed a bug where Morph Moth cocoon size can not syncing.</li>
+  <li>Fixed a bug where Moth Moth Beam was not working in FTD.</li>
+  <li>Fixed extreme slowdown and crashes with Speed Devil shader on older machines.</li>
+  <li>Fixed a bug where Viral Sigma could move out of map boundaries when in attack states.</li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<p>General</p>
+
+<ul>
+  <li>Subtank cooldown reworked:
+    <ul>
+      <li>Cooldown time increased to 2 seconds.</li>
+      <li>Cooldown now only activates in combat (when dealing or receiving non-DoT damage) or after certain invuln frame moves end.</li>
+      <li>Removed locking in upgrade menu in use.</li>
+    </ul>
+  </li>
+  <li>Healers (Silk Shot X, Morph Moth cocoon + moth) can no longer fill subtanks of heal target.</li>
+  <li>The following weapons can no longer assist:
+    <ul>
+      <li>Uncharged Spin Wheel</li>
+      <li>Uncharged Gravity Well</li>
+      <li>Uncharged Tornado Fang</li>
+      <li>Distance Needler</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>X3 Chips can now earn scrap.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Hadouken/Shoryuken no longer rely on full health for use but now have a 30-second cooldown between uses.</li>
+</ul>
+
+<p>Zero</p>
+
+<!--
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+</ul>
+-->
+
+<p>Vile</p>
+
+<ul>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Reworked Ride Armors:
+  <ul>
+    <li>Flinch replaced with pushback only which also reduces movement speed. (K has 50% reduced pushback; G does not have any at all.)</li>
+    <li>N/K/G armor speed and jump height reduced to v9.0 levels.</li>
+    <li>N/G armors now can hover again.</li>
+    <li>All armors except F had their stomp damage cooldown increased from 0.5s to 0.75s which will help reduce stomp loops with hover and H armor.</li>
+    <li>Note: N speed and hover changes do not apply to overworld ride armors.</li>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>No Ride Armors can cancel the enter animation anymore. (Previously all Rides except N could do so)</li>
+</ul>
+
+<p>Axl</p>
+
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Blast Launcher mines can now be destroyed by enemies, and no longer detonate when destroyed.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Revolver Barrel damage reduced to 0.5 on bodyshot.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Ancient Gun no longer reflectable.</li>
+</ul>
+
+<p>Sigma</p>
+
+<ul>
+
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Striker Mode no longer uses energy for most Mavericks (except Cocoon Moth to prevent excessive self healing).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Striker Mode made more usable with Mavericks like Wire Sponge by having attacks complete before they teleport out.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Tag Team: Mavericks can longer use Sub Tanks.</li>
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Chill Penguin: all attacks now share a cooldown.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Armored Armadillo: no longer loses armor at 50% health.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Armored Armadillo: guarding now slowly drains the ammo bar. If empty, guard cannot be used.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wire Sponge: chain spinning damage reduced from 2 to 1.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Wheel Gator: wheels now slow down on hit, like with X's spin wheels. To compensate, a 1s flinch cooldown was added.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Bubble Crab: Bubble Splash now only launches 4 rings in one burst.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Bubble Crab: Reduced rate of damage of claws.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Bubble Crab: Crabling health reduced from 6 to 4 (2 for the bubble, 2 for the crab).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Stag: fireball rate of fire reduced.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Stag: grab damage reduced to 3 ceiling / 5 ground.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Stag: speed burner cooldown now starts at end of the dash, not the charge.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Morph Moth: beam damage reduced to 5.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Morph Moth: beam now strong against Magna Centipede and Magnet Mine X.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipede: Magnet Pull time now has a limit of 2 seconds and a cooldown of 2 seconds between uses.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipede: Magnet Mine control time now has a limit of 4 seconds.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipede: Magnet Mine damage reduced to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipede: added a 0.15s teleport cooldown (now consistent with Boomer Kuwanger).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipede: teleport speed reduced from 300 to 200 units (same as run speed).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Overdrive Ostrich: damage on all 4 damage moves reduced to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Overdrive Ostrich: now crystalized (but not damaged) when hit by charged c. hunter.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Overdrive Ostrich: max speed reduced from 350 units to 300 units.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Overdrive Ostrich: damage reduced to 2 and flinch reduced by half on running into foes.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake Zero: added a cooldown for green buster shots, but can now hold SHOOT for automatic fire.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake Zero: max speed reduced from 250 units to 200 units.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake Zero: ground sword damage at top speed reduced from 6 to 4 and mid speed from 4 to 3.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake Zero: shots are now reflectable.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake zero: 3rd hit of special combo (sword beam) damage reduced from 3 to 2.</li>
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Neo Sigma: second ground claw swing damage reduced to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Neo Sigma: Cooldown added to successive up and down slashes.</li>
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Viral Sigma: Drill mechaniloid damage rate decreased.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Viral Sigma: no longer can possess flag carriers, or have possessed characters score or pick up flag.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Viral Sigma: Laser damage rate reduced.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Viral Sigma: Each successive possess increases time required +0.5 seconds, up to 4 seconds max. Also no longer easier to possess low HP enemies.</li>
+
+</ul>
+
+</body>
+</html>
