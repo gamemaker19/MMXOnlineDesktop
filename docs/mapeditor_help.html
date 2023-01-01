@@ -16,6 +16,15 @@
     padding: 10px;
     line-height: 28px;
   }
+
+  .v3 {
+    color: lightgreen;
+  }
+
+  .v3 th, .v3 td {
+    color: lightgreen; 
+  }
+
 </style>
 
 </head>
@@ -75,6 +84,7 @@
   <li>Zoom Level: change the zoom level of the map. 2 = 200%, 3 = 300%, etc. This can be slow for large maps especially on slower PC's so use judiciously.</li>
   <li>Canvas Size: here you can adjust the size of the Map Canvas to your liking.</li>
   <li>Clicked Mouse Coords: clicking on the Map Canvas will populate this with the clicked mouse coordinates. This can be useful for several things like determining mirror point, various calculations, etc.</li>
+  <li class="v3">Show Wall Paths: show the wall path structure on the map, used in-game for wall crawling projectiles. This gets auto-generated on save, but checking this allows you to visualize it before hand. It won't update automatically when checked. To do so press the refresh button to the right of it after making collision box changes.</li>
 </ul>
 
 <h4>5. Map Data</h4>
@@ -103,6 +113,11 @@
       <li>Is Large Cam Override: Only for large camera maps, this should only be selected for a parallax entry below an existing one, to signify that it's the parallax entry that will override the one above it for large camera modes. This may be needed for large camera maps if the existing parallax setup doesn't cover large camera well. Open volcaniczone map for an example.</li>
     </ul>
   </li>
+  <li class="v3">Race only: If checked, marks this map as only fit for Race mode, making it the only available game mode. Typically it is used for race course maps with Ride Chasers where the usual Deathmatch and CTF would feel out of place.</li>
+  <li class="v3">Background shader: name of background shader for the custom map which applies to all non-parallax map image layers. Put a .frag file in your custom map folder at the top level and put its file name (without .frag at the end) here. Map shaders are a complex subject so read them up here: <a href="map_shaders.html">Map Shader Guide</a></li>
+  <li class="v3">Background shader image: name of png image file that the background shader will use. Optional, only if the map shader uses images. Like with the shader, exclude the .png extension at the end. NOTE: shader images must be placed in the /sprites folder in your custom map folder, along with map spritesheets.</li>
+  <li class="v3">Parallax shader: same as background shader but for parallax images, allowing application of different effects at that layer if desired.</a></li>
+  <li class="v3">Parallax shader image: same as background shader but for parallax images, allowing application of different effects at that layer if desired.</li>
 </ul>
 
 <h4>6. Selected instance data</h4>
@@ -176,10 +191,20 @@
     <td>true</td>
     <td>Indicates that this wall is a side of a bottomless pit. It adds an unclimbable section on the bottom, which prevents players from camping too low in pit walls and also prevents players from going straight through the pit walls without requiring map creators to set the bottom points of the wall to an extremely low value.</td>
   </tr>
-    <tr>
+  <tr>
     <td>Slippery</td>
     <td>true</td>
     <td>Set to true to make a wall slippery, like ice. Currently only used by frozentown.</td>
+  </tr>
+  <tr class="v3">
+    <td>Top Wall</td>
+    <td>true</td>
+    <td>Set to true to indicate that this wall is a boundary blocking the top of the map, typically used in outdoor areas. This prevents ceiling abilities (i.e. Hyoroga) on said wall, so characters don't appear to be hanging onto nothing.</td>
+  </tr>
+    <tr class="v3">
+    <td>Move X</td>
+    <td>A number > 0</td>
+    <td>Set to a number that indicates the speed at which to push enemies standing on this wall (in units of pixels per second). Can be used for conveyer belts such as in factory 1v1.</td>
   </tr>
 </table>
 
@@ -225,6 +250,7 @@
 
 <h3>Kill Zone (Type: Shape)</h3>
 <p>Defines areas on the map where players will be immediately killed. Good for spikes, lava and bottomless pits that aren't located at the bottom of the map height.</p>
+<p class="v3">New to v3, you can configure kill zones as hurt zones, only dealing damage instead of killing outright. See the new properties for more details.</p>
 
 <table>
   <tr>
@@ -236,6 +262,21 @@
     <td>Kill Invuln</td>
     <td>true</td>
     <td>If set, kill the player even if they are invisible (cloaked). Should only be set for pit kill zones.</td>
+  </tr>
+  <tr class="v3">
+    <td>Override Damage</td>
+    <td>Number > 0</td>
+    <td>If set, indicates that this is not a true kill zone but a hurt zone, merely damaging enemies touching it by the amount of damage entered.</td>
+  </tr>
+  <tr class="v3">
+    <td>Flinch?</td>
+    <td>true</td>
+    <td>If override damage is set, turn this on to make the hurt zone flinch players on damage.</td>
+  </tr>
+  <tr class="v3">
+    <td>Hit Cooldown</td>
+    <td>A number > 0</td>
+    <td>If override damage is set, turn this on to set a hit cooldown in seconds. (This is the cooldown between each application of damage, so for example a value of 1 indicates to only damage players every second they stand in the zone). Avoid 0 or very low numbers. 0.5 or 1 (half a second or a second)is usually a good number.</td>
   </tr>
 </table>
 
@@ -271,6 +312,11 @@
     <td>Flip X</td>
     <td>true</td>
     <td>If set, indicates to spawn the player facing left instead of right.</td>
+  </tr>
+  <tr class="v3">
+    <td>Race Start Spawn</td>
+    <td>true</td>
+    <td>Only to be used in Race maps. If set, indicates that this is a race starting spawn position. Race maps need at least 10 of these and they should typically be placed in the left side of the map.</td>
   </tr>
 </table>
 
@@ -468,6 +514,11 @@
     <td>If set, indicates that the neighboring node is to be reached by jumping upwards and then pushing either left or right (configurable) when a platform is detected in that direction. This is to be used if jumping up to a floating platform where there's no wall below. Otherwise if you just use a jump zone, the bot would push left/right for too long and not make it up the platform, and go under it instead.</td>
   </tr>
   <tr>
+    <td class="v3">Platform Jump Dir Dist</td>
+    <td class="v3">positive number</td>
+    <td class="v3">Only for if Platform Jump Dir is set. Allows you to control the distance in which it checks for platforms. Set to a higher number if the platform is further way or else the AI might not see it or reach it.</td>
+  </tr>
+  <tr>
     <td>Include Jump Zones</td>
     <td>CSV string (or empty)</td>
     <td>CSV (comma-separated values) string of jump zone instance <b>numbers</b> (not the full instance name). If set, the jump zones in this CSV will only be active if transitioning to this neighbor node. This isn't commonly used or needed. An example value is <code>1,2</code>. An empty string means to ignore all jump zones when transitioning to this neighbor node.</td>
@@ -486,6 +537,146 @@
     <td>To Air Node</td>
     <td>true</td>
     <td>You need to set this if the neighbor node is in the air and not close to the ground. This is needed for vertical wall climbing node connections (quarry's left shaft has a good example of why you'd need this, so study that map's navmesh for the rationale of this use case.)</td>
+  </tr>
+  <tr>
+    <td class="v3">Moving Plat X Dist</td>
+    <td class="v3">positive number</td>
+    <td class="v3">Used for neighbors to/from moving platforms. Indicates the x distance in pixels before the AI attempts to jump from one moving platform to the next.</td>
+  </tr>
+</table>
+
+<h3 class="v3">Ride Chaser (Type: Non-shape)</h3>
+<p class="v3">Spawns Ride Chasers on the map.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Checkpoint Chaser</td>
+    <td>true</td>
+    <td>If set to true, indicates that this is a Ride Chaser spawn next to a Race mode "checkpoint", which are spawn points that are not the starting race spawn points, typically placed in the middle of the map in case players die so they don't respawn at the beginning, but at the closest checkpoint reached. Place these next to checkpoints to ensure a player that respawns at a checkpoint will immediately get a Ride Chaser spawned for them, bypassing the usual Ride Chaser spawn cooldown in non-race modes. You only need one of these map objects per checkpoint. It will endlessly spawn multiple Ride Armors for everyone if players are nearby and approach it without a Ride Chaser.</td>
+  </tr>
+</table>
+
+<h3 class="v3">Music Source (Type: Non-shape)</h3>
+<p class="v3">A dynamic music source. This provides a region in the map where the music can change on approaching it, much like the Sigma hyper forms, Goliath armor, etc.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Music Name</td>
+    <td>Name of a music file</td>
+    <td>The name of a music file (without the extension) found in the assets/music folder or the custom map top-level folder.</td>
+  </tr>
+</table>
+
+<h3 class="v3">Move Zone (Type: Shape)</h3>
+<p class="v3">A zone on the map where players will be pushed. Giant Dam has an example of this near its propellers.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Move X</td>
+    <td>A number</td>
+    <td>Amount to move in the x direction, in pixels per second/</td>
+  </tr>
+  <tr>
+    <td>Move Y</td>
+    <td>A number</td>
+    <td>Amount to move in the y direction, in pixels per second.</td>
+  </tr>
+</table>
+
+<h3 class="v3">Gate (Type: Shape)</h3>
+<p class="v3">Only for Race maps where at least one is required. Gates disappear after setup period ends and are used to prevent head starts.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Unclimbable</td>
+    <td>true</td>
+    <td>Set to true to make this gate unclimbable. Note, there isn't a boundary property unlike regular collision shapes. You'll have to manually set a very low top y value if you want the gate to not be easily jumped over in an outdoor gate.</td>
+  </tr>
+</table>
+
+<h3 class="v3">Goal (Type: Non-Shape)</h3>
+<p class="v3">Only for Race maps where one is required. This is the goal, the finish line of the race that must be touched first to win.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Mirrored Goal</td>
+    <td>true</td>
+    <td>Only in mirrored maps. Because races by convention go from left to right in the map, in mirrored maps this presents a problem for placing a goal in the right side of the map. So if your map is mirroed you MUST place a goal with this property set on the left side of the map representing the place the goal would spawn on the inverted right side of the map if mirror mode is set. IMPORTANT: if setting this you also need to set the goal to be "Mirrored Only" in the instance options or else it would spawn in non-mirrored modes as well, causing errors. NOTE: if your map supports both mirrored and non-mirrored modes, both modes need a goal, and for the non-mirrored goal, specify the goal to be "Non-Mirrored Only".</td>
+  </tr>
+</table>
+
+<h3 class="v3">Moving Platform (Type: Non-shape)</h3>
+<p class="v3">A moving platform, used in maps like Sigma 1 and Sigma 2.</p>
+
+<table class="v3">
+  <tr>
+    <th>Property</th>
+    <th width="250px">Possible Values</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Sprite Name</td>
+    <td>Custom map sprite name</td>
+    <td>Required. Name of sprite in your custom map's sprites folder to use for this moving platform. When making the map sprite, don't forget to set the sprite wrap mode as loop if it's a looping animation (which it probably will be if it's a map sprite). Also, it needs a global collision box with the "isTrigger" unchecked and hitbox type of "None". You can check isTrigger however, to make it just a moving map sprite, without collision, but this use case still requires a hitbox.</td>
+  </tr>
+  <tr>
+    <td>Move Data</td>
+    <td>Freeform Text</td>
+    <td>
+      Required. A CSV (comma separated value) of 3 numbers, with multiple lines. Here is an example:
+      
+      <code>
+        0,0,2<br/>
+        372,0,2<br/>
+      </code>
+      
+      Each line represents a waypoint in the moving platform's path. The first two numbers are the x and y offset, respectively, from the start position of the moving platform. The last number is the # of seconds to stay at this position. IMPORTANT: all moving platforms require the first row to have 0,0 as x and y so it can smoothly return to its position of origin.
+    </td>
+  </tr>
+  <tr>
+    <td>Move Speed</td>
+    <td>Positive integer > 0</td>
+    <td>Speed of the moving platform in pixels per second.</td>
+  </tr>
+  <tr>
+    <td>Time Offset</td>
+    <td>Positive integer > 0</td>
+    <td>Offset time in seconds for the moving platform before it starts moving. Use these to de-sync moving platforms and make them not move in parallel, but in a way more natural. For example, without this set in some of Sigma 1's platforms the platforms would not move in a game-accurate way but would move in unison instead of criss-crossing like in the real game.</td>
+  </tr>
+  <tr>
+    <td>Node Name</td>
+    <td>A node name</td>
+    <td>You can parent a nav mesh node to this moving platform for the AI to be able to ride and jump on/off it. Enter the node name here. The node will move with the platform. Typically the node is placed right above the moving platform.</td>
+  </tr>
+  <tr>
+    <td>Kill Zone Name</td>
+    <td>A kill zone name</td>
+    <td>You can even parent kill zones to a moving platform to have it move along with the moving platform. You can even disable the moving platform sprite collision by checking the hitbox "isTrigger" checkbox to create a moving kill/hurt zone for stage hazards.</td>
   </tr>
 </table>
 
@@ -550,7 +741,41 @@
   </li>
 </ul>
 
+<h2 class="v3" id="race">Race Mode Guidelines and Tips</h2>
+
+<p class="v3">If you want to create a race map, be sure to read the Spawn Point, Goal, Gate and Ride Chaser map object sections above as they are critical to understanding how to create a race map.</p>
+
+<p class="v3">Creating race maps has some special considerations. First you'll need to decide whether your map is a foot race or a Ride Chaser race. If you put even one Ride Chaser in your map it's considered a Ride Chaser race. Ride Chaser races mostly differ from normal races from a technical perspective in that the AI has special behavior. In Ride Chaser race maps the AI will always try to enter the nearest Ride Chaser, and you should put 10 chasers near the race spawn points and a single chaser with the checkpoint flag next to each intermediate spawn point. Ride Chaser maps should generally be much bigger than foot races and should be traversable the whole way with a chaser (unless you are ok with broken AI).</p>
+
+<p class="v3">Race maps should always be left to right. That is the spawns should be on the left and the goal on the right. This is because the checkpoint detection logic will spawn a player to the nearest checkpoint only if their X position is to the right of the checkpoint. Otherwise the checkpoint will not have counted as being reached. For this reason, avoid vertical race maps, or if you do want to make them, place spawn points carefully.</p>
+
+<p class="v3">See Marine Base and 2fort for examples of a Ride Chaser and foot race custom map, respectively.</p>
+
 <h2 id="changelog">Changelog</h2>
+
+<h3 id="v3-changelog">3.0.0</h3>
+
+<p>Because there are a lot of new features, changes in the documentation sections above related to v3 changes will be in <span class="v3">green.</span> Read these new changes above to understand how to use the new features.</p>
+
+<ul>
+<li>Wall crawling projectiles (Triad Thunder, Mandrill Electric Spark, etc) movement behavior significatly more reliable with the introduction of <b>Wall Paths</b> in the game engine. All maps now will save a Wall Path structure automatically on save. A checkbox option in the editor will reveal the wall path before save. To properly use this feature you'll need to make sure your maps have pixel perfect collision box placement. Otherwise wall crawl projectiles will be off. Old custom maps before this feature was added in v19.0 will use the old, unreliable, buggy wall crawl behavior, and you'll need to update them to make use of the new and improved Wall Path system.</li>
+<li>Map size limit increased to 35000x35000. (Needed to support the new Marine Base race map.)</li>
+<li>Added support for moving platforms.</li>
+<li>Kill zones can now non-lethal ("hurt zones"). In the editor can specify the damage, hit cooldown, flinch. Maverick Factory uses this feature now.</li>
+<li>Added a "Top Wall" property for collision boxes to indicate whether a collision box is an invisible top boundary or not. This prevents ceiling abilities such as Chill Penguin's blizzard, Hyoroga, etc.</li>
+<li>Removed bilinear filtering in map/sprite editor, making canvases not blurry but pixel-perfect when zoomed.</li>
+<li>Fixed a bug where clicking an input field would dirty the state.</li>
+<li>Added support for moving platforms via "Moving Platform" map object.</li>
+<li>Added support for push move zones in maps via "Move Zone" map object.</li>
+<li>Added support for conveyer belt walls via "Move X" property on walls.</li>
+<li>Added support for dynamic music sources in map editor via "Music Source" map object.</li>
+<li>Added support for multiple spritesheets in custom maps.</li>
+<li>Added support for map shaders in custom maps.</li>
+<li>Kill Zones no longer have to always kill and can now be configured to only deal a certain amount of damage, turning them into <b>Hurt Zones.</b> You can even link these to moving platforms, creating moving hurt zones.</li>
+<li>Fixed a bug with "non-visual modifications not allowed" message shoing up in map sprite editor.</li>
+<li>Wall climb direction property of node neighbors now inverted properly in mirror maps.</li>
+
+</ul>
 
 <h3>2.0.0</h3>
 <ul><li>Initial release of MMXOD Map Editor.</li></ul>

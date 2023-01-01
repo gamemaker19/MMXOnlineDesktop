@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>MMXOD Map Shaders</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<style>
+.vile-table th, td {
+  padding: 10px;
+  border: 1px solid white;
+  line-height: 28px;
+}
+</style>
+
+<h1>Map Shaders Overview</h1>
+
+<p>You can create map shaders in custom maps to create visual effects in map background and parallax images. Shaders are little programs that run on the GPU that can programatically change how images look. This allows for many special effects including color or palette changes over time, screen distortion, powerplant 2 blackouts, etc. However this is for advanced creators only, as it requires programming a shader in the GLSL language. If you do not know GLSL you will have to learn it first (google it, it's an industry standard shader language.) Also as you create shaders, realize that not every machine supports them so try not to make them impact gameplay too much (for example a powerplant 2 effect would impact gameplay so it's not actually a shader in the powerplant 2 map).</p>
+
+<p>Map shaders are .frag files placed in the custom map folder at the top level. Your map shader can optionally reference a single image file placed in the /sprites folder of your custom map. To point your custom map to a map shader, set the shader fields in the map editor. You can set separate shaders/images for background vs parallax layers, though background covers all 3 of the following: foreground, background, backwall and currently there is no way to make it more granular. Similarly parallax shaders applies to all parallax layers.</p>
+
+<p>Here's a sample map shader to get started, which will palette swap the background/parallax image if 10 in-game seconds have passed:</p>
+
+<code>
+<pre style="background: white;padding:20px;">
+uniform sampler2D texture;  // Always set, this is the actual background/parallax texture being shaded
+uniform sampler2D image;    // Optional shader image, i.e. palette image
+uniform int imageW;         // Width of the image above.
+uniform int imageH;         // Height of the image above.
+uniform float t;            // Time in seconds. Use this for over time effects.
+
+void main() {
+    vec4 pixel = texture2D(texture, gl_TexCoord[0].xy);
+    
+    float rows = imageH;
+    float cols = imageW;
+    float palette = 1.0;
+    if (t > 10) palette = 2.0;
+
+    if (pixel.a == 0.0) {
+        gl_FragColor = pixel;
+    } else {
+        float firstRow = 0.5 / rows;
+        float nextRow = (palette + 0.5) / rows;
+        vec4 targetColor = pixel;
+        vec4 target;
+
+        for (float i = 0.5; i < cols; i += 1.0) {
+            target = texture2D(image, vec2(i / cols, firstRow));
+
+            if (pixel.r == target.r && pixel.g == target.g && pixel.b == target.b) {
+                targetColor = texture2D(image, vec2(i / cols, nextRow));
+                i = cols + 1.0;
+            }
+        }
+        gl_FragColor = vec4(targetColor.r, targetColor.g, targetColor.b, savedAlpha);
+    }
+}
+</pre>
+</code>
+
+<p>You'll notice that there are several variables at the top of the shader that the game engine will pass in to your shader that you can use. See the comments on what they are for.</p>
+
+<p>See the Highway 2 shader and Zero Virus 1v1 shader in the assets/shader folder for more reference on how to utilize the time variable to create a palette/color change over time effect.</p>
+
+<p>To test your shader, launch the game, and enter your custom map. If your shader fails to compile, the game should warn you on startup. Note that even if it compiles on your machine, it may not on older machines, and there's no way to be sure except by testing on different machines. To avoid these issues, make sure to use decimals for any floating point number literal, even if it is a whole number (i.e. use 1.0 instead of 1) and avoid the f suffix.</p>
+
+</body>
+</html>

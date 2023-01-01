@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update v19.0</title>
+
+<style>
+  .sc {
+    color: lightblue;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .p-sc {
+  }
+</style>
+
+</head>
+<body class="container">
+
+<script>
+  function next(elem) {
+      do {
+          elem = elem.nextSibling;
+      } while (elem && elem.nodeType !== 1);
+      return elem;        
+  }
+  
+  function sc() {
+    event.srcElement.innerHTML = (event.srcElement.innerHTML === "Hide commentary" ? "Show commentary" : "Hide commentary");
+  
+    var targetEl = next(event.srcElement.parentElement);
+  
+    targetEl.style.display = (targetEl.style.display === "block" ? "none" : "block"); 
+  }
+</script>    
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version v19.0: The Sigma Update, Part III</h1>
+
+<p>The last major update of MMXOD concludes the Sigma SNES trilogy with the addition of Sigma's X3 form and Mavericks! Sigma is now a complete character with a Maverick equivalent and counter to all of X's weapons, becoming his symmetrical and thematic evil counterpart as intended all along.</p>
+
+<h3>Doppler Sigma</h3>
+
+<p>Added X3 Sigma Form (Doppler Sigma). This Captain America-like form focuses on heavy defense and ranged attacks.
+<ul>
+<li>This form comes with a passive shield that can block many frontal attacks, but is not active when attacking.</li>
+<li>ATTACK shoots fireballs at enemies which can be controlled up and down.</li>
+<li>SPECIAL has Sigma throw his shield at enemies which can be aimed upwards.</li>
+</ul>
+</p>
+
+<h3>X3 Mavericks</h3>
+
+<p>Added the eight X3 Mavericks and Dr. Doppler (the 9th Maverick) as options in Sigma's loadout. See the X3 Maverick guide for more details: <a target="_blank" href="../mavericks.html?game=X3">Maverick Guide</a></p>
+
+<h3>Kaiser Sigma</h3>
+
+<p>Doppler Sigma's Hyper Mode is Kaiser Sigma (the final boss from MMX3), a 10-scrap revival-based hyper mode. Activate it on death to emerge in an enormous battle body.<ul>
+  <li>Kaiser Sigma's only vulnerable spot is his head; attacks to the body will be blocked.</li>
+  <li>Use the ARROW keys to move/hover, and press UP to rise. When in the air, press JUMP to land back to the ground, crushing enemies beneath your feet with massive damage.</li>
+  <li>ATTACK shoots a beam which can be aimed up or down.</li>
+  <li>SPECIAL shoots 4 missiles (FTD) from the top of the battle body, which home in on foes.</li>
+  <li>WEAPON L/WEAPON R shoots mines (FTD) from the left or right of the battle body, respectively.</li>
+  <li>Kaiser Sigma is so big that it can only be activated in certain spots in the map where it fits. However, once activated you can transform into the viral form seen in X3's ending by pressing DASH. You can then move the head somewhere on the map where Kaiser Sigma will fit and relocate the battle body. Be careful since the viral form is vulnerable and defenseless.</li>
+</ul>
+</p>
+
+<h3>Ride Chasers</h3>
+
+<p>Ride Chasers, a recurring gameplay element of the Mega Man X series, now arrive in MMXOD! These speedy hoverbikes only appear on certain maps, like with neutral Ride Armors added in v17.0.</p>
+<ul>
+  <li>Any character can enter a Ride Chaser in the same way as a Ride Armor. Ride Chasers have 24 health.</li>
+  <li>Ride Chasers can jump, shoot, turn around, and dash for as long as the key is held.</li>
+  <li>You can damage enemies when dashing at full speed but be careful not to crash into a wall or you'll take damage!</li>
+</ul>
+
+<h3>Race Mode + New Race Custom Map</h3>
+
+<p>Ride Chasers would feel incomplete without making a "race" mode, a common request. The object of Race Mode is to be the first to reach a certain map object, the "Goal". When the match first starts, you'll be blocked by a gate until the Setup time ends, to stop early joiners from getting a head start.</p>
+
+<p>Race mode has the following changes from normal mode:</p>
+<ul>
+  <li>Players cannot attack each other, except with Ride Chaser shots on other Ride Chasers.</li>
+  <li>On death, players respawn at the nearest neutral spawn.</li>
+  <li>In their first spawn after joining, players will spawn at a designated neutral spawn (with "raceStartSpawn" property in editor).</li>
+  <li>In Ride Chasers, press WeaponL or WeaponR to move the camera left or right to see further ahead or behind.</li>
+  <li>In Ride Chasers, if it gets destroyed, you die. This is to prevent getting stranded and being forced to manually suicide.</li>
+</ul>
+
+<p>There was a custom map added dedicated to Race mode: Marine Base. This is Jet Stingray's stage from Mega Man X4. Since it's the entire stage, it's really long, so using the Ride Chasers are a must to get to the goal. Race mode was also added to the following maps (none of these have Ride Chasers so these maps are strictly foot races):</p>
+<ul>
+  <li>Airborne Aircraft Carrier</li>
+  <li>Central Computer</li>
+  <li>Highway</li>
+  <li>Gallery</li>
+  <li>Powerplant</li>
+  <li>Tower</li>
+  <li>Robot Junkyard</li>
+  <li>Sigma 1</li>
+  <li>Volcanic Zone</li>
+  <li>Maverick Factory</li>
+  <li>2fort</li>
+</ul>
+
+<p>Many changes were made in the editor to support Race. If you are a map creator, it is important to understand how Race mode works and the difference between Ride Chaser and foot races. See the map editor guide for more details: <a href="../mapeditor_help.html#race">Editor Race Guide</a></p>
+
+<p>PLEASE NOTE: I have been hesitant to add a Race mode to MMXOD given its netcode limitations. Because it lacks delay/lockstep or rollback netcode, it could easily result in players appearing to win the race on their screen but actually losing because of lag. Given this, online Race matches are only supported in custom maps or private matches, and if it has too many netcode issues could even be restricted to offline and LAN only, where the mode would work much better. In addition, foot races may have balance issues with some characters having an advantage, so it's a mode better enjoyed with friends on an honor system, and/or using custom match settings such as "Mono Character" to make everyone the same character. And some big Ride Chaser race maps like Marine Base may lag on older machines.</p>
+
+<h3>Unlimited Potential Rework</h3>
+<p>Unlimited Potential has gotten special attention in this update. The rework adds moves inspired by the <i>X vs Zero Decisive Battle</i> fan animation, making the hyper mode more melee and skill oriented, as originally intended.</p>
+<ul>
+  <li>All of X's currently equipped weapons are removed upon revival.</li>
+  <li>ATTACK button now replaced with a powerful 4-damage buster shot, but takes 8 ammo per shot on a 1-second cooldown per shot. This ammo does not recharge automatically, but successful parries (see below) will refill all ammo.</li>
+  <li>Can now parry attacks by pressing WEAPON L or WEAPON R with good timing right before an attack connects. (The attack timing is independent of lag and favors your screen.) Melee attacks are countered while projectiles are grabbed and thrown back. Quickly release the parry button before the projectile is grabbed to "pocket" it and carry it around with you until you press the parry button again to throw it. All countered/reflected attacks deal 2x the original damage or 4 damage, whichever is more.</li>
+  <li>SPECIAL button now always swings the X6 saber, regardless of whether it's equipped or not.</li>
+</ul>
+
+<h3>Nightmare Zero</h3>
+<p>Added a new Hyper Mode for Zero, Nightmare Zero.</p>
+<ul>
+  <li>This form lasts until death and focuses on debilitating slowdown effects.</li>
+  <li>All attacks apply "infected" status, causing more slowdown the more stacks applied.</li>
+  <li>Giga Attack replaced with Dark Hold, which costs 16 energy and completely stops enemies in place for 4 seconds. Stopped enemies can still be attacked.</li>
+</ul>
+
+<h3>Z-Buster Loadout Option</h3>
+<p>Zero gets a new loadout option that was designed to be accurate and pay homeage to his gameplay in <i>Mega Man X3</i>. As such it's relatively simple, without a lot of options.</p>
+<ul>
+  <li>Zero can now equip the Z-Buster in his first loadout option (renamed from "MELEE" to "GROUND ATK").</li>
+  <li>This replaces the saber and allows shooting uncharged buster shots but prevents all sword techniques and hypers.</li>
+  <li>Charged Z-Buster shots don't require scrap in this mode but are weaker than the saber and k-knuckle form.</li>
+  <li>This form has access to the buster-buster-saber combo (which was removed from Black Zero) at the cost of 1 scrap.</li>
+  <li>SPECIAL will swing Zero's saber in the same fashion as the combo but without the sword beam. (Like his attack that killed Sigma in the X3 ending.)</li>
+</ul>
+
+<h3>Vile V / Devil Bear</h3>
+<p>Added a new 5-scrap Vile Hyper Mode: Vile V.</p>
+<ul>
+  <li>It can either be activated after dying as normal Vile (with ATTACK) or after dying as Vile MK-II (with SPECIAL, if Goliath was not summoned).</li>
+  <li>This form has a jetpack; press and hold JUMP in the air to hover for as long as your fuel meter lasts.</li>
+  <li>This form has a special interaction with Ride Armors. Vile actually controls summoned Ride Armors telekinetically, like puppeteer Sigma, but at all times, not just when the slot is selected. (Note there is a max control range.) In addition, he rides his Ride Armors standing up and can attack freely on them, but loses the ability to duck inside the carrier as a tradeoff.</li>
+  <li>This mode has access to the Devil Bear armor instead of Goliath like with MK-II. Costing 10 scrap, this armor is completely invincible and you can hold down ATTACK to launch a flurry of punches, but otherwise is unremarkable in its features.</li>
+</ul>
+
+<h3>New Vile Laser: Straight Nightmare</h3>
+<ul><li>This laser works similarly to uncharged Storm Tornado, but stronger. It's a powerful forward torrent of air that can push and damage enemies.</li></ul>
+
+<h3>New Official Maps</h3>
+
+<p>Added the following large maps:</p>
+<ul>
+  <li>Highway 2: This map takes place in the credits scene of <i>Mega Man X</i> and shows off the new map shader system used to change the background color from night to day over time, just like in the real game. (Note, this effect requires shaders to be enabled).</li>
+  <li>Desert Base 2: Like Highway 2 but the credits for <i>Mega Man X2</i>. As you'd expect, it has Ride Chasers, and a lot of them! Hover bikes galore in this chaotic fun fest of a map.</li>
+  <li>Hunter Base 2: The third of the "credits series" maps. It's the least remarkable of the three, and is simply the <i>Mega Man X3</i> ending map, a long flat stage with a relatively low floor.</li>
+  <li>Giant Dam 2: this has an unusually high amount of map sprites to more accurately resemble the level's visual beauty in <i>Mega Man X3.</i> So much, in fact, that if the game lags in this map, you can turn off map sprites with the new "enable map sprite" option in graphics settings.</li>
+</ul>
+
+<h3>Editor-Related Changes</h3>
+
+<p>The MMXOD editor was updated to support many new features and improvements in the game engine below. At a high level, here are the changes:</p>
+
+<ul>
+  <li>A signficant overhaul was done in the game engine's hitbox system to allow differentiation of hurtboxes (areas that a player can get hurt) vs hitboxes (areas that apply damage). This is a huge change to the code and could cause stability issues in early v19.0 versions but was worth it because it supports adding so many new features in v19.0: parries, absorbing projectiles, passive shields, proper Gravity Well hitboxes, the list goes on.</li>
+  <li>Wall crawling projectiles (Triad Thunder, Mandrill Electric Spark, etc) movement behavior significatly more reliable with the introduction of <b>Wall Paths</b> in the game engine which are auto-generated at map save time.</li>
+  <li>Exposed support for moving platforms, move zones, and conveyer belt walls in custom maps. Also Sigma 2 now has moving platforms.</li>
+  <li>Added support for multiple spritesheets in custom maps.</li>
+  <li>Added support for dynamic music sources in maps.</li>
+  <li>Added support for hurt zones in maps. These are modified kill zones that only deal set damage instead of OHKO'ing the player. Maverick Factory now uses this.</li>
+  <li>Added support for map shaders for additional graphics effects in maps. Highway 2 and Zero Virus 1v1 use this.</li>
+</ul>
+
+<p>
+  Custom map creators should see the editor change log for how to use these new features:
+  <ul>
+    <li><a href="../mapeditor_help.html#v3-changelog">v3.0.0 map editor changes</a></li>
+    <li><a href="../spriteeditor_help.html#v3-changelog">v3.0.0 sprite editor changes</a></li>
+  </ul>
+</p>
+
+<h3>Misc improvements/changes</h3>
+
+<ul>
+
+<li>Added a new Graphics option, V-Sync. It is off by default as it can add some input lag, but can help make map scrolling smoother if turned on, especially in Race mode when dashing in Ride Chasers.</li>
+<li>X can no longer change chips with SPECIAL until he equips a chip at least once, to prevent accidental activations.</li>
+<li>Vile's Hawk and Frog armors are now specially colored.</li>
+<li>Ride Armor recolor system now uses shaders, reducing spritesheet count and complexity.</li>
+<li>Zero spritesheet reverted to use X3 style sprites.</li>
+<li>Fake Zero 1v1 fights now use x2 Zero theme.</li>
+<li>A bunch of new music related to Sigma was added: X3 maverick theme, and X2/X3 Sigma battle themes, and play in the corresponding 1v1 matches.</li>
+<li>"Our Blood Boils" music track removed (to make room for Sigma themes).</li>
+<li>Added a vote option to end the match. Anyone can vote to end the match, and after 45 seconds, not even the host cannot end the match without a vote (except in private/LAN matches).</li>
+<li>As a way to combat the chronic, difficult-to-repro flag issues in CTF, added a vote option in Match Options to reset flags if they get stuck. This might not be guaranteed to work but at least it will provide additional data to help troubleshoot the issue so don't hesitate to initiate the vote if the flags get stuck.</li>
+<li>Bots no longer taken into account in votes.</li>
+<li>Increased cooldown between the same person starting votes to prevent votekick spam.</li>
+<li>Red spawns now automatically face to the left unless manually overriden in the editor, so now Red Team should always spawn facing the right direction.</li>
+<li>Overtime in CTF no longer triggered unless scores are 1 or less apart.</li>
+<li>Added an option to turn vehicles (Ride Armors, Ride Chasers) on/off in a match.</li>
+<li>Added custom match options to more fine-tune Heart Tank and Sub Tank max count and health provided per tank.</li>
+<li>Improved "connectivity issues detected" check to be more accurate and punish truly laggy players without affecting regular players.</li>
+<li>The long existing exploit of dragging the game window to freeze time was "patched" in that the game now detects and punishes you with a "connectivity issues detected" period equal to the amount of time you froze the window. Note that at this point it's not possible to truly fix the issue without rearchitecting the whole game engine.</li>
+<li>Private match option removed in LAN host match menu as it was never supported.</li>
+<li>Server version check is now asynchronous and now only pauses the app when trying to join or host, rather than on startup. This makes the app not lag on launch if servers are offline or if the player is not connected to the internet.</li>
+<li>Host can now set players as spectator in the Wait Menu before a match in team matches.</li>
+<li>Bots can no longer enter Ride Armors that belong to an enemy Vile player.</li>
+<li>When muting players, the mute chat message is now private.</li>
+<li>Frog flight was brought back, but in a limited form (as a console command). Type "raflight" in the console to activate the ability to perform the frog jump glitch. This only works in offline matches.</li>
+<li>Training map no longer autobalances or blocks team switches.</li>
+<li>Added option to disable map sprites for performance.</li>
+<li>Removed the shaders2 override folder. This was an unnecessary hack. Now there is only one shaders folder with shaders that should be compatible with most machines.</li>
+
+</ul>
+
+<h3>Bug fixes</h3>
+<ul>
+<li>The full screen rounding graphics setting was fixed to work properly.</li>
+<li>Fixed a bug with scroll zones improperly snapping the camera in certain situations, such as Maverick teleport abilities or Tag Team swaps.</li>
+<li>Fixed a visual issue where camera offset was incorrect in the first few frames when joining a match.</li>
+<li>Fixed a bug where certain slowdown effects were not applying in certain cases.</li>
+<li>Fixed a bug where dashing and jumping simultaneously skips the jump animation.</li>
+<li>Fixed a bug where without shaders enabled, charged C. Sting makes other players completely invisible.</li>
+<li>Fixed a bug where activating Sigma Hyper Modes would kill saved Mavericks in your inventory.</li>
+<li>Fixed a bug where Sigma's "war economy" keeps counting even when the user is dead or spectating</li>
+<li>Fixed a bug where Sigma could spawn in spikes or lava after swapping in as Tag Team.</li>
+<li>Fixed a bug where White Axl could not shoot Ice Gatling.</li>
+<li>Fixed a bug where players could enter and control multiple Ride Armors.</li>
+<li>Fixed instances of command grabs were not working in FTD.</li>
+<li>Fixed a bug in the relay server where the version override check wasn't working in some non-American locales.</li>
+</ul>
+
+<h3>Balance changes</h3>
+
+<p>General</p>
+
+<ul>
+<li>Drill Weapons (Tornado Fang, K armor) no longer flinch lock Sigma.</li>
+<li>Invuln Frame moves (i.e. Giga Crush, Rakuhouha) can no longer be used with the flag.</li>
+<li>Added a true deflect mechanic accurate to the real games: weak (1 damage) projectiles ricochet back at a 45 deg angle. This now applies to the following:
+  <ul>
+    <li>Zero Kuennbu and Guard (these no longer reflect straight back).</li>
+    <li>X1 Sigma guard.</li>
+    <li>Wire Sponge chain spinning.</li>
+  </ul>
+</li>
+<li>Zero and Sigma guard hitboxes were reworked to be more accurate to the sprites, using the new and improved hitbox system.</li>
+<li>1v1: Maverick to Maverick weakness interactions no longer apply against standalone Mavericks.</li>
+<li>1v1: If X has a weapon that a standalone enemy Maverick is weak to, that weapon's ammo will be reduced to 4 bars.</li>
+<li>The "knocked over" status can no longer cancel Hyper Mode and I-Frame states.</li>
+<li>Removed suicide penalty of 1 scrap + kill deducted. In exchange, the assist window for self-damage events increased from 2 to 10 seconds, meaning someone who tries to suicide will give the most recent player that attacked them in the last 10 seconds the kill.</li>
+
+</ul>
+
+<p>Mega Man X</p>
+
+<ul>
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>"Special Key" loadout slot no longer has the default armor ability option, and special buster is now the default. This means armor can be upgraded at any time with either the special buster or saber enabled, they just won't work once you have equipped any armor piece. This makes the option simpler to understand and less painful/restrictive.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Fire Wave: no longer shoots when charging.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Uncharged Bubble Splash: no longer shoots when charging, and max of 7 bubbles at once. In return its projectile speed was made more accurate to MMX2, being faster and more horizontal. Pressing UP allows you to shoot it in an upward trajectory resembling the old projectile trajectory.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Strike Change: damage reduced from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Sonic Slicer: damage reduced from 5 to 4.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Parasite Bomb: bees no longer lost on flinch, but cooldown increased to 1 between bee launches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Triad Thunder can no longer assist.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Ray Splasher can't be damaged on start animation anymore.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Gravity Well can now be destroyed. Thanks to the new hitbox refactor, it now has a separate, smaller hurtbox (the metal core) than its hitbox (the black well).</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Charged Frost Shield: no longer damages enemies, except on startup or when dashing. Damage increased from 2 to 3 when it does hit.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Charged Frost Shield: on destruction of the shield, no longer generates 3 shards. Instead a game-accurate ice shard is released that slides among the floor and can damage enemies or block projectiles.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Frost Shield: now generates a climbable platform underwater.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Charged Gravity Well: now properly brings down flying Mavericks as intended.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: Can now be activated even if armor parts were previously purchased, but later taken off.</li>
+</ul>
+
+<p>Zero</p>
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+<ul>
+
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Added a parry ability to K-Knuckle similar to Unlimited Potential's (press Weapon L or Weapon R). However, this can't absorb/reflect projectiles and only deals a fixed 4 damage.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Raijingeki: damage reduced from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>FSplasher: speed reduced to normal air dash speed.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Black Zero: no longer has Z-Buster combo as this was made a Z-Buster loadout exclusive.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Black Zero: flinch cooldown now applied to moves that did not flinch as regular Zero.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hyoroga: icicles now half-flinch enemies.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Quake blazer: decreased burn time to 0.5s.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Quake blazer: reduced max number of bounces to 1.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero: Reduced size of various projectiles to 16-bit proportions.</li>
+
+</ul>
+
+<p>Vile</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Added a "weight" system for Vile inspired by the Vile "cost" system in <i>Mega Man: Maverick Hunter X</i>:
+  <ul>
+    <li>Each Vile loadout option now has a weight cost associated with it.</li>
+    <li>Vile can only consume 32 weight units in a single loadout.</li>
+    <li>Most loadout options are 8 units or less, but the Ride Armor slot (now added as a loadout option) costs a whole 16.</li>
+    <li>Frozen Castle and Speed Devil cost 6 weight each as well.</li>
+    <li>Vile must equip at least one cannon or vulcan, to prevent inventory corner cases and glitches.</li>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Ride Armors now provide 2 scrap on defeat.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Armor flinch resistance reduced to 10%.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Hawk armor napalms: now have limited supply (3 Rumbling Bang, 2 Fire Grenade/Splash Hit) per Hawk summoned, the remaining count shows up in the left HUD section.</li>
+
+</ul>
+
+<p>Axl</p>
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+
+<ul>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Axl craftable guns can now earn scrap, but now come with limited ammo, which shows up in the left HUD section. More ammo can be obtained by re-crafting the gun (with same recipies/costs).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Stealth Mode: now makes Axl fully invisible to enemies.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>White Axl: copy shot now mini-flinches enemies (with a 1-second flinch cooldown).</li>
+</ul>
+
+<p>Sigma</p>
+
+<!--
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/></li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/></li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/></li>
+-->
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>All flying Mavericks can now jump. Flying is still activated by pressing UP, but can now also be activated or deactivated by pressing JUMP mid-air.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Puppeteer control range now limited to roughly 1.25 screen lengths. Any further, the Maverick can no longer be controlled.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma: hands are now climbable/ridable.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Neo Sigma: downslash now has its own cooldown (was shared with up slash cooldown).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Chill Penguin: only slide and ice breath share cooldown now.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Armored Armadillo: Head Beam rate of fire increased.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Wire Sponge: Seeding move now launches 3 seeds when hanging, instead of just 1 like on the ground.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Wheel Gator: added "eat" move. By holding down ATTACK in a bite, wheel Gator can keep his mouth open and eat projectiles and after eating them spit out energy balls that deal 2x the total damage back.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Fake Zero: Can now wall jump and climb walls/ladders, and shoot buster in the air.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Fake Zero: can now guard by pressing DOWN, reducing damage and increasing buster ammo on each hit taken.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake zero: ground punch cooldown increased from 0.75 to 1.5s.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Magna Centipede: magnet pull move now applys virus infected status, no longer heals.</li>
+</ul>
+
+</body>
+</html>

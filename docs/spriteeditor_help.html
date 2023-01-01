@@ -13,6 +13,9 @@
   td {
     padding: 5px;
   }
+  .v3 {
+    color: lightgreen;
+  }
 </style>
 
 </head>
@@ -113,6 +116,26 @@
 </ul>
 
 <h2 id="changelog">Changelog</h2>
+
+<h3 id="v3-changelog">3.0.0</h3>
+
+<ul>
+<li>The flag parameter in the editor was replaced with a dropdown of various options (replacing unintuitive "flag" setting of previous version):
+  <ul>
+    <li>Hitbox: represents an area of a sprite that deals damage.</li>
+    <li>Hurtbox: represents an area of a sprite that can receive damage and detect other collision.</li>
+    <li>Hitbox+hurtbox: both of the above.</li>
+    <li>None: like Hurtbox, but without the receiving damage part. This will only engage with non-damaging collision sources, like walls.</li>
+  </ul>
+</li>
+<li>Added a checkbox option to copy/move frames to top/bottom, useful for quickly copying/moving a frame to the top or bottom of the list. This is found at the top of the frame list section.</li>
+<li>Added an option to place hitbox rectangles with mouse. This is a button in the add hitbox section, and lets you click the top left and then the top right coords on the canvas to create the desired hitbox rectangle faster.</li>
+<li>Added support for naming hitboxes (for special use by the engine only).</li>
+<li>Removed bilinear filtering in map/sprite editor, making canvases not blurry but pixel-perfect when zoomed.</li>
+<li>Fixed a bug where just clicking on an input field would force the editor state to become dirty.</li>
+<li>Fix a bug where spritesheet canvas occasionally couldn't scroll all the way to right/down.</li>
+<li>Remove ping pong option from sprite editor as it's no longer supported by the game engine.</li>
+</ul>
 
 <h3>2.0.0</h3>
 <ul>
