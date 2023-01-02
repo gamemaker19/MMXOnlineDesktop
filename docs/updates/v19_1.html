@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.1</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 19.1</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? No</p>
+
+<h3>Bug Fixes</h3>
+
+<ul>
+  <li>Fixed a bug where opening Vile loadout in the main menu would crash the game.</li>
+  <li>Fixed various other menu and controller crashes.</li>
+  <li>Fixed a bug where Unlimited Potential buster could not be shot if buster was equipped in slot 2 or 3.</li>
+  <li>If an visualmods override sprite is no longer in the official sprite folder, it will no longer crash the game on load but simply ignore the sprite.</li>
+  <li>Fixed improper key displayed when showing prompt to revive from Vile 1 to Vile V. It would improperly show the menu secondary key, whereas the right key is the ATTACK/SHOOT button</li>
+  <li>Fixed a bug where Kaiser Sigma could revert to normal Sigma, which caused many other bugs in turn.</li>
+  <li>Fixed a bug where Crush Crawfish could get stuck in hurt/death animation.</li>
+  <li>Added a taunt to Volt Catfish, preventing a softlock if trying to taunt as Volt Catfish.</li>
+  <li>Fixed a bug where Triad Thunder would mini-flinch more than once per triangle.</li>
+  <li>Fixed a bug where Raijingeki could take health and energy pickups.</li>
+  <li>Fixed a bug where players stopped by Dark Hold could still be slowly moved.</li>
+  <li>Fixed a bug where X1 body part was showing X2 body part (due to incorrect spritesheet in assets).</li>
+  <li>Fixed shader issues with Nightmare Zero and Highway 2.</li>
+  <li>Fixed various color issues with the X3 Maverick spritesheet.</li>
+</ul>
+
+<h3>Balance Changes</h3>
+
+<ul>
+  <li>There was an undocumented change in v19.0 for parasitic bomb that was forgotten to be mentioned in the v19.0 patch notes, so it will be mentioned here: latched parasitic bomb slows down enemies now.</li>
+  <li>Kaiser Sigma: 
+    <ul>
+      <li>Increased stomp height requirement and made damage scaling require a greater fall height.</li>
+      <li>Increased landing lag from 0.75 to 1s.</li>
+      <li>Reduced vertical hover speed by half.</li>
+    </ul>
+  </li>
+</ul>
+
+</body>
+</html>
