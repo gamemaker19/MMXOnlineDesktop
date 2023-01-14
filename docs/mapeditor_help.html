@@ -753,6 +753,18 @@
 
 <h2 id="changelog">Changelog</h2>
 
+<h3 id="v3-1-0-changelog">3.1.0</h3>
+
+<ul>
+<li>Optimized editor to be more efficient for large maps and backgrounds.</li>
+<li>Fixed an issue with parsing trailing commas in JSONs when loading maps.</li>
+<li>Added Flip Y for map sprites.</li>
+<li>Added Z-Index option for Moving Platforms.</li>
+<li>Added optional "idle sprite" for platform sprite while they are not moving.</li>
+<li>Moving Platforms: can now specify option to flip X or flip Y while it is moving to the left or up, respectively.</li>
+<li>A warning will show if map spritesheets are over 1024x1024 pixels. This will not prevent saving but map creators should reduce the size of their spritesheets if they get this message or else others may not be able to play it and it could lag the editor badly. Remember that multiple map sprite spritesheets are supported now as of 3.0.0 update, and that repeat-x/repeat-y options exist to reduce size of map sprites.</li>
+</ul>
+
 <h3 id="v3-changelog">3.0.0</h3>
 
 <p>Because there are a lot of new features, changes in the documentation sections above related to v3 changes will be in <span class="v3">green.</span> Read these new changes above to understand how to use the new features.</p>
