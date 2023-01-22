@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.5</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 19.5</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? No</p>
+
+<p><i>These patch notes will try out a different format. Changes will be categorized by character, or put in General section if not character specific. This makes it easier for people to more easily visualize what changed for their character.</i></p>
+
+<h3>General Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed some instances of tall character sprites still visible when dying from falling off the map.</li>
+</ul>
+
+<h3>Mega Man X Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where charged Gravity Well was affecting friendly Mavericks.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Charged Homing Torpedo: now half flinches.</li>
+  <li><img src="../assets/images/buff.png" class="buff" title="buff"/>Hadouken/Shoryuken cooldown progress now saved across death, and now immediately usable upon unlocking.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increased X Buster Hyper Charge cooldown from 0.5s to 0.75s.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Increase X saber cooldown from 0.75s to 1s. <i>Note:</i> the fact that the cooldown starts at the beginning of the animation is <b>not</b> a bug. Many attack cooldowns work like this such as Buster Zero's saber and X1 Sigma's sword (which also have a 1s cooldown from animation start). Increasing saber cooldown is therefore categorized as a nerf, not a bug fix.</li>
+</ul>
+
+<h3>Zero Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug/exploit with Awakened Zero where sword beams could be spammed in the air.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Air slash damage reduced to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Kuennbu damage reduced to 1, but can double hit for 2 damage if spaced/timed properly.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Rising damage reduced to 1 near ground, but can multi-hit if held longer and spaced/timed properly, especially on airborne enemies.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Dash attack damage reduced from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Shippuga now half flinches only.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Added a flinch cooldown of 1 second to Zero's third ground saber swing.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Knuckle: Added a cooldown to the dash attack kick.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero: Re-added scrap cost of 1 for shooting Shingetsurin (blue "donuts").</li>
+</ul>
+
+<h3>Vile Changes</h3>
+
+<p>Additions/Improvements</p>
+<ul>
+  <li>Vile V gets a new move: Hexa Involute from MMX8.
+  	<ul>
+  	  <li>Activate by charging SPECIAL all the way to green level (doesn't require a laser).</li>
+      <li>Release to unleash 6 powerful electrical beams that radiate and spin from Vile.</li>
+      <li>The move drains all hover meter at once and E-Bar over time and ends when E-Bar is empty or if Vile presses SPECIAL again.</li>
+      <li>Vile has I-Frames during this move but can't command Ride Armors in this state.</li>
+  	</ul>
+  </li>
+  <li>Vile V Ride Armor control reworked:
+    <ul>
+      <li>Being on the mech slot now only controls the mech, not Vile.</li>
+      <li>While on the mech slot, UP ARROW is now used to recall the mech. DOWN ARROW deactivates the mech.</li>
+      <li>A deactivated mech will not move with Vile until Vile re-activates it by switching back to the mech slot.</li>
+      <li>The setting "Vile V Ride Control", if set to Hold, will remain on the mech slot only if WEAPON L/R is held.</li>
+    </ul>
+  </li>
+  <li>Block Mech Scroll no longer compatible with Vile MK5 once a Ride Armor is summoned as it makes less sense there and would be hard to implement.</li>
+  <li>Vile's cannon shoot animations were greatly improved with the addition of a separate cannon sprite system. Now, cannon sprites will be angled at the direction of the shot, without having to duplicate a whole ton of sprites.</li>
+  <li>Longshot Gizmo now roots Vile in place in the air, like in the real MHX game, and the animation was improved as well.</li>
+  <li>Using Rising Specter in the air now works like Charged Triad Thunder: it will drop Vile to the ground and then shoot it immediately upon landing. (Before it just removed the charge and did nothing if used in the air.)</li>
+  <li>Vile can now aim any cannon down when crouching with DOWN + LEFT/RIGHT.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug/exploit where Rocket Punch and Cutter could be used at the same time, and cancel the other out.</li>
+  <li>Fixed a bug where Ride Armor punches couldn't destroy destructable blocks.</li>
+  <li>Fixed a bug where Dragon's Wrath flamethrower worked underwater.</li>
+  <li>Fixed a bug where "Block Mech Scroll" vile setting did not work properly if the player only had one hotbar weapon.</li>
+</ul>
+
+<h3>Axl Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a crash that could happen if crafting weapons with DNA Cores.</li>
+  <li>Can now copy Nightmare Zero.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Blast Launcher: grenade damage reduced from 3 to 2, and can no longer assist.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Spiral Magnum: damage reduced to 1.5 bodyshot / 3 headshot.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Circle Blaze: can no longer assist.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Assassination: removed skull icon (unless in Training map).</li>
+</ul>
+
+<h3>Sigma Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Characters can now drop through Wolf Sigma's hand by holding DOWN when falling in the air, preventing oversight (and griefing potential) of Wolf Sigma blocking players from leaving their team spawn area in certain maps.</li>
+  <li>Fixed Kaiser Sigma's fall speed underwater.</li>
+  <li>Hovering downwards as Kaiser Sigma no longer drains hover meter at the same rate as rising upwards, which was unintentional.</li>
+  <li>Fixed a bug where Doppler vaccine was only adding 1s of vaccine time to allies instead of the intended 2.</li>
+  <li>Fixed a bug where Kaiser Sigma could "snap" to ceilings when trying to go up inclines.</li>
+</ul>
+
+<p>Additions/Improvements</p>
+<ul>
+  <li>Various sprite improvements.</li>
+  <li>Kaiser Sigma now can be activated on inclines.</li>
+  <li>Gravity Beetle's second sphere now goes forward after hitting the wall, like in MMX3.</li>
+  <li>Dr Doppler's Vaccine weapon now has an indicator on Doppler's hotbar slot indicating it's activate, and also is persisted between Maverick swaps.</li>
+
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Reduced damage of X1 Sigma's wall leap slash from 6 to 5.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Kaiser sigma: relocating should remove old kaiser suit, force relocate (no return)</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fake Zero: added a hit cooldown to ground punch move rocks, so only one can hit at a time.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Launch Octopus: added a meter for green missiles.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Launch Octopus: Homing torpedos now half flinch.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Boomer Kuwanger: boomerang damage decreased from 4 to 3.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Boomer Kuwanger: boomerang now able to retrieve pickups.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Flame Stag: added a time/range limit to fireballs, preventing abuse.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Dr. Doppler: flame charge move now can go over pits, no longer affected by gravity.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Dr. Doppler: increased speed of uncoat animation on summon.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Doppler Sigma: added a cooldown to air fireballs to prevent short hop fireball spam.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Doppler Sigma: added a 1s cooldown for shield throw.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Kaiser Sigma: body can no longer pick up health capsules.</li>
+</ul>
+
+</body>
+</html>
