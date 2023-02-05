@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.6</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<p><a href="../changelog.html">Back to changelog</a></p>
+
+<h1>Version 19.6</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? Yes</p>
+
+<h3>Editor Updates</h3>
+<p>The Map Editor was updated to 3.2.0 with some improvements:</p>
+<ul>
+  <li>Added an optimization mode for very large maps. By pressing the TURN ON button next to OPTIMIZED MODE OFF, you'll be able to toggle Optimized mode on and off. This mode is much faster for large expansive maps and is recommended on slow PCs or large Race maps. The downside of this mode is lack of a scroll bar, you'll have to press the arrow keys below the map canvas to scroll.</li>
+  <li>Added a 32 bit version of the editor, available for download from the Tools page.</li>
+  <li>Added some options to support better AI in Ride Chaser-based Race maps: Turn Zones and Brake Zones, as well as a Jump Time property for jump zones (only used by AI in Ride Chasers). See the new Frost Man custom map for examples on how these are used.</li>
+  <li>Added a "View" menu at the top that lets you zoom in or out on the whole editor window.</li>
+  <li>Added support for Vile cannon sprite visualization system as well as the ability move POIs up and down.</li>
+  <li>Added a console command system (at the top of the screen) that lets you enter console commands. Currently the only command is "moveall x y" which moves all instances on the map by an offset of x and y. This is very helpful when you want to resize your map. More commands might be added in the future.</li>
+</ul>
+
+<h3>General Changes</h3>
+
+<p>Improvements</p>
+<ul>
+  <li>Added a couple new custom maps made by the community: Frost Man Stage, a Ride Chaser race map, and Battleship Black X, a large map. So as to not cause growing increases in download size, I have removed Floral Fury 1v1 and Guile Stage 1v1 custom maps to make room for the above maps.</li>
+  <li>The official voice pack was updated to V5 with Vile updates for the new moves. Download it from the bonuses page from the official website. In addition, Vile MK-II and V will now share the same voice clips with regular Vile.</li>
+  <li>Sigma2 sky background now changes color over time.</li>
+  <li>Improved Mountain map by adding cave spawn area.</li>
+  <li>Adjusted Weather Control CP and Quarry CP cap times to be more blue favored since Red has an advantage according to stats.</li>
+  <li>Giant Dam 2 now has invisible wall in gap in middle, to prevent camping and out of bounds clipping.</li>
+  <li>Doppler Lab and Safari Park boundary walls increased in thickness to prevent Kuwanger from getting out of bounds.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where projectiles in FTD sometimes wouldn't connect.</li>
+  <li>Fixed a bug where parallax map shaders weren't applying right parameters sometimes.</li>
+  <li>Fixed a bug where the "hitbox" console command would persist after leaving a match.</li>
+</ul>
+
+<p>Balance Changes</p>
+<ul>
+  <li>All scrap gain modifiers were removed. All kills now grant 1 scrap only, regardless of how far you are behind, whether you killed a Maverick/Ride Armor, whether you killed a player with more upgrades, etc.
+    <!--<ul><li>While this is a major change in the status quo, I consider it a necessary step to curb increasing levels of Hyper Mode spam and power creep introduced over time. In addition the old scrap system could be confusing and lead to false reports of late joiners getting hypers too early.</li></ul>-->
+  </li>
+  <li>If Heart and Sub Tanks are enabled, late joiners will automatically get a certain amount of Heart and Sub Tanks pre-purchased. The amount is dependent on the amount of kills of the player with the most kills, up to the max of 32 or more kills, where all 8 Heart and Sub Tanks will be pre-purchased (as that's the amount of scrap 32 kills would provide and be able to buy.)</li>
+</ul>
+
+<h3>Mega Man X Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where projectiles in FTD sometimes wouldn't connect.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Added a cooldown when switching from/to Fire Wave and Bubble Splash.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Reworked Unlimited Potential:
+  <ul>
+    <li>Charge shot system reworked to be similar to the Stock Charge buster upgrade in <i>Mega Man X4</i>. By holding down the ATTACK button you will charge up, slowly adding stocked charge shots to a maximum of 4, which you can then fire later.</li>
+    <li>As a consequence of this change, successful parries no longer refills charge shot ammo, as there is no longer an ammo bar for charge shot.</li>
+    <li>If no charge shots are stocked, ATTACK now causes X to punch foes, dealing 3 damage with flinch.</li>
+    <li>If you spend the time to watch the Dr Light cutscene, you'll now gain an advantage: the longer you watch, the more stocked charge shots you'll start off with. Watching the whole cutscene gives the max of 4 charge shots stocked from the get-go.</li>
+    <li>Health Drain rate now increases over time. Every 12 seconds, it will double.</li>
+    <li>Added a 0.5s cooldown to parry (which starts after the animation.)</li>
+  </ul>
+</li>
+
+</ul>
+
+<h3>Zero Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where Black Buster Zero could be activated in a vehicle.</li>
+  <li>Fixed a bug where Metal Blade could kill Zero if the hitbox touched spikes due to it being configured as a hurt box as well.</li>
+</ul>
+
+<p>Additions/Improvements</p>
+<ul>
+  <li>Black Buster Zero now has own separate pallete image.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Buster Zero: Old level 3 projectile is now the level 2 shot and deals 3 damage. Level 3 charge now fires a level 2 into a level 3 shot combo, like in the real MMX3.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Buster Zero: Removed cooldown of saber after shooting.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Buster Zero: Double buster combo no longer costs 1 scrap.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Black Buster Zero: Cost reduced to 5 and can now earn scrap.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Genmu no longer provides invincibility.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>K-Knuckle parry now has 0.5s cooldown (which starts after the animation.)</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>K-Knuckle parry can now parry projectiles, but it won't stun the shooter anymore.</li>
+
+</ul>
+
+<h3>Vile Changes</h3>
+
+<p>Additions/Improvements</p>
+<ul>
+  <li>Vile's Napalm, Ball and Flamethrower inputs can now be interchanged.
+  	<ul>
+  	  <li>Napalm slot can be set to NONE(FLAMETHROWER) or NONE(BALL) to either fall back to shooting Flamethrower or Ball if Napalm not equipped.</li>
+      <li>Ball slot can be set to NONE(FLAMETHROWER) or NONE(NAPALM) to either fall back to shooting Flamethrower or Napalm if Ball not equipped.</li>
+      <li>Flamethrower slot can be set to NONE(NAPALM) or NONE(BALL) to either fall back to shooting Napalm or Ball if Flamethrower not equipped.</li>
+  	</ul>
+  </li>
+  <li>Napalm will now always be launched from a Ride Armor when ducking even if none equipped (like Missile). Rumbling Bang will be used as the default.</li>
+  <li>Humerus Crush and Popcorn Demon can now be shot from a Ride Armor if they are equipped.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed some crouch sprite issues.</li>
+  <li>Fixed a bug where Cannon could be used when firing a Napalm.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Front Runner/Fat Boy: shooting these cannons in the air now locks Vile in place briefly, similar to its behavior in <i>Maverick Hunter X.</i></li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Vile MK-II: Shooting a cannon when grabbing now ends the grab.</li>
+</ul>
+
+<h3>Axl Changes</h3>
+
+<p>Improvements</p>
+<ul>
+  <li>Mouse clicks now count in mashing.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where Ray Gun ammo didn't drain fast enough in White Axl.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Bound Blaster: no longer increases damage after bounce (except in White Axl). Screen time buffed from 1s to 1.5s.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Sonar Beacon: no longer assists.</li>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Machine Bullets: ammo usage doubled.</li>
+
+  <li><img src="../assets/images/rework.png" class="rework" title="rework"/>White Axl reworked:
+    <ul>
+      <li>Now lasts 30 seconds.</li>
+      <li>Axl bullet now shoots level 1 copy shots (2 damage) without mini-flinch. Previously was shooting level 2 copy shots (3 damage) with mini-flinch.</li>
+      <li>Ray Gun fire rate bonus reduced from 2x to 1.5x.</li>
+      <li>Blast Launcher no longer uses reduced ammo and fire rate bonus reduced from 2x to 1.5x.</li>
+      <li>Bound Blaster deals increased damange on each bounce.</li>
+      <li>Ice Gattling no longer insta-freezes, instead having a 2x freeze modifier bonus.</li>
+      <li>Flame Burner burn time bonus reduced from 2s to 1s.</li>
+    </ul>
+  </li>
+
+</ul>
+
+<h3>Sigma Changes</h3>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where Mavericks could be attacked in Race Mode.</li>
+  <li>Fixed a bug where suiciding as a Maverick in 1v1 did not affect life counter.</li>
+  <li>Fixed a bug where Viral Sigma taking damage could increase the Mechaniloid ammo bar.</li>
+  <li>Fixed a bug where Kaiser Sigma could get stuck on ceilings due to improper activation spots.</li>
+  <li>Fixed a bug where Armored Armadillo no longer blocked on own when shot at.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Summoner: Mavericks no longer attack immediately, and their attack on spawn is no longer controllable (now being a unique trait of Striker mode).</li>
+</ul>
+
+</body>
+</html>
