@@ -37,6 +37,8 @@
 
 <p>For the non-SC versions, you'll need to download and install .NET 5 if you don't already have it installed. You can download it here: <a href="https://dotnet.microsoft.com/download/dotnet/5.0/runtime">https://dotnet.microsoft.com/download/dotnet/5.0/runtime<a>. On this webpage, under the "Run desktop apps" option on the Windows tab, choose "Download x64", "Download x86" or "Download Arm64" depending on your CPU architecture (typically x64 for newer machines on 64-bit Intel processors). Once you've downloaded and installed .NET 5, you won't need to do so again, even if downloading new non-SC versions of the game. Make sure the CPU architecture of .NET 5 you download matches the version of the game.</p>
 
+<p>Also keep in mind that the Windows advanced download options are not bundled with the assets folder. You'll have to download the assets folder from the advanced download options as well, and extract that folder into the main game folder.</p>
+
 <h2 id="mac">Installation and updating (Mac)</h2>
 
 <p>To install for the first time, download the game from the main page of this website in the Mac download section. Note that you must have a 64 bit version of Mac OS. Too old Mac OS versions may not work. Once downloaded, extract the app file somewhere, then move it to the Applications folder, before running it. If you don't move it to the Applications folder, you won't be able to save your settings.</p>
@@ -58,6 +60,8 @@
 <p>Then, open a terminal window in the game folder and run "chmod 777 ./MMX" followed by "./MMX" to launch the game.</p>
 
 <p>Note that the game requires OpenAL installed (this is a sound library). If you do not already have it installed, you will get an error message like "Unable to load shared library 'csfml-audio'". To install it on your system, run "sudo apt-get install libopenal1".</p>
+
+<p>Also keep in mind that the Linux game download is not bundled with the assets folder. You'll have to download the assets folder from the advanced download options as well, and extract that folder into the main game folder.</p>
 
 <p>To update, re-download the new version of the game. You'll need to run the chmod step again on the new version but you should not need to install OpenAL again. You can copy over controls.txt and options.txt into new versions to preserve your settings.</p>
 
@@ -90,7 +94,7 @@
 <li>Once all desired players have joined, you can now press the continue button to start the match. Note that others can join the match later even after it's started.</li>
 </ol>
 
-<p><i>Tip: In the Waiting for Players menu, for team modes, you can use the 0-9 keys to toggle players' team assignment, based on their player id number.</i></p>
+<p><i>Tip: In the Waiting for Players menu, for team modes, you can use the left/right keys to toggle players' team assignment, based on their player id number.</i></p>
 
 Note that the host of a match is just another player like the others and still participates in the match with no difference from other players. If the host leaves or disconnects, a new host is promoted in their stead.
 
@@ -127,9 +131,7 @@ You can change various settings here, such as sound and music volume, fullscreen
 
 <h2>Errors</h2>
 
-If you encounter errors please join the discord at https://discord.gg/kP9XtVU and follow these steps in the FAQ channel:
-
-<p>First check if your issue is in #known-issues channel, if it is, please be patient, it will be fixed in the next game update! If not, please post a bug report in #bugs-and-issues with a detailed description of your issue and your version of Windows. If the game crashes, fails to load, or loads and immediately exits, then please also report the contents of "out.txt" in the main game folder (if it's not empty), in the bug report (be sure to avoid re-opening the game after a crash since every run wipes this file clean.) </p>
+<p>If you encounter errors please join the discord at https://discord.gg/kP9XtVU and post a bug report in #bugs-and-issues with a detailed description of your issue. Repro steps, screenshots/videos, your controls.txt or options.txt files, PC specs, OS version, and all would help, depending on the specific issue. The more info provided, the more likely it will be fixed.</p>
 
 <h2>Gameplay tips</h2>
 
