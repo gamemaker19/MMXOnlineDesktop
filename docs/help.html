@@ -14,22 +14,34 @@
 <div id="logo-wrapper">
   <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
 </div>
+
+<div style="text-align: center">
+  <button onclick="location.href='help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
 <h1>Help Page</h1>
 
 <p>Welcome to Mega Man X Online: Deathmatch! This page gives a comprehensive guide on how to play the game, configure settings, and useful hints/tips to let you pick up your game and kick some reploid butt!</p>
 
 <h2 id="windows">Installation and updating (Windows)</h2>
 
-<p>To install for the first time, download the game from the main page of this website in the Windows download section. Windows 10 is recommended. Windows 7 and 8 is somewhat supported but may not work for some users. Unzip the downloaded file and open the MMX.exe file in the folder that gets unzipped to launch the game.</p>
+<p>To install for the first time, download the game from the main page of this website in the Windows download section. (Tip: click the game logo at the top of the website to quickly return to the home page from any other page.) Windows 10 is recommended. Windows 7 and 8 is somewhat supported but may not work for some users. Unzip the downloaded file and open the MMX.exe file in the folder that gets unzipped to launch the game.</p>
 
-<p>To update the game if there's a new version, simply redownload the game again. To transfer your settings and controls to the new version, copy these files from your old game version folder to your new game version folder:
+<p>On first launch, you'll be asked if you want to create a folder called "MMXOD" in your "Documents" folder on first launch (Windows only). If you select "Yes", the game will use this folder instead of the game exe folder for settings, controls, crash dumps, report files, etc. Select "Yes" if you want to preserve your settings and control configs on updates.</p>
+
+<p>To update the game if there's a new version, simply redownload the game again. If you selected "No" at the prompt above (or if some error occurs when trying to create the MMXOD folder, such as lack of write access or no documents folder on your computer), you'll have to transfer your settings and controls manually to the new version. To do so, copy these files from your old game version folder to your new game version folder:
   <ul>
     <li>options.txt</li>
     <li>controls.txt</li>
   </ul>
 </p>
 
-<p>To avoid having to do this on every update, you can create a folder called "MMXOD" in your "Documents" folder. If this folder exists, the game will use this folder instead of the game folder to look for the settings above as well as output any reports, crash dumps, etc. You can even copy over the assets folder here as well; if the assets folder exists in this location it would read it here instead of from the game folder. This can be useful for mods, though if the assets change in an update, you'll need to copy over those changes and update your mod if it is incompatible with the new changes.</p>
+<p>For mod users, you can even copy over the assets folder here as well; if the assets folder exists in this location it would read it here instead of from the game folder. This can be useful for mods, though if the assets change in an update, you'll need to copy over those changes and update your mod if it is incompatible with the new changes.</p>
 
 <h2 id="windows">Advanced Users Windows Downloads</h2>
 
@@ -68,6 +80,8 @@
 <p>The Linux version has a few minor differences from the Windows version. There are no popups or prompts. Error messages instead will be reported to the terminal if the game crashes. All "yes/no" prompts will automatically be selected as "yes".</p>
 
 <h2>Game Overview</h2>
+
+<p>On first launch of the game, you'll be prompted to enter a multiplayer name, and a region. It's best to select the region closest to you. Note that no account is required, you just choose a name and hop right in!</p>
 
 <p>In the main Deathmatch mode, the object of the game is to be the first with the most kills, up to a certain amount. If you die, you will respawn in 5 seconds. You can play as one of five characters: Mega Man X, Zero, Vile, Axl or Sigma. As Mega Man X you can choose from a variety of weapons from the various MMX games, and can carry 3 at a time (unless in 1v1 in which you carry all 9). You can also upgrade your armors using "Scrap", a currency earned in-game on each kill. Various armor parts from the various MMX games are available.</p>
 
@@ -131,7 +145,7 @@ You can change various settings here, such as sound and music volume, fullscreen
 
 <h2>Errors</h2>
 
-<p>If you encounter errors please join the discord at https://discord.gg/kP9XtVU and post a bug report in #bugs-and-issues with a detailed description of your issue. Repro steps, screenshots/videos, your controls.txt or options.txt files, PC specs, OS version, and all would help, depending on the specific issue. The more info provided, the more likely it will be fixed.</p>
+<p>If you encounter errors and can't figure it out on your own, you can join the discord at https://discord.gg/kP9XtVU and post a bug report in #bugs-and-issues with a detailed description of your issue. Repro steps, screenshots/videos, your controls.txt or options.txt files, PC specs, OS version, and all would help, depending on the specific issue. The more info provided, the more likely it will be fixed.</p>
 
 <h2>Gameplay tips</h2>
 

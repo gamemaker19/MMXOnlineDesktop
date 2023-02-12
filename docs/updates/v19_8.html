@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.8</title>
+
+<style>
+  .char-icon {
+    margin-top:-4px;
+    margin-right:5px;
+  }
+  hr {
+    background-color: white;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  h3 {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div style="text-align: center">
+  <button onclick="location.href='/help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='/characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='/changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='/tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='/bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='/credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
+<h1>Version 19.8</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? Yes</p>
+
+<hr>
+<h3>General Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+<li>Voice mods: MK-II and MK-V voices now can be overridden if their voice files exist. If not, will default to regular Vile clips.</li>
+<li>Sub Tanks will now display a clear message in the upgrade menu on why they can't be used in battle, to avoid confusing new players.</li>
+<li>Control Menu now moves to the next key after binding a key, making it easier to bind all controls in one go.</li>
+<li>New users are now prompted to auto-create a MMXOD folder in their Documents folder (Windows only). To prevent excessive prompts, the graphics preset prompt on first launch was removed.</li>
+<li>Fixed win message in KOTH mode.</li>
+<li>Spawn invincibility now granted on first spawn when joining matches late.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Control Menu in game no longer exits when pressing Escape bind when binding a control.</li>
+<li>Fixed logic that avoids rendering sprites off-screen. Sometimes it would not render sprites on the edge of the screen.</li>
+<li>Host can no longer spectate if their team has one less player.</li>
+<li>Fixed background parallax in Sigma2 map suddenly changing from day to night when the cycle was complete.</li>
+</ul>
+
+<hr>
+<h3><img class="char-icon" src="../assets/images/x_icon.png" width="24" />Mega Man X Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed an exploit allowing Special Buster to be shot faster than it should.</li>
+<li>X3 mavericks now give you their respective weapon when you kill them as X.</li>
+<li>Fixed a bug where auto scan of X2 helmet was not working.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Unlimited Potential: Grab damage/heal rate reduced by 25%. In return, health decay rate increase reduced from 50% to 25% increase every 12 seconds.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: Firing Buster no longer increases health decay rate.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: can now charge while grabbing, attacking, parrying, etc.</li>
+</ul>
+
+<hr>
+<h3><img class="char-icon" src="../assets/images/zero_icon.png" width="24" />Zero Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed an issue where Buster Zero could start activating Black Buster Zero while warping in.</li>
+</ul>
+
+<hr>
+<h3><img class="char-icon" src="../assets/images/vile_icon.png" width="24" />Vile Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed a bug where Necro Burst in Ride Armor generated the explosion in the wrong coordinates.</li>
+<li>Fixed issue where if no napalm equipped, hawk HUD didn't draw bomb sprites.</li>
+<li>Fixed a bug where Vile V stayed in shooting frame if shooting cannon while hovering.</li>
+
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Air Front Runner and Fat Boy: now have a setting that can be changed to not lock Vile in place when used, defaults to lock.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Removed weight system.
+  <ul>
+    <li>It is not common for major features like this to removed and this decision did not come lightly. In the end the weight system did little to properly balance Vile, as having fewer weapons did not limit Vile's ability to deal large amounts of damage. In addition it was a lot of work to maintain and yet another factor to have to balance. As part of this change, some high-weight weapons have been toned down in power to compensate (see below).</li>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Longshot Gizmo: now deals one damage per shot, fires 50% faster, and uses 50% less ammo. Cooldown of 0.5s added between Gizmo volleys.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Reduced Sea Dragon's Rage Flamethrower range by 50%, and Wild Horse Kick range by 25%. (Affects both ground and air forms.)</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Buckshot Dance: fire rate reduced; max DPS reduced from 12 to 10.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Missiles in Ride Armors now consume energy.</li>
+</ul>
+
+<hr>
+<h3><img class="char-icon" src="../assets/images/axl_icon.png" width="24" />Axl Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+
+<ul>
+<li>Fixed some incorrect Ray Gun muzzle color, sizes, and z-index.</li>
+</ul>
+
+<hr>
+<h3><img class="char-icon" src="../assets/images/sigma_icon.png" width="24" />Sigma Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+
+<ul>
+<li>Fixed a bug where non-tag team Wire Sponge's chain pull could push instead of pull sometimes.</li>
+<li>Fixed Kaise Sigma not landing properly on some inclines.</li>
+<li>Fixed Fake Zero ladder climb animation.</li>
+<li>Fixed Wire Sponge going down when hanging when down pressed even when not being controlled in Puppeteer.</li>
+<li>Fixed a bug where Wolf Sigma hands no longer blocked projectiles.</li>
+<li>Fixed X3 Maverick killfeed icons being shown as X Buster icon.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Commander Sigma: wall dash slash damage further reduced from 5to 4.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Commander Sigma: head beam now uses 2x ammo, and fire rate slightly reduced.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Kaiser Sigma virus activation now shares subtank mechanic of not being able to be used in battle.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma activation: Sigma's head now only rises a maximum distance from the ground, preventing some cases (usually in large camera) where the Wolf suit could spawn too high up.</li>
+</ul>
+
+</body>
+</html>
