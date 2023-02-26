@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.10</title>
+
+<style>
+  .char-icon {
+    margin-top:-4px;
+    margin-right:5px;
+  }
+  hr {
+    background-color: white;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  h3 {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div style="text-align: center">
+  <button onclick="location.href='/MMXOnlineDesktop/help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='/MMXOnlineDesktop/characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='/MMXOnlineDesktop/changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='/MMXOnlineDesktop/tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='/MMXOnlineDesktop/bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='/MMXOnlineDesktop/credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
+<h1>Version 19.10</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? Yes</p>
+
+<!--GENERAL-->
+<hr>
+<h3>General Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+<li>Each bot now has a 1/3 chance of falling into the following mashing archetypes: not mashing at all, being a "light masher" or being a "heavy masher". In training they will never mash (unless the new "aimash <number>" command is used, where number is a number from 0-2 representing the options listed).</li>
+<li>Zero, Vile and Sigma bots can now attack airborne enemies more effectively.</li>
+<li>Bots can now target mechaniloids, ray splasher turrets.</li>
+<li>Name limit increased from 8 to 9.</li>
+<li>The two race custom maps now support large camera. (Note, for community created custom maps, it is up to the map creator to enable this in the actual race map, and make sure it looks presentable in large camera mode.)</li>
+<li>Axl can now rocket jump in race mode.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed revival hyper modes showing player icons as dead (faded out) in scoreboard.</li>
+<li>Fixed bots not being able to attack Revival hyper modes.</li>
+<li>Fixed an issue where camera could shake when spawning.</li>
+<li>Fixed Robot Junkyard wall path issue in mirrored mode.</li>
+<li>Fixed double clang effect when Zero's saber hits sigma guard.</li>
+<li>Fixed a bug where turning on/off AI Takeover (via F12) during a match breaks any bots.</li>
+<li>Fixed a visual issue of chat being drawn on top of menu hud, blocking important info.</li>
+<li>Fixed issue where Flame Stag can get stuck in ladders with uppercut move.</li>
+<li>Fixed Sigma3 map camera stuttering problems.</li>
+<li>Made inclines in Maverick Factory map less prone to getting stuck.</li>
+<li>Kill zones that are bound to a moving platform now work with time offset.</li>
+
+</ul>
+
+<!--MMX-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/x_icon.png" width="24" />Mega Man X Changes</h3>
+<hr>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Uncharged Bubble Splash: fire rate decreased (0.075s to 0.1s cooldown), ammo usage increased (now 4 bars per burst). This makes its ammo usage match Ray Splasher and also its DPS match Ray Splasher (and the other "9 DPS" weapons, i.e. Cherry Blast and Ray Gun).</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Magnet Mine (Uncharged + Charged): Can now be moved up or down after shooting, like in the real games.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Unlimited Potential: Increased charge rate by 1.5x.</li>
+</ul>
+
+<!--ZERO-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/zero_icon.png" width="24" />Zero Changes</h3>
+<hr>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Black Zero: no longer immune to CC, but Tough Guy granted instead of normal flinches.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Awakened Zero: no longer immune to CC (except Genmu).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Black Buster Zero: Requires 10 scrap now.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Black Buster Zero: Can now triple jump.</li>
+</ul>
+
+<!--VILE-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/vile_icon.png" width="24" />Vile Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed a bug where ball cooldown was reset upon landing. (Also a big nerf to Peace out Roller.)</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Splash Hit: max damage reduced from 5 to 3. (Hit cooldown increased from 0.33s to 0.5s).</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Fire Grenade: trail now dissapears on hit.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Knee Bombs: now launch 3 bombs each with 2 dmg.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Quick Homesick: Damage reduced from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Parasite Sword: Damage reduced from 3 to 2.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Goliath: no longer immune to flinches (having the same resistance as K Armor).</li>
+</ul>
+
+<!--AXL-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/axl_icon.png" width="24" />Axl Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+<li>Improved various arm sprites.</li>
+<li>Improved various effect sprites and proportions to match 16 bit character sprites better.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>"Frail Guy" mechanic introduced: Axl suffers longer flinch times.
+  <ul>
+  <li>All mini-flinches become half a flinch (13 frames).</li>
+  <li>All half-flinches become a full flinch (26 frames).</li>
+  <li>All full flinches become super-flinches (36 frames).</li>
+  </ul>
+</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>White Axl: no longer CC immune, instead being granted "Tough Guy" mechanic like Black Zero.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Various projectile hitbox sizes reduced to match the new sprites.</li>
+</ul>
+
+<!--SIGMA-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/sigma_icon.png" width="24" />Sigma Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed bug where Head Beams could be used even if no ammo.</li>
+<li>Fixed lack of cooldown with Sting Chameleon's Chameleon Sting when used while climbing with Puppet cancel.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Commander Sigma: Head beam ammo usage increased to 7, allowing only 5 to be shot at once. Ammo recharge rate increased.</li>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Puppeteer Sigma: no longer has 25% defense, instead gets 4 extra health bars.</li>
+<li><img src="../assets/images/buff.png" class="buff" title="buff"/>Mavericks (1v1 standalone only): can now deal 3 contact damage (no flinch) on jump or fall. This is to allow some Mavericks to actually be able to damage others in the air and prevent impossible matchups.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Magna Centipde: hanging upside down now drains ammo bar. This is to prevent indefinite camping in some maps (such as airport_md) where he could also attack through walls while being difficult to attack back, and also infinite stalling in 1v1.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma: hands can no longer carry flags.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma: beam damage reduced to 8.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Wolf Sigma: hand attacks now drain the "off-screen meter" faster.</li>
+<li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>All 3 Sigma hyper modes can no longer recover HP by any means.</li>
+</ul>
+
+</body>
+</html>

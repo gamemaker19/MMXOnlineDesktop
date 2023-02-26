@@ -40,7 +40,7 @@
 
 <p>Download the program from the Tools section of the site. As of right now, this only works on Windows 64-bit versions, and requires .NET 5 to be installed. Download .NET 5 <a target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/5.0/runtime">here</a>. Make sure you download the "Run console apps" version, x64.</p>
 
-<p>This program is a command-line utility. However, it accepts no input and is extremely simple: just open it and leave it running. If the firewall prompt comes up, enable it for private networks. That's all you need to do, and now people can connect to your server.</p>
+<p>This program is a command-line utility. However, it accepts no input and is extremely simple: just open it and leave it running. If the firewall prompt comes up, enable it for private networks (may need to do it for public networks if on VPN). That's all you need to do, and now people can connect to your server.</p>
 
 <h2>LAN</h2>
 
@@ -54,9 +54,8 @@
   <li>If for some reason the IP address is missing in the host's match UI, or then one listed does not work, try having the host manually get their IP address by running the <code>ipconfig</code> command in Windows Command Prompt. Use the one on the right network adapter (usually Ethernet or Wi-Fi) that is labeled "IPv4 Address" or similar. If this doesn't work either, then depending on your specific VPN or network configuration, you may need to use another IP address (answers will vary depending on exact VPN vendor or network setup).</li>
   <li>Ensure anti-viruses aren't blocking the MMXOD network communications.</li>
   <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
-  <li>Ensure the host did not make their LAN match private (private LAN matches are not supported and this option will be removed in a future update)</li>
 </ul>
-<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
+<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs, i.e. Hamachi): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
 
 <h2>Custom Internet Server</h2>
 
