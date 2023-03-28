@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.11</title>
+
+<style>
+  .char-icon {
+    margin-top:-4px;
+    margin-right:5px;
+  }
+  hr {
+    background-color: white;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  h3 {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div style="text-align: center">
+  <button onclick="location.href='/MMXOnlineDesktop/help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='/MMXOnlineDesktop/characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='/MMXOnlineDesktop/changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='/MMXOnlineDesktop/tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='/MMXOnlineDesktop/bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='/MMXOnlineDesktop/credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
+<h1>Version 19.11</h1>
+
+<p>Asset Changes? Yes</p>
+<p>Relay Server Update? No</p>
+
+<!--GENERAL-->
+<hr>
+<h3>General Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+<li>Map thumbnails shown in create next match.</li>
+<li>Increased name limit to 10. Symbolically, this allows "Mega Man X" to be used as a name. It won't increase any more.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed broken Quake Blazer explosion sprite.</li>
+<li>"Blocked" text in koth/cp was too high.</li>
+<li>Flame mammoth fires, magnet mines, and frost shield now move with moving platforms.</li>
+<li>Fixed softlock on 1v1 end screen.</li>
+<li>"Please select a map" prompt was not blocking input.</li>
+<li>Fixed a bug where a 1v1 Maverick could be selected in non-1v1, resulting in a softlock.</li>
+<li>Fixed destructable wall spawning too many gibs in netcode.</li>
+<li>Fixed Sub Tank sound improperly playing when hitting Mavericks with healing projectiles.</li>
+<li>Fixed healing sound not playing when hitting mavericks, Ride Armors with healing projectiles.</li>
+<li>The "cannot use subtank" message no longer overlaps with Sigma's Maverick icons.</li>
+<li>Fixed a visual issue with "client and server custom map checksums do not match" menu.</li>
+<li>Fixed hitbox bugs in crouch states.</li>
+</ul>
+
+<!--MMX-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/x_icon.png" width="24" />Mega Man X Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Magnet Mines can no longer be controlled when dead.</li>
+<li>Fixed bug where Ultimate Armor could use subtanks when invisible in C-Sting.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+<li><img src="../assets/images/rework.png" class="rework" title="rework"/>Unlimited Potential rework: 
+<ul>
+  <li>Buster now flinches and damage increased to 3, but rate of fire greatly reduced, and charge rate reduced to 1x.</li>
+  <li>Grabbing, Parrying no longer eats up drain meter/drain time.</li>
+  <li>Special Saber replaced with Punch.</li>
+</ul>
+</li>
+</ul>
+
+<!--VILE-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/vile_icon.png" width="24" />Vile Changes</h3>
+<hr>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed a bug/exploit where Ride Armor could land and punch at the same time.</li>
+</ul>
+
+<!--AXL-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/axl_icon.png" width="24" />Axl Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+<li>Improved Ice Gattling sprites.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+<li>Fixed a bug where Gaea shield was not blocking projectiles.</li>
+</ul>
+
+<!--SIGMA-->
+<hr>
+<h3><img class="char-icon" src="../assets/images/sigma_icon.png" width="24" />Sigma Changes</h3>
+<hr>
+
+<p>Improvements</p>
+<ul>
+  <li>New "Command Button" key introduced for Sigma, which is now used for issuing commands to Mavericks, that can be bound in Sigma's controls menu. This defaults to CONTROL on keyboard for new users. On controller, it is by default unbound and must be bound in Sigma's controls menu. It can be bound to the same as SPECIAL if you want the old Sigma command button behavior.</li>
+  <li>Mavericks can now drop down ladders by pressing DOWN.</li>
+  <li>Improved walk animations of Storm Eagle and Armored Armadillo.</li>
+</ul>
+
+<p>Bug Fixes</p>
+<ul>
+  <li>Fixed a bug where Wire Sponge's up strike chain could get stuck in moving platforms, getting Wire Sponge stuck in the up shoot state.</li>
+  <li>Fixed a bug where Wire Sponge could cling in midair if clinging to a moving platform.</li>
+  <li>Fixed a bug where Commander and Neo forms could not attack in air if Zero swap air input setting was on.</li>
+  <li>Fixed a bug where unarmored Armored Armadillo roll was using the wrong hitbox.</li>
+</ul>
+
+<p>Balance</p>
+<ul>
+  <li><img src="../assets/images/nerf.png" class="nerf" title="nerf"/>Summoner/Puppeteer/Striker Maverick HP reduced from 32 to 24.</li>
+</ul>
+
+</body>
+</html>

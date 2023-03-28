@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
 <link rel="shortcut icon" href="favicon.png?v=1.0.2" />
-<title>MMXOD Sprite Editor Help</title>
+<title>MMXOD Relay Server Help</title>
 
 <style>
   td {
@@ -38,13 +38,13 @@
 
 <h2 id="windows">Installation/Getting Started</h2>
 
-<p>Download the program from the Tools section of the site. As of right now, this only works on Windows 64-bit versions, and requires .NET 5 to be installed. Download .NET 5 <a target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/5.0/runtime">here</a>. Make sure you download the "Run console apps" version, x64.</p>
+<p>Download the program from the Tools section of the site. Choose the right version for your needs. Like with the main game, you can download self-contained versions (easiest to set up as they run out of the box without requiring .NET 5 installed, but have a larger download size) and choose between 32 bit or 64 bit depending on your OS. However, Mac and Linux Relay Server downloads are currently not available.</p>
 
 <p>This program is a command-line utility. However, it accepts no input and is extremely simple: just open it and leave it running. If the firewall prompt comes up, enable it for private networks (may need to do it for public networks if on VPN). That's all you need to do, and now people can connect to your server.</p>
 
 <h2>LAN</h2>
 
-<p>To host a LAN match, first run RelayServer.exe (NOT the MMX.exe file) in the unzipped folder, then create a match, choosing the "LAN" option before entering the Host Server menu. Players on your private network can then attempt to look up the LAN matches you create if they choose the "LAN" option before entering the Join Server menu. It will automatically search PCs on your LAN for ones running the MMXOD Relay Server.</p>
+<p>To host a LAN match, first run RelayServer.exe in the unzipped folder (NOT the MMX.exe file, this should be ignored and is to never be opened, you still use your main MMXOD game download for running the actual game). Then open MMXOD and create a match, choosing the "LAN" option before entering the Host Server menu. Players on your private network can then attempt to look up the LAN matches you create if they choose the "LAN" option before entering the Join Server menu. It will automatically search PCs on your LAN for ones running the MMXOD Relay Server.</p>
 <p>Note that the automatic LAN match lookup may not always find matches hosted in your LAN. This could be the case if hosting a LAN match on a VPN or a large business-class internal network (as opposed to a typical private home network in the 192.168.1.* range). If no results show up even if someone hosted a match, the others will need to directly connect by IP address by pressing ESCAPE in the Join Menu. They should type in the IP address of the host. This IP can be found in the host's "Waiting for Players" screen, under the match name (or if the match already started, in the scoreboard in the top-right).</p>
 <p>Once a player has submitted the host's IP, the Join Match menu should now find and show the match that the host created, which you can then join.</p>
 <p>If connecting by direct IP is still not working, try these troubleshooting steps:</p>
@@ -55,7 +55,7 @@
   <li>Ensure anti-viruses aren't blocking the MMXOD network communications.</li>
   <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
 </ul>
-<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs, i.e. Hamachi): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
+<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. The late Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs, i.e. Hamachi): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
 
 <h2>Custom Internet Server</h2>
 

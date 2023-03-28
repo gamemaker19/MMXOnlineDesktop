@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Decommission</title>
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="index.html"><img id="logo" src="assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div style="text-align: center">
+  <button onclick="location.href='help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
+<h1>Official Server Decommission Guide</h1>
+
+<p>Unfortunately in about 2 months, on end of day May 28th, 2023, I will lose the ability to fund the public servers, and will have to shut them down. In addition, there is a small but not insigificant chance it could be shut down sooner.</p>
+
+<p>Development will also officially end by then, barring maybe a few small bug fixes. Some time afterwards, the source code will be released to the public on Github.</p>
+
+<p>This guide will walk you through various potential options if you want to keep playing multiplayer MMXOD after that date elapses. While it will be harder without official servers, the tools are there, but a general theme is that you'll have to play with a trusted group of friends, as opposed to anonymously with strangers.</p>
+
+<p><b>Note:</b> most of the information on the actual Relay Server is documented here: <a href="relayserver_help.html">Relay Server Help Guide</a>. So follow that for more technical details. This guide merely outlines high level methods of utilizing the Relay Server to play with friends online post shutdown of the official servers, and pros and cons to each approach.</p>
+
+<p><b>Disclaimer:</b> Some of these options below are at your own risk, and I take no responsibility if you get hacked. Only attempt these options if you understand and researched the risks, know what you are doing, and have a backup plan if things go wrong. (This applies for any game you try to self host, really, not just MMXOD.)</p>
+
+<h3>1. In-Person LAN</h3>
+
+<p><b>Pros:</b> Simplest option by far; requires little setup or technical knowledge; little to no security risk</p>
+<p><b>Cons:</b> Only allows people to play in person, or within the same home/building/campus network</p>
+
+<p>LAN is simple: one person needs to download the Relay Server from the Tools section of the site. They open it on their computer, along with MMXOD. They share their private IP with others they wish to play with (there is a chance in small networks that it could be auto-detected on LAN search but it's not guaranteed by any means.) This IP can easily be found on the hoster's host menu and in the in-game scoreboard. Others just need to run MMXOD and connect to the LAN IP of the player running the Relay Server.</p>
+
+<p>This option is great for: LAN parties at someone's residence or a computer lab, i.e. in school/college buildings, or in-person tournaments in a building with a LAN, or 1v1 or smaller matches with people in the same house.</p>
+
+<h3>2. LAN over VPN</h3>
+
+<p><b>Pros:</b> Enables online play; does not require port forwarding; somewhat secure if you only allow people you trust into the VPN</p>
+<p><b>Cons:</b> Requires a bunch of setup effort and moderate VPN technical knowledge; larger or higher quality VPNs cost money</p>
+
+<p>Playing MMXOD over a VPN entails all players who wish to play with each other setting up the same VPN service on their computer, and connecting to a network someone creates on that VPN. Then, the steps are more or less the same as in-person LAN: one person hosts a LAN match and the others can join remotely, using the same steps. Hamachi is recommended and was tested to work with MMXOD. If you want to use another VPN Provider, look for providers that have a lot of media coverage, i.e. Wikipedia, news articles, etc to ensure that they are legit and not dangerous malware. Most should work if they provide basic VPN services.</p>
+
+<p>At the time of this writing, Hamachi is free for up to 5 computers in a network - meaning that only 5 players can join the same match before having to pay. If you don't want to have to pay you need to use a different VPN.</p>
+
+<p>Make sure you only allow friends or people you absolutely trust to connect to your VPN network. A bad actor allowed on the network could attempt to hack into your PC causing serious damage. This is not a subsitute for a public server. Also make sure your PC software is up to date to reduce risk, have a good anti-virus, firewall, etc.</p>
+
+<!--<p>This is the recommended option if you want to keep playing MMXOD online with friends but can't connect in person or in the same building/campus.</p>-->
+
+<h3>3. Internet, Port-Forwarded Home Server</h3>
+
+<p><b>Pros:</b> Free, does not require third party tools or infrastructure; allows online play</p>
+<p><b>Cons:</b> Potentially dangerous (to port forwarder) if you don't know what your doing; exposes the host's IP address to all players in the match (and vice versa), technical expertise and supported router required.</p>
+
+<p><i>Note: this option was not tested and might not actually work, or might require additional unaccounted steps.</i></p>
+
+<p>This option entails one user, the port forwarder, exposing their IP/ports for computers in their home network (or whatever network of the building they are in) to the internet. This typically requires a router change and is for advanced networking gurus. Certain ISP's might also not allow it. However only the port forwarder needs the tech knowledge. The port forwarder should forward TCP and UDP ports 14242-14342 to their computer running the Relay Server as these ports are used by MMXOD. The others can then join the match if they have the public IP address of the hoster, who should share it. Everyone should add a region.txt file in their game folder to directly connect to the IP address of the hoster instead of the official servers, enabling them to join to the port forwarder's server instead of the official server when selecting "internet" as the Join Match option. (The port forwarder must do this too so they can create the match on their local IP/Relay Server.) See the Relay Server guide for more details on region.txt.</p>
+
+<p>This option is best used for a larger group of friends that want to play MMXOD with each other over the internet. There should be no cap in the player count (at least up to the official 12 player cap in a match).</p>
+
+<p>However, this option can definitely be risky and dangerous (to the port forwarder) if you don't know what your doing, and could put your home network at risk, so be careful. Avoid sharing your IP to too broad an audience; posting the IP publicly available on the internet is probably a bad idea. Make sure your routers and devices are up to date. Don't forward more ports than you need to, and have a good antivirus/firewall. Even players joining the port forwarder's servers could have their IP address revealed to the port forwarder, so only connect to servers run by people you trust.</p>
+
+<h3>4. Internet, Dedicated Hosted Server</h3>
+
+<p><b>Pros:</b> least risky / most secure option, from a personal protection standpoint; supports public matches that anyone can easily join with zero technical setup (for the joiners).</p>
+<p><b>Cons:</b> most expensive option; requires a lot of technical expertise and effort for server admin; server must be maintained to prevent hackers/cheaters/denial of service/etc.</p>
+
+<p>This option basically takes the MMXOD official server model and hands it over to players to independently manage their own servers, communities, etc. To do this, you'd need a cloud hosted Windows server with a public, static IP address, then host the Relay Server there. Cloud services like AWS/Azure servers, etc can be used. However, these are very expensive. (Significantly more so than VPNs)</p>
+
+<p>Then, similarly to option 3, players would add a region.txt if they want to connect to that specific server IP.</p>
+
+<p>If you want to set up your own public server with near 100% uptime that anyone can join, and maximize uptime and minimize hackers, you need lots of money, free time and patience. Another major problem with a public server is that since the code will become open source, the game will be very easy to hack. As the security model of the code is quite flawed and is overly trusting of the player (this was my first netcode project, and it was designed to maximize development speed at the expense of poor security against cheaters). So with the source code available, a hacker could do anything easily. At this moment I cannot recommend this option, at least a full blown public server, and will not document it in great detail. It will require the source code to be released first. But the option is there. If you do want to puruse this option, I recommend you do not share your server IPs to too broad an audience. You could mod the game code to make all matches private/secret, which could also help reduce maintenance effort. If you have a small community/group of friends sharing the server, you could turn the server on only when needed to save costs and bandwidth.</p>
+
+<p>This option should not pose any significant security risks, to either the server hoster or people connecting to it. However, the person running the public server could have access to IP addresses of people connecting to it, so only connect to servers run by people you trust.</p>
+
+<h3>Other options</h3>
+
+<p>These are by no means a comprehensive list: computer networking, though very complex, is also very flexible. If you have the technical know how and once the source code is released, you can pursue combinations of the options above, or even experiment with new options and tools altogether.</p>
+
+</body>
+</html>
