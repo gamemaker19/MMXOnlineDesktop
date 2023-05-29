@@ -60,13 +60,14 @@
 <h2>Custom Internet Server</h2>
 
 <p>To host a public MMXOD server (also known as a "Region" in the in-game menu jargon) on the internet, you'll need a Windows 64-bit server with a public ip address. It'll need to meet certain minimum requirements: too weak or low bandwidth servers may struggle with running the Relay Server, especially with multiple concurrent matches. Simply download the Relay Server and run it on your server. Make sure you enable TCP and UDP ports 14242-14342 (this gives 100 ports/concurrent matches, go over 14342 if you need more).</p>
-<p>As long as the exe is running, people will be able to connect to your server if they add a region.txt in the game folder with an entry that points to your public server ip. Then they will connect to that region instead of the 3 official regions on startup. Here is the region.txt format (it is JSON):</p>
+<p>As long as the exe is running, people will be able to connect to your server if they have a region.txt in the game folder with an entry that points to your public server ip. Here is the region.txt format (it is JSON):</p>
 <pre style="color:white">
 {
   "name": "YOUR_REGION_NAME",
   "ip": "YOUR_SERVER_IP"
 }
 </pre>
+<p>Replace YOUR_SERVER_IP with the public ipv4 address of the server running MMXOD you wish to connect to. YOUR_REGION_NAME can be anything and will be what the region will show up as in the game menus, but must not be blank and will be truncated to 8 characters max if longer.</p>
 
 <p>Troubleshooting:</p>
 <ul>

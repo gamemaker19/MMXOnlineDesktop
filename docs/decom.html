@@ -26,11 +26,11 @@
 
 <h1>Official Server Decommission Guide</h1>
 
-<p>Unfortunately in about 2 months, on end of day May 28th, 2023, I will lose the ability to fund the public servers, and will have to shut them down. In addition, there is a small but not insigificant chance it could be shut down sooner.</p>
+<p>As of May 28th, 2023, I have shut down the official servers of MMXOD. This means you can't play online anymore without self-hosted servers.</p>
 
-<p>Development will also officially end by then, barring maybe a few small bug fixes. Some time afterwards, the source code will be released to the public on Github.</p>
+<p>I have also ended development and support for the project. The source code has been released and is here for anyone that wants to clone it, or just figure out how the game and its tools work: <a href="https://github.com/gamemaker19/MMX-Online-Deathmatch">https://github.com/gamemaker19/MMX-Online-Deathmatch</a>. The readme will have more details.</p>
 
-<p>This guide will walk you through various potential options if you want to keep playing multiplayer MMXOD after that date elapses. While it will be harder without official servers, the tools are there, but a general theme is that you'll have to play with a trusted group of friends, as opposed to anonymously with strangers.</p>
+<p>This guide will walk you through various potential options if you want to keep playing multiplayer MMXOD online. While it will be harder without official servers, the tools are there, but a general theme is that you'll have to play with a trusted group of friends, as opposed to anonymously with strangers.</p>
 
 <p><b>Note:</b> most of the information on the actual Relay Server is documented here: <a href="relayserver_help.html">Relay Server Help Guide</a>. So follow that for more technical details. This guide merely outlines high level methods of utilizing the Relay Server to play with friends online post shutdown of the official servers, and pros and cons to each approach.</p>
 
@@ -74,13 +74,17 @@
 <h3>4. Internet, Dedicated Hosted Server</h3>
 
 <p><b>Pros:</b> least risky / most secure option, from a personal protection standpoint; supports public matches that anyone can easily join with zero technical setup (for the joiners).</p>
-<p><b>Cons:</b> most expensive option; requires a lot of technical expertise and effort for server admin; server must be maintained to prevent hackers/cheaters/denial of service/etc.</p>
+<p><b>Cons:</b> most expensive option; requires technical expertise in cloud infrastructure for server admin; server must be maintained to prevent hackers/cheaters/denial of service/etc.</p>
 
-<p>This option basically takes the MMXOD official server model and hands it over to players to independently manage their own servers, communities, etc. To do this, you'd need a cloud hosted Windows server with a public, static IP address, then host the Relay Server there. Cloud services like AWS/Azure servers, etc can be used. However, these are very expensive. (Significantly more so than VPNs)</p>
+<p>This option basically takes the MMXOD official server model and hands it over to players to independently manage their own servers, communities, etc. To do this, you'd need a cloud hosted Windows server with a public, static IP address, then host the Relay Server there. Cloud services like Azure or AWS servers, etc can be used. However, these are very expensive. (Significantly more so than VPNs)</p>
 
 <p>Then, similarly to option 3, players would add a region.txt if they want to connect to that specific server IP.</p>
 
-<p>If you want to set up your own public server with near 100% uptime that anyone can join, and maximize uptime and minimize hackers, you need lots of money, free time and patience. Another major problem with a public server is that since the code will become open source, the game will be very easy to hack. As the security model of the code is quite flawed and is overly trusting of the player (this was my first netcode project, and it was designed to maximize development speed at the expense of poor security against cheaters). So with the source code available, a hacker could do anything easily. At this moment I cannot recommend this option, at least a full blown public server, and will not document it in great detail. It will require the source code to be released first. But the option is there. If you do want to puruse this option, I recommend you do not share your server IPs to too broad an audience. You could mod the game code to make all matches private/secret, which could also help reduce maintenance effort. If you have a small community/group of friends sharing the server, you could turn the server on only when needed to save costs and bandwidth.</p>
+<p>If you want to set up your own public server with near 100% uptime that anyone can join, and maximize uptime and minimize hackers, you need lots of money, free time and patience. Another major problem with a public server is that since the code will become open source, the game will be very easy to hack. As the security model of the code is quite flawed and is overly trusting of the player (this was my first netcode project, and it was designed to maximize development speed at the expense of poor security against cheaters). So with the source code available, a hacker could do anything easily. I also don't recommend relying on the ban tools for this reason, and also because they require building from source and source code tweaks and are very complex to set up.</p>
+
+<p>Thus, if you do want to puruse this option, I recommend you do not share your server IPs to the public or to too broad an audience. It's best to only share it with a small trusted community or group of friends. If you have a small community/group of friends sharing the server, you could also turn the server on only when needed to significantly save on costs and bandwidth.</p>
+
+<p>Here is a quick start guide if you want to host on Azure, which is what the official servers ran on: <a href="azure_server_help.html">Azure Server Help</a></p>
 
 <p>This option should not pose any significant security risks, to either the server hoster or people connecting to it. However, the person running the public server could have access to IP addresses of people connecting to it, so only connect to servers run by people you trust.</p>
 

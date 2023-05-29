@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="../assets/helpPage.css?v=1.0.3">
+<link rel="shortcut icon" href="../favicon.png?v=1.0.2" />
+<title>Mega Man X Online: Deathmatch Update 19.12</title>
+
+<style>
+  .char-icon {
+    margin-top:-4px;
+    margin-right:5px;
+  }
+  hr {
+    background-color: white;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  h3 {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body class="container">
+
+<div id="logo-wrapper">
+  <a href="../index.html"><img id="logo" src="../assets/images/logo.png?v=1.0.2" /></a>
+</div>
+
+<div style="text-align: center">
+  <button onclick="location.href='/MMXOnlineDesktop/help.html'" type="button" style="display:inline-block;">Help Guide</button>
+  <button onclick="location.href='/MMXOnlineDesktop/characters.html'" type="button" style="display:inline-block;">Characters</button>
+  <button onclick="location.href='/MMXOnlineDesktop/changelog.html'" type="button" style="display:inline-block;">Change Log</button>
+  <button onclick="location.href='/MMXOnlineDesktop/tools.html'" type="button" style="display:inline-block;">Tools</button>
+  <button onclick="location.href='/MMXOnlineDesktop/bonuses.html'" type="button" style="display:inline-block;">Bonuses</button>
+  <button onclick="location.href='/MMXOnlineDesktop/credits.html'" type="button" style="display:inline-block;">Credits</button>
+</div>
+
+<h1>Version 19.12</h1>
+
+<p>Asset Changes? No</p>
+<p>Relay Server Update? Yes</p>
+
+<!--GENERAL-->
+<hr>
+<h3>General Changes</h3>
+<hr>
+
+<ul>
+<li>Official servers have been shut down, and the pre join/create match menu has been updated accordingly. Now, to select the "internet" option and play online, you'll need to edit "region.txt" in your game folder (or MMXOD documents folder if you are using that) and set the ip address to that of a self-hosted server. Otherwise the menu will not let you advance. See the <a href="/MMXOnlineDesktop/decom.html">decom guide</a> on how to self-host a server. Then restart the game for it to pick up the change. The region name can be anything but must be set. For quick reference here is the format of region.txt that the game accepts:</li>
+<pre style="color:white">
+{
+  "name": "YOUR_REGION_NAME",
+  "ip": "YOUR_SERVER_IP"
+}
+</pre>
+<ul>
+  <li>Note, "region.txt" file with the right format will be generated automatically now if it does not exist, on game startup.</li>
+</ul>
+</ul>
+
+<hr>
+<h3>Balance</h3>
+<hr>
+
+<ul>
+  <li>K-Knuckle: second ground punch damage reduced from 3 to 2, flinch reduced to half flinch.</li>
+  <li>K-Knuckle: ground dash attack (spin kick) damage reduced from 3 to 2, and flinch cooldown now shared with second ground punch.</li>
+  <li>K-Knuckle: air neutral kick no longer flinches.</li>
+  <li>K-Knuckle: air drop kick damage reduced from 6 to 4, and flinch reduced to half flinch.</li>
+  <li>Rekkoha: damage per hit reduced from 4 to 3.</li>
+</ul>
+
+</body>
+</html>
