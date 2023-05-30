@@ -34,7 +34,9 @@
 
 <h1>MMXOD Relay Server Help</h1>
 
-<p>If you are interested in hosting low-latency LAN matches or servers, come no further. This detailed guide will explain how the Relay Server works, how to host your own servers, and more.</p>
+<p>If you are interested in hosting LAN matches or self-hosted servers, this detailed guide will explain how the Relay Server works, how to host your own servers, and more.</p>
+
+<p>You can also consult the <a href="decom.html">Decommission Guide</a> for a high level overview of methods to use this tool to play online without requiring the offical servers, which have been taken down and decomissioned.</p>
 
 <h2 id="windows">Installation/Getting Started</h2>
 
@@ -55,7 +57,9 @@
   <li>Ensure anti-viruses aren't blocking the MMXOD network communications.</li>
   <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
 </ul>
-<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, especially if trying to host a LAN server on a VPN, which could have many settings that need to be adjusted for everything to work properly. The late Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs, i.e. Hamachi): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
+<p>There are generally two ways to use LAN. You can use it to play with people that are on the same physical network as you (i.e. people in the same building, house, etc). This is the simplest and easiest option and should not require any special tools or knowledge outside the Relay Server. Another use of LAN is to play with people over a VPN (Virtual Private Network) on the internet. This allows you to play with others online without needing a self-hosted server, but requires everyone to download a VPN software like Hamachi and set up/connect to a network in it.</p>
+<p>Unfortunately this is a complex subject and troubleshooting often requires someone familiar with computer networking, since there could be many settings that need to be adjusted for everything to work properly. The late Jape has created a good tutorial on hosting a Smash Crusade match over Radmin VPN (the basic networking principles should also apply to MMXOD, and other VPNs, i.e. Hamachi): <a href="https://www.youtube.com/watch?v=NaMztavlQxk&t=1s">https://www.youtube.com/watch?v=NaMztavlQxk&t=1s</a></p>
+<p>If connecting to a VPN network with others on the internet please be aware of the security risks. Make sure your operating system and programs are up-to-date. Only join VPN networks run by people you trust, and only allow people in your VPN you trust. The smaller the group of people you share the VPN network with, the more secure.</p>
 
 <h2>Custom Internet Server</h2>
 
@@ -75,6 +79,8 @@
   <li>Ensure no firewall or anti-virus is blocking the ports mentioned above (both server and client side).</li>
   <li>Make sure the Relay Server is still running and hasn't crashed or ran into a fatal error.</li>
 </ul>
+
+<p>Here is a quick start guide if you want to host on Azure, which is what the official servers ran on: <a href="azure_server_help.html">Azure Server Help</a></p>
 
 <h2>Updating</h2>
 
